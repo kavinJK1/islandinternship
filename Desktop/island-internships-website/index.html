@@ -1843,29 +1843,6 @@
       font-weight: 500;
     }
 
-    .stories-video-strip {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1.5rem 2rem;
-      background: var(--navy);
-      border-radius: 8px;
-      color: var(--white);
-    }
-    .svs-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: rgba(255,255,255,0.8);
-    }
-    .stories-video-strip strong { font-size: 0.9rem; color: var(--white); display: block; margin-bottom: 0.2rem; }
-    .stories-video-strip p { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
-
     @media (max-width: 768px) { .intern-stories-grid { grid-template-columns: 1fr; } }
 
     /* ─── MODAL ─────────────────────────────────────────────────── */
@@ -2127,6 +2104,40 @@
     .story-card {
       min-height: 100%;
     }
+    .testimonial-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-video-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(26,26,46,0.05);
+    }
+    .testimonial-video-card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: var(--navy);
+    }
+    .testimonial-video-copy {
+      padding: 1rem 1.1rem 1.15rem;
+    }
+    .testimonial-video-copy strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .testimonial-video-copy p {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
     .story-avatar {
       background: linear-gradient(135deg, rgba(42,122,111,0.14), rgba(200,80,58,0.08));
       border: 1px solid rgba(26,26,46,0.08);
@@ -2325,7 +2336,8 @@
         grid-template-columns: 1fr 1fr;
       }
       .pricing-grid,
-      .company-mini-stats { grid-template-columns: 1fr; }
+      .company-mini-stats,
+      .testimonial-videos-grid { grid-template-columns: 1fr; }
 
       nav .nav-links {
         display: none;
@@ -2833,13 +2845,13 @@
         <span class="placement-dest-badge">Sri Lanka</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-2-company">Ex Venture</div>
+        <div class="placement-company" data-i18n="pl-2-company">Sri Lanka sustainability partner</div>
         <div class="placement-field-row">
           <span class="placement-field">Sustainability &amp; ESG</span>
           <span class="placement-type-badge" data-i18n="pl-2-type">Eco-resort</span>
         </div>
         <h3 class="placement-title" data-i18n="pl-2-title">Sustainability &amp; Operations Intern</h3>
-        <p class="placement-desc" data-i18n="pl-2-desc">Contribute to research, reporting, and operational projects for Ex Venture teams working across business building, partnerships, and sustainability-focused initiatives.</p>
+        <p class="placement-desc" data-i18n="pl-2-desc">Contribute to research, reporting, and operational projects for a sustainability-focused host company in Sri Lanka, with exposure to business, community, and impact initiatives.</p>
         <div class="placement-skills">
           <span class="skill-tag">ESG reporting</span>
           <span class="skill-tag">Research</span>
@@ -2867,13 +2879,13 @@
         <span class="placement-dest-badge">Bali</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-3-company">Ex Venture</div>
+        <div class="placement-company" data-i18n="pl-3-company">Bali startup partner</div>
         <div class="placement-field-row">
           <span class="placement-field">Business Operations</span>
           <span class="placement-type-badge" data-i18n="pl-3-type">Tech startup</span>
         </div>
         <h3 class="placement-title" data-i18n="pl-3-title">Operations &amp; Partnerships Intern</h3>
-        <p class="placement-desc" data-i18n="pl-3-desc">Support internal operations, partner coordination, and cross-functional projects at Ex Venture, with exposure to a fast-moving startup environment in Bali.</p>
+        <p class="placement-desc" data-i18n="pl-3-desc">Support internal operations, partner coordination, and cross-functional projects within a fast-moving startup environment in Bali.</p>
         <div class="placement-skills">
           <span class="skill-tag">Process design</span>
           <span class="skill-tag">Notion / Airtable</span>
@@ -2901,13 +2913,13 @@
         <span class="placement-dest-badge">Sri Lanka</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-4-company">Ex Venture</div>
+        <div class="placement-company" data-i18n="pl-4-company">International business partner</div>
         <div class="placement-field-row">
           <span class="placement-field">Hospitality &amp; Guest Experience</span>
           <span class="placement-type-badge" data-i18n="pl-4-type">Boutique hospitality</span>
         </div>
         <h3 class="placement-title" data-i18n="pl-4-title">Business Development Intern</h3>
-        <p class="placement-desc" data-i18n="pl-4-desc">Work on market research, outreach, and partnership support for Ex Venture initiatives, with a focus on international business development and project coordination.</p>
+        <p class="placement-desc" data-i18n="pl-4-desc">Work on market research, outreach, and partnership support for an international business team, with a focus on business development and project coordination.</p>
         <div class="placement-skills">
           <span class="skill-tag">Guest journey</span>
           <span class="skill-tag">Partnerships</span>
@@ -3002,8 +3014,29 @@
 <section id="testimonials" class="section-wrap">
   <div class="testimonials-header fade-up">
     <div class="eyebrow" data-i18n="test-eyebrow">Student stories</div>
-    <h2 class="section-heading" data-i18n="test-heading">Placeholder testimonials, ready for real alumni.</h2>
+    <h2 class="section-heading" data-i18n="test-heading">Student stories, with video and written testimonials.</h2>
     <p class="section-sub" data-i18n="test-sub">Use these cards for final headshots, names, universities, internship roles, and short student quotes once alumni material is ready.</p>
+  </div>
+
+  <div class="testimonial-videos-grid">
+    <div class="testimonial-video-card fade-up">
+      <video controls playsinline preload="metadata">
+        <source src="videos/testimonial-story-1.mp4" type="video/mp4">
+      </video>
+      <div class="testimonial-video-copy">
+        <strong data-i18n="test-video-1-title">Student video testimonial</strong>
+        <p data-i18n="test-video-1-sub">A first-hand reflection on the internship experience, daily routine, and living abroad.</p>
+      </div>
+    </div>
+    <div class="testimonial-video-card fade-up delay-1">
+      <video controls playsinline preload="metadata">
+        <source src="videos/testimonial-story-2.mp4" type="video/mp4">
+      </video>
+      <div class="testimonial-video-copy">
+        <strong data-i18n="test-video-2-title">Student video testimonial</strong>
+        <p data-i18n="test-video-2-sub">A second student perspective on placement support, schedule, and life in destination.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Quote cards grid -->
@@ -3024,13 +3057,13 @@
 
     <div class="story-card fade-up delay-1">
       <div class="story-stars">★★★★★</div>
-      <blockquote class="story-quote" data-i18n="t2-quote">"I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support at Ex Venture."</blockquote>
+      <blockquote class="story-quote" data-i18n="t2-quote">"I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support from the start."</blockquote>
       <div class="story-person">
         <div class="story-avatar story-av-2">PH</div>
         <div class="story-info">
           <strong data-i18n="t2-name">Student Name</strong>
           <span data-i18n="t2-detail">University Name</span>
-          <span class="story-role-tag" data-i18n="t2-role">Ex Venture · Bali · Operations internship · 4 months</span>
+          <span class="story-role-tag" data-i18n="t2-role">Bali · Operations internship · 4 months</span>
         </div>
       </div>
     </div>
@@ -3043,7 +3076,7 @@
         <div class="story-info">
           <strong data-i18n="t3-name">Student Name</strong>
           <span data-i18n="t3-detail">University Name</span>
-          <span class="story-role-tag" data-i18n="t3-role">Ex Venture · Bali · Business internship · 6 months</span>
+          <span class="story-role-tag" data-i18n="t3-role">Bali · Business internship · 6 months</span>
         </div>
       </div>
     </div>
@@ -3056,22 +3089,11 @@
         <div class="story-info">
           <strong data-i18n="t4-name">Student Name</strong>
           <span data-i18n="t4-detail">University Name</span>
-          <span class="story-role-tag" data-i18n="t4-role">Ex Venture · Bali · Partnerships internship · 5 months</span>
+          <span class="story-role-tag" data-i18n="t4-role">Bali · Partnerships internship · 5 months</span>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <!-- Video coming soon strip -->
-  <div class="stories-video-strip fade-up delay-3">
-    <div class="svs-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-    </div>
-    <div>
-      <strong data-i18n="test-video-heading">Video stories from our first intake — coming soon.</strong>
-      <p data-i18n="test-video-sub">We're filming with students currently on placement. Real footage, real people, real placements.</p>
-    </div>
   </div>
 
 </section>
@@ -3898,24 +3920,26 @@ const t = {
     'inc-6-title':'Local SIM card','inc-6-desc':'A local SIM with data is waiting for you on arrival. No phone shop queues on day one.','inc-6-expand':'<p>A local SIM with a solid data plan is set up before you arrive. You\'ll be online from the moment you land. Typical ongoing monthly data costs if you want to top up:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/month</span></div><div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/month</span></div></div>',
     'inc-7-title':'Student community','inc-7-desc':'15–20 Dutch students per intake. Group chats, community events, weekend trips — you\'ll know people from day one.','inc-7-expand':'<p>Every intake, a group of Dutch students arrives in the same destination at roughly the same time. A group WhatsApp is set up before anyone departs — so you already know people before you land.</p><p>Throughout your stay, we organise regular community events: beach days, hikes, group dinners, weekend trips. You also have access to a wider network of international interns in the same area.</p>',
     'inc-8-title':'24/7 support','inc-8-desc':'Our team is reachable around the clock. If something goes wrong — medically, logistically, or otherwise — we\'re there.','inc-8-expand':'<p>Our team is reachable via WhatsApp at any hour. For medical situations, we maintain a list of English-speaking doctors and hospitals in each city — you\'ll have it before you arrive.</p><p>We strongly recommend travel insurance. Typical cost for students: €25–40/month. We provide a list of suitable policies in your pre-departure pack.</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Travel insurance (estimate)</span><span>€25–40/month</span></div></div>',
-    'test-eyebrow':'Student stories','test-heading':'Student story cards, ready for alumni content.','test-sub':'Use these cards for final headshots, names, universities, internship roles, and short student quotes once alumni material is ready.',
+    'test-eyebrow':'Student stories','test-heading':'Student stories, with video and written testimonials.','test-sub':'Use these cards for final headshots, names, universities, internship roles, and short student quotes once alumni material is ready.',
+    'test-video-1-title':'Student video testimonial','test-video-1-sub':'A first-hand reflection on the internship experience, daily routine, and living abroad.',
+    'test-video-2-title':'Student video testimonial','test-video-2-sub':'A second student perspective on placement support, schedule, and life in destination.',
     't1-quote':'The placement at Ex Venture was structured, international, and easy to align with my university requirements. The support before departure made the move feel clear from the start.',
     't1-name':'Student Name','t1-detail':'University Name','t1-role':'Ex Venture · Bali · Marketing internship · 5 months',
-    't2-quote':'I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support at Ex Venture.',
-    't2-name':'Student Name','t2-detail':'University Name','t2-role':'Ex Venture · Bali · Operations internship · 4 months',
+    't2-quote':'I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support from the start.',
+    't2-name':'Student Name','t2-detail':'University Name','t2-role':'Bali · Operations internship · 4 months',
     't3-quote':'The 11:00 to 17:00 schedule worked well for me. It felt focused during the day, while still leaving time to enjoy Bali and settle into life abroad.',
-    't3-name':'Student Name','t3-detail':'University Name','t3-role':'Ex Venture · Bali · Business internship · 6 months',
+    't3-name':'Student Name','t3-detail':'University Name','t3-role':'Bali · Business internship · 6 months',
     't4-quote':'Communication was calm and professional throughout. From placement details to university paperwork, everything felt organized and easy to follow.',
-    't4-name':'Student Name','t4-detail':'University Name','t4-role':'Ex Venture · Bali · Partnerships internship · 5 months',
+    't4-name':'Student Name','t4-detail':'University Name','t4-role':'Bali · Partnerships internship · 5 months',
     't5-quote':'I went with a friend from my programme, which helped with the first week. But even without that I think the group dynamic would have been fine — there were already people in the WhatsApp chat before any of us had even booked flights.',
     't5-name':'Sara Rousseau','t5-detail':'Sustainability Studies, VU Amsterdam · 3 months',
     't6-quote':'Honestly the logistics were the thing I was most stressed about — visa, accommodation, getting from the airport. All of it was sorted before I even landed. I just had to show up. The rest took care of itself.',
     't6-name':'Noah Bakker','t6-detail':'Digital Business, Rotterdam University · 4 months',
     'pl-eyebrow':'Internship listings','pl-heading':'Browse example placements.','pl-sub':'These example listings show how internship opportunities are structured across Bali and Sri Lanka, with clear roles, destinations, durations, and focus areas.',
     'pl-1-company':'Ex Venture','pl-1-field':'Marketing & Digital','pl-1-type':'Startup environment','pl-1-title':'Growth Marketing Intern','pl-1-desc':'Support campaign planning, content production, and audience growth within Ex Venture\'s startup environment in Bali, working across founder-led brand and business initiatives.','pl-1-meta':'Startup / venture building','pl-1-dest':'Bali',
-    'pl-2-company':'Ex Venture','pl-2-field':'Sustainability & ESG','pl-2-type':'Business operations','pl-2-title':'Sustainability & Operations Intern','pl-2-desc':'Contribute to research, reporting, and operational projects for Ex Venture teams working across business building, partnerships, and sustainability-focused initiatives.','pl-2-meta':'Operations / impact projects','pl-2-dest':'Bali or Sri Lanka',
-    'pl-3-company':'Ex Venture','pl-3-field':'Business Operations','pl-3-type':'Startup environment','pl-3-title':'Operations & Partnerships Intern','pl-3-desc':'Support internal operations, partner coordination, and cross-functional projects at Ex Venture, with exposure to a fast-moving startup environment in Bali.','pl-3-meta':'Startup / SME','pl-3-dest':'Bali',
-    'pl-4-company':'Ex Venture','pl-4-type':'Business development','pl-4-title':'Business Development Intern','pl-4-desc':'Work on market research, outreach, and partnership support for Ex Venture initiatives, with a focus on international business development and project coordination.','pl-4-meta':'Business development / partnerships','pl-4-dest':'Bali or Sri Lanka',
+    'pl-2-company':'Sri Lanka sustainability partner','pl-2-field':'Sustainability & ESG','pl-2-type':'Business operations','pl-2-title':'Sustainability & Operations Intern','pl-2-desc':'Contribute to research, reporting, and operational projects for a Sri Lanka-based partner company working across sustainability, community, and business initiatives.','pl-2-meta':'Operations / impact projects','pl-2-dest':'Sri Lanka',
+    'pl-3-company':'Bali startup partner','pl-3-field':'Business Operations','pl-3-type':'Startup environment','pl-3-title':'Operations & Partnerships Intern','pl-3-desc':'Support internal operations, partner coordination, and cross-functional projects within a fast-moving startup environment in Bali.','pl-3-meta':'Startup / SME','pl-3-dest':'Bali',
+    'pl-4-company':'International business partner','pl-4-type':'Business development','pl-4-title':'Business Development Intern','pl-4-desc':'Work on market research, outreach, and partnership support for an international business team, with a focus on business development and project coordination.','pl-4-meta':'Business development / partnerships','pl-4-dest':'Bali or Sri Lanka',
     'meta-duration':'Duration','meta-hours':'Company type','meta-lang':'Destination',
     'com-eyebrow':'You won\'t be alone','com-heading':'A small group of Dutch students. Every intake.','com-sub':'Going abroad for your internship sounds exciting — until you think about doing it completely alone. That\'s not how this works. Every intake, a group of Dutch students arrives at the same time, lives in the same area, and goes through the same experience together.',
     'com-p1':'A group chat with your fellow interns before you even land','com-p2':'Shared housing with other interns — your housemates are your community','com-p3':'Community events and weekend trips organised by our team','com-p4':'Mix of Dutch students and other international interns in the wider network','com-p5':'Connect with other Dutch students in the same destination',
@@ -3979,7 +4003,6 @@ const t = {
     'trsf-5-title':'University paperwork handled','trsf-5-desc':'We supply the templates your university needs: internship agreements, learning objective forms, supervisor evaluation sheets. We\'ve worked through the documentation requirements of multiple Dutch universities.',
     'trsf-6-title':'Pre-departure preparation','trsf-6-desc':'Before you leave, you receive a complete preparation pack: what to pack, travel insurance recommendations, banking advice for abroad, cultural norms, and your local contact\'s details.',
     'trsf-note':'Questions about safety or suitability? Email us at <a href="mailto:hello@islandinternship.com">hello@islandinternship.com</a> — we respond to every message personally.',
-    'test-video-heading':'Video stories from our first intake — coming soon.','test-video-sub':'We\'re filming with students currently on placement, with student interviews and day-to-day footage from the internship experience.',
     'co-how-heading':'Simple 3-step process',
     'co-s1-title':'Tell us what role you need','co-s1-desc':'Share a short brief about the role, preferred timing, and what kind of student would be a good fit for your business.',
     'co-s2-title':'We match suitable candidates','co-s2-desc':'We send you relevant profiles, coordinate an introduction, and support the process until both sides are comfortable proceeding.',
@@ -4030,24 +4053,26 @@ const t = {
     'inc-6-title':'Lokale simkaart','inc-6-desc':'Een lokale simkaart met data ligt klaar bij aankomst. Geen rij voor een telefoonwinkel op dag één.','inc-6-expand':'<p>Een lokale simkaart met een goed dataplan wordt voor je aankomst geregeld. Je bent online zodra je landt. Typische maandelijkse kosten voor bijvullen:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/maand</span></div><div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/maand</span></div></div>',
     'inc-7-title':'Studentencommunity','inc-7-desc':'15–20 Nederlandse studenten per intake. Groepschats, community-evenementen, weekendtrips — je kent mensen vanaf dag één.','inc-7-expand':'<p>Bij elke intake arriveert een groep Nederlandse studenten op dezelfde bestemming op ongeveer hetzelfde moment. Een groeps-WhatsApp wordt opgezet voordat iemand vertrekt — dus je kent mensen al voordat je landt.</p><p>Gedurende je verblijf organiseren we regelmatig community-evenementen: stranddagen, wandelingen, groepsdiners, weekendtrips. Je hebt ook toegang tot een breder netwerk van internationale stagiairs in dezelfde omgeving.</p>',
     'inc-8-title':'24/7 support','inc-8-desc':'Ons team is dag en nacht bereikbaar. Als er iets misgaat — medisch, logistiek of anders — staan wij klaar.','inc-8-expand':'<p>Ons team is via WhatsApp bereikbaar op elk uur van de dag. Voor medische situaties hebben we een lijst van Engelssprekende artsen en ziekenhuizen in elke stad — je hebt deze voordat je aankomt.</p><p>We raden sterk aan een reisverzekering af te sluiten. Typische kosten voor studenten: €25–40/maand. We bieden een lijst van geschikte polissen aan in je vertrekpakket.</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Reisverzekering (schatting)</span><span>€25–40/maand</span></div></div>',
-    'test-eyebrow':'Studentenverhalen','test-heading':'Studentverhalen, klaar voor alumnicontent.','test-sub':'Gebruik deze kaarten voor echte headshots, namen, universiteiten, stagefuncties en korte quotes zodra alumnimateriaal beschikbaar is.',
+    'test-eyebrow':'Studentenverhalen','test-heading':'Studentverhalen, met video en geschreven testimonials.','test-sub':'Gebruik deze kaarten voor echte headshots, namen, universiteiten, stagefuncties en korte quotes zodra alumnimateriaal beschikbaar is.',
+    'test-video-1-title':'Video testimonial van een student','test-video-1-sub':'Een eerste terugblik op de stage-ervaring, dagelijkse routine en het leven in het buitenland.',
+    'test-video-2-title':'Video testimonial van een student','test-video-2-sub':'Een tweede perspectief op plaatsingsbegeleiding, het dagschema en het leven op bestemming.',
     't1-quote':'De stage bij Ex Venture was gestructureerd, internationaal en goed af te stemmen op de eisen van mijn universiteit. De begeleiding voor vertrek gaf vanaf het begin veel duidelijkheid.',
     't1-name':'Naam student','t1-detail':'Naam universiteit','t1-role':'Ex Venture · Bali · Marketingstage · 5 maanden',
-    't2-quote':'Ik vond het prettig hoe duidelijk de stage was afgebakend voordat ik arriveerde. Ik wist met welk team ik zou werken, wat het schema was en welke projecten ik bij Ex Venture zou ondersteunen.',
-    't2-name':'Naam student','t2-detail':'Naam universiteit','t2-role':'Ex Venture · Bali · Operationele stage · 4 maanden',
+    't2-quote':'Ik vond het prettig hoe duidelijk de stage was afgebakend voordat ik arriveerde. Ik wist met welk team ik zou werken, wat het schema was en welke projecten ik vanaf het begin zou ondersteunen.',
+    't2-name':'Naam student','t2-detail':'Naam universiteit','t2-role':'Bali · Operationele stage · 4 maanden',
     't3-quote':'Het schema van 11:00 tot 17:00 werkte voor mij heel goed. Overdag was het gefocust, en daarnaast bleef er genoeg tijd over om Bali te leren kennen en mijn ritme op te bouwen.',
-    't3-name':'Naam student','t3-detail':'Naam universiteit','t3-role':'Ex Venture · Bali · Businessstage · 6 maanden',
+    't3-name':'Naam student','t3-detail':'Naam universiteit','t3-role':'Bali · Businessstage · 6 maanden',
     't4-quote':'De communicatie was gedurende het hele proces rustig en professioneel. Van plaatsingsdetails tot universiteitsdocumentatie voelde alles georganiseerd en overzichtelijk.',
-    't4-name':'Naam student','t4-detail':'Naam universiteit','t4-role':'Ex Venture · Bali · Partnershipsstage · 5 maanden',
+    't4-name':'Naam student','t4-detail':'Naam universiteit','t4-role':'Bali · Partnershipsstage · 5 maanden',
     't5-quote':'Ik ging met een vriendin van mijn opleiding, wat in de eerste week hielp. Maar zelfs zonder haar denk ik dat de groepsdynamiek prima zou zijn geweest — er waren al mensen in de WhatsApp-chat voordat iemand van ons vluchten had geboekt.',
     't5-name':'Sara Rousseau','t5-detail':'Duurzaamheidsstudies, VU Amsterdam · 3 maanden',
     't6-quote':'Eerlijk gezegd was de logistiek het waar ik me het meest zorgen om maakte — visum, huisvesting, vervoer vanaf het vliegveld. Alles was geregeld voordat ik landde. Ik hoefde alleen maar op te komen dagen. De rest ging vanzelf.',
     't6-name':'Noah Bakker','t6-detail':'Digital Business, Hogeschool Rotterdam · 4 maanden',
     'pl-eyebrow':'Stageoverzicht','pl-heading':'Bekijk voorbeeldstages.','pl-sub':'Deze voorbeeldvacatures laten zien hoe stagekansen op Bali en Sri Lanka zijn opgebouwd, met duidelijke rollen, bestemmingen, duur en focusgebieden.',
     'pl-1-company':'Ex Venture','pl-1-field':'Marketing & Digital','pl-1-type':'Startupomgeving','pl-1-title':'Growth Marketing Stagiair','pl-1-desc':'Ondersteun campagneplanning, contentproductie en publieksgroei binnen de startupomgeving van Ex Venture op Bali, met exposure aan merk- en businessinitiatieven.','pl-1-meta':'Startup / venture building','pl-1-dest':'Bali',
-    'pl-2-company':'Ex Venture','pl-2-field':'Duurzaamheid & ESG','pl-2-type':'Business operations','pl-2-title':'Duurzaamheid & Operaties Stagiair','pl-2-desc':'Werk mee aan onderzoek, rapportage en operationele projecten voor Ex Venture-teams die zich richten op business building, partnerships en duurzaamheidsinitiatieven.','pl-2-meta':'Operaties / impactprojecten','pl-2-dest':'Bali of Sri Lanka',
-    'pl-3-company':'Ex Venture','pl-3-field':'Business Operations','pl-3-type':'Startupomgeving','pl-3-title':'Operations & Partnerships Stagiair','pl-3-desc':'Ondersteun interne operatie, partnercoördinatie en cross-functionele projecten bij Ex Venture, met exposure aan een snel bewegende startupomgeving op Bali.','pl-3-meta':'Startup / mkb','pl-3-dest':'Bali',
-    'pl-4-company':'Ex Venture','pl-4-type':'Business development','pl-4-title':'Business Development Stagiair','pl-4-desc':'Werk aan marktonderzoek, outreach en partnership support voor Ex Venture-initiatieven, met focus op internationale business development en projectcoördinatie.','pl-4-meta':'Business development / partnerships','pl-4-dest':'Bali of Sri Lanka',
+    'pl-2-company':'Duurzaamheidspartner in Sri Lanka','pl-2-field':'Duurzaamheid & ESG','pl-2-type':'Business operations','pl-2-title':'Duurzaamheid & Operaties Stagiair','pl-2-desc':'Werk mee aan onderzoek, rapportage en operationele projecten voor een partnerbedrijf in Sri Lanka dat werkt aan duurzaamheid, community en businessinitiatieven.','pl-2-meta':'Operaties / impactprojecten','pl-2-dest':'Sri Lanka',
+    'pl-3-company':'Startuppartner op Bali','pl-3-field':'Business Operations','pl-3-type':'Startupomgeving','pl-3-title':'Operations & Partnerships Stagiair','pl-3-desc':'Ondersteun interne operatie, partnercoördinatie en cross-functionele projecten binnen een snel bewegende startupomgeving op Bali.','pl-3-meta':'Startup / mkb','pl-3-dest':'Bali',
+    'pl-4-company':'Internationale business partner','pl-4-type':'Business development','pl-4-title':'Business Development Stagiair','pl-4-desc':'Werk aan marktonderzoek, outreach en partnership support voor een internationaal business team, met focus op business development en projectcoördinatie.','pl-4-meta':'Business development / partnerships','pl-4-dest':'Bali of Sri Lanka',
     'meta-duration':'Duur','meta-hours':'Type bedrijf','meta-lang':'Bestemming',
     'com-eyebrow':'Je staat er niet alleen voor','com-heading':'Een kleine groep Nederlandse studenten. Elke intake.','com-sub':'Een stage in het buitenland doen klinkt geweldig — totdat je denkt aan het idee om het helemaal alleen te doen. Zo werkt het hier niet. Bij elke intake arriveert een groep Nederlandse studenten op hetzelfde moment, woont in hetzelfde gebied en maakt dezelfde ervaring mee.',
     'com-p1':'Een groepsapp met je mede-stagiairs voordat je ook maar vertrekt','com-p2':'Gedeelde huisvesting met andere stagiairs — je huisgenoten zijn je community','com-p3':'Community-evenementen en weekendtrips georganiseerd door ons team','com-p4':'Mix van Nederlandse studenten en andere internationale stagiairs in het bredere netwerk','com-p5':'Maak contact met andere Nederlandse studenten op dezelfde bestemming',
@@ -4111,7 +4136,6 @@ const t = {
     'trsf-5-title':'Universiteitsdocumentatie geregeld','trsf-5-desc':'Wij leveren de sjablonen die jouw universiteit nodig heeft: stageovereenkomsten, leerdoelformulieren, begeleidersbeoordelingen. We kennen de documentatievereisten van meerdere Nederlandse universiteiten.',
     'trsf-6-title':'Voorbereiding voor vertrek','trsf-6-desc':'Voor vertrek ontvang je een compleet voorbereidingspakket: wat je moet inpakken, aanbevelingen voor reisverzekeringen, bankadvies voor het buitenland, culturele normen en de gegevens van je lokale contactpersoon.',
     'trsf-note':'Vragen over veiligheid of geschiktheid? Mail ons op <a href="mailto:hello@islandinternship.com">hello@islandinternship.com</a> — we reageren persoonlijk op elk bericht.',
-    'test-video-heading':'Videoverhalen van onze eerste intake — binnenkort.','test-video-sub':'We filmen met studenten die momenteel op stage zijn, inclusief interviews en dagelijkse beelden van hun stage-ervaring.',
     'co-how-heading':'Eenvoudig 3-stappenproces',
     'co-s1-title':'Vertel ons welke rol je zoekt','co-s1-desc':'Deel een korte briefing over de rol, gewenste timing en welk type student goed past bij je bedrijf.',
     'co-s2-title':'Wij matchen passende kandidaten','co-s2-desc':'We sturen relevante profielen, coördineren een introductie en ondersteunen het proces totdat beide partijen comfortabel zijn om door te gaan.',
