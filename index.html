@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Island Internships — Intern in Bali or Sri Lanka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:     #F5F0E8;
+      --cream-d:   #EDE5D6;
+      --navy:      #1A1A2E;
+      --navy-mid:  #2E2E48;
+      --teal:      #2A7A6F;
+      --teal-deep: #1E5C53;
+      --coral:     #C8503A;
+      --text:      #2C2C3A;
+      --muted:     #7A7A8A;
+      --white:     #FFFFFF;
+      --border:    #DDD6C8;
+      --teal-faint: rgba(42,122,111,0.08);
+      --navy-faint: rgba(26,26,46,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── FADE ANIMATIONS ───────────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: 64px;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(245, 240, 232, 0.9);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 1px 20px rgba(26,26,46,0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--teal); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-apply {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white) !important;
+      opacity: 1 !important;
+      background: var(--teal);
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+    .nav-apply:hover { background: var(--teal-deep) !important; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      width: 22px;
+      height: 1.5px;
+      background: var(--navy);
+      display: block;
+      transition: all 0.3s;
+    }
+
+    /* ─── BUTTONS ───────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s, background 0.2s, color 0.2s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+    }
+    .btn-primary:hover { background: #b34432; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      padding: 0.85rem 1.75rem;
+      border: 1.5px solid rgba(26,26,46,0.25);
+    }
+    .btn-outline:hover { border-color: var(--navy); background: var(--navy); color: var(--white); }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+    }
+    .btn-teal:hover { background: var(--teal-deep); }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      padding: 0.9rem 1.9rem;
+      font-size: 0.9rem;
+    }
+    .btn-white:hover { background: var(--cream); }
+
+    /* ─── SECTION UTILITY ───────────────────────────────────────── */
+    .section-wrap { padding: 100px 5%; }
+    .section-wrap-sm { padding: 72px 5%; }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.1rem;
+    }
+
+    .section-heading {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .section-heading em { font-style: italic; color: var(--teal); }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    .center { text-align: center; }
+    .center .section-sub { margin: 0 auto; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .hero-headline {
+      font-size: clamp(3rem, 5.5vw, 4.75rem);
+      color: var(--navy);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2.25rem;
+      max-width: 460px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 0.85rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── HERO VISUAL ───────────────────────────────────────────── */
+    .hero-visual {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.85rem;
+    }
+
+    .hero-photo {
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-photo-tall {
+      grid-row: span 2;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo-tall .photo-inner { min-height: 440px; }
+
+    .photo-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+    .hero-photo:hover .photo-bg { transform: scale(1.03); }
+
+    .photo-bg-1 { background: linear-gradient(155deg, #1e5c53 0%, #2a7a6f 45%, #3d9e92 100%); }
+    .photo-bg-2 { background: linear-gradient(150deg, #c4813a 0%, #d4a853 55%, #e8c87a 100%); }
+    .photo-bg-3 { background: linear-gradient(145deg, #1a1a2e 0%, #2e2e48 60%, #3d3d6e 100%); }
+
+    .photo-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      z-index: 2;
+    }
+    .photo-label-time {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.2rem;
+    }
+    .photo-label-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* ─── TRUST BAR ─────────────────────────────────────────────── */
+    #trust {
+      padding: 36px 5%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .trust-unis {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .trust-uni {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.38;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+    .trust-uni:hover { opacity: 0.7; }
+
+    /* ─── WHAT IT LOOKS LIKE ────────────────────────────────────── */
+    #moments {
+      background: var(--navy);
+    }
+    #moments .section-heading { color: var(--white); }
+    #moments .section-sub { color: rgba(255,255,255,0.5); }
+    #moments .eyebrow { color: rgba(212,168,83,0.85); }
+
+    .moments-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .moment-item {
+      background: var(--navy);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+    }
+    .moment-item:hover { background: var(--navy-mid); }
+
+    .moment-time {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(212,168,83,0.7);
+      margin-bottom: 0.85rem;
+    }
+
+    .moment-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .moment-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+
+    .moment-divider {
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: rgba(212,168,83,0.4);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── DESTINATIONS ──────────────────────────────────────────── */
+    #destinations {}
+
+    .destinations-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .dest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .dest-card {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.4s cubic-bezier(.22,.68,0,1.15), box-shadow 0.4s;
+    }
+    .dest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(26,26,46,0.18);
+    }
+
+    .dest-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+    .dest-card:hover .dest-bg { transform: scale(1.04); }
+
+    .dest-bg-bali {
+      background: linear-gradient(160deg, #1B5C52 0%, #2a7a6f 40%, #1a3e3a 100%);
+    }
+    .dest-bg-srilanka {
+      background: linear-gradient(160deg, #7a5210 0%, #b88830 40%, #d4a853 100%);
+    }
+
+    .dest-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,12,22,0.8) 0%, rgba(10,12,22,0.1) 55%, transparent 100%);
+      z-index: 1;
+    }
+
+    .dest-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .dest-region {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.4rem;
+    }
+
+    .dest-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .dest-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .dest-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.28rem 0.75rem;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.15);
+      letter-spacing: 0.04em;
+    }
+
+    .dest-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, gap 0.2s;
+    }
+    .dest-link:hover { border-color: rgba(255,255,255,0.85); gap: 0.75rem; }
+    .dest-link svg { flex-shrink: 0; }
+
+    /* ─── WHAT'S INCLUDED ───────────────────────────────────────── */
+    #included {
+      background: var(--cream-d);
+    }
+
+    .included-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .included-item {
+      background: var(--white);
+      padding: 2rem 1.75rem;
+      transition: background 0.25s;
+    }
+    .included-item:hover { background: var(--cream); }
+
+    .included-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 1.1rem;
+      color: var(--teal);
+    }
+
+    .included-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+      line-height: 1.2;
+    }
+
+    .included-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── EXPANDABLE INCLUDED CARDS ────────────────────────────── */
+    .included-item {
+      cursor: pointer;
+    }
+    .included-item summary {
+      list-style: none;
+      display: block;
+      cursor: pointer;
+    }
+    .included-item summary::-webkit-details-marker { display: none; }
+
+    .included-summary-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .included-toggle {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      transition: background 0.2s, border-color 0.2s;
+      color: var(--muted);
+    }
+    .included-item[open] .included-toggle {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+    .included-toggle svg { transition: transform 0.3s; }
+    .included-item[open] .included-toggle svg { transform: rotate(45deg); }
+
+    .included-item[open] { background: var(--cream); }
+    .included-item[open] .included-title { color: var(--teal); }
+
+    .included-expand {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .included-expand p + p { margin-top: 0.6rem; }
+
+    .included-expand-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+      transition: gap 0.2s;
+    }
+    .included-expand-cta:hover { gap: 0.65rem; }
+
+    .included-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .included-price-row:last-of-type { border-bottom: none; }
+    .included-price-row span:last-child {
+      font-weight: 600;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    /* ─── EXAMPLE PLACEMENTS ────────────────────────────────────── */
+    #placements {}
+
+    .placements-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .placements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .placement-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .placement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(26,26,46,0.1);
+    }
+
+    .placement-top {
+      height: 140px;
+      position: relative;
+      overflow: hidden;
+    }
+    .placement-top-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s ease;
+    }
+    .placement-card:hover .placement-top-bg { transform: scale(1.05); }
+
+    .pt-1 { background: linear-gradient(140deg, #2a7a6f 0%, #1e5c53 100%); }
+    .pt-2 { background: linear-gradient(140deg, #b88830 0%, #d4a853 100%); }
+    .pt-3 { background: linear-gradient(140deg, #1A1A2E 0%, #2e2e48 100%); }
+
+    .placement-dest-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(0,0,0,0.25);
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+    }
+
+    .placement-body {
+      padding: 1.5rem;
+    }
+
+    .placement-field {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .placement-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .placement-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .placement-meta {
+      display: flex;
+      gap: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .placement-meta-item {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .placement-meta-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.78rem;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ─── COMMUNITY ─────────────────────────────────────────────── */
+    #community {
+      background: var(--teal);
+    }
+
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    #community .section-heading { color: var(--white); }
+    #community .eyebrow { color: rgba(255,255,255,0.55); }
+
+    .community-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .community-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .community-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+    }
+    .community-points li svg {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .community-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .comm-stat {
+      background: rgba(255,255,255,0.08);
+      padding: 2rem;
+    }
+    .comm-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .comm-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* ─── HOW IT WORKS ──────────────────────────────────────────── */
+    #how {}
+
+    .how-header { margin-bottom: 3.5rem; }
+
+    .steps-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps-list::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .step {
+      padding: 0 1.5rem 0 0;
+      padding-top: 0;
+      position: relative;
+    }
+
+    .step-num-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .step:nth-child(1) .step-num { background: var(--teal); border-color: var(--teal); color: var(--white); }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+    .step-desc {
+      font-size: 0.845rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── COST OF LIVING ────────────────────────────────────────── */
+    #costs {
+      background: var(--navy);
+    }
+    #costs .section-heading { color: var(--white); }
+    #costs .section-sub { color: rgba(255,255,255,0.5); }
+    #costs .eyebrow { color: rgba(212,168,83,0.75); }
+
+    .costs-header { margin-bottom: 3.5rem; }
+
+    .costs-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .costs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .costs-table thead th {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .costs-table thead th:not(:first-child) { text-align: right; }
+
+    .costs-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+    }
+    .costs-table tbody tr:last-child { border-bottom: none; }
+    .costs-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    .costs-table tbody td {
+      padding: 0.9rem 1.5rem;
+      color: rgba(255,255,255,0.7);
+      vertical-align: middle;
+    }
+    .costs-table tbody td:not(:first-child) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .costs-table tfoot td {
+      padding: 1.1rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+    }
+    .costs-table tfoot td:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .costs-table tfoot td:not(:first-child) {
+      text-align: right;
+      font-weight: 600;
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    .costs-note {
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.65;
+    }
+
+    /* ─── FAQ ───────────────────────────────────────────────────── */
+    #faq {}
+
+    .faq-header { margin-bottom: 3.5rem; }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4rem;
+      align-items: start;
+    }
+
+    .faq-col {}
+
+    details {
+      border-bottom: 1px solid var(--border);
+    }
+    details:first-child { border-top: 1px solid var(--border); }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { color: var(--teal); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    details[open] summary .faq-icon {
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+    .faq-icon svg { transition: transform 0.3s; }
+    details[open] summary .faq-icon svg { transform: rotate(45deg); }
+    details[open] summary .faq-icon svg path { stroke: white; }
+
+    .faq-answer {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding: 0 0 1.35rem 0;
+      max-width: 480px;
+    }
+
+    /* ─── CTA BANNER ────────────────────────────────────────────── */
+    #cta-banner {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(42,122,111,0.15) 0%, transparent 60%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    #cta-banner .eyebrow { color: rgba(212,168,83,0.7); }
+    #cta-banner .section-heading { color: var(--white); }
+    #cta-banner .section-sub { color: rgba(255,255,255,0.5); max-width: 480px; }
+
+    .cta-btns {
+      display: flex;
+      gap: 0.85rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .footer-above { background: var(--navy); }
+
+    .footer-main {
+      background: #2a2a3e;
+      padding: 4rem 5% 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-col { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .footer-col-left { align-items: flex-start; text-align: left; }
+    .footer-col-right { align-items: flex-start; text-align: left; }
+
+    .footer-col-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-mission-text {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 1.1rem;
+      align-items: center;
+    }
+    .footer-socials a {
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+    .footer-socials a:hover { color: var(--teal); }
+    .footer-socials svg { display: block; }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-contact-item:hover { color: rgba(255,255,255,0.85); }
+    .footer-contact-item svg { flex-shrink: 0; color: var(--teal); }
+
+    .footer-info-links { display: flex; flex-direction: column; gap: 0; width: 100%; }
+    .footer-info-link {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    .footer-info-link:last-child { border-bottom: none; }
+    .footer-info-link:hover { color: rgba(255,255,255,0.85); }
+    .footer-info-link svg { flex-shrink: 0; color: var(--teal); }
+
+    footer {
+      background: rgba(0,0,0,0.35);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 1.25rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--teal); }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-legal-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      transition: color 0.2s;
+    }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    @media (max-width: 860px) {
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-col { align-items: flex-start; text-align: left; }
+    }
+    @media (max-width: 640px) {
+      .footer-main { grid-template-columns: 1fr; }
+      .footer-legal-links { gap: 1rem; }
+    }
+
+    /* ─── TESTIMONIALS ──────────────────────────────────────────── */
+    #testimonials { background: var(--cream-d); }
+
+    .testimonials-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .testimonials-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .testimonials-track-wrap::before,
+    .testimonials-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .testimonials-track-wrap::before { left: 0; background: linear-gradient(to right, var(--cream-d), transparent); }
+    .testimonials-track-wrap::after  { right: 0; background: linear-gradient(to left, var(--cream-d), transparent); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: box-shadow 0.25s;
+    }
+    .testimonial-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.07); }
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--teal);
+    }
+    .testimonial-stars svg { display: block; }
+
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: var(--text);
+      flex: 1;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      font-size: 2.5rem;
+      line-height: 0;
+      vertical-align: -0.6rem;
+      margin-right: 0.1rem;
+      color: var(--teal);
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--cream-d);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      flex-shrink: 0;
+      letter-spacing: 0.03em;
+    }
+    .testimonial-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .testimonial-detail {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .testimonial-dest-tag {
+      margin-left: auto;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(42,122,111,0.08);
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    /* ─── MODAL ─────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(10,10,20,0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--cream);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 92vh;
+      overflow-y: auto;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.35s cubic-bezier(.22,.68,0,1.15);
+      position: relative;
+    }
+    .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+
+    .modal-header {
+      padding: 2rem 2rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .modal-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .modal-title {
+      font-size: 1.65rem;
+      color: var(--navy);
+      line-height: 1.15;
+      font-weight: 500;
+    }
+    .modal-subtitle {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.55;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      line-height: 1;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: var(--cream-d); color: var(--navy); }
+
+    .modal-body { padding: 1.75rem 2rem 2rem; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+    .form-row.full { grid-template-columns: 1fr; }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.7rem 0.875rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(42,122,111,0.1);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7A8A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      padding-right: 2.5rem;
+    }
+    .form-group textarea { resize: vertical; min-height: 88px; }
+
+    .modal-submit {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    }
+    .modal-submit:hover {
+      background: var(--teal-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(42,122,111,0.25);
+    }
+    .modal-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .modal-success {
+      display: none;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .modal-success.visible { display: block; }
+    .modal-form-wrap.hidden { display: none; }
+
+    .success-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1.5px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--teal);
+    }
+    .success-title {
+      font-size: 1.7rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .success-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 360px;
+      margin: 0 auto 2rem;
+    }
+
+    .lang-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.3rem 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .lang-toggle:hover { border-color: var(--navy); }
+    .lt-sep { opacity: 0.3; }
+    .lt-active { color: var(--navy); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .included-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-list { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .steps-list::before { display: none; }
+      .step { padding-right: 0; }
+    }
+
+    @media (max-width: 860px) {
+      #hero {
+        grid-template-columns: 1fr;
+        padding-top: 96px;
+        min-height: auto;
+        gap: 2.5rem;
+        padding-bottom: 72px;
+      }
+      .hero-visual { order: -1; }
+      .hero-headline { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+
+      .dest-grid { grid-template-columns: 1fr; }
+      .placements-grid { grid-template-columns: 1fr; }
+      .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .faq-grid { grid-template-columns: 1fr; gap: 0; }
+      .faq-col:first-child details:first-child { border-top: 1px solid var(--border); }
+      .faq-col:nth-child(2) details:first-child { border-top: none; }
+      .moments-grid { grid-template-columns: 1fr; }
+      .hero-visual {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0; right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0.5rem 5%;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 20px rgba(26,26,46,0.08);
+      }
+      nav .nav-links.open { display: flex; }
+      nav .nav-links li { width: 100%; }
+      nav .nav-links a {
+        display: block;
+        padding: 0.85rem 0;
+        font-size: 0.95rem;
+        border-bottom: 1px solid var(--border);
+        opacity: 1;
+      }
+      nav .nav-links li:last-child a { border-bottom: none; }
+      .nav-apply { display: inline-block; margin-bottom: 0.5rem; }
+      .nav-hamburger { display: flex; }
+    }
+
+    @media (max-width: 640px) {
+      .section-wrap { padding: 72px 5%; }
+      .section-wrap-sm { padding: 52px 5%; }
+      .placements-grid { grid-template-columns: 1fr; }
+      .steps-list { grid-template-columns: 1fr; }
+      .community-stats-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .modal-header, .modal-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero-stats { gap: 1.5rem; }
+      .hero-photo-tall .photo-inner { min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">Island<span>.</span>Internships</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#destinations" data-i18n="nav-destinations">Destinations</a></li>
+    <li><a href="#placements" data-i18n="nav-placements">Placements</a></li>
+    <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#cta-banner" class="nav-apply" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
+  </ul>
+  <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+    <span id="lt-en" class="lt-active">EN</span>
+    <span class="lt-sep">|</span>
+    <span id="lt-nl">NL</span>
+  </button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section id="hero" class="section-wrap">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up" data-i18n="hero-eyebrow">For Dutch university students</div>
+    <h1 class="hero-headline fade-up delay-1" data-i18n-html="hero-headline">
+      Do your internship.<br><em>Just not in the Netherlands.</em>
+    </h1>
+    <p class="hero-sub fade-up delay-2" data-i18n="hero-sub">
+      Island Internships places Dutch students in vetted internships in Bali and Sri Lanka — with housing, visa support, and a community of students doing the same thing. Same credits. Much better story.
+    </p>
+    <div class="hero-ctas fade-up delay-3">
+      <a href="#cta-banner" class="btn btn-primary" onclick="openModal(event)" data-i18n="hero-cta1">Apply now</a>
+      <a href="#how" class="btn btn-outline" data-i18n="hero-cta2">How it works</a>
+    </div>
+    <div class="hero-stats fade-up delay-4">
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-label" data-i18n="stat-islands">Islands</div>
+      </div>
+      <div>
+        <div class="stat-num">6+</div>
+        <div class="stat-label" data-i18n="stat-fields">Fields</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label" data-i18n="stat-unis">Partner universities</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual fade-up delay-2">
+    <div class="hero-photo hero-photo-tall">
+      <div class="photo-inner">
+        <div class="photo-bg photo-bg-1"></div>
+        <div class="photo-label">
+          <div class="photo-label-time" data-i18n="p1-time">Monday, 9am</div>
+          <div class="photo-label-text" data-i18n="p1-text">Working from a terrace in Canggu</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-inner">
+        <div class="photo-bg photo-bg-2"></div>
+        <div class="photo-label">
+          <div class="photo-label-time" data-i18n="p2-time">Friday evening</div>
+          <div class="photo-label-text" data-i18n="p2-text">Surf lesson after work</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-inner">
+        <div class="photo-bg photo-bg-3"></div>
+        <div class="photo-label">
+          <div class="photo-label-time" data-i18n="p3-time">The weekend</div>
+          <div class="photo-label-text" data-i18n="p3-text">Somewhere on the island</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ─────────────────────────────────────────────────── -->
+<div id="trust" class="fade-up">
+  <div class="trust-row">
+    <span class="trust-label" data-i18n="trust-label">Students from</span>
+    <div class="trust-unis">
+      <span class="trust-uni">Maastricht University</span>
+      <span class="trust-uni">Universiteit van Amsterdam</span>
+      <span class="trust-uni">Erasmus University</span>
+      <span class="trust-uni">Tilburg University</span>
+      <span class="trust-uni">Vrije Universiteit</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHAT IT ACTUALLY LOOKS LIKE ──────────────────────────────── -->
+<section id="moments" class="section-wrap">
+  <div class="moments-header">
+    <div class="eyebrow fade-up" data-i18n="mom-eyebrow">A normal week</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="mom-heading">This is what it actually looks like.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="mom-sub">Your internship runs Monday to Friday. The evenings and weekends are entirely yours.</p>
+  </div>
+  <div class="moments-grid">
+    <div class="moment-item fade-up">
+      <span class="moment-divider"></span>
+      <div class="moment-time" data-i18n="m1-time">Monday — Friday</div>
+      <h3 class="moment-heading" data-i18n="m1-heading">Real work at a real company.</h3>
+      <p class="moment-text" data-i18n="m1-text">You work at a vetted local company in your field, five days a week. Your colleagues speak English, your tasks are real, and the work counts for your university credits.</p>
+    </div>
+    <div class="moment-item fade-up delay-1">
+      <span class="moment-divider"></span>
+      <div class="moment-time" data-i18n="m2-time">Weekday evenings</div>
+      <h3 class="moment-heading" data-i18n="m2-heading">After work looks different here.</h3>
+      <p class="moment-text" data-i18n="m2-text">Close the laptop and step outside. Bali and Sri Lanka have the kind of evenings that don't exist in Rotterdam — beachside dinners, sunset swims, or just a cold Bintang with your housemates.</p>
+    </div>
+    <div class="moment-item fade-up delay-2">
+      <span class="moment-divider"></span>
+      <div class="moment-time" data-i18n="m3-time">Weekends</div>
+      <h3 class="moment-heading" data-i18n="m3-heading">The island is yours.</h3>
+      <p class="moment-text" data-i18n="m3-text">Rent a scooter and go. Waterfalls, temples, surf breaks, rice fields. Two full days with no plans and an entire island to explore — every weekend.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DESTINATIONS ──────────────────────────────────────────────── -->
+<section id="destinations" class="section-wrap">
+  <div class="destinations-header">
+    <div class="eyebrow fade-up" data-i18n="dest-eyebrow">Where you'll go</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="dest-heading">Two islands. One choice.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="dest-sub">Both destinations are warm, affordable, and full of companies looking for motivated students. The hardest part is picking one.</p>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card fade-up">
+      <div class="dest-bg dest-bg-bali"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-content">
+        <p class="dest-region" data-i18n="dest-bali-region">Indonesia · Southeast Asia</p>
+        <h3 class="dest-name">Bali</h3>
+        <div class="dest-tags">
+          <span class="dest-tag">Startups</span>
+          <span class="dest-tag">Marketing</span>
+          <span class="dest-tag">Hospitality</span>
+          <span class="dest-tag">Sustainability</span>
+        </div>
+        <a href="#placements" class="dest-link" onclick="openModal(event, 'Bali')">
+          Explore Bali placements
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="dest-card fade-up delay-1">
+      <div class="dest-bg dest-bg-srilanka"></div>
+      <div class="dest-overlay"></div>
+      <div class="dest-content">
+        <p class="dest-region" data-i18n="dest-sl-region">South Asia · Indian Ocean</p>
+        <h3 class="dest-name">Sri Lanka</h3>
+        <div class="dest-tags">
+          <span class="dest-tag">Tourism</span>
+          <span class="dest-tag">Sustainability</span>
+          <span class="dest-tag">Development</span>
+          <span class="dest-tag">Startups</span>
+        </div>
+        <a href="#placements" class="dest-link" onclick="openModal(event, 'Sri Lanka')">
+          Explore Sri Lanka placements
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INCLUDED ───────────────────────────────────────────── -->
+<section id="included" class="section-wrap">
+  <div class="included-header">
+    <div class="eyebrow fade-up" data-i18n="inc-eyebrow">No guesswork</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="inc-heading">We arrange everything.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="inc-sub">You focus on getting excited. We take care of the logistics that would otherwise take you months to sort out alone.</p>
+  </div>
+  <div class="included-grid fade-up delay-1">
+
+    <!-- 1. Internship placement -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="10" width="24" height="18" rx="2"/>
+          <path d="M12 10V7a6 6 0 0112 0v3"/>
+          <circle cx="18" cy="19" r="2"/>
+          <path d="M18 21v3"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-1-title">Internship placement</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-1-desc">We match you with a vetted company in your field. All placements are screened for quality and university eligibility.</div>
+      </summary>
+      <div class="included-expand">
+        <p>We match you based on your study background, field of interest, and preferred destination. Every host company is vetted for quality, English-language working environment, and willingness to complete your university's paperwork.</p>
+        <p>Not sure what field is right for you? We offer a free 20-minute consulting call before you even apply — no commitment, just a conversation to help you figure out the right direction.</p>
+        <a href="#" class="included-expand-cta" onclick="openModal(event)">
+          Book a free consulting call
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </details>
+
+    <!-- 2. Housing -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 16V10a9 9 0 0118 0v6"/>
+          <rect x="5" y="16" width="26" height="14" rx="2"/>
+          <path d="M14 23h8M14 27h4"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-2-title">Housing sorted</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-2-desc">Private room in a shared house with other interns. Good Wi-Fi, central location, no 3-month hunt on Facebook groups.</div>
+      </summary>
+      <div class="included-expand">
+        <p>All housing is in safe, central areas — within scooter distance of coworking cafes, supermarkets, and the beach. Typically 3–5 interns per house, all in your own private room.</p>
+        <p>Housing costs are paid directly at the destination and are not included in the program fee. Typical prices:</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Bali — private room</span><span>from €180/month</span></div>
+          <div class="included-price-row"><span>Sri Lanka — private room</span><span>from €140/month</span></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 3. Visa guidance -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="8" width="24" height="20" rx="2"/>
+          <path d="M12 8V6a2 2 0 014 0v2M20 8V6a2 2 0 014 0v2"/>
+          <path d="M10 16h16M10 21h10"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-3-title">Visa guidance</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-3-desc">We walk you through the exact visa process for your destination. No surprises at immigration.</div>
+      </summary>
+      <div class="included-expand">
+        <p>Dutch passport holders can enter both destinations without a visa agent. Here's what applies:</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Bali — visa on arrival (30 days)</span><span>Free</span></div>
+          <div class="included-price-row"><span>Bali — extension to 60 days</span><span>~€30</span></div>
+          <div class="included-price-row"><span>Sri Lanka — e-visa online</span><span>~€35</span></div>
+        </div>
+        <p style="margin-top:0.75rem;">We send you a step-by-step visa guide as part of your pre-departure pack. For stays longer than 60 days in Bali, we'll advise on the right route.</p>
+      </div>
+    </details>
+
+    <!-- 4. Airport pickup -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 28l6-6 4 4 8-10"/>
+          <path d="M28 12h-6V6"/>
+          <circle cx="9" cy="28" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-4-title">Airport transport</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-4-desc">We arrange transport from the airport on arrival day so you're not stranded in an unfamiliar city.</div>
+      </summary>
+      <div class="included-expand">
+        <p>We can arrange a private pickup for your arrival day — confirm your flight details and we'll have someone waiting. Can't align with the group arrival? Grab (Southeast Asia's Uber equivalent) is reliable, safe, and cheap:</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Bali airport → Canggu</span><span>~€8–12</span></div>
+          <div class="included-price-row"><span>Bali airport → Seminyak</span><span>~€6–10</span></div>
+          <div class="included-price-row"><span>Bali airport → Ubud</span><span>~€14–18</span></div>
+          <div class="included-price-row"><span>Colombo airport → Weligama (SL)</span><span>~€25–35</span></div>
+          <div class="included-price-row"><span>Colombo airport → Galle (SL)</span><span>~€22–30</span></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 5. Orientation week -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 12h24M6 18h16M6 24h10"/>
+          <path d="M26 22l4 4-4 4"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-5-title">Orientation week</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-5-desc">Your first week includes a full orientation — local area, transport, culture, and meeting the rest of your group.</div>
+      </summary>
+      <div class="included-expand">
+        <p>Before you start your internship, we run a full orientation week. You'll cover:</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Neighbourhood walkthrough</span><span></span></div>
+          <div class="included-price-row"><span>Scooter safety and rental</span><span></span></div>
+          <div class="included-price-row"><span>Local transport and apps</span><span></span></div>
+          <div class="included-price-row"><span>Cultural tips and local etiquette</span><span></span></div>
+          <div class="included-price-row"><span>Group dinner to meet your fellow interns</span><span></span></div>
+        </div>
+        <p style="margin-top:0.75rem;">You start your internship in week two — settled, oriented, and not scrambling.</p>
+      </div>
+    </details>
+
+    <!-- 6. Local SIM -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="11" y="4" width="14" height="28" rx="2"/>
+          <path d="M15 8h6M18 26v2"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-6-title">Local SIM card</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-6-desc">A local SIM with data is waiting for you on arrival. No phone shop queues on day one.</div>
+      </summary>
+      <div class="included-expand">
+        <p>A local SIM with a solid data plan is set up before you arrive. You'll be online from the moment you land. Typical ongoing monthly data costs if you want to top up:</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/month</span></div>
+          <div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/month</span></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 7. Community -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 28c0-6.63 5.37-12 12-12s12 5.37 12 12"/>
+          <circle cx="18" cy="12" r="5"/>
+          <path d="M28 22c2 1 3 3 3 5"/>
+          <path d="M8 22c-2 1-3 3-3 5"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-7-title">Student community</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-7-desc">15–20 Dutch students per intake. Group chats, community events, weekend trips — you'll know people from day one.</div>
+      </summary>
+      <div class="included-expand">
+        <p>Every intake, a group of Dutch students arrives in the same destination at roughly the same time. A group WhatsApp is set up before anyone departs — so you already know people before you land.</p>
+        <p>Throughout your stay, we organise regular community events: beach days, hikes, group dinners, weekend trips. You also have access to a wider network of international interns in the same area.</p>
+      </div>
+    </details>
+
+    <!-- 8. 24/7 support -->
+    <details class="included-item">
+      <summary class="included-summary">
+        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6v6M18 24v6M6 18h6M24 18h6"/>
+          <circle cx="18" cy="18" r="6"/>
+        </svg>
+        <div class="included-summary-header">
+          <div class="included-title" data-i18n="inc-8-title">24/7 support</div>
+          <span class="included-toggle">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <div class="included-desc" data-i18n="inc-8-desc">Our team is reachable around the clock. If something goes wrong — medically, logistically, or otherwise — we're there.</div>
+      </summary>
+      <div class="included-expand">
+        <p>Our team is reachable via WhatsApp at any hour. For medical situations, we maintain a list of English-speaking doctors and hospitals in each city — you'll have it before you arrive.</p>
+        <p>We strongly recommend travel insurance. Typical cost for students: €25–40/month. We provide a list of suitable policies in your pre-departure pack, including ones that cover internships and adventure activities.</p>
+        <div style="margin-top:0.75rem;">
+          <div class="included-price-row"><span>Travel insurance (estimate)</span><span>€25–40/month</span></div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ── EXAMPLE PLACEMENTS ────────────────────────────────────────── -->
+<section id="placements" class="section-wrap">
+  <div class="placements-header">
+    <div class="eyebrow fade-up" data-i18n="pl-eyebrow">What you'll actually do</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="pl-heading">Example placements.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="pl-sub">Every internship is matched to your study background and approved for academic credit. These are recent examples.</p>
+  </div>
+  <div class="placements-grid">
+    <div class="placement-card fade-up">
+      <div class="placement-top">
+        <div class="placement-top-bg pt-1"></div>
+        <span class="placement-dest-badge">Bali, Indonesia</span>
+      </div>
+      <div class="placement-body">
+        <div class="placement-field">Marketing &amp; Digital</div>
+        <h3 class="placement-title" data-i18n="pl-1-title">Marketing Coordinator at a Canggu Surf Brand</h3>
+        <p class="placement-desc" data-i18n="pl-1-desc">Run Instagram and email campaigns, coordinate content production, and help grow an international audience for a fast-growing Bali-based lifestyle brand.</p>
+        <div class="placement-meta">
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-duration">Duration</strong>3–6 months
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-hours">Hours/week</strong>36–40 hrs
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-lang">Language</strong>English
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="placement-card fade-up delay-1">
+      <div class="placement-top">
+        <div class="placement-top-bg pt-2"></div>
+        <span class="placement-dest-badge">Sri Lanka</span>
+      </div>
+      <div class="placement-body">
+        <div class="placement-field">Sustainability &amp; ESG</div>
+        <h3 class="placement-title" data-i18n="pl-2-title">Sustainability Intern at a Boutique Eco-Resort</h3>
+        <p class="placement-desc" data-i18n="pl-2-desc">Research sustainable operations, support local community partnerships, and help develop ESG reporting for a certified eco-property in southern Sri Lanka.</p>
+        <div class="placement-meta">
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-duration">Duration</strong>3–5 months
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-hours">Hours/week</strong>36–40 hrs
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-lang">Language</strong>English
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="placement-card fade-up delay-2">
+      <div class="placement-top">
+        <div class="placement-top-bg pt-3"></div>
+        <span class="placement-dest-badge">Bali, Indonesia</span>
+      </div>
+      <div class="placement-body">
+        <div class="placement-field" data-i18n="pl-3-field">Startup Operations</div>
+        <h3 class="placement-title" data-i18n="pl-3-title">Operations Intern at a Tech Startup in Seminyak</h3>
+        <p class="placement-desc" data-i18n="pl-3-desc">Support daily operations, help build internal processes, and work directly with the founding team of a seed-stage startup expanding across Southeast Asia.</p>
+        <div class="placement-meta">
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-duration">Duration</strong>4–6 months
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-hours">Hours/week</strong>36–40 hrs
+          </div>
+          <div class="placement-meta-item">
+            <strong data-i18n="meta-lang">Language</strong>English
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMUNITY ─────────────────────────────────────────────────── -->
+<section id="community" class="section-wrap">
+  <div class="community-inner">
+    <div>
+      <div class="eyebrow fade-up">You won't be alone</div>
+      <h2 class="section-heading fade-up delay-1">15–20 Dutch students. Always in a group.</h2>
+      <p class="community-sub fade-up delay-2">Going abroad for your internship sounds exciting — until you think about doing it completely alone. That's not how this works. Every intake, a group of Dutch students arrives at the same time, lives in the same area, and goes through the same experience together.</p>
+      <ul class="community-points fade-up delay-3">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          A group chat with your fellow interns before you even land
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Shared housing with other interns — your housemates are your community
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Community events and weekend trips organised by Island Internships
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Mix of Dutch students and other international interns in the wider network
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Alumni network you can tap into before you go
+        </li>
+      </ul>
+    </div>
+    <div class="fade-up delay-2">
+      <div class="community-stats-grid">
+        <div class="comm-stat">
+          <div class="comm-stat-num">15–20</div>
+          <div class="comm-stat-label">Dutch students per intake</div>
+        </div>
+        <div class="comm-stat">
+          <div class="comm-stat-num">6+</div>
+          <div class="comm-stat-label">Internship fields available</div>
+        </div>
+        <div class="comm-stat">
+          <div class="comm-stat-num">2</div>
+          <div class="comm-stat-label">Islands to choose from</div>
+        </div>
+        <div class="comm-stat">
+          <div class="comm-stat-num">100%</div>
+          <div class="comm-stat-label">University credit eligible</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ──────────────────────────────────────────────── -->
+<section id="testimonials" class="section-wrap">
+  <div class="testimonials-header fade-up">
+    <div class="eyebrow" data-i18n="test-eyebrow">In their own words</div>
+    <h2 class="section-heading" data-i18n="test-heading">Students who've been there.</h2>
+    <p class="section-sub" data-i18n="test-sub">Hear directly from alumni about their experience.</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <!-- Video placeholder 1 — replace src with real embed URL -->
+    <div class="testimonial-card fade-up">
+      <div class="video-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <div class="testimonial-meta">
+        <div class="testimonial-name">Bali</div>
+        <span class="testimonial-dest-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <!-- Video placeholder 2 -->
+    <div class="testimonial-card fade-up delay-1">
+      <div class="video-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <div class="testimonial-meta">
+        <div class="testimonial-name">Bali</div>
+        <span class="testimonial-dest-tag">Coming soon</span>
+      </div>
+    </div>
+
+    <!-- Video placeholder 3 -->
+    <div class="testimonial-card fade-up delay-2">
+      <div class="video-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <div class="testimonial-meta">
+        <div class="testimonial-name">Sri Lanka</div>
+        <span class="testimonial-dest-tag">Coming soon</span>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ── HOW IT WORKS ──────────────────────────────────────────────── -->
+<section id="how" class="section-wrap">
+  <div class="how-header">
+    <div class="eyebrow fade-up" data-i18n="how-eyebrow">The process</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="how-heading">Four steps from here to Bali.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="how-sub">We keep it simple. You apply, we match you, we sort the logistics, and you show up.</p>
+  </div>
+  <div class="steps-list">
+    <div class="step fade-up">
+      <div class="step-num-wrap">
+        <div class="step-num">01</div>
+      </div>
+      <h3 class="step-title" data-i18n="step-1-title">Apply online — takes 10 minutes</h3>
+      <p class="step-desc" data-i18n="step-1-desc">Tell us your study background, preferred destination, and internship field. No cover letter, no extensive forms. We review your application within 2 business days.</p>
+    </div>
+    <div class="step fade-up delay-1">
+      <div class="step-num-wrap">
+        <div class="step-num">02</div>
+      </div>
+      <h3 class="step-title" data-i18n="step-2-title">We find your placement</h3>
+      <p class="step-desc" data-i18n="step-2-desc">Based on your profile, we match you with a suitable host company and send you the details. You meet them over video call and confirm. We handle the internship agreement paperwork.</p>
+    </div>
+    <div class="step fade-up delay-2">
+      <div class="step-num-wrap">
+        <div class="step-num">03</div>
+      </div>
+      <h3 class="step-title" data-i18n="step-3-title">We sort the logistics</h3>
+      <p class="step-desc" data-i18n="step-3-desc">Housing, visa guidance, airport pickup, local SIM — all confirmed before you travel. We send you a complete pre-departure checklist so nothing is forgotten.</p>
+    </div>
+    <div class="step fade-up delay-3">
+      <div class="step-num-wrap">
+        <div class="step-num">04</div>
+      </div>
+      <h3 class="step-title" data-i18n="step-4-title">You arrive. The rest follows.</h3>
+      <p class="step-desc" data-i18n="step-4-desc">Orientation week, meet your group, start at your company. From that point on, you're living it — not planning it. We stay reachable throughout your entire stay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── COST OF LIVING ────────────────────────────────────────────── -->
+<section id="costs" class="section-wrap">
+  <div class="costs-header">
+    <div class="eyebrow fade-up" data-i18n="costs-eyebrow">No surprises</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="costs-heading">What it actually costs to live there.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="costs-sub">One of the best parts of Bali and Sri Lanka is that your money goes much further than in the Netherlands. These are realistic monthly estimates for a student lifestyle.</p>
+  </div>
+  <div class="costs-table-wrap fade-up delay-1">
+    <table class="costs-table">
+      <thead>
+        <tr>
+          <th data-i18n="costs-th1">Monthly expense</th>
+          <th data-i18n="costs-th2">Bali, Indonesia</th>
+          <th data-i18n="costs-th3">Sri Lanka</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="cost-r1">Private accommodation</td>
+          <td>Starts from €180</td>
+          <td>Starts from €140</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r2">Scooter rental</td>
+          <td>€50 – €70</td>
+          <td>€40 – €60</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r3">Petrol</td>
+          <td>€10 – €20</td>
+          <td>€8 – €15</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r4">Meals at local restaurants</td>
+          <td>€70 – €120</td>
+          <td>€60 – €100</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r5">Coffee / cafes</td>
+          <td>€20 – €40</td>
+          <td>€15 – €30</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r6">Gym</td>
+          <td>€15 – €30</td>
+          <td>€10 – €20</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r7">Surf lessons / activities</td>
+          <td>€40 – €70</td>
+          <td>€30 – €60</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r8">Weekend trips</td>
+          <td>€40 – €80</td>
+          <td>€30 – €70</td>
+        </tr>
+        <tr>
+          <td data-i18n="cost-r9">Local transport</td>
+          <td>€15 – €30</td>
+          <td>€15 – €25</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td data-i18n="cost-total">Estimated monthly total</td>
+          <td>€440 – €630</td>
+          <td>€358 – €520</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="costs-note fade-up delay-2">Estimates are for a comfortable student lifestyle and will vary based on your spending habits. Flights, travel insurance, and the Island Internships program fee are not included in the above. Dutch students who receive studiefinanciering typically find costs comparable to or lower than living in a major Dutch city.</p>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────────── -->
+<section id="faq" class="section-wrap">
+  <div class="faq-header">
+    <div class="eyebrow fade-up" data-i18n="faq-eyebrow">Common questions</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="faq-heading">Straight answers.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="faq-sub">We know what Dutch students actually want to know before committing. Here it is.</p>
+  </div>
+  <div class="faq-grid fade-up delay-1">
+    <div class="faq-col">
+      <details open>
+        <summary>
+          Can this internship count for my university credits?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Yes — that's the whole point. All our host companies provide an official internship agreement, a supervisor, and are willing to complete your university's assessment paperwork. We've worked with students from Maastricht, UvA, Erasmus, Tilburg, and Vrije Universiteit. We recommend confirming with your study coordinator early, and we can assist with the documentation they need.</p>
+      </details>
+      <details>
+        <summary>
+          Do I get help finding my internship placement?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Yes. Finding a placement is our job, not yours. You tell us your study background and field of interest. We match you with a suitable company from our network, arrange an introductory call, and handle the internship agreement. You don't have to cold-email companies in Bali.</p>
+      </details>
+      <details>
+        <summary>
+          Is housing included in the program?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Housing is arranged as part of the program. You get a private room in a shared house with other interns — in a central, safe area. The housing cost is separate from the program fee and is paid directly at your destination. We confirm your room before you travel so you know exactly where you're staying.</p>
+      </details>
+      <details>
+        <summary>
+          Is Bali or Sri Lanka safe for students?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Both destinations are popular, well-established expat and student destinations with large international communities. The most common risks are the same as anywhere — traffic, petty theft, and sunburn. We provide a full safety briefing on arrival, and our local team is reachable 24/7. Our housing is in areas specifically chosen for their safety and proximity to amenities.</p>
+      </details>
+      <details>
+        <summary>
+          Can I come with a friend?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Absolutely. A lot of students apply together. If you and a friend both apply for the same destination and start period, we'll do our best to place you in the same house. Mention this in your application and we'll coordinate from there.</p>
+      </details>
+    </div>
+    <div class="faq-col">
+      <details>
+        <summary>
+          What level of English is required?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">All internships are conducted in English. You need to be able to communicate professionally in English — which for most Dutch university students is not an issue. You don't need to speak Indonesian or Sinhala.</p>
+      </details>
+      <details>
+        <summary>
+          How long are the internships?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Most internships run for 3 to 6 months, which aligns with standard Dutch university internship requirements. The minimum is 10 weeks. We'll confirm the exact duration when matching you with a company, and adjust where needed to meet your university's minimum hour requirements.</p>
+      </details>
+      <details>
+        <summary>
+          Do I need a visa?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Yes, but the process is straightforward for Dutch passport holders. For Bali, Dutch citizens can enter visa-free for 30 days and extend to 60 days relatively easily. For longer stays, we guide you through the correct visa route. For Sri Lanka, a simple e-visa is available online. We send you a step-by-step visa guide as part of your pre-departure pack.</p>
+      </details>
+      <details>
+        <summary>
+          What does a typical week look like?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">Internships run Monday to Friday, typically 36–40 hours a week — the same as a regular internship in the Netherlands. You might work from the company's office, a coworking space, or a mix of both depending on your host. Evenings and weekends are completely yours. A typical week involves real work during the day and exploring, socialising, or doing something active once you're done.</p>
+      </details>
+      <details>
+        <summary>
+          What if something goes wrong during my stay?
+          <span class="faq-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="faq-answer">We have a local team on the ground in each destination and a 24/7 emergency contact line. If there's a problem with your placement, housing, health, or safety — you call us. We also strongly recommend taking out student travel insurance before departure (we point you to suitable options), and we advise on what to do in the rare event of a medical or legal issue abroad.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ────────────────────────────────────────────────── -->
+<section id="cta-banner" class="section-wrap footer-above">
+  <div class="cta-inner">
+    <div class="eyebrow fade-up" data-i18n="cta-eyebrow">Applications open</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="cta-heading">You could do your internship in the Netherlands. Or you could do it in Bali.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="cta-sub">Spots are limited per intake. The application takes 10 minutes and there's no commitment until you're matched and happy with your placement.</p>
+    <div class="cta-btns fade-up delay-3">
+      <a href="#" class="btn btn-teal" onclick="openModal(event)">Apply now</a>
+      <a href="#faq" class="btn btn-outline" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);">Read the FAQ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── APPLICATION MODAL ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-tag" data-i18n="modal-tag">Free application — no commitment</span>
+      <h2 class="modal-title" id="modal-title">Apply for Island Internships</h2>
+      <p class="modal-subtitle" data-i18n="modal-subtitle">Tell us about yourself and we'll come back to you within 2 business days.</p>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">&#x2715;</button>
+    </div>
+    <div class="modal-form-wrap" id="modal-form-wrap">
+      <div class="modal-body">
+        <form id="apply-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">First name</label>
+              <input type="text" id="f-name" placeholder="Emma" data-i18n-ph="ph-fname" required />
+            </div>
+            <div class="form-group">
+              <label for="f-surname">Last name</label>
+              <input type="text" id="f-surname" placeholder="de Vries" data-i18n-ph="ph-lname" required />
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="f-email">Email address</label>
+              <input type="email" id="f-email" placeholder="emma@student.uva.nl" data-i18n-ph="ph-email" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-university">University</label>
+              <select id="f-university" required>
+                <option value="" disabled selected>Select your university</option>
+                <option>Maastricht University</option>
+                <option>Universiteit van Amsterdam</option>
+                <option>Erasmus University</option>
+                <option>Tilburg University</option>
+                <option>Vrije Universiteit</option>
+                <option>Other Dutch university</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-year">Study year</label>
+              <select id="f-year">
+                <option value="" disabled selected>Year</option>
+                <option>Year 2</option>
+                <option>Year 3</option>
+                <option>Year 4 (Master)</option>
+                <option>Pre-Master</option>
+                <option>Master</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-destination">Destination</label>
+              <select id="f-destination" required>
+                <option value="" disabled selected>Choose destination</option>
+                <option value="Bali">Bali, Indonesia</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Both">Open to both</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-field">Internship field</label>
+              <select id="f-field" required>
+                <option value="" disabled selected>Choose field</option>
+                <option value="Marketing & Digital">Marketing &amp; Digital</option>
+                <option value="Business Development">Business Development</option>
+                <option value="Sustainability & ESG">Sustainability &amp; ESG</option>
+                <option value="Hospitality Management">Hospitality Management</option>
+                <option value="Startup Operations">Startup Operations</option>
+                <option value="Data & Tech">Data &amp; Tech</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="f-message">Anything you'd like us to know (optional)</label>
+              <textarea id="f-message" placeholder="Your study background, preferred start date, or any questions…" data-i18n-ph="ph-msg"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="modal-submit">Send application</button>
+          <p class="modal-note" data-i18n="modal-note">No payment required. We'll reply within 2 business days.</p>
+        </form>
+      </div>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div class="success-mark">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="success-title">Application received.</h3>
+      <p class="success-sub">Thank you — we'll review your profile and get back to you within 2 business days with your matched placement options.</p>
+      <button class="modal-submit" style="max-width:220px;margin:0 auto;display:block;" onclick="closeModal()">Back to homepage</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<div class="footer-main footer-above">
+
+  <!-- Col 1: Mission -->
+  <div class="footer-col footer-col-left">
+    <div class="footer-col-heading" data-i18n="footer-mission-title">Our Mission</div>
+    <p class="footer-mission-text" data-i18n="footer-mission-text">We connect Dutch university students with meaningful internships in Bali and Sri Lanka — handling the logistics so students can focus on the experience.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><path d="M12 11v5M12 11a3 3 0 0 1 6 0v5"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+      </a>
+      <a href="#" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Col 2: Request info -->
+  <div class="footer-col">
+    <div class="footer-col-heading" data-i18n="footer-info-title">Request More Info</div>
+    <div class="footer-info-links">
+      <a class="footer-info-link" href="#cta-banner" onclick="openModal(event)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span data-i18n="footer-link-apply">Apply for an internship</span>
+      </a>
+      <a class="footer-info-link" href="#cta-banner" onclick="openModal(event)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span data-i18n="footer-link-consult">Book a free consulting call</span>
+      </a>
+      <a class="footer-info-link" href="#faq">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span data-i18n="footer-link-faq">Read the FAQ</span>
+      </a>
+      <a class="footer-info-link" href="#destinations">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
+        <span data-i18n="footer-link-dest">Explore destinations</span>
+      </a>
+      <a class="footer-info-link" href="#placements">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        <span data-i18n="footer-link-pl">See example placements</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Col 3: Contact -->
+  <div class="footer-col footer-col-right">
+    <div class="footer-col-heading">islandinternships.com</div>
+    <a class="footer-contact-item" href="mailto:hello@islandinternships.com">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      hello@islandinternships.com
+    </a>
+    <a class="footer-contact-item" href="https://wa.me/31612345678" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp us
+    </a>
+    <a class="footer-contact-item" href="#">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
+      Amsterdam, Netherlands
+    </a>
+    <a class="footer-contact-item" href="#">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span data-i18n="footer-link-terms">Terms &amp; Conditions</span>
+    </a>
+    <a class="footer-contact-item" href="#">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span data-i18n="footer-link-privacy">Privacy Policy</span>
+    </a>
+  </div>
+</div>
+
+<footer class="footer-above">
+  <a href="#hero" class="footer-logo">Island<span>.</span>Internships</a>
+  <ul class="footer-legal-links">
+    <li><a href="#destinations" data-i18n="nav-destinations">Destinations</a></li>
+    <li><a href="#placements" data-i18n="nav-placements">Placements</a></li>
+    <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#cta-banner" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 Island Internships · Amsterdam, NL</span>
+</footer>
+
+<!-- ── SCRIPTS ───────────────────────────────────────────────────── -->
+<script>
+// ─── Translations ─────────────────────────────────────────────
+const t = {
+  en: {
+    'nav-destinations':'Destinations','nav-placements':'Placements','nav-costs':'Costs','nav-apply':'Apply Now',
+    'hero-eyebrow':'For Dutch university students',
+    'hero-headline':'Do your internship.<br><em>Just not in the Netherlands.</em>',
+    'hero-sub':'Island Internships places Dutch students in vetted internships in Bali and Sri Lanka — with housing, visa support, and a community of students doing the same thing. Same credits. Much better story.',
+    'hero-cta1':'Apply now','hero-cta2':'How it works',
+    'stat-islands':'Islands','stat-fields':'Fields','stat-unis':'Partner universities',
+    'p1-time':'Monday, 9am','p1-text':'Working from a terrace in Canggu',
+    'p2-time':'Friday evening','p2-text':'Surf lesson after work',
+    'p3-time':'The weekend','p3-text':'Somewhere on the island',
+    'trust-label':'Students from',
+    'mom-eyebrow':'A normal week','mom-heading':'This is what it actually looks like.','mom-sub':'Your internship runs Monday to Friday. The evenings and weekends are entirely yours.',
+    'm1-time':'Monday — Friday','m1-heading':'Real work at a real company.','m1-text':'You work at a vetted local company in your field, five days a week. Your colleagues speak English, your tasks are real, and the work counts for your university credits.',
+    'm2-time':'Weekday evenings','m2-heading':'After work looks different here.','m2-text':'Close the laptop and step outside. Bali and Sri Lanka have the kind of evenings that don\'t exist in Rotterdam — beachside dinners, sunset swims, or just a cold Bintang with your housemates.',
+    'm3-time':'Weekends','m3-heading':'The island is yours.','m3-text':'Rent a scooter and go. Waterfalls, temples, surf breaks, rice fields. Two full days with no plans and an entire island to explore — every weekend.',
+    'dest-eyebrow':'Where you\'ll go','dest-heading':'Two islands. One choice.','dest-sub':'Both destinations are warm, affordable, and full of companies looking for motivated students. The hardest part is picking one.',
+    'dest-bali-region':'Indonesia · Southeast Asia','dest-sl-region':'South Asia · Indian Ocean',
+    'dest-bali-link':'Explore Bali placements','dest-sl-link':'Explore Sri Lanka placements',
+    'inc-eyebrow':'No guesswork','inc-heading':'We arrange everything.','inc-sub':'You focus on getting excited. We take care of the logistics that would otherwise take you months to sort out alone.',
+    'inc-1-title':'Internship placement','inc-1-desc':'We match you with a vetted company in your field. All placements are screened for quality and university eligibility.','inc-1-expand':'<p>We match you based on your study background, field of interest, and preferred destination. Every host company is vetted for quality, English-language working environment, and willingness to complete your university\'s paperwork.</p><p>Not sure what field is right for you? We offer a free 20-minute consulting call before you even apply — no commitment, just a conversation to help you figure out the right direction.</p><a href="#" class="included-expand-cta" onclick="openModal(event)">Book a free consulting call <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>',
+    'inc-2-title':'Housing sorted','inc-2-desc':'Private room in a shared house with other interns. Good Wi-Fi, central location, no 3-month hunt on Facebook groups.','inc-2-expand':'<p>All housing is in safe, central areas — within scooter distance of coworking cafes, supermarkets, and the beach. Typically 3–5 interns per house, all in your own private room.</p><p>Housing costs are paid directly at the destination and are not included in the program fee. Typical prices:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — private room</span><span>from €180/month</span></div><div class="included-price-row"><span>Sri Lanka — private room</span><span>from €140/month</span></div></div>',
+    'inc-3-title':'Visa guidance','inc-3-desc':'We walk you through the exact visa process for your destination. No surprises at immigration.','inc-3-expand':'<p>Dutch passport holders can enter both destinations without a visa agent. Here\'s what applies:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — visa on arrival (30 days)</span><span>Free</span></div><div class="included-price-row"><span>Bali — extension to 60 days</span><span>~€30</span></div><div class="included-price-row"><span>Sri Lanka — e-visa online</span><span>~€35</span></div></div><p style="margin-top:0.75rem;">We send you a step-by-step visa guide as part of your pre-departure pack.</p>',
+    'inc-4-title':'Airport transport','inc-4-desc':'We arrange transport from the airport on arrival day so you\'re not stranded in an unfamiliar city.','inc-4-expand':'<p>We can arrange a private pickup for your arrival day — confirm your flight details and we\'ll have someone waiting. Can\'t align with the group arrival? Grab (Southeast Asia\'s Uber equivalent) is reliable, safe, and cheap:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali airport → Canggu</span><span>~€8–12</span></div><div class="included-price-row"><span>Bali airport → Seminyak</span><span>~€6–10</span></div><div class="included-price-row"><span>Bali airport → Ubud</span><span>~€14–18</span></div><div class="included-price-row"><span>Colombo airport → Weligama (SL)</span><span>~€25–35</span></div><div class="included-price-row"><span>Colombo airport → Galle (SL)</span><span>~€22–30</span></div></div>',
+    'inc-5-title':'Orientation week','inc-5-desc':'Your first week includes a full orientation — local area, transport, culture, and meeting the rest of your group.','inc-5-expand':'<p>Before you start your internship, we run a full orientation week. You\'ll cover:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Neighbourhood walkthrough</span><span></span></div><div class="included-price-row"><span>Scooter safety and rental</span><span></span></div><div class="included-price-row"><span>Local transport and apps</span><span></span></div><div class="included-price-row"><span>Cultural tips and local etiquette</span><span></span></div><div class="included-price-row"><span>Group dinner to meet your fellow interns</span><span></span></div></div><p style="margin-top:0.75rem;">You start your internship in week two — settled, oriented, and not scrambling.</p>',
+    'inc-6-title':'Local SIM card','inc-6-desc':'A local SIM with data is waiting for you on arrival. No phone shop queues on day one.','inc-6-expand':'<p>A local SIM with a solid data plan is set up before you arrive. You\'ll be online from the moment you land. Typical ongoing monthly data costs if you want to top up:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/month</span></div><div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/month</span></div></div>',
+    'inc-7-title':'Student community','inc-7-desc':'15–20 Dutch students per intake. Group chats, community events, weekend trips — you\'ll know people from day one.','inc-7-expand':'<p>Every intake, a group of Dutch students arrives in the same destination at roughly the same time. A group WhatsApp is set up before anyone departs — so you already know people before you land.</p><p>Throughout your stay, we organise regular community events: beach days, hikes, group dinners, weekend trips. You also have access to a wider network of international interns in the same area.</p>',
+    'inc-8-title':'24/7 support','inc-8-desc':'Our team is reachable around the clock. If something goes wrong — medically, logistically, or otherwise — we\'re there.','inc-8-expand':'<p>Our team is reachable via WhatsApp at any hour. For medical situations, we maintain a list of English-speaking doctors and hospitals in each city — you\'ll have it before you arrive.</p><p>We strongly recommend travel insurance. Typical cost for students: €25–40/month. We provide a list of suitable policies in your pre-departure pack.</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Travel insurance (estimate)</span><span>€25–40/month</span></div></div>',
+    'test-eyebrow':'In their own words','test-heading':'Students who\'ve been there.','test-sub':'We asked alumni to describe their experience. This is what they said.',
+    't1-quote':'I was nervous about going alone, but within the first week I had a house full of people and a job I actually looked forward to. The internship counted towards my degree and I learned more in three months than I did in a full year at university.',
+    't1-name':'Lisa van der Berg','t1-detail':'Business Administration, Erasmus University · 5 months',
+    't2-quote':'The placement matched my study background exactly. I was running real campaigns from week two. What made the difference was that Island Internships stayed in touch throughout — it never felt like I\'d just been dropped somewhere and forgotten.',
+    't2-name':'Jasper Koopman','t2-detail':'Marketing & Communication, UvA · 4 months',
+    't3-quote':'Sri Lanka was not on my radar at all until I spoke with them. I\'m so glad I went. The south coast is stunning, the cost of living is incredibly low, and my supervisor at the resort gave me responsibilities I wouldn\'t have touched in the Netherlands for years.',
+    't3-name':'Femke Smits','t3-detail':'Hospitality Management, Maastricht University · 6 months',
+    't4-quote':'My university was initially hesitant about approving an internship this far away. Island Internships helped with all the paperwork and the company provided exactly the documentation my study coordinator asked for. It went through without any issues.',
+    't4-name':'Thomas Hendrikx','t4-detail':'International Business, Tilburg University · 5 months',
+    't5-quote':'I went with a friend from my programme, which helped with the first week. But even without that I think the group dynamic would have been fine — there were already people in the WhatsApp chat before any of us had even booked flights.',
+    't5-name':'Sara Rousseau','t5-detail':'Sustainability Studies, VU Amsterdam · 3 months',
+    't6-quote':'Honestly the logistics were the thing I was most stressed about — visa, accommodation, getting from the airport. All of it was sorted before I even landed. I just had to show up. The rest took care of itself.',
+    't6-name':'Noah Bakker','t6-detail':'Digital Business, Rotterdam University · 4 months',
+    'pl-eyebrow':'What you\'ll actually do','pl-heading':'Example placements.','pl-sub':'Every internship is matched to your study background and approved for academic credit. These are recent examples.',
+    'pl-1-field':'Marketing & Digital','pl-1-title':'Marketing Coordinator at a Canggu Surf Brand','pl-1-desc':'Run Instagram and email campaigns, coordinate content production, and help grow an international audience for a fast-growing Bali-based lifestyle brand.',
+    'pl-2-field':'Sustainability & ESG','pl-2-title':'Sustainability Intern at a Boutique Eco-Resort','pl-2-desc':'Research sustainable operations, support local community partnerships, and help develop ESG reporting for a certified eco-property in southern Sri Lanka.',
+    'pl-3-field':'Startup Operations','pl-3-title':'Operations Intern at a Tech Startup in Seminyak','pl-3-desc':'Support daily operations, help build internal processes, and work directly with the founding team of a seed-stage startup expanding across Southeast Asia.',
+    'meta-duration':'Duration','meta-hours':'Hours/week','meta-lang':'Language',
+    'com-eyebrow':'You won\'t be alone','com-heading':'15–20 Dutch students. Always in a group.','com-sub':'Going abroad for your internship sounds exciting — until you think about doing it completely alone. That\'s not how this works. Every intake, a group of Dutch students arrives at the same time, lives in the same area, and goes through the same experience together.',
+    'com-p1':'A group chat with your fellow interns before you even land','com-p2':'Shared housing with other interns — your housemates are your community','com-p3':'Community events and weekend trips organised by Island Internships','com-p4':'Mix of Dutch students and other international interns in the wider network','com-p5':'Alumni network you can tap into before you go',
+    'com-s1':'Dutch students per intake','com-s2':'Internship fields available','com-s3':'Islands to choose from','com-s4':'University credit eligible',
+    'how-eyebrow':'The process','how-heading':'Four steps from here to Bali.','how-sub':'We keep it simple. You apply, we match you, we sort the logistics, and you show up.',
+    'step-1-title':'Apply online — takes 10 minutes','step-1-desc':'Tell us your study background, preferred destination, and internship field. No cover letter, no extensive forms. We review your application within 2 business days.',
+    'step-2-title':'We find your placement','step-2-desc':'Based on your profile, we match you with a suitable host company and send you the details. You meet them over video call and confirm. We handle the internship agreement paperwork.',
+    'step-3-title':'We sort the logistics','step-3-desc':'Housing, visa guidance, airport pickup, local SIM — all confirmed before you travel. We send you a complete pre-departure checklist so nothing is forgotten.',
+    'step-4-title':'You arrive. The rest follows.','step-4-desc':'Orientation week, meet your group, start at your company. From that point on, you\'re living it — not planning it. We stay reachable throughout your entire stay.',
+    'costs-eyebrow':'No surprises','costs-heading':'What it actually costs to live there.','costs-sub':'One of the best parts of Bali and Sri Lanka is that your money goes much further than in the Netherlands. These are realistic monthly estimates for a student lifestyle.',
+    'costs-th1':'Monthly expense','costs-th2':'Bali, Indonesia','costs-th3':'Sri Lanka',
+    'cost-r1':'Private accommodation','cost-r2':'Scooter rental','cost-r3':'Petrol','cost-r4':'Meals at local restaurants','cost-r5':'Coffee / cafes','cost-r6':'Gym','cost-r7':'Surf lessons / activities','cost-r8':'Weekend trips','cost-r9':'Local transport','cost-total':'Estimated monthly total',
+    'costs-note':'Estimates are for a comfortable student lifestyle and will vary based on your spending habits. Flights, travel insurance, and the Island Internships program fee are not included in the above. Dutch students who receive studiefinanciering typically find costs comparable to or lower than living in a major Dutch city.',
+    'faq-eyebrow':'Common questions','faq-heading':'Straight answers.','faq-sub':'We know what Dutch students actually want to know before committing. Here it is.',
+    'q1':'Can this internship count for my university credits?','a1':'Yes — that\'s the whole point. All our host companies provide an official internship agreement, a supervisor, and are willing to complete your university\'s assessment paperwork. We\'ve worked with students from Maastricht, UvA, Erasmus, Tilburg, and Vrije Universiteit. We recommend confirming with your study coordinator early, and we can assist with the documentation they need.',
+    'q2':'Do I get help finding my internship placement?','a2':'Yes. Finding a placement is our job, not yours. You tell us your study background and field of interest. We match you with a suitable company from our network, arrange an introductory call, and handle the internship agreement. You don\'t have to cold-email companies in Bali.',
+    'q3':'Is housing included in the program?','a3':'Housing is arranged as part of the program. You get a private room in a shared house with other interns — in a central, safe area. The housing cost is separate from the program fee and is paid directly at your destination. We confirm your room before you travel so you know exactly where you\'re staying.',
+    'q4':'Is Bali or Sri Lanka safe for students?','a4':'Both destinations are popular, well-established expat and student destinations with large international communities. The most common risks are the same as anywhere — traffic, petty theft, and sunburn. We provide a full safety briefing on arrival, and our local team is reachable 24/7. Our housing is in areas specifically chosen for their safety and proximity to amenities.',
+    'q5':'Can I come with a friend?','a5':'Absolutely. A lot of students apply together. If you and a friend both apply for the same destination and start period, we\'ll do our best to place you in the same house. Mention this in your application and we\'ll coordinate from there.',
+    'q6':'What level of English is required?','a6':'All internships are conducted in English. You need to be able to communicate professionally in English — which for most Dutch university students is not an issue. You don\'t need to speak Indonesian or Sinhala.',
+    'q7':'How long are the internships?','a7':'Most internships run for 3 to 6 months, which aligns with standard Dutch university internship requirements. The minimum is 10 weeks. We\'ll confirm the exact duration when matching you with a company, and adjust where needed to meet your university\'s minimum hour requirements.',
+    'q8':'Do I need a visa?','a8':'Yes, but the process is straightforward for Dutch passport holders. For Bali, Dutch citizens can enter visa-free for 30 days and extend to 60 days relatively easily. For longer stays, we guide you through the correct visa route. For Sri Lanka, a simple e-visa is available online. We send you a step-by-step visa guide as part of your pre-departure pack.',
+    'q9':'What does a typical week look like?','a9':'Internships run Monday to Friday, typically 36–40 hours a week — the same as a regular internship in the Netherlands. You might work from the company\'s office, a coworking space, or a mix of both depending on your host. Evenings and weekends are completely yours.',
+    'q10':'What if something goes wrong during my stay?','a10':'We have a local team on the ground in each destination and a 24/7 emergency contact line. If there\'s a problem with your placement, housing, health, or safety — you call us. We also strongly recommend taking out student travel insurance before departure (we point you to suitable options), and we advise on what to do in the rare event of a medical or legal issue abroad.',
+    'cta-eyebrow':'Applications open','cta-heading':'You could do your internship in the Netherlands. Or you could do it in Bali.','cta-sub':'Spots are limited per intake. The application takes 10 minutes and there\'s no commitment until you\'re matched and happy with your placement.','cta-btn1':'Apply now','cta-btn2':'Read the FAQ',
+    'footer-dest':'Destinations','footer-pl':'Placements','footer-costs':'Costs','footer-faq':'FAQ','footer-apply':'Apply Now',
+    'footer-mission-title':'Our Mission',
+    'footer-mission-text':'We connect Dutch university students with meaningful internships in Bali and Sri Lanka — handling the logistics so students can focus on the experience.',
+    'footer-info-title':'Request More Info',
+    'footer-link-apply':'Apply for an internship',
+    'footer-link-consult':'Book a free consulting call',
+    'footer-link-faq':'Read the FAQ',
+    'footer-link-dest':'Explore destinations',
+    'footer-link-pl':'See example placements',
+    'footer-link-terms':'Terms & Conditions',
+    'footer-link-privacy':'Privacy Policy',
+    'modal-tag':'Free application — no commitment','modal-title':'Apply for Island Internships','modal-subtitle':'Tell us about yourself and we\'ll come back to you within 2 business days.',
+    'lbl-fname':'First name','lbl-lname':'Last name','lbl-email':'Email address','lbl-uni':'University','lbl-year':'Study year','lbl-dest':'Destination','lbl-field':'Internship field','lbl-msg':'Anything you\'d like us to know (optional)',
+    'ph-fname':'Emma','ph-lname':'de Vries','ph-email':'emma@student.uva.nl','ph-msg':'Your study background, preferred start date, or any questions…',
+    'modal-submit':'Send application','modal-note':'No payment required. We\'ll reply within 2 business days.',
+    'success-title':'Application received.','success-sub':'Thank you — we\'ll review your profile and get back to you within 2 business days with your matched placement options.','modal-back':'Back to homepage',
+  },
+  nl: {
+    'nav-destinations':'Bestemmingen','nav-placements':'Stages','nav-costs':'Kosten','nav-apply':'Solliciteer',
+    'hero-eyebrow':'Voor Nederlandse universiteitsstudenten',
+    'hero-headline':'Doe je stage.<br><em>Gewoon niet in Nederland.</em>',
+    'hero-sub':'Island Internships plaatst Nederlandse studenten in gescreende stages op Bali en Sri Lanka — inclusief huisvesting, visumondersteuning en een community van studenten die hetzelfde doen. Zelfde credits. Veel beter verhaal.',
+    'hero-cta1':'Solliciteer nu','hero-cta2':'Hoe het werkt',
+    'stat-islands':'Eilanden','stat-fields':'Vakgebieden','stat-unis':'Partneruniversiteiten',
+    'p1-time':'Maandag, 9 uur','p1-text':'Werken vanaf een terras in Canggu',
+    'p2-time':'Vrijdagavond','p2-text':'Surfles na het werk',
+    'p3-time':'Het weekend','p3-text':'Ergens op het eiland',
+    'trust-label':'Studenten van',
+    'mom-eyebrow':'Een normale week','mom-heading':'Zo ziet het er echt uit.','mom-sub':'Je stage loopt van maandag tot vrijdag. De avonden en weekenden zijn helemaal van jou.',
+    'm1-time':'Maandag — Vrijdag','m1-heading':'Echt werk bij een echt bedrijf.','m1-text':'Je werkt bij een gescreend lokaal bedrijf in jouw vakgebied, vijf dagen per week. Je collega\'s spreken Engels, je taken zijn echt, en het werk telt mee voor je universitaire credits.',
+    'm2-time':'Doordeweekse avonden','m2-heading':'Na het werk ziet het er hier anders uit.','m2-text':'Klap de laptop dicht en stap naar buiten. Bali en Sri Lanka hebben het soort avonden dat niet bestaat in Rotterdam — diners aan het strand, avondzwemmen, of gewoon een koude Bintang met je huisgenoten.',
+    'm3-time':'Weekenden','m3-heading':'Het eiland is van jou.','m3-text':'Huur een scooter en ga. Watervallen, tempels, surfstranden, rijstvelden. Twee vrije dagen zonder plannen en een heel eiland om te verkennen — elk weekend.',
+    'dest-eyebrow':'Waar je naartoe gaat','dest-heading':'Twee eilanden. Eén keuze.','dest-sub':'Beide bestemmingen zijn warm, betaalbaar en vol bedrijven die op zoek zijn naar gemotiveerde studenten. Het moeilijkste is het kiezen.',
+    'dest-bali-region':'Indonesië · Zuidoost-Azië','dest-sl-region':'Zuid-Azië · Indische Oceaan',
+    'dest-bali-link':'Bekijk stages op Bali','dest-sl-link':'Bekijk stages in Sri Lanka',
+    'inc-eyebrow':'Geen gedoe','inc-heading':'Wij regelen alles.','inc-sub':'Jij focust op enthousiast worden. Wij regelen de logistiek die je anders maanden zou kosten om zelf uit te zoeken.',
+    'inc-1-title':'Stageplanning','inc-1-desc':'Wij koppelen je aan een gescreend bedrijf in jouw vakgebied. Alle stages worden beoordeeld op kwaliteit en geschiktheid voor universitaire credits.','inc-1-expand':'<p>Wij matchen je op basis van je studie, vakgebied en voorkeur voor bestemming. Elk hostbedrijf wordt gescreend op kwaliteit, Engelstalige werkomgeving en bereidheid om je universiteitsdocumentatie in te vullen.</p><p>Weet je nog niet welk vakgebied het beste bij je past? We bieden een gratis gesprek van 20 minuten aan voordat je solliciteert — nergens aan vast, gewoon even afstemmen.</p><a href="#" class="included-expand-cta" onclick="openModal(event)">Plan een gratis gesprek <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>',
+    'inc-2-title':'Huisvesting geregeld','inc-2-desc':'Privékamer in een gedeeld huis met andere stagiairs. Goed wifi, centrale locatie, geen maanden zoeken op Facebook-groepen.','inc-2-expand':'<p>Alle huisvesting bevindt zich in veilige, centrale gebieden — op scooterafstand van coworking cafés, supermarkten en het strand. Doorgaans 3–5 stagiairs per huis, allemaal in een eigen privékamer.</p><p>Huisvestingskosten worden rechtstreeks ter plaatse betaald en zijn niet inbegrepen in de programmakosten. Typische prijzen:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — privékamer</span><span>vanaf €180/maand</span></div><div class="included-price-row"><span>Sri Lanka — privékamer</span><span>vanaf €140/maand</span></div></div>',
+    'inc-3-title':'Visumondersteuning','inc-3-desc':'Wij loodsen je door het exacte visumproces voor jouw bestemming. Geen verrassingen bij de grenscontrole.','inc-3-expand':'<p>Houders van een Nederlands paspoort kunnen beide bestemmingen binnenkomen zonder visumbureau. Dit is wat van toepassing is:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — visum bij aankomst (30 dagen)</span><span>Gratis</span></div><div class="included-price-row"><span>Bali — verlenging naar 60 dagen</span><span>~€30</span></div><div class="included-price-row"><span>Sri Lanka — e-visum online</span><span>~€35</span></div></div><p style="margin-top:0.75rem;">We sturen je een stap-voor-stap visumgids als onderdeel van je vertrekpakket.</p>',
+    'inc-4-title':'Vervoer vanaf het vliegveld','inc-4-desc':'Wij regelen vervoer vanaf het vliegveld op de aankomstdag, zodat je niet alleen staat in een onbekende stad.','inc-4-expand':'<p>We kunnen een privéopvang regelen voor je aankomstdag — bevestig je vluchtgegevens en we zorgen dat er iemand klaarstaat. Kun je niet aansluiten? Grab (de Uber van Zuidoost-Azië) is betrouwbaar, veilig en goedkoop:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Vliegveld Bali → Canggu</span><span>~€8–12</span></div><div class="included-price-row"><span>Vliegveld Bali → Seminyak</span><span>~€6–10</span></div><div class="included-price-row"><span>Vliegveld Bali → Ubud</span><span>~€14–18</span></div><div class="included-price-row"><span>Vliegveld Colombo → Weligama (SL)</span><span>~€25–35</span></div><div class="included-price-row"><span>Vliegveld Colombo → Galle (SL)</span><span>~€22–30</span></div></div>',
+    'inc-5-title':'Introductieweek','inc-5-desc':'Je eerste week bestaat uit een volledige introductie — lokale omgeving, vervoer, cultuur en kennismaken met je groep.','inc-5-expand':'<p>Voordat je begint bij je stagebedrijf organiseren we een volledige introductieweek. Wat je zult doen:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Rondleiding in de buurt</span><span></span></div><div class="included-price-row"><span>Scooterveiligheid en -verhuur</span><span></span></div><div class="included-price-row"><span>Lokaal vervoer en apps</span><span></span></div><div class="included-price-row"><span>Culturele tips en lokale etiquette</span><span></span></div><div class="included-price-row"><span>Groepsdiner om je mede-stagiairs te leren kennen</span><span></span></div></div><p style="margin-top:0.75rem;">Je begint met je stage in week twee — settled, georiënteerd, niet in de stress.</p>',
+    'inc-6-title':'Lokale simkaart','inc-6-desc':'Een lokale simkaart met data ligt klaar bij aankomst. Geen rij voor een telefoonwinkel op dag één.','inc-6-expand':'<p>Een lokale simkaart met een goed dataplan wordt voor je aankomst geregeld. Je bent online zodra je landt. Typische maandelijkse kosten voor bijvullen:</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/maand</span></div><div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/maand</span></div></div>',
+    'inc-7-title':'Studentencommunity','inc-7-desc':'15–20 Nederlandse studenten per intake. Groepschats, community-evenementen, weekendtrips — je kent mensen vanaf dag één.','inc-7-expand':'<p>Bij elke intake arriveert een groep Nederlandse studenten op dezelfde bestemming op ongeveer hetzelfde moment. Een groeps-WhatsApp wordt opgezet voordat iemand vertrekt — dus je kent mensen al voordat je landt.</p><p>Gedurende je verblijf organiseren we regelmatig community-evenementen: stranddagen, wandelingen, groepsdiners, weekendtrips. Je hebt ook toegang tot een breder netwerk van internationale stagiairs in dezelfde omgeving.</p>',
+    'inc-8-title':'24/7 support','inc-8-desc':'Ons team is dag en nacht bereikbaar. Als er iets misgaat — medisch, logistiek of anders — staan wij klaar.','inc-8-expand':'<p>Ons team is via WhatsApp bereikbaar op elk uur van de dag. Voor medische situaties hebben we een lijst van Engelssprekende artsen en ziekenhuizen in elke stad — je hebt deze voordat je aankomt.</p><p>We raden sterk aan een reisverzekering af te sluiten. Typische kosten voor studenten: €25–40/maand. We bieden een lijst van geschikte polissen aan in je vertrekpakket.</p><div style="margin-top:0.75rem;"><div class="included-price-row"><span>Reisverzekering (schatting)</span><span>€25–40/maand</span></div></div>',
+    'test-eyebrow':'In hun eigen woorden','test-heading':'Studenten die er zijn geweest.','test-sub':'We vroegen alumni om hun ervaring te beschrijven. Dit zeiden ze.',
+    't1-quote':'Ik was zenuwachtig om alleen te gaan, maar binnen de eerste week had ik een huis vol mensen en een baan waar ik echt naar uitkeek. De stage telde mee voor mijn diploma en ik leerde meer in drie maanden dan in een heel jaar op de universiteit.',
+    't1-name':'Lisa van der Berg','t1-detail':'Bedrijfskunde, Erasmus Universiteit · 5 maanden',
+    't2-quote':'De stage sloot perfect aan bij mijn studie. In week twee runde ik al echte campagnes. Het verschil was dat Island Internships gedurende de hele periode contact hield — het voelde nooit alsof ik zomaar ergens was achtergelaten.',
+    't2-name':'Jasper Koopman','t2-detail':'Marketing & Communicatie, UvA · 4 maanden',
+    't3-quote':'Sri Lanka stond helemaal niet op mijn radar tot ik met ze sprak. Ik ben zo blij dat ik gegaan ben. De zuidkust is prachtig, de kosten van levensonderhoud zijn ongelooflijk laag, en mijn begeleider gaf me verantwoordelijkheden die ik in Nederland nog jaren niet zou hebben gekregen.',
+    't3-name':'Femke Smits','t3-detail':'Hospitality Management, Universiteit Maastricht · 6 maanden',
+    't4-quote':'Mijn universiteit stond aanvankelijk niet te juichen over een stage zo ver weg. Island Internships hielp met alle documentatie en het bedrijf leverde precies wat mijn studiecoördinator vroeg. Het ging zonder problemen door.',
+    't4-name':'Thomas Hendrikx','t4-detail':'International Business, Universiteit van Tilburg · 5 maanden',
+    't5-quote':'Ik ging met een vriendin van mijn opleiding, wat in de eerste week hielp. Maar zelfs zonder haar denk ik dat de groepsdynamiek prima zou zijn geweest — er waren al mensen in de WhatsApp-chat voordat iemand van ons vluchten had geboekt.',
+    't5-name':'Sara Rousseau','t5-detail':'Duurzaamheidsstudies, VU Amsterdam · 3 maanden',
+    't6-quote':'Eerlijk gezegd was de logistiek het waar ik me het meest zorgen om maakte — visum, huisvesting, vervoer vanaf het vliegveld. Alles was geregeld voordat ik landde. Ik hoefde alleen maar op te komen dagen. De rest ging vanzelf.',
+    't6-name':'Noah Bakker','t6-detail':'Digital Business, Hogeschool Rotterdam · 4 maanden',
+    'pl-eyebrow':'Wat je daadwerkelijk doet','pl-heading':'Voorbeeldstages.','pl-sub':'Elke stage wordt afgestemd op je studie en goedgekeurd voor studiepunten. Dit zijn recente voorbeelden.',
+    'pl-1-field':'Marketing & Digital','pl-1-title':'Marketingcoördinator bij een surfmerk in Canggu','pl-1-desc':'Beheer Instagram- en e-mailcampagnes, coördineer contentproductie en help een internationaal publiek op te bouwen voor een snel groeiend lifestyle-merk op Bali.',
+    'pl-2-field':'Duurzaamheid & ESG','pl-2-title':'Duurzaamheidsstagiair bij een boetiek eco-resort','pl-2-desc':'Onderzoek duurzame operaties, ondersteun lokale community-samenwerkingen en help ESG-rapportage te ontwikkelen voor een gecertificeerd eco-pand in het zuiden van Sri Lanka.',
+    'pl-3-field':'Startup Operaties','pl-3-title':'Operationeel stagiair bij een tech-startup in Seminyak','pl-3-desc':'Ondersteun dagelijkse operaties, help interne processen op te bouwen en werk direct met het founding team van een seed-stage startup die uitbreidt in Zuidoost-Azië.',
+    'meta-duration':'Duur','meta-hours':'Uur/week','meta-lang':'Taal',
+    'com-eyebrow':'Je staat er niet alleen voor','com-heading':'15–20 Nederlandse studenten. Altijd in een groep.','com-sub':'Een stage in het buitenland doen klinkt geweldig — totdat je denkt aan het idee om het helemaal alleen te doen. Zo werkt het hier niet. Bij elke intake arriveert een groep Nederlandse studenten op hetzelfde moment, woont in hetzelfde gebied en maakt dezelfde ervaring mee.',
+    'com-p1':'Een groepsapp met je mede-stagiairs voordat je ook maar vertrekt','com-p2':'Gedeelde huisvesting met andere stagiairs — je huisgenoten zijn je community','com-p3':'Community-evenementen en weekendtrips georganiseerd door Island Internships','com-p4':'Mix van Nederlandse studenten en andere internationale stagiairs in het bredere netwerk','com-p5':'Alumninetwerk waar je al vóór vertrek contact mee kunt leggen',
+    'com-s1':'Nederlandse studenten per intake','com-s2':'Beschikbare vakgebieden','com-s3':'Eilanden om uit te kiezen','com-s4':'Erkend voor universitaire credits',
+    'how-eyebrow':'Het proces','how-heading':'Vier stappen van hier naar Bali.','how-sub':'We houden het simpel. Jij solliciteert, wij matchen je, wij regelen de logistiek, en jij komt opdagen.',
+    'step-1-title':'Solliciteer online — duurt 10 minuten','step-1-desc':'Vertel ons je studie, voorkeur voor bestemming en vakgebied. Geen motivatiebrief, geen uitgebreide formulieren. Wij beoordelen je sollicitatie binnen 2 werkdagen.',
+    'step-2-title':'Wij vinden je stage','step-2-desc':'Op basis van jouw profiel koppelen we je aan een geschikt hostbedrijf en sturen we je de details. Je spreekt ze via video-call en bevestigt. Wij regelen de stageovereenkomst.',
+    'step-3-title':'Wij regelen de logistiek','step-3-desc':'Huisvesting, visumondersteuning, vervoer vanaf het vliegveld, lokale simkaart — alles bevestigd voordat je reist. We sturen je een volledige checklist zodat niets wordt vergeten.',
+    'step-4-title':'Je arriveert. De rest volgt vanzelf.','step-4-desc':'Introductieweek, kennismaken met je groep, beginnen bij je bedrijf. Vanaf dat moment leef je het — niet plan je het. Wij blijven bereikbaar gedurende je gehele verblijf.',
+    'costs-eyebrow':'Geen verrassingen','costs-heading':'Wat het echt kost om daar te leven.','costs-sub':'Een van de beste dingen van Bali en Sri Lanka is dat je geld veel verder gaat dan in Nederland. Dit zijn realistische maandelijkse schattingen voor een studentenlevensstijl.',
+    'costs-th1':'Maandelijkse uitgave','costs-th2':'Bali, Indonesië','costs-th3':'Sri Lanka',
+    'cost-r1':'Privéaccommodatie','cost-r2':'Scooterverhuur','cost-r3':'Benzine','cost-r4':'Maaltijden bij lokale restaurants','cost-r5':'Koffie / cafés','cost-r6':'Sportschool','cost-r7':'Surflessen / activiteiten','cost-r8':'Weekendtrips','cost-r9':'Lokaal vervoer','cost-total':'Geschat maandtotaal',
+    'costs-note':'Schattingen zijn voor een comfortabele studentenlevensstijl en variëren afhankelijk van je uitgavenpatroon. Vluchten, reisverzekering en de programmakosten zijn niet inbegrepen. Nederlandse studenten met studiefinanciering vinden de kosten doorgaans vergelijkbaar met of lager dan wonen in een grote Nederlandse stad.',
+    'faq-eyebrow':'Veelgestelde vragen','faq-heading':'Directe antwoorden.','faq-sub':'We weten wat Nederlandse studenten echt willen weten voordat ze de stap zetten. Hier is het.',
+    'q1':'Telt deze stage mee voor mijn universitaire credits?','a1':'Ja — dat is precies het punt. Al onze hostbedrijven bieden een officiële stageovereenkomst, een begeleider en zijn bereid het beoordelingsformulier van jouw universiteit in te vullen. We hebben samengewerkt met studenten van Maastricht, UvA, Erasmus, Tilburg en Vrije Universiteit. We raden aan dit vroeg te bevestigen met je studiecoördinator.',
+    'q2':'Krijg ik hulp bij het vinden van mijn stage?','a2':'Ja. Een stage vinden is onze taak, niet die van jou. Jij vertelt ons je studie en vakgebied. Wij koppelen je aan een geschikt bedrijf, regelen een kennismakingsgesprek en zorgen voor de stageovereenkomst. Je hoeft geen koude e-mails te sturen naar bedrijven op Bali.',
+    'q3':'Is huisvesting inbegrepen in het programma?','a3':'Huisvesting wordt geregeld als onderdeel van het programma. Je krijgt een privékamer in een gedeeld huis met andere stagiairs. De huisvestingskosten zijn apart van de programmakosten en worden rechtstreeks ter plaatse betaald. We bevestigen je kamer vóór vertrek.',
+    'q4':'Is Bali of Sri Lanka veilig voor studenten?','a4':'Beide bestemmingen zijn populaire, gevestigde expat- en studentenbestemmingen met grote internationale gemeenschappen. De meest voorkomende risico\'s zijn dezelfde als overal — verkeer, zakkenrollerij en zonnesteek. We geven een uitgebreide veiligheidsbriefing bij aankomst, en ons lokale team is 24/7 bereikbaar.',
+    'q5':'Kan ik met een vriend(in) gaan?','a5':'Absoluut. Veel studenten solliciteren samen. Als jij en een vriend(in) allebei solliciteren voor dezelfde bestemming en startperiode, doen we ons best om jullie in hetzelfde huis te plaatsen. Vermeld dit in je sollicitatie.',
+    'q6':'Welk niveau Engels is vereist?','a6':'Alle stages worden uitgevoerd in het Engels. Je moet professioneel kunnen communiceren in het Engels — wat voor de meeste Nederlandse universiteitsstudenten geen probleem is. Je hoeft geen Indonesisch of Singalees te spreken.',
+    'q7':'Hoe lang duren de stages?','a7':'De meeste stages duren 3 tot 6 maanden, wat aansluit bij de standaard stageperiode van Nederlandse universiteiten. Het minimum is 10 weken. We bevestigen de exacte duur bij het matchen en passen aan waar nodig.',
+    'q8':'Heb ik een visum nodig?','a8':'Ja, maar het proces is eenvoudig voor houders van een Nederlands paspoort. Voor Bali kun je visumvrij voor 30 dagen binnenkomen en dit verlengen naar 60 dagen. Voor Sri Lanka is een eenvoudig e-visum online beschikbaar. We sturen je een stap-voor-stap gids als onderdeel van je vertrekpakket.',
+    'q9':'Hoe ziet een normale week eruit?','a9':'Stages lopen van maandag tot vrijdag, doorgaans 36–40 uur per week — hetzelfde als een reguliere stage in Nederland. Je werkt op kantoor, in een coworking space of een combinatie van beide. Avonden en weekenden zijn volledig van jou.',
+    'q10':'Wat als er iets misgaat tijdens mijn verblijf?','a10':'We hebben een lokaal team op de grond in elke bestemming en een 24/7 noodnummer. Als er een probleem is met je stage, huisvesting, gezondheid of veiligheid — bel je ons. We raden ook sterk aan om vóór vertrek een reisverzekering af te sluiten.',
+    'cta-eyebrow':'Sollicitaties open','cta-heading':'Je kunt je stage in Nederland doen. Of je doet het in Bali.','cta-sub':'Plekken per intake zijn beperkt. De sollicitatie duurt 10 minuten en je zit nergens aan vast totdat je gematcht bent en blij met je stage.','cta-btn1':'Solliciteer nu','cta-btn2':'Lees de FAQ',
+    'footer-dest':'Bestemmingen','footer-pl':'Stages','footer-costs':'Kosten','footer-faq':'FAQ','footer-apply':'Solliciteer',
+    'footer-mission-title':'Onze Missie',
+    'footer-mission-text':'We verbinden Nederlandse universiteitsstudenten met zinvolle stages op Bali en Sri Lanka — wij regelen de logistiek zodat studenten zich kunnen richten op de ervaring.',
+    'footer-info-title':'Meer Informatie',
+    'footer-link-apply':'Solliciteer voor een stage',
+    'footer-link-consult':'Plan een gratis gesprek',
+    'footer-link-faq':'Lees de FAQ',
+    'footer-link-dest':'Bekijk bestemmingen',
+    'footer-link-pl':'Bekijk voorbeeldstages',
+    'footer-link-terms':'Algemene Voorwaarden',
+    'footer-link-privacy':'Privacybeleid',
+    'modal-tag':'Gratis sollicitatie — nergens aan vast','modal-title':'Solliciteer bij Island Internships','modal-subtitle':'Vertel ons over jezelf en we nemen binnen 2 werkdagen contact met je op.',
+    'lbl-fname':'Voornaam','lbl-lname':'Achternaam','lbl-email':'E-mailadres','lbl-uni':'Universiteit','lbl-year':'Studiejaar','lbl-dest':'Bestemming','lbl-field':'Vakgebied stage','lbl-msg':'Iets wat je ons wilt laten weten (optioneel)',
+    'ph-fname':'Emma','ph-lname':'de Vries','ph-email':'emma@student.uva.nl','ph-msg':'Je studieachtergrond, gewenste startdatum of eventuele vragen…',
+    'modal-submit':'Verstuur sollicitatie','modal-note':'Geen betaling vereist. We reageren binnen 2 werkdagen.',
+    'success-title':'Sollicitatie ontvangen.','success-sub':'Bedankt — we beoordelen je profiel en nemen binnen 2 werkdagen contact met je op met je stageopties.','modal-back':'Terug naar de homepage',
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (t[lang][k] !== undefined) el.textContent = t[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.dataset.i18nHtml;
+    if (t[lang][k] !== undefined) el.innerHTML = t[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.dataset.i18nPh;
+    if (t[lang][k] !== undefined) el.placeholder = t[lang][k];
+  });
+  document.getElementById('lt-en').classList.toggle('lt-active', lang === 'en');
+  document.getElementById('lt-nl').classList.toggle('lt-active', lang === 'nl');
+  document.documentElement.lang = lang;
+}
+
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  setLang(currentLang === 'en' ? 'nl' : 'en');
+});
+
+
+  // ─── Nav scroll state ─────────────────────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ─── Mobile hamburger ─────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ─── Scroll fade-up ───────────────────────────────────────────
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // ─── Modal ────────────────────────────────────────────────────
+  const overlay     = document.getElementById('apply-modal');
+  const formWrap    = document.getElementById('modal-form-wrap');
+  const successPane = document.getElementById('modal-success');
+  const form        = document.getElementById('apply-form');
+  const destSel     = document.getElementById('f-destination');
+  const fieldSel    = document.getElementById('f-field');
+
+  function openModal(e, destination, field) {
+    if (e) e.preventDefault();
+    formWrap.classList.remove('hidden');
+    successPane.classList.remove('visible');
+    if (destination) destSel.value = destination;
+    if (field)       fieldSel.value = field;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const first = form.querySelector('input:not([value]), input[value=""]');
+      if (first) first.focus();
+    }, 350);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const uni   = document.getElementById('f-university').value;
+    const dest  = destSel.value;
+    const fld   = fieldSel.value;
+    const fields = [
+      { el: document.getElementById('f-name'),       val: name  },
+      { el: document.getElementById('f-email'),      val: email },
+      { el: document.getElementById('f-university'), val: uni   },
+      { el: destSel,                                 val: dest  },
+      { el: fieldSel,                                val: fld   },
+    ];
+    let valid = true;
+    fields.forEach(({ el, val }) => {
+      if (!val) {
+        valid = false;
+        el.style.borderColor = 'var(--coral)';
+        el.style.boxShadow   = '0 0 0 3px rgba(200,80,58,0.12)';
+        el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
+      }
+    });
+    if (!valid) return;
+    formWrap.classList.add('hidden');
+    successPane.classList.add('visible');
+  });
+</script>
+</body>
+</html>

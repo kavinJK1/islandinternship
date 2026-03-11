@@ -1,0 +1,20 @@
+{
+  "name": "islandinternship-backend",
+  "version": "1.0.0",
+  "description": "Backend services for islandinternship.com — GoDaddy DNS + Zoho Mail integration",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test:godaddy": "node scripts/test-godaddy.js",
+    "test:zoho": "node scripts/test-zoho.js",
+    "test:all": "node scripts/test-godaddy.js && node scripts/test-zoho.js",
+    "zoho:exchange-code": "node scripts/zoho-exchange-code.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "notes": "Zero external dependencies — uses Node.js built-in fetch (Node 18+) and dotenv via --env-file flag or manual loading"
+}
