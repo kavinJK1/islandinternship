@@ -1888,7 +1888,7 @@
       border: 1px solid rgba(107, 96, 80, 0.14);
       border-radius: 14px;
       width: 100%;
-      max-width: 620px;
+      max-width: 648px;
       max-height: 92vh;
       overflow-y: auto;
       box-shadow: 0 26px 70px rgba(26,26,46,0.14);
@@ -1899,8 +1899,10 @@
     .modal-overlay.open .modal { transform: translateY(0) scale(1); }
 
     .modal-header {
-      padding: 2.15rem 2.35rem 1.4rem;
+      padding: 2.3rem 2.5rem 1.8rem;
       position: relative;
+      border-bottom: 1px solid rgba(112, 103, 88, 0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(248,243,234,0.96));
     }
     .modal-tag {
       font-size: 0.69rem;
@@ -1924,6 +1926,33 @@
       margin-top: 0.7rem;
       line-height: 1.7;
       max-width: 31rem;
+    }
+    .modal-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.4rem;
+    }
+    .modal-fact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(112, 103, 88, 0.14);
+    }
+    .modal-fact span {
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7B746C;
+    }
+    .modal-fact strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
     }
     .modal-close {
       position: absolute;
@@ -1949,12 +1978,12 @@
       outline: none;
     }
 
-    .modal-body { padding: 0 2.35rem 2.35rem; }
+    .modal-body { padding: 1.75rem 2.5rem 2.5rem; }
 
     .modal-form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem 1.1rem;
+      gap: 1.1rem 1.2rem;
     }
 
     .form-group {
@@ -1968,9 +1997,9 @@
       color: var(--teal);
     }
     .form-group label {
-      font-size: 0.69rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: #6F6A62;
     }
@@ -1980,19 +2009,20 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.94rem;
       color: var(--navy);
-      background: var(--white);
-      border: 1px solid rgba(112, 103, 88, 0.18);
-      border-radius: 8px;
-      padding: 0.78rem 0.95rem;
+      background: rgba(255,253,248,0.92);
+      border: 1px solid rgba(112, 103, 88, 0.2);
+      border-radius: 10px;
+      padding: 0.82rem 1rem;
       outline: none;
       transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       width: 100%;
-      min-height: 47px;
+      min-height: 48px;
     }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: rgba(42,122,111,0.55);
+      background: var(--white);
+      border-color: rgba(42,122,111,0.58);
       box-shadow: 0 0 0 3px rgba(42,122,111,0.12);
     }
     .form-group input::placeholder,
@@ -2008,7 +2038,7 @@
     }
     .form-group textarea {
       resize: vertical;
-      min-height: 128px;
+      min-height: 132px;
       line-height: 1.7;
     }
     .form-error {
@@ -2026,9 +2056,9 @@
 
     .modal-submit {
       width: 100%;
-      margin-top: 1.4rem;
+      margin-top: 1.6rem;
       min-height: 49px;
-      padding: 0.95rem 1rem;
+      padding: 0.98rem 1rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
@@ -2036,7 +2066,7 @@
       background: var(--teal);
       color: var(--white);
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -2087,8 +2117,11 @@
       text-align: center;
       font-size: 0.76rem;
       color: var(--muted);
-      margin-top: 0.9rem;
+      margin-top: 0.95rem;
       line-height: 1.55;
+      max-width: 28rem;
+      margin-left: auto;
+      margin-right: auto;
     }
     .modal-success {
       display: none;
@@ -2465,6 +2498,7 @@
       .testimonial-video-copy {
         padding: 1rem 1rem 1.15rem;
       }
+      .modal-facts,
       .modal-form-grid { grid-template-columns: 1fr; }
       .form-group.span-2 { grid-column: auto; }
 
@@ -2501,8 +2535,8 @@
       .placements-grid { grid-template-columns: 1fr; }
       .steps-list { grid-template-columns: 1fr; }
       .community-stats-grid { grid-template-columns: 1fr; }
-      .modal-header { padding: 1.65rem 1.35rem 1.1rem; }
-      .modal-body { padding: 0 1.35rem 1.55rem; }
+      .modal-header { padding: 1.65rem 1.35rem 1.2rem; }
+      .modal-body { padding: 1.2rem 1.35rem 1.55rem; }
       .modal-success { padding: 2.2rem 1.35rem 2.4rem; }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .hero-stats { gap: 1.5rem; }
@@ -3843,6 +3877,20 @@
       <span class="modal-tag" data-i18n="modal-tag">Free application — no commitment</span>
       <h2 class="modal-title" id="modal-title" data-i18n="modal-title">Apply for Island Internship</h2>
       <p class="modal-subtitle" id="modal-subtitle" data-i18n="modal-subtitle">Tell us about yourself and we'll come back to you within 2 business days.</p>
+      <div class="modal-facts" aria-label="Application details">
+        <div class="modal-fact">
+          <span data-i18n="modal-fact-1-kicker">Application time</span>
+          <strong data-i18n="modal-fact-1-value">About 10 minutes</strong>
+        </div>
+        <div class="modal-fact">
+          <span data-i18n="modal-fact-2-kicker">Cost</span>
+          <strong data-i18n="modal-fact-2-value">Free to apply</strong>
+        </div>
+        <div class="modal-fact">
+          <span data-i18n="modal-fact-3-kicker">Response</span>
+          <strong data-i18n="modal-fact-3-value">Within 2 business days</strong>
+        </div>
+      </div>
       <button class="modal-close" id="modal-close-btn" aria-label="Close">&#x2715;</button>
     </div>
     <div class="modal-form-wrap" id="modal-form-wrap">
@@ -4161,6 +4209,9 @@ const t = {
     'footer-link-terms':'Terms & Conditions',
     'footer-link-privacy':'Privacy Policy',
     'modal-tag':'Free application — no commitment','modal-title':'Apply for Island Internship','modal-subtitle':'Tell us about yourself and we\'ll come back to you within 2 business days.',
+    'modal-fact-1-kicker':'Application time','modal-fact-1-value':'About 10 minutes',
+    'modal-fact-2-kicker':'Cost','modal-fact-2-value':'Free to apply',
+    'modal-fact-3-kicker':'Response','modal-fact-3-value':'Within 2 business days',
     'lbl-fname':'First name','lbl-lname':'Last name','lbl-email':'Email address','lbl-uni':'University','lbl-year':'Study year','lbl-dest':'Destination','lbl-field':'Internship field','lbl-msg':'Anything you\'d like us to know (optional)',
     'opt-uni-default':'Select your university','opt-uni-other':'Other Dutch university',
     'opt-year-default':'Select study year','opt-year-2':'Year 2','opt-year-3':'Year 3','opt-year-4':'Year 4 (Master)','opt-year-pre':'Pre-Master','opt-year-master':'Master',
@@ -4299,6 +4350,9 @@ const t = {
     'footer-link-terms':'Algemene Voorwaarden',
     'footer-link-privacy':'Privacybeleid',
     'modal-tag':'Gratis sollicitatie — nergens aan vast','modal-title':'Solliciteer bij Island Internship','modal-subtitle':'Vertel ons over jezelf en we nemen binnen 2 werkdagen contact met je op.',
+    'modal-fact-1-kicker':'Sollicitatietijd','modal-fact-1-value':'Ongeveer 10 minuten',
+    'modal-fact-2-kicker':'Kosten','modal-fact-2-value':'Gratis om te solliciteren',
+    'modal-fact-3-kicker':'Reactie','modal-fact-3-value':'Binnen 2 werkdagen',
     'lbl-fname':'Voornaam','lbl-lname':'Achternaam','lbl-email':'E-mailadres','lbl-uni':'Universiteit','lbl-year':'Studiejaar','lbl-dest':'Bestemming','lbl-field':'Vakgebied stage','lbl-msg':'Iets wat je ons wilt laten weten (optioneel)',
     'opt-uni-default':'Selecteer je universiteit','opt-uni-other':'Andere Nederlandse universiteit',
     'opt-year-default':'Selecteer studiejaar','opt-year-2':'Jaar 2','opt-year-3':'Jaar 3','opt-year-4':'Jaar 4 (Master)','opt-year-pre':'Pre-master','opt-year-master':'Master',
