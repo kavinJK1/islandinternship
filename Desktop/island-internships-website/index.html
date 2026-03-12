@@ -328,9 +328,21 @@
     }
     .hero-photo:hover .photo-bg { transform: scale(1.03); }
 
-    .photo-bg-1 { background: linear-gradient(155deg, #1e5c53 0%, #2a7a6f 45%, #3d9e92 100%); }
-    .photo-bg-2 { background: linear-gradient(150deg, #c4813a 0%, #d4a853 55%, #e8c87a 100%); }
-    .photo-bg-3 { background: linear-gradient(145deg, #1a1a2e 0%, #2e2e48 60%, #3d3d6e 100%); }
+    .photo-bg-1 {
+      background:
+        linear-gradient(180deg, rgba(10,16,30,0.1), rgba(10,16,30,0.55)),
+        url("images/moments-beach.jpg") center 28% / cover no-repeat;
+    }
+    .photo-bg-2 {
+      background:
+        linear-gradient(180deg, rgba(10,16,30,0.06), rgba(10,16,30,0.48)),
+        url("images/moments-group.jpg") center 42% / cover no-repeat;
+    }
+    .photo-bg-3 {
+      background:
+        linear-gradient(180deg, rgba(10,16,30,0.08), rgba(10,16,30,0.5)),
+        url("images/moments-hills.jpg") center 58% / cover no-repeat;
+    }
 
     .photo-label {
       position: absolute;
@@ -338,6 +350,11 @@
       left: 1rem;
       right: 1rem;
       z-index: 2;
+      padding: 0.8rem 0.95rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
     .photo-label-time {
       font-size: 0.65rem;
@@ -492,7 +509,6 @@
       background: rgba(212,168,83,0.4);
       margin-bottom: 1.25rem;
     }
-
     /* ─── DESTINATIONS ──────────────────────────────────────────── */
     #destinations {}
 
@@ -529,10 +545,14 @@
     .dest-card:hover .dest-bg { transform: scale(1.04); }
 
     .dest-bg-bali {
-      background: linear-gradient(160deg, #1B5C52 0%, #2a7a6f 40%, #1a3e3a 100%);
+      background:
+        linear-gradient(180deg, rgba(10,12,22,0.06), rgba(10,12,22,0.26)),
+        url("images/destination-bali.jpg") center 62% / cover no-repeat;
     }
     .dest-bg-srilanka {
-      background: linear-gradient(160deg, #7a5210 0%, #b88830 40%, #d4a853 100%);
+      background:
+        linear-gradient(180deg, rgba(10,12,22,0.05), rgba(10,12,22,0.2)),
+        url("images/destination-srilanka.jpg") center 50% / cover no-repeat;
     }
 
     .dest-overlay {
@@ -2107,25 +2127,44 @@
     .testimonial-videos-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
     }
     .testimonial-video-card {
+      display: grid;
+      grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+      align-items: stretch;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(26,26,46,0.05);
     }
+    .testimonial-video-media {
+      padding: 0.9rem 0 0.9rem 0.9rem;
+      background:
+        linear-gradient(180deg, rgba(26,26,46,0.03), rgba(42,122,111,0.08)),
+        radial-gradient(circle at top left, rgba(212,168,83,0.18), transparent 55%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .testimonial-video-card video {
       display: block;
       width: 100%;
+      max-width: 220px;
       aspect-ratio: 9 / 16;
+      max-height: 360px;
       object-fit: cover;
       background: var(--navy);
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(26,26,46,0.12);
     }
     .testimonial-video-copy {
-      padding: 1rem 1.1rem 1.15rem;
+      padding: 1.2rem 1.2rem 1.25rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .testimonial-video-copy strong {
       display: block;
@@ -2338,6 +2377,16 @@
       .pricing-grid,
       .company-mini-stats,
       .testimonial-videos-grid { grid-template-columns: 1fr; }
+      .testimonial-video-card { grid-template-columns: 1fr; }
+      .testimonial-video-media {
+        padding: 1rem 1rem 0;
+      }
+      .testimonial-video-card video {
+        max-width: min(100%, 280px);
+      }
+      .testimonial-video-copy {
+        padding: 1rem 1rem 1.15rem;
+      }
 
       nav .nav-links {
         display: none;
@@ -3020,18 +3069,22 @@
 
   <div class="testimonial-videos-grid">
     <div class="testimonial-video-card fade-up">
-      <video controls playsinline preload="metadata">
-        <source src="videos/testimonial-story-1.mp4" type="video/mp4">
-      </video>
+      <div class="testimonial-video-media">
+        <video controls playsinline preload="metadata">
+          <source src="videos/testimonial-story-1.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="testimonial-video-copy">
         <strong data-i18n="test-video-1-title">Student video testimonial</strong>
         <p data-i18n="test-video-1-sub">A first-hand reflection on the internship experience, daily routine, and living abroad.</p>
       </div>
     </div>
     <div class="testimonial-video-card fade-up delay-1">
-      <video controls playsinline preload="metadata">
-        <source src="videos/testimonial-story-2.mp4" type="video/mp4">
-      </video>
+      <div class="testimonial-video-media">
+        <video controls playsinline preload="metadata">
+          <source src="videos/testimonial-story-2.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="testimonial-video-copy">
         <strong data-i18n="test-video-2-title">Student video testimonial</strong>
         <p data-i18n="test-video-2-sub">A second student perspective on placement support, schedule, and life in destination.</p>
