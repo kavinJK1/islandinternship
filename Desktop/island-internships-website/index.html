@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Island Internship — Intern in Bali or Sri Lanka</title>
+  <title>Island Internship | Career-Focused Internships in Bali</title>
+  <meta name="description" content="Curated Bali internships for students who want stronger work experience, portfolio proof, international network, and a structured move abroad." />
+  <link rel="canonical" href="https://www.islandinternship.com/" />
+  <meta property="og:title" content="Island Internship | Career-Focused Internships in Bali" />
+  <meta property="og:description" content="Build experience, network, and portfolio through a curated Bali internship program with placement support, onboarding, and community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.islandinternship.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -268,30 +274,34 @@
     .hero-ctas {
       display: flex;
       gap: 0.85rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       flex-wrap: wrap;
     }
 
-    .hero-stats {
+    .hero-proof-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      max-width: 460px;
+    }
+    .hero-proof-list li {
       display: flex;
-      gap: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 600;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.94rem;
       color: var(--navy);
-      line-height: 1;
-      margin-bottom: 0.2rem;
+      line-height: 1.6;
     }
-    .stat-label {
-      font-size: 0.78rem;
-      font-weight: 500;
+    .hero-proof-list svg {
+      flex-shrink: 0;
+      color: var(--teal);
+      margin-top: 0.15rem;
+    }
+    .hero-support {
+      font-size: 0.8rem;
       color: var(--muted);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
     }
 
     /* ─── HERO VISUAL ───────────────────────────────────────────── */
@@ -352,9 +362,7 @@
       z-index: 2;
       padding: 0.8rem 0.95rem 0.9rem;
       border: 1px solid rgba(255,255,255,0.12);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08));
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(17, 21, 34, 0.32);
     }
     .photo-label-time {
       font-size: 0.65rem;
@@ -444,70 +452,123 @@
       transition: opacity 0.2s;
     }
     .trust-uni:hover { opacity: 0.7; }
+    .trust-footnote {
+      padding: 0 0 1.25rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
     @media (max-width: 640px) {
       .trust-stats-row { flex-wrap: wrap; gap: 1rem; }
       .trust-divider { display: none; }
       .trust-stat { flex: 0 0 calc(50% - 0.5rem); }
     }
 
-    /* ─── WHAT IT LOOKS LIKE ────────────────────────────────────── */
-    #moments {
-      background: var(--navy);
-    }
-    #moments .section-heading { color: var(--white); }
-    #moments .section-sub { color: rgba(255,255,255,0.5); }
-    #moments .eyebrow { color: rgba(212,168,83,0.85); }
+    /* ─── INTERNSHIP TRACKS ─────────────────────────────────────── */
+    #moments { background: var(--cream-d); }
 
     .moments-header {
       margin-bottom: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .moments-grid {
+    .track-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 8px;
-      overflow: hidden;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
     }
-
-    .moment-item {
-      background: var(--navy);
-      padding: 2.5rem 2rem;
-      transition: background 0.3s;
+    .track-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.6rem;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
-    .moment-item:hover { background: var(--navy-mid); }
-
-    .moment-time {
-      font-size: 0.68rem;
+    .track-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(26,26,46,0.08);
+      border-color: rgba(42,122,111,0.24);
+    }
+    .track-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(42,122,111,0.08);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .track-kicker {
+      font-size: 0.64rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(212,168,83,0.7);
-      margin-bottom: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
     }
-
-    .moment-heading {
+    .track-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 0.85rem;
-      line-height: 1.3;
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 0.55rem;
     }
-
-    .moment-text {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.45);
+    .track-text {
+      font-size: 0.84rem;
+      color: var(--muted);
       line-height: 1.7;
+      flex: 1;
     }
-
-    .moment-divider {
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: rgba(212,168,83,0.4);
-      margin-bottom: 1.25rem;
+    .track-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-top: 1rem;
+    }
+    .track-link svg { flex-shrink: 0; }
+    .track-search-row {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+    .track-search-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .track-search-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.86);
+      font-size: 0.78rem;
+      color: var(--navy);
+      transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .track-search-chip:hover {
+      border-color: rgba(42,122,111,0.26);
+      color: var(--teal);
+      transform: translateY(-1px);
     }
     /* ─── DESTINATIONS ──────────────────────────────────────────── */
     #destinations {}
@@ -552,7 +613,7 @@
     .dest-bg-srilanka {
       background:
         linear-gradient(180deg, rgba(10,12,22,0.05), rgba(10,12,22,0.2)),
-        url("images/destination-srilanka.jpg") center 50% / cover no-repeat;
+        url("images/moments-beach.jpg") center 50% / cover no-repeat;
     }
 
     .dest-overlay {
@@ -2307,6 +2368,54 @@
       border-radius: 14px;
       background: rgba(255,255,255,0.6);
     }
+    .placements-intro {
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+    .placements-intro-copy {
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.35rem;
+    }
+    .placements-intro-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem 1.5rem;
+    }
+    .placements-intro-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.84rem;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .placements-intro-list svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--teal);
+    }
+    .process-note {
+      margin-top: 2rem;
+      display: grid;
+      gap: 0.35rem;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.72);
+      border-radius: 10px;
+    }
+    .process-note strong {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .process-note p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
     .intern-stories-grid {
       margin-bottom: 1.5rem;
     }
@@ -2370,6 +2479,60 @@
       background: linear-gradient(135deg, rgba(42,122,111,0.14), rgba(200,80,58,0.08));
       border: 1px solid rgba(26,26,46,0.08);
     }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(26,26,46,0.05);
+    }
+    .resource-kicker {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+    .resource-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 0.7rem;
+    }
+    .resource-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+      flex: 1;
+    }
+    .resource-meta {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-bottom: 1.15rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+    .resource-link svg { flex-shrink: 0; }
     #day-in-life {
       background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(237,229,214,0.45));
     }
@@ -2530,6 +2693,13 @@
       font-size: 0.8rem;
       color: var(--muted);
     }
+    .cta-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    .mobile-cta-bar { display: none; }
 
     /* ─── RESPONSIVE ────────────────────────────────────────────── */
     @media (max-width: 1024px) {
@@ -2540,6 +2710,7 @@
       .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .company-intro-card,
       .company-offer-list { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 860px) {
@@ -2555,6 +2726,7 @@
 
       .dest-grid { grid-template-columns: 1fr; }
       .placements-grid { grid-template-columns: 1fr; }
+      .placements-intro-list { grid-template-columns: 1fr; }
       .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .faq-grid { grid-template-columns: 1fr; gap: 0; }
       .faq-col:first-child details:first-child { border-top: 1px solid var(--border); }
@@ -2623,6 +2795,32 @@
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .hero-stats { gap: 1.5rem; }
       .hero-photo-tall .photo-inner { min-height: 280px; }
+      body { padding-bottom: 82px; }
+      .mobile-cta-bar {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+        z-index: 70;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.65rem;
+        padding: 0.7rem;
+        border-radius: 14px;
+        background: rgba(15,19,34,0.94);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 14px 40px rgba(15,19,34,0.18);
+      }
+      .mobile-cta-bar .btn {
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 10px;
+      }
+      .mobile-cta-bar .btn-outline {
+        background: transparent;
+        border-color: rgba(255,255,255,0.16);
+        color: rgba(255,255,255,0.88);
+      }
     }
   </style>
 </head>
@@ -2632,11 +2830,11 @@
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">Island<span>.</span>Internship</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#destinations" data-i18n="nav-destinations">Destinations</a></li>
-    <li><a href="#placements" data-i18n="nav-placements">Placements</a></li>
+    <li><a href="#moments" data-i18n="nav-destinations">Tracks</a></li>
+    <li><a href="#placements" data-i18n="nav-placements">Outcomes</a></li>
     <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#companies" data-i18n="nav-companies">For Companies</a></li>
+    <li><a href="#community" data-i18n="nav-companies">Community</a></li>
     <li><a href="#cta-banner" class="nav-apply" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
   </ul>
   <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
@@ -2650,33 +2848,35 @@
 </nav>
 
 <!-- ── HERO ─────────────────────────────────────────────────────── -->
+<main id="content">
 <section id="hero" class="section-wrap">
   <div class="hero-left">
-    <div class="hero-eyebrow fade-up" data-i18n="hero-eyebrow">International internships in Bali &amp; Sri Lanka</div>
+    <div class="hero-eyebrow fade-up" data-i18n="hero-eyebrow">Career-focused internships in Bali</div>
     <h1 class="hero-headline fade-up delay-1" data-i18n-html="hero-headline">
-      Find a credit-ready internship.<br><em>In Bali or Sri Lanka.</em>
+      Launch your career from Bali.<br><em>Curated internships, network, and lifestyle in one semester.</em>
     </h1>
     <p class="hero-sub fade-up delay-2" data-i18n="hero-sub">
-      Island Internship matches students with host companies, placement support, housing guidance, and local coordination from shortlist to arrival.
+      Island Internship is a curated Bali internship program for students who want more than a placement: stronger experience, sharper career direction, and an ambitious community around them.
     </p>
-    <div class="hero-ctas fade-up delay-3">
-      <a href="#cta-banner" class="btn btn-primary" onclick="openModal(event)" data-i18n="hero-cta1">Apply now — it's free</a>
-      <a href="#placements" class="btn btn-outline" data-i18n="hero-cta2">Browse internships</a>
+    <ul class="hero-proof-list fade-up delay-3">
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero-b1">Curated internships with startups, agencies, hospitality brands, and impact teams in Bali.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero-b2">Build CV, portfolio, and international network through meaningful project work.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero-b3">Move with local support, housing guidance, and an intern community already on the ground.</span>
+      </li>
+    </ul>
+    <div class="hero-ctas fade-up delay-4">
+      <a href="#cta-banner" class="btn btn-primary" onclick="openModal(event)" data-i18n="hero-cta1">Start your application</a>
+      <a href="#moments" class="btn btn-outline" data-i18n="hero-cta2">Explore internship tracks</a>
     </div>
-    <div class="hero-stats fade-up delay-4">
-      <div>
-        <div class="stat-num">2</div>
-        <div class="stat-label" data-i18n="stat-islands">Island destinations</div>
-      </div>
-      <div>
-        <div class="stat-num">3-6</div>
-        <div class="stat-label" data-i18n="stat-fields">Months on placement</div>
-      </div>
-      <div>
-        <div class="stat-num">1:1</div>
-        <div class="stat-label" data-i18n="stat-unis">Support through the process</div>
-      </div>
-    </div>
+    <p class="hero-support fade-up delay-5" data-i18n="hero-support">Free application. No commitment required. We reply within 2 business days.</p>
   </div>
 
   <div class="hero-visual fade-up delay-2">
@@ -2684,8 +2884,8 @@
       <div class="photo-inner">
         <div class="photo-bg photo-bg-1"></div>
         <div class="photo-label">
-          <div class="photo-label-time" data-i18n="p1-time">Placement shortlist</div>
-          <div class="photo-label-text" data-i18n="p1-text">Vetted host companies matched to your field</div>
+          <div class="photo-label-time" data-i18n="p1-time">Curated placement</div>
+          <div class="photo-label-text" data-i18n="p1-text">Internship environments matched to your track, pace, and university goals</div>
         </div>
       </div>
     </div>
@@ -2693,8 +2893,8 @@
       <div class="photo-inner">
         <div class="photo-bg photo-bg-2"></div>
         <div class="photo-label">
-          <div class="photo-label-time" data-i18n="p2-time">Arrival setup</div>
-          <div class="photo-label-text" data-i18n="p2-text">Housing, onboarding, and local guidance lined up</div>
+          <div class="photo-label-time" data-i18n="p2-time">Career + network</div>
+          <div class="photo-label-text" data-i18n="p2-text">Work alongside ambitious teams and build relationships beyond the classroom</div>
         </div>
       </div>
     </div>
@@ -2702,8 +2902,8 @@
       <div class="photo-inner">
         <div class="photo-bg photo-bg-3"></div>
         <div class="photo-label">
-          <div class="photo-label-time" data-i18n="p3-time">Life outside work</div>
-          <div class="photo-label-text" data-i18n="p3-text">A student experience that balances work and island life</div>
+          <div class="photo-label-time" data-i18n="p3-time">Bali lifestyle</div>
+          <div class="photo-label-text" data-i18n="p3-text">A week that balances focused internship hours with community, dinners, and island life</div>
         </div>
       </div>
     </div>
@@ -2714,27 +2914,27 @@
 <div id="trust" class="fade-up">
   <div class="trust-stats-row">
     <div class="trust-stat">
-      <div class="trust-stat-num">120+</div>
-      <div class="trust-stat-label" data-i18n="ts-islands">Internships placed</div>
+      <div class="trust-stat-num">XX+</div>
+      <div class="trust-stat-label" data-i18n="ts-islands">Interns placed</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">45+</div>
-      <div class="trust-stat-label" data-i18n="ts-fields">Partner companies</div>
+      <div class="trust-stat-num">XX+</div>
+      <div class="trust-stat-label" data-i18n="ts-fields">Bali host companies</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">18+</div>
-      <div class="trust-stat-label" data-i18n="ts-credit">Countries represented</div>
+      <div class="trust-stat-num">XX+</div>
+      <div class="trust-stat-label" data-i18n="ts-credit">Universities represented</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">94%</div>
-      <div class="trust-stat-label" data-i18n="ts-fee">Recommendation rate</div>
+      <div class="trust-stat-num">2</div>
+      <div class="trust-stat-label" data-i18n="ts-fee">Business day reply</div>
     </div>
   </div>
   <div class="trust-unis-row">
-    <span class="trust-label" data-i18n="trust-label">Trusted by students from</span>
+    <span class="trust-label" data-i18n="trust-label">Students join from</span>
     <div class="trust-unis">
       <span class="trust-uni">Maastricht University</span>
       <span class="trust-uni">Universiteit van Amsterdam</span>
@@ -2744,59 +2944,112 @@
       <span class="trust-uni">Hogeschool Rotterdam</span>
     </div>
   </div>
+  <div class="trust-footnote" data-i18n="trust-footnote">Proof totals can be updated here once the confirmed Bali alumni and host-company counts are locked.</div>
 </div>
 
 <!-- ── WHAT IT ACTUALLY LOOKS LIKE ──────────────────────────────── -->
 <section id="moments" class="section-wrap">
   <div class="moments-header">
-    <div class="eyebrow fade-up" data-i18n="mom-eyebrow">A normal week</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="mom-heading">This is what it actually looks like.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="mom-sub">Your internship runs Monday to Friday. The evenings and weekends are entirely yours.</p>
+    <div>
+      <div class="eyebrow fade-up" data-i18n="mom-eyebrow">Internship tracks</div>
+      <h2 class="section-heading fade-up delay-1" data-i18n="mom-heading">Choose the type of work you want to build around.</h2>
+      <p class="section-sub fade-up delay-2" data-i18n="mom-sub">The program is built around clear internship tracks in Bali, so students understand the kind of companies, work, and exposure they are applying for.</p>
+    </div>
   </div>
-  <div class="moments-grid">
-    <div class="moment-item fade-up">
-      <span class="moment-divider"></span>
-      <div class="moment-time" data-i18n="m1-time">Monday — Friday</div>
-      <h3 class="moment-heading" data-i18n="m1-heading">Structured internship hours with a host company.</h3>
-      <p class="moment-text" data-i18n="m1-text">You join a host company in your field, work in English, and follow a schedule that fits university placement requirements and the local work rhythm.</p>
-    </div>
-    <div class="moment-item fade-up delay-1">
-      <span class="moment-divider"></span>
-      <div class="moment-time" data-i18n="m2-time">Weekday evenings</div>
-      <h3 class="moment-heading" data-i18n="m2-heading">After work looks different here.</h3>
-      <p class="moment-text" data-i18n="m2-text">Close the laptop and step outside. Bali and Sri Lanka have the kind of evenings that don't exist in Rotterdam — beachside dinners, sunset swims, or just a cold Bintang with your housemates.</p>
-    </div>
-    <div class="moment-item fade-up delay-2">
-      <span class="moment-divider"></span>
-      <div class="moment-time" data-i18n="m3-time">Weekends</div>
-      <h3 class="moment-heading" data-i18n="m3-heading">The island is yours.</h3>
-      <p class="moment-text" data-i18n="m3-text">Rent a scooter and go. Waterfalls, temples, surf breaks, rice fields. Two full days with no plans and an entire island to explore — every weekend.</p>
-    </div>
+  <div class="track-grid">
+    <article class="track-card fade-up">
+      <div class="track-icon">01</div>
+      <div class="track-kicker" data-i18n="track-1-kicker">Marketing</div>
+      <h3 class="track-title" data-i18n="track-1-title">Digital Marketing</h3>
+      <p class="track-text" data-i18n="track-1-text">Support campaign planning, content creation, social growth, and brand execution inside fast-moving Bali teams.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali', 'Marketing & Digital')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+    <article class="track-card fade-up delay-1">
+      <div class="track-icon">02</div>
+      <div class="track-kicker" data-i18n="track-2-kicker">Growth</div>
+      <h3 class="track-title" data-i18n="track-2-title">Business Development</h3>
+      <p class="track-text" data-i18n="track-2-text">Work on outreach, partnerships, market research, lead generation, and commercial projects with ambitious Bali businesses.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali', 'Business Development')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+    <article class="track-card fade-up delay-2">
+      <div class="track-icon">03</div>
+      <div class="track-kicker" data-i18n="track-3-kicker">Hospitality</div>
+      <h3 class="track-title" data-i18n="track-3-title">Hospitality and Guest Experience</h3>
+      <p class="track-text" data-i18n="track-3-text">Learn inside boutique hotels, villa brands, restaurants, and experience-led businesses focused on service, operations, and guest journeys.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali', 'Hospitality Management')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+    <article class="track-card fade-up">
+      <div class="track-icon">04</div>
+      <div class="track-kicker" data-i18n="track-4-kicker">Operations</div>
+      <h3 class="track-title" data-i18n="track-4-title">Operations and Project Management</h3>
+      <p class="track-text" data-i18n="track-4-text">Step into operations roles that sharpen structure, coordination, systems thinking, and day-to-day execution.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali', 'Startup Operations')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+    <article class="track-card fade-up delay-1">
+      <div class="track-icon">05</div>
+      <div class="track-kicker" data-i18n="track-5-kicker">Impact</div>
+      <h3 class="track-title" data-i18n="track-5-title">NGO and Sustainability</h3>
+      <p class="track-text" data-i18n="track-5-text">Contribute to impact-led projects across sustainability, community programs, ESG reporting, and purpose-driven operations.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali', 'Sustainability & ESG')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+    <article class="track-card fade-up delay-2">
+      <div class="track-icon">06</div>
+      <div class="track-kicker" data-i18n="track-6-kicker">Startup</div>
+      <h3 class="track-title" data-i18n="track-6-title">Startup Internships</h3>
+      <p class="track-text" data-i18n="track-6-text">Get close to founders, cross-functional work, and practical execution inside young companies where you can learn quickly.</p>
+      <a href="#cta-banner" class="track-link" onclick="openModal(event, 'Bali')">
+        <span data-i18n="track-link">Ask about this track</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+  <div class="track-search-row fade-up delay-2">
+    <span class="track-search-label" data-i18n="track-search-label">Popular searches</span>
+    <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, 'Bali', 'Marketing & Digital')" data-i18n="track-search-1">Marketing internship Bali</a>
+    <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, 'Bali', 'Business Development')" data-i18n="track-search-2">Business internship Bali</a>
+    <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, 'Bali', 'Hospitality Management')" data-i18n="track-search-3">Hospitality internship Bali</a>
+    <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, 'Bali', 'Startup Operations')" data-i18n="track-search-4">Startup internship Bali</a>
+    <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, 'Bali', 'Sustainability & ESG')" data-i18n="track-search-5">Sustainability internship Bali</a>
   </div>
 </section>
 
-<!-- ── DESTINATIONS ──────────────────────────────────────────────── -->
+<!-- ── WHY BALI ──────────────────────────────────────────────────── -->
 <section id="destinations" class="section-wrap">
   <div class="destinations-header">
-    <div class="eyebrow fade-up" data-i18n="dest-eyebrow">Where you'll go</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="dest-heading">Two islands. One choice.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="dest-sub">Both destinations are warm, affordable, and full of companies looking for motivated students. The hardest part is picking one.</p>
+    <div class="eyebrow fade-up" data-i18n="dest-eyebrow">Why Bali</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="dest-heading">The location supports the career story.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="dest-sub">Bali works because it combines ambitious companies, international energy, and a lifestyle that makes students want to stay engaged for the full internship experience.</p>
   </div>
   <div class="dest-grid">
     <div class="dest-card fade-up">
       <div class="dest-bg dest-bg-bali"></div>
       <div class="dest-overlay"></div>
       <div class="dest-content">
-        <p class="dest-region" data-i18n="dest-bali-region">Indonesia · Southeast Asia</p>
-        <h3 class="dest-name">Bali</h3>
+        <p class="dest-region" data-i18n="dest-bali-region">Work in Bali</p>
+        <h3 class="dest-name" data-i18n="dest-bali-name">Career ecosystem</h3>
         <div class="dest-tags">
-          <span class="dest-tag">Startups</span>
-          <span class="dest-tag">Marketing</span>
-          <span class="dest-tag">Hospitality</span>
-          <span class="dest-tag">Sustainability</span>
+          <span class="dest-tag" data-i18n="dest-bali-tag-1">Startups</span>
+          <span class="dest-tag" data-i18n="dest-bali-tag-2">Agencies</span>
+          <span class="dest-tag" data-i18n="dest-bali-tag-3">Hospitality</span>
+          <span class="dest-tag" data-i18n="dest-bali-tag-4">Impact teams</span>
         </div>
         <a href="#placements" class="dest-link" onclick="openModal(event, 'Bali')">
-          Explore Bali placements
+          <span data-i18n="dest-bali-link">See the career outcomes</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -2805,16 +3058,16 @@
       <div class="dest-bg dest-bg-srilanka"></div>
       <div class="dest-overlay"></div>
       <div class="dest-content">
-        <p class="dest-region" data-i18n="dest-sl-region">South Asia · Indian Ocean</p>
-        <h3 class="dest-name">Sri Lanka</h3>
+        <p class="dest-region" data-i18n="dest-sl-region">Live in Bali</p>
+        <h3 class="dest-name" data-i18n="dest-sl-name">Community and lifestyle</h3>
         <div class="dest-tags">
-          <span class="dest-tag">Tourism</span>
-          <span class="dest-tag">Sustainability</span>
-          <span class="dest-tag">Development</span>
-          <span class="dest-tag">Startups</span>
+          <span class="dest-tag" data-i18n="dest-sl-tag-1">Coworking</span>
+          <span class="dest-tag" data-i18n="dest-sl-tag-2">Community</span>
+          <span class="dest-tag" data-i18n="dest-sl-tag-3">Networking</span>
+          <span class="dest-tag" data-i18n="dest-sl-tag-4">Weekends</span>
         </div>
-        <a href="#placements" class="dest-link" onclick="openModal(event, 'Sri Lanka')">
-          Explore Sri Lanka placements
+        <a href="#community" class="dest-link">
+          <span data-i18n="dest-sl-link">See life outside the internship</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -2825,381 +3078,227 @@
 <!-- ── WHAT'S INCLUDED ───────────────────────────────────────────── -->
 <section id="included" class="section-wrap">
   <div class="included-header">
-    <div class="eyebrow fade-up" data-i18n="inc-eyebrow">No guesswork</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="inc-heading">We arrange everything.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="inc-sub">You focus on getting excited. We take care of the logistics that would otherwise take you months to sort out alone.</p>
+    <div class="eyebrow fade-up" data-i18n="inc-eyebrow">How it works</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="inc-heading">From first application to your first week in Bali.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="inc-sub">The process is structured, transparent, and designed to move you from interest to placement without months of uncertainty.</p>
   </div>
-  <div class="included-grid fade-up delay-1">
-
-    <!-- 1. Internship placement -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="6" y="10" width="24" height="18" rx="2"/>
-          <path d="M12 10V7a6 6 0 0112 0v3"/>
-          <circle cx="18" cy="19" r="2"/>
-          <path d="M18 21v3"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-1-title">Internship placement</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-1-desc">We match you with a host company in your field. Placements are aligned with university requirements and your preferred destination.</div>
-      </summary>
-      <div class="included-expand">
-        <p>We match you based on your study background, field of interest, and preferred destination. We focus on host companies that offer an English-language working environment and can support the documentation your university needs.</p>
-        <p>Not sure what field is right for you? We offer a free 20-minute consulting call before you even apply — no commitment, just a conversation to help you figure out the right direction.</p>
-        <a href="#" class="included-expand-cta" onclick="openModal(event)">
-          Book a free consulting call
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+  <div class="steps-list fade-up delay-1">
+    <div class="step fade-up">
+      <div class="step-num-wrap">
+        <div class="step-num">01</div>
       </div>
-    </details>
-
-    <!-- 2. Housing -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 16V10a9 9 0 0118 0v6"/>
-          <rect x="5" y="16" width="26" height="14" rx="2"/>
-          <path d="M14 23h8M14 27h4"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-2-title">Housing sorted</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-2-desc">Private room in a shared house with other interns. Good Wi-Fi, central location, no 3-month hunt on Facebook groups.</div>
-      </summary>
-      <div class="included-expand">
-        <p>All housing is in safe, central areas — within scooter distance of coworking cafes, supermarkets, and the beach. Typically 3–5 interns per house, all in your own private room.</p>
-        <p>Housing costs are paid directly at the destination and are not included in the program fee. Typical prices:</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Bali — private room</span><span>from €180/month</span></div>
-          <div class="included-price-row"><span>Sri Lanka — private room</span><span>from €140/month</span></div>
-        </div>
+      <h3 class="step-title" data-i18n="step-1-title">Apply</h3>
+      <p class="step-desc" data-i18n="step-1-desc">Tell us your field, timing, and what kind of internship you want. The application is free, takes about 10 minutes, and gives us enough context to review your fit.</p>
+    </div>
+    <div class="step fade-up delay-1">
+      <div class="step-num-wrap">
+        <div class="step-num">02</div>
       </div>
-    </details>
-
-    <!-- 3. Visa guidance -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="6" y="8" width="24" height="20" rx="2"/>
-          <path d="M12 8V6a2 2 0 014 0v2M20 8V6a2 2 0 014 0v2"/>
-          <path d="M10 16h16M10 21h10"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-3-title">Visa guidance</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-3-desc">We walk you through the exact visa process for your destination. No surprises at immigration.</div>
-      </summary>
-      <div class="included-expand">
-        <p>Dutch passport holders can enter both destinations without a visa agent. Here's what applies:</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Bali — visa on arrival (30 days)</span><span>Free</span></div>
-          <div class="included-price-row"><span>Bali — extension to 60 days</span><span>~€30</span></div>
-          <div class="included-price-row"><span>Sri Lanka — e-visa online</span><span>~€35</span></div>
-        </div>
-        <p style="margin-top:0.75rem;">We send you a step-by-step visa guide as part of your pre-departure pack. For stays longer than 60 days in Bali, we'll advise on the right route.</p>
+      <h3 class="step-title" data-i18n="step-2-title">Intro call and matching</h3>
+      <p class="step-desc" data-i18n="step-2-desc">We speak with you, refine the brief, and match you to host companies that fit your study background, skill set, and preferred working environment.</p>
+    </div>
+    <div class="step fade-up delay-2">
+      <div class="step-num-wrap">
+        <div class="step-num">03</div>
       </div>
-    </details>
-
-    <!-- 4. Airport pickup -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 28l6-6 4 4 8-10"/>
-          <path d="M28 12h-6V6"/>
-          <circle cx="9" cy="28" r="2" fill="currentColor" stroke="none"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-4-title">Airport transport</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-4-desc">We arrange transport from the airport on arrival day so you're not stranded in an unfamiliar city.</div>
-      </summary>
-      <div class="included-expand">
-        <p>We can arrange a private pickup for your arrival day — confirm your flight details and we'll have someone waiting. Can't align with the group arrival? Grab (Southeast Asia's Uber equivalent) is reliable, safe, and cheap:</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Bali airport → Canggu</span><span>~€8–12</span></div>
-          <div class="included-price-row"><span>Bali airport → Seminyak</span><span>~€6–10</span></div>
-          <div class="included-price-row"><span>Bali airport → Ubud</span><span>~€14–18</span></div>
-          <div class="included-price-row"><span>Colombo airport → Weligama (SL)</span><span>~€25–35</span></div>
-          <div class="included-price-row"><span>Colombo airport → Galle (SL)</span><span>~€22–30</span></div>
-        </div>
+      <h3 class="step-title" data-i18n="step-3-title">Placement and preparation</h3>
+      <p class="step-desc" data-i18n="step-3-desc">Once the match is right, we support the paperwork, pre-departure planning, and arrival coordination so the move to Bali feels clear before you fly.</p>
+    </div>
+    <div class="step fade-up delay-3">
+      <div class="step-num-wrap">
+        <div class="step-num">04</div>
       </div>
-    </details>
-
-    <!-- 5. Orientation week -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 12h24M6 18h16M6 24h10"/>
-          <path d="M26 22l4 4-4 4"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-5-title">Orientation week</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-5-desc">Your first week includes a full orientation — local area, transport, culture, and meeting the rest of your group.</div>
-      </summary>
-      <div class="included-expand">
-        <p>Before you start your internship, we run a full orientation week. You'll cover:</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Neighbourhood walkthrough</span><span></span></div>
-          <div class="included-price-row"><span>Scooter safety and rental</span><span></span></div>
-          <div class="included-price-row"><span>Local transport and apps</span><span></span></div>
-          <div class="included-price-row"><span>Cultural tips and local etiquette</span><span></span></div>
-          <div class="included-price-row"><span>Group dinner to meet your fellow interns</span><span></span></div>
-        </div>
-        <p style="margin-top:0.75rem;">You start your internship in week two — settled, oriented, and not scrambling.</p>
-      </div>
-    </details>
-
-    <!-- 6. Local SIM -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="11" y="4" width="14" height="28" rx="2"/>
-          <path d="M15 8h6M18 26v2"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-6-title">Local SIM card</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-6-desc">A local SIM with data is waiting for you on arrival. No phone shop queues on day one.</div>
-      </summary>
-      <div class="included-expand">
-        <p>A local SIM with a solid data plan is set up before you arrive. You'll be online from the moment you land. Typical ongoing monthly data costs if you want to top up:</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Bali — Telkomsel / XL (30GB)</span><span>~€8–12/month</span></div>
-          <div class="included-price-row"><span>Sri Lanka — Dialog / Mobitel (25GB)</span><span>~€6–10/month</span></div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 7. Community -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 28c0-6.63 5.37-12 12-12s12 5.37 12 12"/>
-          <circle cx="18" cy="12" r="5"/>
-          <path d="M28 22c2 1 3 3 3 5"/>
-          <path d="M8 22c-2 1-3 3-3 5"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-7-title">Student community</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-7-desc">15–20 Dutch students per intake. Group chats, community events, weekend trips — you'll know people from day one.</div>
-      </summary>
-      <div class="included-expand">
-        <p>Every intake, a group of Dutch students arrives in the same destination at roughly the same time. A group WhatsApp is set up before anyone departs — so you already know people before you land.</p>
-        <p>Throughout your stay, we organise regular community events: beach days, hikes, group dinners, weekend trips. You also have access to a wider network of international interns in the same area.</p>
-      </div>
-    </details>
-
-    <!-- 8. 24/7 support -->
-    <details class="included-item">
-      <summary class="included-summary">
-        <svg class="included-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 6v6M18 24v6M6 18h6M24 18h6"/>
-          <circle cx="18" cy="18" r="6"/>
-        </svg>
-        <div class="included-summary-header">
-          <div class="included-title" data-i18n="inc-8-title">24/7 support</div>
-          <span class="included-toggle">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-        </div>
-        <div class="included-desc" data-i18n="inc-8-desc">Our team is reachable around the clock. If something goes wrong — medically, logistically, or otherwise — we're there.</div>
-      </summary>
-      <div class="included-expand">
-        <p>Our team is reachable via WhatsApp at any hour. For medical situations, we maintain a list of English-speaking doctors and hospitals in each city — you'll have it before you arrive.</p>
-        <p>We strongly recommend travel insurance. Typical cost for students: €25–40/month. We provide a list of suitable policies in your pre-departure pack, including ones that cover internships and adventure activities.</p>
-        <div style="margin-top:0.75rem;">
-          <div class="included-price-row"><span>Travel insurance (estimate)</span><span>€25–40/month</span></div>
-        </div>
-      </div>
-    </details>
-
+      <h3 class="step-title" data-i18n="step-4-title">Arrive and start well</h3>
+      <p class="step-desc" data-i18n="step-4-desc">You land with structure around you: housing guidance, onboarding, community touchpoints, and a host company ready for your first week.</p>
+    </div>
+  </div>
+  <div class="process-note fade-up delay-2">
+    <strong data-i18n="inc-note-title">Free application. No commitment until you want to move forward.</strong>
+    <p data-i18n="inc-note-text">The first step is simply sharing your profile. We only move into matching conversations and placement details once the direction feels right for you.</p>
   </div>
 </section>
 
 <!-- ── INTERNSHIP LISTINGS ────────────────────────────────────────── -->
 <section id="placements" class="section-wrap">
   <div class="placements-header">
-    <div class="eyebrow fade-up" data-i18n="pl-eyebrow">Internship listings</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="pl-heading">Browse example placements.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="pl-sub">These example listings show how internship opportunities are structured across Bali and Sri Lanka, with clear roles, destinations, durations, and focus areas.</p>
+    <div class="eyebrow fade-up" data-i18n="pl-eyebrow">Career outcomes</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="pl-heading">What students should leave Bali with.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="pl-sub">The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.</p>
+  </div>
+  <div class="placements-intro fade-up">
+    <p class="placements-intro-copy" data-i18n="pl-intro-copy">Island Internship is positioned as a career accelerator because the outcome is not just time in Bali. It is the combination of practical experience, sharper career direction, and a more ambitious peer network.</p>
+    <ul class="placements-intro-list">
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="pl-intro-point-1">Talk about actual projects in interviews, not just classroom work.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="pl-intro-point-2">Build proof for your CV, portfolio, and LinkedIn profile.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="pl-intro-point-3">Learn how teams in startups, agencies, hospitality, and impact businesses actually operate.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="pl-intro-point-4">Return with a wider international network and clearer next-step thinking.</span>
+      </li>
+    </ul>
   </div>
   <div class="placements-grid">
-
-    <!-- Card 1 -->
     <div class="placement-card fade-up">
       <div class="placement-top">
         <div class="placement-top-bg pt-1"></div>
-        <span class="placement-dest-badge">Bali</span>
+        <span class="placement-dest-badge" data-i18n="pl-1-badge">Outcome 01</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-1-company">Ex Venture</div>
+        <div class="placement-company" data-i18n="pl-1-company">CV and portfolio</div>
         <div class="placement-field-row">
-          <span class="placement-field">Marketing &amp; Digital</span>
-          <span class="placement-type-badge" data-i18n="pl-1-type">Lifestyle brand</span>
+          <span class="placement-field" data-i18n="pl-1-field">Career proof</span>
+          <span class="placement-type-badge" data-i18n="pl-1-type">Built on actual work</span>
         </div>
-        <h3 class="placement-title" data-i18n="pl-1-title">Growth Marketing Intern</h3>
-        <p class="placement-desc" data-i18n="pl-1-desc">Support campaign planning, content production, and audience growth within Ex Venture's startup environment in Bali, working across founder-led brand and business initiatives.</p>
+        <h3 class="placement-title" data-i18n="pl-1-title">Projects you can actually speak about.</h3>
+        <p class="placement-desc" data-i18n="pl-1-desc">The best placements give you campaigns, reports, operational improvements, or partnership work that turns into concrete proof for interviews and future applications.</p>
         <div class="placement-skills">
-          <span class="skill-tag">Content creation</span>
-          <span class="skill-tag">Instagram</span>
-          <span class="skill-tag">Campaigns</span>
-          <span class="skill-tag">Canva / Figma</span>
+          <span class="skill-tag" data-i18n="pl-1-skill-1">Case studies</span>
+          <span class="skill-tag" data-i18n="pl-1-skill-2">Project examples</span>
+          <span class="skill-tag" data-i18n="pl-1-skill-3">Interview stories</span>
+          <span class="skill-tag" data-i18n="pl-1-skill-4">Portfolio proof</span>
         </div>
         <div class="placement-meta">
           <div class="placement-meta-item">
-            <strong data-i18n="meta-duration">Duration</strong>3-6 months
+            <strong data-i18n="pl-1-meta-1-label">You leave with</strong>
+            <span data-i18n="pl-1-meta-1-value">Better examples on your CV and LinkedIn.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-hours">Company type</strong><span data-i18n="pl-1-meta">Startup / hospitality</span>
+            <strong data-i18n="pl-1-meta-2-label">Built through</strong>
+            <span data-i18n="pl-1-meta-2-value">Deliverables, reporting, and project ownership.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-lang">Destination</strong><span data-i18n="pl-1-dest">Canggu or Seminyak, Bali</span>
+            <strong data-i18n="pl-1-meta-3-label">Best for</strong>
+            <span data-i18n="pl-1-meta-3-value">Students who want stronger career proof fast.</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Card 2 -->
     <div class="placement-card fade-up delay-1">
       <div class="placement-top">
         <div class="placement-top-bg pt-2"></div>
-        <span class="placement-dest-badge">Sri Lanka</span>
+        <span class="placement-dest-badge" data-i18n="pl-2-badge">Outcome 02</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-2-company">Sri Lanka sustainability partner</div>
+        <div class="placement-company" data-i18n="pl-2-company">Business exposure</div>
         <div class="placement-field-row">
-          <span class="placement-field">Sustainability &amp; ESG</span>
-          <span class="placement-type-badge" data-i18n="pl-2-type">Eco-resort</span>
+          <span class="placement-field" data-i18n="pl-2-field">How teams work</span>
+          <span class="placement-type-badge" data-i18n="pl-2-type">Closer to founders and operators</span>
         </div>
-        <h3 class="placement-title" data-i18n="pl-2-title">Sustainability &amp; Operations Intern</h3>
-        <p class="placement-desc" data-i18n="pl-2-desc">Contribute to research, reporting, and operational projects for a sustainability-focused host company in Sri Lanka, with exposure to business, community, and impact initiatives.</p>
+        <h3 class="placement-title" data-i18n="pl-2-title">A better feel for how ambitious companies run.</h3>
+        <p class="placement-desc" data-i18n="pl-2-desc">Students get close to real operating environments in startups, agencies, hospitality brands, and impact businesses rather than staying at the edge of the team.</p>
         <div class="placement-skills">
-          <span class="skill-tag">ESG reporting</span>
-          <span class="skill-tag">Research</span>
-          <span class="skill-tag">Operations</span>
-          <span class="skill-tag">Excel / Sheets</span>
+          <span class="skill-tag" data-i18n="pl-2-skill-1">Team rhythm</span>
+          <span class="skill-tag" data-i18n="pl-2-skill-2">Meetings</span>
+          <span class="skill-tag" data-i18n="pl-2-skill-3">Execution</span>
+          <span class="skill-tag" data-i18n="pl-2-skill-4">Commercial awareness</span>
         </div>
         <div class="placement-meta">
           <div class="placement-meta-item">
-            <strong data-i18n="meta-duration">Duration</strong>3-5 months
+            <strong data-i18n="pl-2-meta-1-label">You build</strong>
+            <span data-i18n="pl-2-meta-1-value">Practical business judgement.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-hours">Company type</strong><span data-i18n="pl-2-meta">Resort / impact business</span>
+            <strong data-i18n="pl-2-meta-2-label">Through</strong>
+            <span data-i18n="pl-2-meta-2-value">Exposure to teams, deadlines, and feedback loops.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-lang">Destination</strong><span data-i18n="pl-2-dest">South Coast, Sri Lanka</span>
+            <strong data-i18n="pl-2-meta-3-label">Useful for</strong>
+            <span data-i18n="pl-2-meta-3-value">Students still defining the kind of environment they want.</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Card 3 -->
     <div class="placement-card fade-up delay-2">
       <div class="placement-top">
         <div class="placement-top-bg pt-3"></div>
-        <span class="placement-dest-badge">Bali</span>
+        <span class="placement-dest-badge" data-i18n="pl-3-badge">Outcome 03</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-3-company">Bali startup partner</div>
+        <div class="placement-company" data-i18n="pl-3-company">International network</div>
         <div class="placement-field-row">
-          <span class="placement-field">Business Operations</span>
-          <span class="placement-type-badge" data-i18n="pl-3-type">Tech startup</span>
+          <span class="placement-field" data-i18n="pl-3-field">People you keep</span>
+          <span class="placement-type-badge" data-i18n="pl-3-type">Community and company network</span>
         </div>
-        <h3 class="placement-title" data-i18n="pl-3-title">Operations &amp; Partnerships Intern</h3>
-        <p class="placement-desc" data-i18n="pl-3-desc">Support internal operations, partner coordination, and cross-functional projects within a fast-moving startup environment in Bali.</p>
+        <h3 class="placement-title" data-i18n="pl-3-title">A network that is both social and professional.</h3>
+        <p class="placement-desc" data-i18n="pl-3-desc">You meet other interns, teams, founders, operators, and hospitality people while living in the same area and sharing a more international routine.</p>
         <div class="placement-skills">
-          <span class="skill-tag">Process design</span>
-          <span class="skill-tag">Notion / Airtable</span>
-          <span class="skill-tag">Project mgmt</span>
-          <span class="skill-tag">Data analysis</span>
+          <span class="skill-tag" data-i18n="pl-3-skill-1">Peer network</span>
+          <span class="skill-tag" data-i18n="pl-3-skill-2">Coworking</span>
+          <span class="skill-tag" data-i18n="pl-3-skill-3">Introductions</span>
+          <span class="skill-tag" data-i18n="pl-3-skill-4">Community events</span>
         </div>
         <div class="placement-meta">
           <div class="placement-meta-item">
-            <strong data-i18n="meta-duration">Duration</strong>4-6 months
+            <strong data-i18n="pl-3-meta-1-label">You leave with</strong>
+            <span data-i18n="pl-3-meta-1-value">Contacts beyond your own university circle.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-hours">Company type</strong><span data-i18n="pl-3-meta">Startup / SME</span>
+            <strong data-i18n="pl-3-meta-2-label">Built through</strong>
+            <span data-i18n="pl-3-meta-2-value">Shared housing, events, and daily work connections.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-lang">Destination</strong><span data-i18n="pl-3-dest">Seminyak or Ubud, Bali</span>
+            <strong data-i18n="pl-3-meta-3-label">Best for</strong>
+            <span data-i18n="pl-3-meta-3-value">Students who value both belonging and ambition.</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Card 4 -->
     <div class="placement-card fade-up delay-3">
       <div class="placement-top">
         <div class="placement-top-bg pt-2"></div>
-        <span class="placement-dest-badge">Sri Lanka</span>
+        <span class="placement-dest-badge" data-i18n="pl-4-badge">Outcome 04</span>
       </div>
       <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-4-company">International business partner</div>
+        <div class="placement-company" data-i18n="pl-4-company">Career direction</div>
         <div class="placement-field-row">
-          <span class="placement-field">Hospitality &amp; Guest Experience</span>
-          <span class="placement-type-badge" data-i18n="pl-4-type">Boutique hospitality</span>
+          <span class="placement-field" data-i18n="pl-4-field">Clarity for what comes next</span>
+          <span class="placement-type-badge" data-i18n="pl-4-type">A smarter next move</span>
         </div>
-        <h3 class="placement-title" data-i18n="pl-4-title">Business Development Intern</h3>
-        <p class="placement-desc" data-i18n="pl-4-desc">Work on market research, outreach, and partnership support for an international business team, with a focus on business development and project coordination.</p>
+        <h3 class="placement-title" data-i18n="pl-4-title">Return with more direction, not just memories.</h3>
+        <p class="placement-desc" data-i18n="pl-4-desc">A strong placement helps students understand whether they want startups, hospitality, operations, marketing, or another direction before the next career step.</p>
         <div class="placement-skills">
-          <span class="skill-tag">Guest journey</span>
-          <span class="skill-tag">Partnerships</span>
-          <span class="skill-tag">Operations</span>
-          <span class="skill-tag">Service design</span>
+          <span class="skill-tag" data-i18n="pl-4-skill-1">Direction</span>
+          <span class="skill-tag" data-i18n="pl-4-skill-2">Confidence</span>
+          <span class="skill-tag" data-i18n="pl-4-skill-3">Better choices</span>
+          <span class="skill-tag" data-i18n="pl-4-skill-4">Next-step clarity</span>
         </div>
         <div class="placement-meta">
           <div class="placement-meta-item">
-            <strong data-i18n="meta-duration">Duration</strong>3-6 months
+            <strong data-i18n="pl-4-meta-1-label">You gain</strong>
+            <span data-i18n="pl-4-meta-1-value">A clearer view of the roles you want next.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-hours">Company type</strong><span data-i18n="pl-4-meta">Boutique hotel / villa group</span>
+            <strong data-i18n="pl-4-meta-2-label">Through</strong>
+            <span data-i18n="pl-4-meta-2-value">Daily exposure to real working environments.</span>
           </div>
           <div class="placement-meta-item">
-            <strong data-i18n="meta-lang">Destination</strong><span data-i18n="pl-4-dest">Galle or Weligama, Sri Lanka</span>
+            <strong data-i18n="pl-4-meta-3-label">Useful for</strong>
+            <span data-i18n="pl-4-meta-3-value">Students who want their internship to shape the next chapter.</span>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
-  <!-- All fields row -->
   <div class="placements-fields-row fade-up delay-2">
-    <span class="placements-fields-label" data-i18n="pl-fields-label">Also available in</span>
+    <span class="placements-fields-label" data-i18n="pl-fields-label">Common Bali internship searches</span>
     <div class="placements-fields-list">
-      <span class="field-chip">Graphic Design</span>
-      <span class="field-chip">Hospitality</span>
-      <span class="field-chip">Finance &amp; Accounting</span>
-      <span class="field-chip">IT &amp; Web Dev</span>
-      <span class="field-chip">Environmental Science</span>
-      <span class="field-chip">Communications &amp; PR</span>
+      <span class="field-chip" data-i18n="pl-field-chip-1">Marketing internship Bali</span>
+      <span class="field-chip" data-i18n="pl-field-chip-2">Business internship Bali</span>
+      <span class="field-chip" data-i18n="pl-field-chip-3">Hospitality internship Bali</span>
+      <span class="field-chip" data-i18n="pl-field-chip-4">Startup internship Bali</span>
+      <span class="field-chip" data-i18n="pl-field-chip-5">Operations internship Bali</span>
+      <span class="field-chip" data-i18n="pl-field-chip-6">Sustainability internship Bali</span>
     </div>
-    <a href="#cta-banner" class="placements-apply-link" onclick="openModal(event)" data-i18n="pl-apply-link">Browse all fields</a>
+    <a href="#moments" class="placements-apply-link" data-i18n="pl-apply-link">Explore the tracks</a>
   </div>
 </section>
 
@@ -3207,49 +3306,49 @@
 <section id="community" class="section-wrap">
   <div class="community-inner">
     <div>
-      <div class="eyebrow fade-up">You won't be alone</div>
-      <h2 class="section-heading fade-up delay-1">A small group of Dutch students. Every intake.</h2>
-      <p class="community-sub fade-up delay-2">Going abroad for your internship sounds exciting — until you think about doing it completely alone. That's not how this works. Every intake, a group of Dutch students arrives at the same time, lives in the same area, and goes through the same experience together.</p>
+      <div class="eyebrow fade-up" data-i18n="com-eyebrow">Community in Bali</div>
+      <h2 class="section-heading fade-up delay-1" data-i18n="com-heading">The internship matters more when the community around it is strong.</h2>
+      <p class="community-sub fade-up delay-2" data-i18n="com-sub">Island Internship is not built as a solo drop-off placement. You arrive into an ambitious student community with shared routines, introductions, dinners, weekend plans, and people who make the move feel more connected from week one.</p>
       <ul class="community-points fade-up delay-3">
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          A group chat with your fellow interns before you even land
+          <span data-i18n="com-p1">You meet people before arrival through group chats and pre-departure introductions.</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Shared housing with other interns — your housemates are your community
+          <span data-i18n="com-p2">Shared housing, coworking meetups, and casual dinners make everyday life easy to settle into.</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Community events and weekend trips organised by our team
+          <span data-i18n="com-p3">Welcome nights, shared dinners, and weekend plans add warmth without pulling focus away from the internship itself.</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Mix of Dutch students and other international interns in the wider network
+          <span data-i18n="com-p4">You build friendships across different universities, countries, and internship tracks.</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Connect with other Dutch students in the same destination
+          <span data-i18n="com-p5">The result is a network that is social in Bali and useful once you are back home.</span>
         </li>
       </ul>
     </div>
     <div class="fade-up delay-2">
       <div class="community-stats-grid">
         <div class="comm-stat">
-          <div class="comm-stat-num">Small</div>
-          <div class="comm-stat-label">Group size per intake</div>
+          <div class="comm-stat-num" data-i18n="com-s1-num">Coworking</div>
+          <div class="comm-stat-label" data-i18n="com-s1">Coffee catch-ups, work sessions, and shared routines around Bali.</div>
         </div>
         <div class="comm-stat">
-          <div class="comm-stat-num">6+</div>
-          <div class="comm-stat-label">Internship fields available</div>
+          <div class="comm-stat-num" data-i18n="com-s2-num">Dinners</div>
+          <div class="comm-stat-label" data-i18n="com-s2">Welcome evenings and informal meetups that make the intake feel personal.</div>
         </div>
         <div class="comm-stat">
-          <div class="comm-stat-num">2</div>
-          <div class="comm-stat-label">Islands to choose from</div>
+          <div class="comm-stat-num" data-i18n="com-s3-num">Weekends</div>
+          <div class="comm-stat-label" data-i18n="com-s3">Surf days, beach plans, and short island trips once the work week finishes.</div>
         </div>
         <div class="comm-stat">
-          <div class="comm-stat-num">100%</div>
-          <div class="comm-stat-label">University credit eligible</div>
+          <div class="comm-stat-num" data-i18n="com-s4-num">Network</div>
+          <div class="comm-stat-label" data-i18n="com-s4">A mix of friends, peers, and professional contacts that grows through the placement.</div>
         </div>
       </div>
     </div>
@@ -3260,8 +3359,8 @@
 <section id="testimonials" class="section-wrap">
   <div class="testimonials-header fade-up">
     <div class="eyebrow" data-i18n="test-eyebrow">Student stories</div>
-    <h2 class="section-heading" data-i18n="test-heading">Student stories, with video and written testimonials.</h2>
-    <p class="section-sub" data-i18n="test-sub">Use these cards for final headshots, names, universities, internship roles, and short student quotes once alumni material is ready.</p>
+    <h2 class="section-heading" data-i18n="test-heading">What the experience feels like once students are in it.</h2>
+    <p class="section-sub" data-i18n="test-sub">These first stories show the rhythm of a Bali placement from the inside: workdays, team culture, and the kind of environment students step into once they arrive.</p>
   </div>
 
   <div class="testimonial-videos-grid">
@@ -3351,103 +3450,48 @@
 <!-- ── DAY IN THE LIFE ───────────────────────────────────────────── -->
 <section id="day-in-life" class="section-wrap">
   <div class="dil-header">
-    <div class="eyebrow fade-up" data-i18n="dil-eyebrow">Day in the life</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="dil-heading">What student life can look like on placement.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="dil-sub">A typical internship day combines a focused afternoon schedule with time to settle into life in Bali or Sri Lanka.</p>
+    <div class="eyebrow fade-up" data-i18n="dil-eyebrow">Need more clarity first?</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="dil-heading">A guide, track match, or live session can be the easier first step.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="dil-sub">Not every student is ready to apply immediately. These entry points make the research stage lighter while keeping the path into the program clear.</p>
   </div>
-  <div class="dil-timeline fade-up delay-1">
-
-    <div class="dil-item">
-      <div class="dil-time">10:00</div>
-      <div class="dil-dot"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">01</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-1-title">Morning routine before work</strong>
-          <span data-i18n="dil-1-desc">Time for breakfast, getting ready, and heading to your host company or workspace before the internship day begins at 11:00.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dil-item">
-      <div class="dil-time">11:00</div>
-      <div class="dil-dot dil-dot-teal"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">02</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-2-title">Internship hours begin</strong>
-          <span data-i18n="dil-2-desc">You start at 11:00 and work on project-based tasks with your supervisor and team, often in a startup, business, hospitality, or operations setting.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dil-item">
-      <div class="dil-time">13:30</div>
-      <div class="dil-dot"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">03</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-3-title">Lunch break</strong>
-          <span data-i18n="dil-3-desc">A one-hour lunch break in the middle of the day, either with colleagues, nearby cafes, or other students in the area.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dil-item">
-      <div class="dil-time">14:30</div>
-      <div class="dil-dot dil-dot-teal"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">04</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-4-title">Afternoon project block</strong>
-          <span data-i18n="dil-4-desc">The second half of the day is for meetings, deliverables, research, or coordination work before the internship day finishes at 17:00.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dil-item">
-      <div class="dil-time">17:00</div>
-      <div class="dil-dot"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">05</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-5-title">The workday wraps at 17:00</strong>
-          <span data-i18n="dil-5-desc">After work, students usually have time for the gym, dinner, surf, errands, or simply unwinding with housemates and friends.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dil-item">
-      <div class="dil-time">Evening</div>
-      <div class="dil-dot"></div>
-      <div class="dil-content">
-        <div class="dil-emoji">06</div>
-        <div class="dil-text">
-          <strong data-i18n="dil-6-title">Evenings and weekends abroad</strong>
-          <span data-i18n="dil-6-desc">That is where the wider experience comes in: exploring the area, spending time with other students, and settling into an international routine.</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="dil-note fade-up delay-3" data-i18n="dil-note">
-    The internship comes first. The destination makes it unforgettable.
+  <div class="resource-grid fade-up delay-1">
+    <article class="resource-card">
+      <div class="resource-kicker" data-i18n="dil-1-title">Guide</div>
+      <h3 class="resource-title" data-i18n="dil-1-heading">The Bali Internship Guide</h3>
+      <p class="resource-text" data-i18n="dil-1-desc">A practical overview of tracks, pricing, housing, visa basics, and what the application process looks like from first form to arrival.</p>
+      <div class="resource-meta" data-i18n="dil-1-meta">Best for students still comparing Bali with other internship options.</div>
+      <a href="#cta-banner" class="resource-link" onclick="openModal(event)" data-i18n="dil-1-link">Request the guide</a>
+    </article>
+    <article class="resource-card">
+      <div class="resource-kicker" data-i18n="dil-2-title">Match quiz</div>
+      <h3 class="resource-title" data-i18n="dil-2-heading">Which Bali internship track fits you best?</h3>
+      <p class="resource-text" data-i18n="dil-2-desc">A short matching flow can help narrow down the roles that fit your background before you commit to an application.</p>
+      <div class="resource-meta" data-i18n="dil-2-meta">Useful if you are still choosing between marketing, operations, hospitality, and startup roles.</div>
+      <a href="#moments" class="resource-link" data-i18n="dil-2-link">Explore the tracks</a>
+    </article>
+    <article class="resource-card">
+      <div class="resource-kicker" data-i18n="dil-3-title">Live session</div>
+      <h3 class="resource-title" data-i18n="dil-3-heading">Join the next info session</h3>
+      <p class="resource-text" data-i18n="dil-3-desc">Hear how placements, housing, community, and the application process work before you decide whether to move ahead.</p>
+      <div class="resource-meta" data-i18n="dil-3-meta">Ideal for students and parents who want answers live before applying.</div>
+      <a href="mailto:hello@islandinternship.com?subject=Info%20session" class="resource-link" data-i18n="dil-3-link">Ask about the next session</a>
+    </article>
   </div>
 </section>
 
 <!-- ── FOR COMPANIES ──────────────────────────────────────────────── -->
 <section id="companies" class="section-wrap">
   <div class="companies-header">
-    <div class="eyebrow fade-up" data-i18n="co-eyebrow">For host companies</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="co-heading">Access international talent without recruitment headaches.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="co-sub">Island Internship helps companies in Bali and Sri Lanka source motivated students, match them to real business needs, and host interns with far less admin and friction.</p>
+    <div class="eyebrow fade-up" data-i18n="co-eyebrow">For Bali host companies</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="co-heading">Host international interns in Bali with more structure and less admin.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="co-sub">For Bali teams, Island Internship helps define the role, surface suitable student profiles, and support a smoother placement process from intro to onboarding.</p>
   </div>
 
   <div class="company-intro-card fade-up">
     <div class="company-panel company-panel-dark">
       <div class="eyebrow" style="color: rgba(255,255,255,0.72);" data-i18n="co-offer-eyebrow">What we offer companies</div>
-      <h3 class="section-heading" style="color: var(--white); font-size: clamp(1.9rem, 3vw, 2.6rem);" data-i18n="co-offer-heading">A lightweight way to host strong international interns.</h3>
-      <p class="section-sub" data-i18n="co-offer-sub">We source candidates, screen for fit, coordinate introductions, and support the placement so your team can focus on the work you actually need help with.</p>
+      <h3 class="section-heading" style="color: var(--white); font-size: clamp(1.9rem, 3vw, 2.6rem);" data-i18n="co-offer-heading">A simpler way to open your team to international interns.</h3>
+      <p class="section-sub" data-i18n="co-offer-sub">We source candidates, screen for fit, coordinate introductions, and support the placement so your team can stay focused on the work itself.</p>
       <div class="company-offer-list">
         <div class="company-offer-item">
           <div class="company-offer-icon">01</div>
@@ -3565,8 +3609,8 @@
           <path d="M5 9v8a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1V9"/>
         </svg>
       </div>
-      <h3 class="cb-title" data-i18n="co-b6-title">Designed for Bali and Sri Lanka hosts</h3>
-      <p class="cb-desc" data-i18n="co-b6-desc">The service is built around the realities of hosting interns in Bali and Sri Lanka, not copied from a generic recruitment model.</p>
+      <h3 class="cb-title" data-i18n="co-b6-title">Built for Bali-based teams</h3>
+      <p class="cb-desc" data-i18n="co-b6-desc">The service is shaped around the realities of hosting international interns in Bali, from timing and supervision to university paperwork and local onboarding.</p>
     </div>
   </div>
 
@@ -3603,77 +3647,38 @@
   </div>
 </section>
 
-<!-- ── HOW IT WORKS ──────────────────────────────────────────────── -->
-<section id="how" class="section-wrap">
-  <div class="how-header">
-    <div class="eyebrow fade-up" data-i18n="how-eyebrow">The process</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="how-heading">Four steps from here to Bali.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="how-sub">We keep it simple. You apply, we match you, we sort the logistics, and you show up.</p>
-  </div>
-  <div class="steps-list">
-    <div class="step fade-up">
-      <div class="step-num-wrap">
-        <div class="step-num">01</div>
-      </div>
-      <h3 class="step-title" data-i18n="step-1-title">Apply online — takes 10 minutes</h3>
-      <p class="step-desc" data-i18n="step-1-desc">Tell us your study background, preferred destination, and internship field. No cover letter, no extensive forms. We review your application within 2 business days.</p>
-    </div>
-    <div class="step fade-up delay-1">
-      <div class="step-num-wrap">
-        <div class="step-num">02</div>
-      </div>
-      <h3 class="step-title" data-i18n="step-2-title">We find your placement</h3>
-      <p class="step-desc" data-i18n="step-2-desc">Based on your profile, we match you with a suitable host company and send you the details. You meet them over video call and confirm. We handle the internship agreement paperwork.</p>
-    </div>
-    <div class="step fade-up delay-2">
-      <div class="step-num-wrap">
-        <div class="step-num">03</div>
-      </div>
-      <h3 class="step-title" data-i18n="step-3-title">We sort the logistics</h3>
-      <p class="step-desc" data-i18n="step-3-desc">Housing, visa guidance, airport pickup, local SIM — all confirmed before you travel. We send you a complete pre-departure checklist so nothing is forgotten.</p>
-    </div>
-    <div class="step fade-up delay-3">
-      <div class="step-num-wrap">
-        <div class="step-num">04</div>
-      </div>
-      <h3 class="step-title" data-i18n="step-4-title">You arrive. The rest follows.</h3>
-      <p class="step-desc" data-i18n="step-4-desc">Orientation week, meet your group, start at your company. From that point on, you're living it — not planning it. We stay reachable throughout your entire stay.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── COST OF LIVING ────────────────────────────────────────────── -->
 <section id="costs" class="section-wrap">
   <div class="costs-header">
-    <div class="eyebrow fade-up" data-i18n="costs-eyebrow">Pricing clarity</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="costs-heading">What you pay for, and what to budget separately.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="costs-sub">This keeps pricing easy to understand even before final fee numbers are locked. The structure can be updated later without changing the layout.</p>
+    <div class="eyebrow fade-up" data-i18n="costs-eyebrow">Career accelerator program</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="costs-heading">Clear pricing around the placement and the move to Bali.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="costs-sub">Students are not paying for the internship itself. The fee is for matching, coordination, onboarding, and support around the Bali internship experience.</p>
   </div>
   <div class="pricing-grid fade-up delay-1">
     <article class="pricing-card">
-      <div class="pricing-card-kicker" data-i18n="costs-card-1-kicker">Program fee</div>
-      <h3 class="pricing-card-title" data-i18n="costs-card-1-title">Final fee confirmed before enrollment</h3>
-      <p class="pricing-card-sub" data-i18n="costs-card-1-sub">Use this card for the official program fee once finalized. The structure already separates the service from day-to-day living costs.</p>
+      <div class="pricing-card-kicker" data-i18n="costs-card-1-kicker">Application fee</div>
+      <h3 class="pricing-card-title" data-i18n="costs-card-1-title">Free to apply</h3>
+      <p class="pricing-card-sub" data-i18n="costs-card-1-sub">There is no cost to submit a profile, speak with us, or receive an initial fit review for the Bali program.</p>
       <ul class="pricing-list">
-        <li data-i18n="costs-card-1-li1">Placement matching and shortlist coordination</li>
-        <li data-i18n="costs-card-1-li2">Onboarding, arrival planning, and support</li>
-        <li data-i18n="costs-card-1-li3">University/admin coordination where needed</li>
+        <li data-i18n="costs-card-1-li1">Step-one application and profile review</li>
+        <li data-i18n="costs-card-1-li2">Intro call and initial fit conversation</li>
+        <li data-i18n="costs-card-1-li3">No payment required until you decide to move forward</li>
       </ul>
     </article>
     <article class="pricing-card">
-      <div class="pricing-card-kicker" data-i18n="costs-card-2-kicker">Living costs</div>
-      <h3 class="pricing-card-title" data-i18n="costs-card-2-title">Accommodation and day-to-day spending</h3>
-      <p class="pricing-card-sub" data-i18n="costs-card-2-sub">Housing and local spending are budgeted separately so students can choose a lifestyle that fits their destination and intake.</p>
+      <div class="pricing-card-kicker" data-i18n="costs-card-2-kicker">Program fee</div>
+      <h3 class="pricing-card-title" data-i18n="costs-card-2-title">Placement and relocation support program</h3>
+      <p class="pricing-card-sub" data-i18n="costs-card-2-sub">Add the confirmed fee here once final. This is the structured support layer around the Bali placement, not payment for the internship itself.</p>
       <ul class="pricing-list">
-        <li data-i18n="costs-card-2-li1">Accommodation paid locally or arranged separately</li>
-        <li data-i18n="costs-card-2-li2">Food, transport, activities, and personal spending vary by lifestyle</li>
-        <li data-i18n="costs-card-2-li3">Use the monthly estimates below as a practical guide</li>
+        <li data-i18n="costs-card-2-li1">Placement matching and company introductions</li>
+        <li data-i18n="costs-card-2-li2">Onboarding, arrival planning, and local support</li>
+        <li data-i18n="costs-card-2-li3">University and admin coordination where needed</li>
       </ul>
     </article>
     <article class="pricing-card">
       <div class="pricing-card-kicker" data-i18n="costs-card-3-kicker">Included</div>
-      <h3 class="pricing-card-title" data-i18n="costs-card-3-title">What students can expect in the service</h3>
-      <p class="pricing-card-sub" data-i18n="costs-card-3-sub">A clean list of inclusions reduces uncertainty and makes the offer feel more credible.</p>
+      <h3 class="pricing-card-title" data-i18n="costs-card-3-title">What the program includes</h3>
+      <p class="pricing-card-sub" data-i18n="costs-card-3-sub">This is where the student-facing value becomes tangible: placement support, practical coordination, and the structure around the internship experience.</p>
       <ul class="pricing-list">
         <li data-i18n="costs-card-3-li1">Placement support and host company matching</li>
         <li data-i18n="costs-card-3-li2">Pre-departure coordination and guidance</li>
@@ -3681,9 +3686,9 @@
       </ul>
     </article>
     <article class="pricing-card">
-      <div class="pricing-card-kicker" data-i18n="costs-card-4-kicker">Not included</div>
-      <h3 class="pricing-card-title" data-i18n="costs-card-4-title">Costs students should budget for separately</h3>
-      <p class="pricing-card-sub" data-i18n="costs-card-4-sub">Separating exclusions avoids confusion and gives parents and students a clearer planning framework.</p>
+      <div class="pricing-card-kicker" data-i18n="costs-card-4-kicker">Budget separately</div>
+      <h3 class="pricing-card-title" data-i18n="costs-card-4-title">Costs to plan outside the program fee</h3>
+      <p class="pricing-card-sub" data-i18n="costs-card-4-sub">Being explicit about exclusions keeps the offer more trustworthy and helps families understand the full financial picture early.</p>
       <ul class="pricing-list">
         <li data-i18n="costs-card-4-li1">Flights, insurance, and visa-related costs</li>
         <li data-i18n="costs-card-4-li2">Accommodation and everyday personal spending</li>
@@ -3696,76 +3701,65 @@
       <thead>
         <tr>
           <th data-i18n="costs-th1">Monthly expense</th>
-          <th data-i18n="costs-th2">Bali, Indonesia</th>
-          <th data-i18n="costs-th3">Sri Lanka</th>
+          <th data-i18n="costs-th2">Typical Bali range</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td data-i18n="cost-r1">Private accommodation</td>
           <td>Starts from €180</td>
-          <td>Starts from €140</td>
         </tr>
         <tr>
           <td data-i18n="cost-r2">Scooter rental</td>
           <td>€50 – €70</td>
-          <td>€40 – €60</td>
         </tr>
         <tr>
           <td data-i18n="cost-r3">Petrol</td>
           <td>€10 – €20</td>
-          <td>€8 – €15</td>
         </tr>
         <tr>
           <td data-i18n="cost-r4">Meals at local restaurants</td>
           <td>€70 – €120</td>
-          <td>€60 – €100</td>
         </tr>
         <tr>
           <td data-i18n="cost-r5">Coffee / cafes</td>
           <td>€20 – €40</td>
-          <td>€15 – €30</td>
         </tr>
         <tr>
           <td data-i18n="cost-r6">Gym</td>
           <td>€15 – €30</td>
-          <td>€10 – €20</td>
         </tr>
         <tr>
           <td data-i18n="cost-r7">Surf lessons / activities</td>
           <td>€40 – €70</td>
-          <td>€30 – €60</td>
         </tr>
         <tr>
           <td data-i18n="cost-r8">Weekend trips</td>
           <td>€40 – €80</td>
-          <td>€30 – €70</td>
         </tr>
         <tr>
           <td data-i18n="cost-r9">Local transport</td>
           <td>€15 – €30</td>
-          <td>€15 – €25</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td data-i18n="cost-total">Estimated monthly total</td>
           <td>€440 – €630</td>
-          <td>€358 – €520</td>
         </tr>
       </tfoot>
     </table>
   </div>
-  <p class="costs-note fade-up delay-2" data-i18n="costs-note">These planning estimates are designed to keep the offer clear. Final program fee, flights, travel insurance, and visa costs should be shown separately so students can budget confidently.</p>
-  <div class="pricing-disclaimer fade-up delay-2" data-i18n="costs-disclaimer">Update the fee card later with final pricing, but keep this structure so the separation between service and living costs stays clear.</div>
+  <p class="costs-note fade-up delay-2" data-i18n="costs-note">Monthly living cost depends on room standard, transport choice, and how often you eat out. Use this as a Bali planning range, not a fixed bill.</p>
+  <div class="pricing-disclaimer fade-up delay-2" data-i18n="costs-disclaimer">Keep the program fee separate from flights, insurance, visa costs, and personal lifestyle spending when you compare options.</div>
 </section>
 
 <!-- ── TRUST & SAFETY ────────────────────────────────────────────── -->
 <section id="trust-safety" class="section-wrap">
   <div class="ts-header">
-    <div class="eyebrow fade-up" data-i18n="trsf-eyebrow">You're in safe hands</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="trsf-heading">What we verify. What we provide. What to expect.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="trsf-sub">We know parents and universities ask hard questions. Here's the honest answer to all of them.</p>
+    <div class="eyebrow fade-up" data-i18n="trsf-eyebrow">Support and safeguards</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="trsf-heading">Clear structure for students, parents, and universities.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="trsf-sub">The program feels more credible when the support model is visible. These are the practical layers around the placement that reduce uncertainty and make the move easier to trust.</p>
   </div>
   <div class="ts-grid fade-up delay-1">
 
@@ -3781,40 +3775,40 @@
       <div class="ts-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       </div>
-      <h3 class="ts-title" data-i18n="trsf-2-title">Housing confirmed before you fly</h3>
-      <p class="ts-desc" data-i18n="trsf-2-desc">You'll know your exact address, housemates, and arrival procedure before you book your flight. No arrival surprises. Private rooms in safe, central areas — pre-inspected by our local team.</p>
+      <h3 class="ts-title" data-i18n="trsf-2-title">Housing and arrival guidance</h3>
+      <p class="ts-desc" data-i18n="trsf-2-desc">Students receive clear housing guidance, arrival instructions, and practical context before they travel, so the first week in Bali feels more settled and less improvised.</p>
     </div>
 
     <div class="ts-card">
       <div class="ts-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
-      <h3 class="ts-title" data-i18n="trsf-3-title">Visa guidance included</h3>
-      <p class="ts-desc" data-i18n="trsf-3-desc">We walk you through the correct visa process for Indonesia (social-cultural visa) and Sri Lanka step by step. Most students handle it themselves with our guide — no immigration lawyer needed.</p>
+      <h3 class="ts-title" data-i18n="trsf-3-title">Visa and paperwork guidance</h3>
+      <p class="ts-desc" data-i18n="trsf-3-desc">Students receive step-by-step guidance for the visa route, required documentation, and what needs to be arranged before departure.</p>
     </div>
 
     <div class="ts-card">
       <div class="ts-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.73A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.07 7.96a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
       </div>
-      <h3 class="ts-title" data-i18n="trsf-4-title">24/7 emergency contact</h3>
-      <p class="ts-desc" data-i18n="trsf-4-desc">Our team is reachable via WhatsApp around the clock. For medical situations, we maintain an updated list of English-speaking doctors and hospitals at each destination — sent to you before departure.</p>
+      <h3 class="ts-title" data-i18n="trsf-4-title">Local support and emergency contact</h3>
+      <p class="ts-desc" data-i18n="trsf-4-desc">Our team stays reachable through WhatsApp and provides local contact guidance for the kinds of practical issues that matter when living abroad.</p>
     </div>
 
     <div class="ts-card">
       <div class="ts-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v3M10 15h4"/></svg>
       </div>
-      <h3 class="ts-title" data-i18n="trsf-5-title">University paperwork handled</h3>
-      <p class="ts-desc" data-i18n="trsf-5-desc">We supply the templates your university needs: internship agreements, learning objective forms, supervisor evaluation sheets. We've worked through the documentation requirements of multiple Dutch universities.</p>
+      <h3 class="ts-title" data-i18n="trsf-5-title">University compatibility</h3>
+      <p class="ts-desc" data-i18n="trsf-5-desc">The placement structure is designed to work with internship agreements, supervision, and other university paperwork that students often need for approval or credit.</p>
     </div>
 
     <div class="ts-card">
       <div class="ts-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
       </div>
-      <h3 class="ts-title" data-i18n="trsf-6-title">Pre-departure preparation</h3>
-      <p class="ts-desc" data-i18n="trsf-6-desc">Before you leave, you receive a complete preparation pack: what to pack, travel insurance recommendations, banking advice for abroad, cultural norms, and your local contact's details.</p>
+      <h3 class="ts-title" data-i18n="trsf-6-title">Preparation before departure</h3>
+      <p class="ts-desc" data-i18n="trsf-6-desc">Students can receive preparation notes around arrival, local practicalities, insurance, and what to expect in the first days of the program.</p>
     </div>
 
   </div>
@@ -3830,110 +3824,110 @@
   <div class="faq-header">
     <div class="eyebrow fade-up" data-i18n="faq-eyebrow">Common questions</div>
     <h2 class="section-heading fade-up delay-1" data-i18n="faq-heading">Straight answers.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="faq-sub">We know what Dutch students actually want to know before committing. Here it is.</p>
+    <p class="section-sub fade-up delay-2" data-i18n="faq-sub">The questions students and parents usually want answered before moving ahead.</p>
   </div>
   <div class="faq-grid fade-up delay-1">
     <div class="faq-col">
       <details open>
         <summary>
-          Can this internship count for my university credits?
+          <span data-i18n="q1">Can this internship count for my university credits?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Yes — that's the whole point. All our host companies provide an official internship agreement, a supervisor, and are willing to complete your university's assessment paperwork. Students from Maastricht, UvA, Erasmus, Tilburg, and Vrije Universiteit all have internship programmes that accept placements abroad. We recommend confirming with your study coordinator early, and we can assist with the documentation they need.</p>
+        <p class="faq-answer" data-i18n="a1">Yes — that's the whole point. All our host companies provide an official internship agreement, a supervisor, and are willing to complete your university's assessment paperwork. Students from Maastricht, UvA, Erasmus, Tilburg, and Vrije Universiteit all have internship programmes that accept placements abroad. We recommend confirming with your study coordinator early, and we can assist with the documentation they need.</p>
       </details>
       <details>
         <summary>
-          Are the internships paid?
+          <span data-i18n="q2-extra">Are the internships paid?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">No — all internships are unpaid. In Indonesia and Sri Lanka, foreign nationals on a social-cultural visa are not permitted to receive remuneration under local immigration law. This is standard practice across all international internship programmes in these countries, including well-established ones. The value is in the experience, the university credits, and a CV that stands out — not a payslip.</p>
+        <p class="faq-answer" data-i18n="a2-extra">No — internships are normally unpaid. The value is in the placement itself: practical work experience, university credit compatibility where relevant, and stronger career proof for what comes next.</p>
       </details>
       <details>
         <summary>
-          Do I get help finding my internship placement?
+          <span data-i18n="q2">Do I get help finding my internship placement?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Yes. Finding a placement is our job, not yours. You tell us your study background and field of interest. We match you with a suitable company from our network, arrange an introductory call, and handle the internship agreement. You don't have to cold-email companies in Bali.</p>
+        <p class="faq-answer" data-i18n="a2">Yes. Finding a placement is our job, not yours. You tell us your study background and field of interest. We match you with a suitable company from our network, arrange an introductory call, and handle the internship agreement. You don't have to cold-email companies in Bali.</p>
       </details>
       <details>
         <summary>
-          Is housing included in the program?
+          <span data-i18n="q3">Is housing included in the program?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Housing is arranged as part of the program. You get a private room in a shared house with other interns — in a central, safe area. The housing cost is separate from the program fee and is paid directly at your destination. We confirm your room before you travel so you know exactly where you're staying.</p>
+        <p class="faq-answer" data-i18n="a3">Housing is arranged as part of the program. You get a private room in a shared house with other interns — in a central, safe area. The housing cost is separate from the program fee and is paid directly at your destination. We confirm your room before you travel so you know exactly where you're staying.</p>
       </details>
       <details>
         <summary>
-          Is Bali or Sri Lanka safe for students?
+          <span data-i18n="q4">Is Bali a safe place to live as an intern?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Both destinations are popular, well-established expat and student destinations with large international communities. The most common risks are the same as anywhere — traffic, petty theft, and sunburn. We provide a full safety briefing on arrival, and our local team is reachable 24/7. Our housing is in areas specifically chosen for their safety and proximity to amenities.</p>
+        <p class="faq-answer" data-i18n="a4">Bali is a well-established destination for students, remote teams, and international communities. The most common risks are practical rather than dramatic: traffic, scooters, petty theft, and late-night transport decisions. We help students prepare properly, choose sensible housing areas, and know who to contact if something goes wrong.</p>
       </details>
       <details>
         <summary>
-          Can I come with a friend?
+          <span data-i18n="q5">Can I come with a friend?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Absolutely. A lot of students apply together. If you and a friend both apply for the same destination and start period, we'll do our best to place you in the same house. Mention this in your application and we'll coordinate from there.</p>
+        <p class="faq-answer" data-i18n="a5">Absolutely. A lot of students apply together. If you and a friend both apply for the same Bali intake and start period, we'll do our best to place you in the same house. Mention it in your application and we'll coordinate from there.</p>
       </details>
     </div>
     <div class="faq-col">
       <details>
         <summary>
-          What level of English is required?
+          <span data-i18n="q6">What level of English is required?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">All internships are conducted in English. You need to be able to communicate professionally in English — which for most Dutch university students is not an issue. You don't need to speak Indonesian or Sinhala.</p>
+        <p class="faq-answer" data-i18n="a6">All internships are conducted in English. You need to be able to communicate professionally in English. You do not need to speak Bahasa Indonesia to take part in the Bali program.</p>
       </details>
       <details>
         <summary>
-          How long are the internships?
+          <span data-i18n="q7">How long are the internships?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Most internships run for 3 to 6 months, which aligns with standard Dutch university internship requirements. The minimum is 10 weeks. We'll confirm the exact duration when matching you with a company, and adjust where needed to meet your university's minimum hour requirements.</p>
+        <p class="faq-answer" data-i18n="a7">Most internships run for 3 to 6 months, which aligns with standard university internship requirements. The minimum is 10 weeks. We confirm the exact duration when matching you with a company and adjust where needed to meet your university's minimum hour requirements.</p>
       </details>
       <details>
         <summary>
-          Do I need a visa?
+          <span data-i18n="q8">Do I need a visa?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Yes, but the process is straightforward for Dutch passport holders. For Bali, Dutch citizens can enter visa-free for 30 days and extend to 60 days relatively easily. For longer stays, we guide you through the correct visa route. For Sri Lanka, a simple e-visa is available online. We send you a step-by-step visa guide as part of your pre-departure pack.</p>
+        <p class="faq-answer" data-i18n="a8">Yes. The exact visa route depends on your passport and how long you plan to stay in Bali. We guide students through the right option, the required documents, and the timeline before departure so the process feels clear rather than last-minute.</p>
       </details>
       <details>
         <summary>
-          What does a typical week look like?
+          <span data-i18n="q9">What does a typical week look like?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">Internships run Monday to Friday. A typical day starts at 11:00, includes a one-hour lunch break in the middle of the day, and finishes at 17:00. Depending on your host company, you may work from an office, a coworking space, or a hybrid setup. Evenings and weekends are completely yours.</p>
+        <p class="faq-answer" data-i18n="a9">Internships run Monday to Friday. A typical day starts at 11:00, includes a one-hour lunch break in the middle of the day, and finishes at 17:00. Depending on your host company, you may work from an office, a coworking space, or a hybrid setup. Evenings and weekends are completely yours.</p>
       </details>
       <details>
         <summary>
-          What if something goes wrong during my stay?
+          <span data-i18n="q10">What if something goes wrong during my stay?</span>
           <span class="faq-icon">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
         </summary>
-        <p class="faq-answer">We have a local team on the ground in each destination and a 24/7 emergency contact line. If there's a problem with your placement, housing, health, or safety — you call us. We also strongly recommend taking out student travel insurance before departure (we point you to suitable options), and we advise on what to do in the rare event of a medical or legal issue abroad.</p>
+        <p class="faq-answer" data-i18n="a10">We keep local support contacts available in Bali and share clear emergency guidance before arrival. If there is a problem with your placement, housing, health, or safety, you reach out and we help you take the right next step. We also strongly recommend student travel insurance before departure.</p>
       </details>
     </div>
   </div>
@@ -3942,15 +3936,17 @@
 <!-- ── CTA BANNER ────────────────────────────────────────────────── -->
 <section id="cta-banner" class="section-wrap footer-above">
   <div class="cta-inner">
-    <div class="eyebrow fade-up" data-i18n="cta-eyebrow">Applications open</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="cta-heading">Do your internship somewhere worth remembering.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="cta-sub">Spots are limited per intake. The application takes 10 minutes and there's no commitment until you're matched and happy with your placement.</p>
+    <div class="eyebrow fade-up" data-i18n="cta-eyebrow">Start your application</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="cta-heading">Tell us your field and timing. We will come back with the right next step.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="cta-sub">The application is free, takes about 10 minutes, and gives us what we need to review your profile for Bali placements. We reply within 2 business days.</p>
     <div class="cta-btns fade-up delay-3">
-      <a href="#" class="btn btn-teal" onclick="openModal(event)">Apply now</a>
-      <a href="#faq" class="btn btn-outline" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);">Read the FAQ</a>
+      <a href="#" class="btn btn-teal" onclick="openModal(event)" data-i18n="cta-btn1">Start your application</a>
+      <a href="https://wa.me/31683660360" class="btn btn-outline" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);" target="_blank" rel="noopener" data-i18n="cta-btn2">Chat on WhatsApp</a>
     </div>
+    <p class="cta-note fade-up delay-3" data-i18n="cta-note">Free application. No commitment required. We reply within 2 business days.</p>
   </div>
 </section>
+ </main>
 
 <!-- ── APPLICATION MODAL ─────────────────────────────────────────── -->
 <div class="modal-overlay" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-subtitle">
@@ -4115,7 +4111,7 @@
   <!-- Col 1: Mission -->
   <div class="footer-col footer-col-left">
     <div class="footer-col-heading" data-i18n="footer-mission-title">Our Mission</div>
-    <p class="footer-mission-text" data-i18n="footer-mission-text">We connect Dutch university students with meaningful internships in Bali and Sri Lanka, while keeping the process clear for students, parents, and host companies.</p>
+    <p class="footer-mission-text" data-i18n="footer-mission-text">Island Internship helps students build experience, network, and career proof through curated placements in Bali, with clear support around the move and the program.</p>
     <div class="footer-socials">
       <a href="mailto:hello@islandinternship.com" aria-label="Email">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
@@ -4150,11 +4146,11 @@
       </a>
       <a class="footer-info-link" href="#destinations">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
-        <span data-i18n="footer-link-dest">Explore destinations</span>
+        <span data-i18n="footer-link-dest">See why Bali</span>
       </a>
       <a class="footer-info-link" href="#placements">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        <span data-i18n="footer-link-pl">See example placements</span>
+        <span data-i18n="footer-link-pl">See the outcomes</span>
       </a>
     </div>
   </div>
@@ -4188,14 +4184,19 @@
 <footer class="footer-above">
   <a href="#hero" class="footer-logo">Island<span>.</span>Internship</a>
   <ul class="footer-legal-links">
-    <li><a href="#destinations" data-i18n="nav-destinations">Destinations</a></li>
-    <li><a href="#placements" data-i18n="nav-placements">Placements</a></li>
+    <li><a href="#moments" data-i18n="nav-destinations">Tracks</a></li>
+    <li><a href="#placements" data-i18n="nav-placements">Outcomes</a></li>
     <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#cta-banner" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
   </ul>
   <span class="footer-copy">© 2026 Island Internship · Amsterdam, NL</span>
 </footer>
+
+<div class="mobile-cta-bar" aria-label="Mobile quick actions">
+  <a href="#cta-banner" class="btn btn-teal" onclick="openModal(event)" data-i18n="mobile-cta-apply">Apply now</a>
+  <a href="https://wa.me/31683660360" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="mobile-cta-chat">WhatsApp</a>
+</div>
 
 <!-- ── SCRIPTS ───────────────────────────────────────────────────── -->
 <script>
@@ -4494,6 +4495,562 @@ const t = {
     'success-title':'Sollicitatie ontvangen.','success-sub':'Bedankt — we beoordelen je profiel en nemen binnen 2 werkdagen contact met je op met je stageopties.','modal-back':'Terug naar de homepage',
   }
 };
+
+Object.assign(t.en, {
+  'nav-destinations':'Tracks',
+  'nav-placements':'Outcomes',
+  'nav-costs':'Costs',
+  'nav-apply':'Apply Now',
+  'hero-eyebrow':'Career-focused internships in Bali',
+  'hero-headline':'Launch your career from Bali.<br><em>Curated internships, network, and lifestyle in one semester.</em>',
+  'hero-sub':'Island Internship is a curated Bali internship program for students who want more than a placement: stronger experience, sharper career direction, and an ambitious community around them.',
+  'hero-b1':'Curated internships with startups, agencies, hospitality brands, and impact teams in Bali.',
+  'hero-b2':'Build CV, portfolio, and international network through meaningful project work.',
+  'hero-b3':'Move with local support, housing guidance, and an intern community already on the ground.',
+  'hero-cta1':'Start your application',
+  'hero-cta2':'Explore internship tracks',
+  'hero-support':'Free application. No commitment required. We reply within 2 business days.',
+  'p1-time':'Curated placement',
+  'p1-text':'Internship environments matched to your field and level.',
+  'p2-time':'Career + network',
+  'p2-text':'Work alongside ambitious teams and build relationships beyond the classroom.',
+  'p3-time':'Bali lifestyle',
+  'p3-text':'A week that balances focused internship hours with community, dinners, and island life.',
+  'ts-islands':'Interns placed',
+  'ts-fields':'Bali host companies',
+  'ts-credit':'Universities represented',
+  'ts-fee':'Business day reply',
+  'trust-label':'Students join from',
+  'trust-footnote':'Proof totals can be updated here once the confirmed Bali alumni and host-company counts are locked.',
+  'mom-eyebrow':'Internship tracks',
+  'mom-heading':'Choose the type of work you want to build around.',
+  'mom-sub':'The program is built around clear internship tracks in Bali, so students understand the kind of companies, work, and exposure they are applying for.',
+  'track-1-kicker':'Marketing',
+  'track-1-title':'Digital Marketing',
+  'track-1-text':'Support campaign planning, content creation, social growth, and brand execution inside fast-moving Bali teams.',
+  'track-2-kicker':'Growth',
+  'track-2-title':'Business Development',
+  'track-2-text':'Work on outreach, partnerships, market research, lead generation, and commercial projects with ambitious Bali businesses.',
+  'track-3-kicker':'Hospitality',
+  'track-3-title':'Hospitality and Guest Experience',
+  'track-3-text':'Learn inside boutique hotels, villa brands, restaurants, and experience-led businesses focused on service, operations, and guest journeys.',
+  'track-4-kicker':'Operations',
+  'track-4-title':'Operations and Project Management',
+  'track-4-text':'Step into operations roles that sharpen structure, coordination, systems thinking, and day-to-day execution.',
+  'track-5-kicker':'Impact',
+  'track-5-title':'NGO and Sustainability',
+  'track-5-text':'Contribute to impact-led projects across sustainability, community programs, ESG reporting, and purpose-driven operations.',
+  'track-6-kicker':'Startup',
+  'track-6-title':'Startup Internships',
+  'track-6-text':'Get close to founders, cross-functional work, and practical execution inside young companies where you can learn quickly.',
+  'track-link':'Ask about this track',
+  'track-search-label':'Popular searches',
+  'track-search-1':'Marketing internship Bali',
+  'track-search-2':'Business internship Bali',
+  'track-search-3':'Hospitality internship Bali',
+  'track-search-4':'Startup internship Bali',
+  'track-search-5':'Sustainability internship Bali',
+  'dest-eyebrow':'Why Bali',
+  'dest-heading':'The location supports the career story.',
+  'dest-sub':'Bali works because it combines ambitious companies, international energy, and a lifestyle that makes students want to stay engaged for the full internship experience.',
+  'dest-bali-region':'Work in Bali',
+  'dest-bali-name':'Career ecosystem',
+  'dest-bali-tag-1':'Startups',
+  'dest-bali-tag-2':'Agencies',
+  'dest-bali-tag-3':'Hospitality',
+  'dest-bali-tag-4':'Impact teams',
+  'dest-bali-link':'See the career outcomes',
+  'dest-sl-region':'Live in Bali',
+  'dest-sl-name':'Community and lifestyle',
+  'dest-sl-tag-1':'Coworking',
+  'dest-sl-tag-2':'Community',
+  'dest-sl-tag-3':'Networking',
+  'dest-sl-tag-4':'Weekends',
+  'dest-sl-link':'See life outside the internship',
+  'inc-eyebrow':'How it works',
+  'inc-heading':'From first application to your first week in Bali.',
+  'inc-sub':'The process is structured, transparent, and designed to move you from interest to placement without months of uncertainty.',
+  'step-1-title':'Apply',
+  'step-1-desc':'Tell us your field, timing, and what kind of internship you want. The application is free, takes about 10 minutes, and gives us enough context to review your fit.',
+  'step-2-title':'Intro call and matching',
+  'step-2-desc':'We speak with you, refine the brief, and match you to host companies that fit your study background, skill set, and preferred working environment.',
+  'step-3-title':'Placement and preparation',
+  'step-3-desc':'Once the match is right, we support the paperwork, pre-departure planning, and arrival coordination so the move to Bali feels clear before you fly.',
+  'step-4-title':'Arrive and start well',
+  'step-4-desc':'You land with structure around you: housing guidance, onboarding, community touchpoints, and a host company ready for your first week.',
+  'inc-note-title':'Free application. No commitment until you want to move forward.',
+  'inc-note-text':'The first step is simply sharing your profile. We only move into matching conversations and placement details once the direction feels right for you.',
+  'pl-eyebrow':'Career outcomes',
+  'pl-heading':'What students should leave Bali with.',
+  'pl-sub':'The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.',
+  'pl-intro-copy':'Island Internship is positioned as a career accelerator because the outcome is not just time in Bali. It is the combination of practical experience, sharper career direction, and a more ambitious peer network.',
+  'pl-intro-point-1':'Talk about actual projects in interviews, not just classroom work.',
+  'pl-intro-point-2':'Build proof for your CV, portfolio, and LinkedIn profile.',
+  'pl-intro-point-3':'Learn how teams in startups, agencies, hospitality, and impact businesses actually operate.',
+  'pl-intro-point-4':'Return with a wider international network and clearer next-step thinking.',
+  'pl-1-badge':'Outcome 01',
+  'pl-1-company':'CV and portfolio',
+  'pl-1-field':'Career proof',
+  'pl-1-type':'Built on actual work',
+  'pl-1-title':'Projects you can actually speak about.',
+  'pl-1-desc':'The best placements give you campaigns, reports, operational improvements, or partnership work that turns into concrete proof for interviews and future applications.',
+  'pl-1-skill-1':'Case studies',
+  'pl-1-skill-2':'Project examples',
+  'pl-1-skill-3':'Interview stories',
+  'pl-1-skill-4':'Portfolio proof',
+  'pl-1-meta-1-label':'You leave with',
+  'pl-1-meta-1-value':'Better examples on your CV and LinkedIn.',
+  'pl-1-meta-2-label':'Built through',
+  'pl-1-meta-2-value':'Deliverables, reporting, and project ownership.',
+  'pl-1-meta-3-label':'Best for',
+  'pl-1-meta-3-value':'Students who want stronger career proof fast.',
+  'pl-2-badge':'Outcome 02',
+  'pl-2-company':'Business exposure',
+  'pl-2-field':'How teams work',
+  'pl-2-type':'Closer to founders and operators',
+  'pl-2-title':'A better feel for how ambitious companies run.',
+  'pl-2-desc':'Students get close to real operating environments in startups, agencies, hospitality brands, and impact businesses rather than staying at the edge of the team.',
+  'pl-2-skill-1':'Team rhythm',
+  'pl-2-skill-2':'Meetings',
+  'pl-2-skill-3':'Execution',
+  'pl-2-skill-4':'Commercial awareness',
+  'pl-2-meta-1-label':'You build',
+  'pl-2-meta-1-value':'Practical business judgement.',
+  'pl-2-meta-2-label':'Through',
+  'pl-2-meta-2-value':'Exposure to teams, deadlines, and feedback loops.',
+  'pl-2-meta-3-label':'Useful for',
+  'pl-2-meta-3-value':'Students still defining the kind of environment they want.',
+  'pl-3-badge':'Outcome 03',
+  'pl-3-company':'International network',
+  'pl-3-field':'People you keep',
+  'pl-3-type':'Community and company network',
+  'pl-3-title':'A network that is both social and professional.',
+  'pl-3-desc':'You meet other interns, teams, founders, operators, and hospitality people while living in the same area and sharing a more international routine.',
+  'pl-3-skill-1':'Peer network',
+  'pl-3-skill-2':'Coworking',
+  'pl-3-skill-3':'Introductions',
+  'pl-3-skill-4':'Community events',
+  'pl-3-meta-1-label':'You leave with',
+  'pl-3-meta-1-value':'Contacts beyond your own university circle.',
+  'pl-3-meta-2-label':'Built through',
+  'pl-3-meta-2-value':'Shared housing, events, and daily work connections.',
+  'pl-3-meta-3-label':'Best for',
+  'pl-3-meta-3-value':'Students who value both belonging and ambition.',
+  'pl-4-badge':'Outcome 04',
+  'pl-4-company':'Career direction',
+  'pl-4-field':'Clarity for what comes next',
+  'pl-4-type':'A smarter next move',
+  'pl-4-title':'Return with more direction, not just memories.',
+  'pl-4-desc':'A strong placement helps students understand whether they want startups, hospitality, operations, marketing, or another direction before the next career step.',
+  'pl-4-skill-1':'Direction',
+  'pl-4-skill-2':'Confidence',
+  'pl-4-skill-3':'Better choices',
+  'pl-4-skill-4':'Next-step clarity',
+  'pl-4-meta-1-label':'You gain',
+  'pl-4-meta-1-value':'A clearer view of the roles you want next.',
+  'pl-4-meta-2-label':'Through',
+  'pl-4-meta-2-value':'Daily exposure to real working environments.',
+  'pl-4-meta-3-label':'Useful for',
+  'pl-4-meta-3-value':'Students who want their internship to shape the next chapter.',
+  'pl-fields-label':'Common Bali internship searches',
+  'pl-field-chip-1':'Marketing internship Bali',
+  'pl-field-chip-2':'Business internship Bali',
+  'pl-field-chip-3':'Hospitality internship Bali',
+  'pl-field-chip-4':'Startup internship Bali',
+  'pl-field-chip-5':'Operations internship Bali',
+  'pl-field-chip-6':'Sustainability internship Bali',
+  'pl-apply-link':'Explore the tracks',
+  'com-eyebrow':'Community in Bali',
+  'com-heading':'The internship matters more when the community around it is strong.',
+  'com-sub':'Island Internship is not built as a solo drop-off placement. You arrive into an ambitious student community with shared routines, introductions, dinners, weekend plans, and people who make the move feel more connected from week one.',
+  'com-p1':'You meet people before arrival through group chats and pre-departure introductions.',
+  'com-p2':'Shared housing, coworking meetups, and casual dinners make everyday life easy to settle into.',
+  'com-p3':'Welcome nights, shared dinners, and weekend plans add warmth without pulling focus away from the internship itself.',
+  'com-p4':'You build friendships across different universities, countries, and internship tracks.',
+  'com-p5':'The result is a network that is social in Bali and useful once you are back home.',
+  'com-s1-num':'Coworking',
+  'com-s1':'Coffee catch-ups, work sessions, and shared routines around Bali.',
+  'com-s2-num':'Dinners',
+  'com-s2':'Welcome evenings and informal meetups that make the intake feel personal.',
+  'com-s3-num':'Weekends',
+  'com-s3':'Surf days, beach plans, and short island trips once the work week finishes.',
+  'com-s4-num':'Network',
+  'com-s4':'A mix of friends, peers, and professional contacts that grows through the placement.',
+  'test-heading':'What the experience feels like once students are in it.',
+  'test-sub':'These first stories show the rhythm of a Bali placement from the inside: workdays, team culture, and the kind of environment students step into once they arrive.',
+  'dil-eyebrow':'Need more clarity first?',
+  'dil-heading':'A guide, track match, or live session can be the easier first step.',
+  'dil-sub':'Not every student is ready to apply immediately. These entry points make the research stage lighter while keeping the path into the program clear.',
+  'dil-1-title':'Guide',
+  'dil-1-heading':'The Bali Internship Guide',
+  'dil-1-desc':'A practical overview of tracks, pricing, housing, visa basics, and what the application process looks like from first form to arrival.',
+  'dil-1-meta':'Best for students still comparing Bali with other internship options.',
+  'dil-1-link':'Request the guide',
+  'dil-2-title':'Match quiz',
+  'dil-2-heading':'Which Bali internship track fits you best?',
+  'dil-2-desc':'A short matching flow can help narrow down the roles that fit your background before you commit to an application.',
+  'dil-2-meta':'Useful if you are still choosing between marketing, operations, hospitality, and startup roles.',
+  'dil-2-link':'Explore the tracks',
+  'dil-3-title':'Live session',
+  'dil-3-heading':'Join the next info session',
+  'dil-3-desc':'Hear how placements, housing, community, and the application process work before you decide whether to move ahead.',
+  'dil-3-meta':'Ideal for students and parents who want answers live before applying.',
+  'dil-3-link':'Ask about the next session',
+  'co-eyebrow':'For Bali host companies',
+  'co-heading':'Host international interns in Bali with more structure and less admin.',
+  'co-sub':'For Bali teams, Island Internship helps define the role, surface suitable student profiles, and support a smoother placement process from intro to onboarding.',
+  'co-offer-heading':'A simpler way to open your team to international interns.',
+  'co-offer-sub':'We source candidates, screen for fit, coordinate introductions, and support the placement so your team can stay focused on the work itself.',
+  'co-b6-title':'Built for Bali-based teams',
+  'co-b6-desc':'The service is shaped around the realities of hosting international interns in Bali, from timing and supervision to university paperwork and local onboarding.',
+  'costs-eyebrow':'Career accelerator program',
+  'costs-heading':'Clear pricing around the placement and the move to Bali.',
+  'costs-sub':'Students are not paying for the internship itself. The fee is for matching, coordination, onboarding, and support around the Bali internship experience.',
+  'costs-card-1-kicker':'Application fee',
+  'costs-card-1-title':'Free to apply',
+  'costs-card-1-sub':'There is no cost to submit a profile, speak with us, or receive an initial fit review for the Bali program.',
+  'costs-card-1-li1':'Step-one application and profile review',
+  'costs-card-1-li2':'Intro call and initial fit conversation',
+  'costs-card-1-li3':'No payment required until you decide to move forward',
+  'costs-card-2-kicker':'Program fee',
+  'costs-card-2-title':'Placement and relocation support program',
+  'costs-card-2-sub':'Add the confirmed fee here once final. This is the structured support layer around the Bali placement, not payment for the internship itself.',
+  'costs-card-2-li1':'Placement matching and company introductions',
+  'costs-card-2-li2':'Onboarding, arrival planning, and local support',
+  'costs-card-2-li3':'University and admin coordination where needed',
+  'costs-card-3-title':'What the program includes',
+  'costs-card-3-sub':'This is where the student-facing value becomes tangible: placement support, practical coordination, and the structure around the internship experience.',
+  'costs-card-3-li1':'Internship placement support and matching',
+  'costs-card-3-li2':'Pre-departure coordination and guidance',
+  'costs-card-3-li3':'Local onboarding and ongoing support structure',
+  'costs-card-4-kicker':'Budget separately',
+  'costs-card-4-title':'Costs to plan outside the program fee',
+  'costs-card-4-sub':'Being explicit about exclusions keeps the offer more trustworthy and helps families understand the full financial picture early.',
+  'costs-card-4-li1':'Flights, insurance, and visa-related costs',
+  'costs-card-4-li2':'Accommodation and everyday personal spending',
+  'costs-card-4-li3':'Optional travel, activities, and extra lifestyle costs',
+  'costs-th2':'Typical Bali range',
+  'costs-note':'Monthly living cost depends on room standard, transport choice, and how often you eat out. Use this as a Bali planning range, not a fixed bill.',
+  'costs-disclaimer':'Keep the program fee separate from flights, insurance, visa costs, and personal lifestyle spending when you compare options.',
+  'trsf-eyebrow':'Support and safeguards',
+  'trsf-heading':'Clear structure for students, parents, and universities.',
+  'trsf-sub':'The program feels more credible when the support model is visible. These are the practical layers around the placement that reduce uncertainty and make the move easier to trust.',
+  'trsf-2-title':'Housing and arrival guidance',
+  'trsf-2-desc':'Students receive clear housing guidance, arrival instructions, and practical context before they travel, so the first week in Bali feels more settled and less improvised.',
+  'trsf-3-title':'Visa and paperwork guidance',
+  'trsf-3-desc':'Students receive step-by-step guidance for the visa route, required documentation, and what needs to be arranged before departure.',
+  'trsf-4-title':'Local support and emergency contact',
+  'trsf-4-desc':'Our team stays reachable through WhatsApp and provides local contact guidance for the kinds of practical issues that matter when living abroad.',
+  'trsf-5-title':'University compatibility',
+  'trsf-5-desc':'The placement structure is designed to work with internship agreements, supervision, and other university paperwork that students often need for approval or credit.',
+  'trsf-6-title':'Preparation before departure',
+  'trsf-6-desc':'Students can receive preparation notes around arrival, local practicalities, insurance, and what to expect in the first days of the program.',
+  'trsf-note':'Questions about fit, safety, or paperwork? Email us at <a href="mailto:hello@islandinternship.com">hello@islandinternship.com</a> and we will reply personally.',
+  'faq-eyebrow':'Common questions',
+  'faq-heading':'Straight answers before you apply.',
+  'faq-sub':'The basics students and parents usually want to understand before moving ahead.',
+  'q4':'Is Bali a safe place to live as an intern?',
+  'a4':'Bali is a well-established destination for students, remote teams, and international communities. The most common risks are practical rather than dramatic: traffic, scooters, petty theft, and late-night transport decisions. We help students prepare properly, choose sensible housing areas, and know who to contact if something goes wrong.',
+  'a5':'Absolutely. A lot of students apply together. If you and a friend both apply for the same Bali intake and start period, we will do our best to place you in the same house. Mention it in your application and we will coordinate from there.',
+  'a6':'All internships are conducted in English. You need to be able to communicate professionally in English. You do not need to speak Bahasa Indonesia to take part in the Bali program.',
+  'a7':'Most internships run for 3 to 6 months, which aligns with standard university internship requirements. The minimum is 10 weeks. We confirm the exact duration when matching you with a company and adjust where needed to meet your university\'s minimum hour requirements.',
+  'q2-extra':'Are the internships paid?',
+  'a2-extra':'No. Internships are normally unpaid, and the value is in the placement itself: practical work experience, university credit compatibility where relevant, and stronger career proof for what comes next.',
+  'q8':'Do I need a visa?',
+  'a8':'Yes. The exact visa route depends on your passport and how long you plan to stay in Bali. We guide students through the right option, the required documents, and the timeline before departure so the process feels clear rather than last-minute.',
+  'a10':'We keep local support contacts available in Bali and share clear emergency guidance before arrival. If there is a problem with your placement, housing, health, or safety, you reach out and we help you take the right next step. We also strongly recommend student travel insurance before departure.',
+  'cta-eyebrow':'Start your application',
+  'cta-heading':'Tell us your field and timing. We will come back with the right next step.',
+  'cta-sub':'The application is free, takes about 10 minutes, and gives us what we need to review your profile for Bali placements. We reply within 2 business days.',
+  'cta-btn1':'Start your application',
+  'cta-btn2':'Chat on WhatsApp',
+  'cta-note':'Free application. No commitment required. We reply within 2 business days.',
+  'footer-mission-text':'Island Internship helps students build experience, network, and career proof through curated placements in Bali, with clear support around the move and the program.',
+  'footer-link-apply':'Start your application',
+  'footer-link-consult':'Book an intro call',
+  'footer-link-dest':'See why Bali',
+  'footer-link-pl':'See the outcomes',
+  'mobile-cta-apply':'Apply now',
+  'mobile-cta-chat':'WhatsApp'
+});
+
+Object.assign(t.nl, {
+  'nav-destinations':'Tracks',
+  'nav-placements':'Uitkomsten',
+  'nav-costs':'Kosten',
+  'nav-apply':'Solliciteer',
+  'hero-eyebrow':'Carrieregerichte stages op Bali',
+  'hero-headline':'Start je carriere vanuit Bali.<br><em>Gecureerde stages, netwerk en lifestyle in een semester.</em>',
+  'hero-sub':'Island Internship is een gecureerd stageprogramma op Bali voor studenten die meer willen dan alleen een plek: sterkere ervaring, duidelijkere carrièrerichting en een ambitieuze community om zich heen.',
+  'hero-b1':'Gecureerde stages bij startups, agencies, hospitalitymerken en impactteams op Bali.',
+  'hero-b2':'Bouw aan je cv, portfolio en internationale netwerk via betekenisvol projectwerk.',
+  'hero-b3':'Verhuis met lokale support, begeleiding rond huisvesting en een community van interns die al aanwezig is.',
+  'hero-cta1':'Start je sollicitatie',
+  'hero-cta2':'Bekijk de stage tracks',
+  'hero-support':'Gratis sollicitatie. Geen verplichting. We reageren binnen 2 werkdagen.',
+  'p1-time':'Gecureerde plaatsing',
+  'p1-text':'Stageomgevingen afgestemd op jouw vakgebied en niveau.',
+  'p2-time':'Carriere + netwerk',
+  'p2-text':'Werk samen met ambitieuze teams en bouw relaties op buiten het klaslokaal.',
+  'p3-time':'Bali lifestyle',
+  'p3-text':'Een week met balans tussen gefocuste stage-uren, community, diners en eilandleven.',
+  'ts-islands':'Geplaatste studenten',
+  'ts-fields':'Hostbedrijven op Bali',
+  'ts-credit':'Vertegenwoordigde universiteiten',
+  'ts-fee':'Werkdagen tot reactie',
+  'trust-label':'Studenten komen van',
+  'trust-footnote':'Hier kunnen de definitieve aantallen komen zodra de bevestigde cijfers voor Bali-alumni en hostbedrijven vaststaan.',
+  'mom-eyebrow':'Stage tracks',
+  'mom-heading':'Kies het type werk waar je omheen wilt bouwen.',
+  'mom-sub':'Het programma is opgebouwd rond duidelijke stage tracks op Bali, zodat studenten direct begrijpen voor welk soort bedrijven, werk en exposure ze solliciteren.',
+  'track-1-kicker':'Marketing',
+  'track-1-title':'Digital Marketing',
+  'track-1-text':'Werk mee aan campagneplanning, contentcreatie, social growth en merkuitvoering binnen snel bewegende Balinese teams.',
+  'track-2-kicker':'Growth',
+  'track-2-title':'Business Development',
+  'track-2-text':'Werk aan outreach, partnerships, marktonderzoek, leadgeneratie en commerciële projecten bij ambitieuze bedrijven op Bali.',
+  'track-3-kicker':'Hospitality',
+  'track-3-title':'Hospitality en Guest Experience',
+  'track-3-text':'Leer binnen boetiekhotels, villamerken, restaurants en experience-led businesses waar service, operatie en guest journeys centraal staan.',
+  'track-4-kicker':'Operations',
+  'track-4-title':'Operations en Project Management',
+  'track-4-text':'Stap in operationele rollen die structuur, coördinatie, systems thinking en dagelijkse uitvoering aanscherpen.',
+  'track-5-kicker':'Impact',
+  'track-5-title':'NGO en Sustainability',
+  'track-5-text':'Draag bij aan impactgedreven projecten rond duurzaamheid, communityprogramma\'s, ESG-rapportage en purpose-driven operations.',
+  'track-6-kicker':'Startup',
+  'track-6-title':'Startup Stages',
+  'track-6-text':'Werk dicht op founders, cross-functioneel werk en praktische uitvoering binnen jonge bedrijven waar je snel leert.',
+  'track-link':'Vraag naar deze track',
+  'track-search-label':'Populaire zoekopdrachten',
+  'track-search-1':'Marketing stage Bali',
+  'track-search-2':'Business stage Bali',
+  'track-search-3':'Hospitality stage Bali',
+  'track-search-4':'Startup stage Bali',
+  'track-search-5':'Duurzaamheid stage Bali',
+  'dest-eyebrow':'Waarom Bali',
+  'dest-heading':'De locatie versterkt het carrièrenarratief.',
+  'dest-sub':'Bali werkt omdat het ambitieuze bedrijven, internationale energie en een lifestyle combineert die studenten betrokken houdt tijdens de volledige stageperiode.',
+  'dest-bali-region':'Werken op Bali',
+  'dest-bali-name':'Carriere-ecosysteem',
+  'dest-bali-tag-1':'Startups',
+  'dest-bali-tag-2':'Agencies',
+  'dest-bali-tag-3':'Hospitality',
+  'dest-bali-tag-4':'Impact teams',
+  'dest-bali-link':'Bekijk de carrière-uitkomsten',
+  'dest-sl-region':'Leven op Bali',
+  'dest-sl-name':'Community en lifestyle',
+  'dest-sl-tag-1':'Coworking',
+  'dest-sl-tag-2':'Community',
+  'dest-sl-tag-3':'Netwerken',
+  'dest-sl-tag-4':'Weekenden',
+  'dest-sl-link':'Bekijk het leven naast je stage',
+  'inc-eyebrow':'Hoe het werkt',
+  'inc-heading':'Van eerste sollicitatie tot je eerste week op Bali.',
+  'inc-sub':'Het proces is gestructureerd, transparant en ontworpen om je van interesse naar plaatsing te brengen zonder maanden van onzekerheid.',
+  'step-1-title':'Solliciteren',
+  'step-1-desc':'Vertel ons je vakgebied, timing en het soort stage dat je zoekt. De sollicitatie is gratis, duurt ongeveer 10 minuten en geeft ons genoeg context om je fit te beoordelen.',
+  'step-2-title':'Introgesprek en matching',
+  'step-2-desc':'We spreken je, scherpen de briefing aan en matchen je met hostbedrijven die passen bij je studieachtergrond, skills en gewenste werkomgeving.',
+  'step-3-title':'Plaatsing en voorbereiding',
+  'step-3-desc':'Zodra de match klopt, ondersteunen we de documenten, voorbereiding voor vertrek en aankomstcoördinatie zodat de stap naar Bali duidelijk voelt voordat je vliegt.',
+  'step-4-title':'Aankomen en goed starten',
+  'step-4-desc':'Je landt met structuur om je heen: begeleiding rond huisvesting, onboarding, communitymomenten en een hostbedrijf dat klaarstaat voor je eerste week.',
+  'inc-note-title':'Gratis sollicitatie. Geen verplichting totdat je verder wilt.',
+  'inc-note-text':'De eerste stap is simpelweg je profiel delen. Pas wanneer de richting goed voelt, gaan we verder in matchinggesprekken en plaatsingsdetails.',
+  'pl-eyebrow':'Carrière-uitkomsten',
+  'pl-heading':'Waar studenten Bali mee zouden moeten verlaten.',
+  'pl-sub':'De sterkste programma\'s plaatsen je niet alleen in het buitenland. Ze geven je beter bewijs van werk, sterkere verhalen voor sollicitaties en een netwerk dat ook daarna relevant blijft.',
+  'pl-intro-copy':'Island Internship wordt neergezet als een career accelerator omdat de uitkomst meer is dan tijd op Bali. Het is de combinatie van praktische ervaring, scherpere carrièrerichting en een ambitieuzer netwerk.',
+  'pl-intro-point-1':'Praat in gesprekken over echte projecten, niet alleen over studiewerk.',
+  'pl-intro-point-2':'Bouw bewijs op voor je cv, portfolio en LinkedIn-profiel.',
+  'pl-intro-point-3':'Leer hoe teams in startups, agencies, hospitality en impactbedrijven echt werken.',
+  'pl-intro-point-4':'Kom terug met een breder internationaal netwerk en duidelijkere next-step keuzes.',
+  'pl-1-badge':'Uitkomst 01',
+  'pl-1-company':'Cv en portfolio',
+  'pl-1-field':'Carrièrebewijs',
+  'pl-1-type':'Gebouwd op echt werk',
+  'pl-1-title':'Projecten waar je echt over kunt praten.',
+  'pl-1-desc':'De beste plaatsingen geven je campagnes, rapportages, operationele verbeteringen of partnershipwerk dat verandert in concreet bewijs voor sollicitaties en volgende stappen.',
+  'pl-1-skill-1':'Case studies',
+  'pl-1-skill-2':'Projectvoorbeelden',
+  'pl-1-skill-3':'Interviewverhalen',
+  'pl-1-skill-4':'Portfoliobewijs',
+  'pl-1-meta-1-label':'Je vertrekt met',
+  'pl-1-meta-1-value':'Sterkere voorbeelden op je cv en LinkedIn.',
+  'pl-1-meta-2-label':'Gebouwd via',
+  'pl-1-meta-2-value':'Deliverables, rapportages en eigenaarschap over projecten.',
+  'pl-1-meta-3-label':'Ideaal voor',
+  'pl-1-meta-3-value':'Studenten die snel sterker carrièrebewijs willen opbouwen.',
+  'pl-2-badge':'Uitkomst 02',
+  'pl-2-company':'Business exposure',
+  'pl-2-field':'Hoe teams werken',
+  'pl-2-type':'Dichter op founders en operators',
+  'pl-2-title':'Een beter gevoel voor hoe ambitieuze bedrijven draaien.',
+  'pl-2-desc':'Studenten komen dichter bij echte werkomgevingen in startups, agencies, hospitalitymerken en impactbedrijven in plaats van aan de rand van het team te blijven.',
+  'pl-2-skill-1':'Teamritme',
+  'pl-2-skill-2':'Meetings',
+  'pl-2-skill-3':'Uitvoering',
+  'pl-2-skill-4':'Commercieel inzicht',
+  'pl-2-meta-1-label':'Je bouwt',
+  'pl-2-meta-1-value':'Praktisch business judgement op.',
+  'pl-2-meta-2-label':'Via',
+  'pl-2-meta-2-value':'Exposure aan teams, deadlines en feedbackloops.',
+  'pl-2-meta-3-label':'Waardevol voor',
+  'pl-2-meta-3-value':'Studenten die nog scherpstellen welk type omgeving bij hen past.',
+  'pl-3-badge':'Uitkomst 03',
+  'pl-3-company':'Internationaal netwerk',
+  'pl-3-field':'Mensen die je meeneemt',
+  'pl-3-type':'Community en bedrijfsnetwerk',
+  'pl-3-title':'Een netwerk dat zowel sociaal als professioneel is.',
+  'pl-3-desc':'Je ontmoet andere interns, teams, founders, operators en hospitalitymensen terwijl je in hetzelfde gebied woont en in een internationaler ritme leeft.',
+  'pl-3-skill-1':'Peer network',
+  'pl-3-skill-2':'Coworking',
+  'pl-3-skill-3':'Introducties',
+  'pl-3-skill-4':'Community events',
+  'pl-3-meta-1-label':'Je vertrekt met',
+  'pl-3-meta-1-value':'Contacten buiten je eigen universiteitskring.',
+  'pl-3-meta-2-label':'Gebouwd via',
+  'pl-3-meta-2-value':'Shared housing, events en dagelijkse werkconnecties.',
+  'pl-3-meta-3-label':'Ideaal voor',
+  'pl-3-meta-3-value':'Studenten die zowel belonging als ambitie belangrijk vinden.',
+  'pl-4-badge':'Uitkomst 04',
+  'pl-4-company':'Carrièrerichting',
+  'pl-4-field':'Duidelijkheid over wat hierna komt',
+  'pl-4-type':'Een slimmere volgende stap',
+  'pl-4-title':'Kom terug met meer richting, niet alleen met herinneringen.',
+  'pl-4-desc':'Een sterke plaatsing helpt studenten begrijpen of ze startups, hospitality, operations, marketing of een andere richting willen voordat de volgende stap begint.',
+  'pl-4-skill-1':'Richting',
+  'pl-4-skill-2':'Zelfvertrouwen',
+  'pl-4-skill-3':'Betere keuzes',
+  'pl-4-skill-4':'Duidelijkheid',
+  'pl-4-meta-1-label':'Je wint',
+  'pl-4-meta-1-value':'Meer zicht op de rollen die je hierna wilt.',
+  'pl-4-meta-2-label':'Via',
+  'pl-4-meta-2-value':'Dagelijkse exposure aan echte werkomgevingen.',
+  'pl-4-meta-3-label':'Waardevol voor',
+  'pl-4-meta-3-value':'Studenten die willen dat hun stage de volgende fase mee bepaalt.',
+  'pl-fields-label':'Veelgezochte stages op Bali',
+  'pl-field-chip-1':'Marketing stage Bali',
+  'pl-field-chip-2':'Business stage Bali',
+  'pl-field-chip-3':'Hospitality stage Bali',
+  'pl-field-chip-4':'Startup stage Bali',
+  'pl-field-chip-5':'Operations stage Bali',
+  'pl-field-chip-6':'Duurzaamheid stage Bali',
+  'pl-apply-link':'Bekijk de tracks',
+  'com-eyebrow':'Community op Bali',
+  'com-heading':'De stage telt meer wanneer de community eromheen sterk is.',
+  'com-sub':'Island Internship is niet opgebouwd als een solo drop-off placement. Je arriveert in een ambitieuze studentencommunity met gedeelde routines, introducties, diners, weekendplannen en mensen die de stap vanaf week één meer verbonden maken.',
+  'com-p1':'Je leert al mensen kennen vóór aankomst via groepschats en introducties voor vertrek.',
+  'com-p2':'Shared housing, coworking-momenten en informele diners maken het dagelijks leven makkelijker om in te landen.',
+  'com-p3':'Welcome nights, gezamenlijke diners en weekendplannen voegen warmte toe zonder de focus van de stage weg te trekken.',
+  'com-p4':'Je bouwt vriendschappen op met studenten van verschillende universiteiten, landen en stage tracks.',
+  'com-p5':'Het resultaat is een netwerk dat sociaal voelt op Bali en nuttig blijft zodra je terug bent.',
+  'com-s1-num':'Coworking',
+  'com-s1':'Koffiemomenten, werksessies en gedeelde routines rond Bali.',
+  'com-s2-num':'Diners',
+  'com-s2':'Welcome evenings en informele meetups die de intake persoonlijk laten voelen.',
+  'com-s3-num':'Weekenden',
+  'com-s3':'Surfdays, strandplannen en korte eilandtrips zodra de werkweek klaar is.',
+  'com-s4-num':'Netwerk',
+  'com-s4':'Een mix van vrienden, peers en professionele contacten die groeit tijdens de plaatsing.',
+  'test-heading':'Hoe de ervaring voelt zodra studenten erin zitten.',
+  'test-sub':'Deze eerste verhalen laten het ritme van een plaatsing op Bali van binnenuit zien: werkdagen, teamcultuur en het soort omgeving waarin studenten terechtkomen.',
+  'dil-eyebrow':'Eerst meer duidelijkheid nodig?',
+  'dil-heading':'Een gids, track match of live sessie kan de betere eerste stap zijn.',
+  'dil-sub':'Niet elke student wil meteen solliciteren. Deze ingangen maken de oriëntatiefase lichter en houden het pad naar het programma duidelijk.',
+  'dil-1-title':'Gids',
+  'dil-1-heading':'De Bali Stagegids',
+  'dil-1-desc':'Een praktisch overzicht van tracks, prijzen, huisvesting, visum basics en hoe het sollicitatieproces eruitziet van eerste formulier tot aankomst.',
+  'dil-1-meta':'Handig voor studenten die Bali nog met andere stageopties vergelijken.',
+  'dil-1-link':'Vraag de gids aan',
+  'dil-2-title':'Match quiz',
+  'dil-2-heading':'Welke Bali stage track past het best bij jou?',
+  'dil-2-desc':'Een korte matching flow kan helpen om de rollen te versmallen die bij jouw achtergrond passen voordat je een sollicitatie start.',
+  'dil-2-meta':'Handig als je nog twijfelt tussen marketing, operations, hospitality en startuprollen.',
+  'dil-2-link':'Bekijk de tracks',
+  'dil-3-title':'Live sessie',
+  'dil-3-heading':'Doe mee aan de volgende infosessie',
+  'dil-3-desc':'Hoor hoe plaatsingen, huisvesting, community en het sollicitatieproces werken voordat je beslist of je verder wilt.',
+  'dil-3-meta':'Ideaal voor studenten en ouders die live antwoorden willen voordat ze solliciteren.',
+  'dil-3-link':'Vraag naar de volgende sessie',
+  'co-eyebrow':'Voor hostbedrijven op Bali',
+  'co-heading':'Host internationale interns op Bali met meer structuur en minder administratie.',
+  'co-sub':'Voor teams op Bali helpt Island Internship bij het definiëren van de rol, het vinden van passende studentenprofielen en het soepeler laten verlopen van de plaatsing van intro tot onboarding.',
+  'co-offer-heading':'Een eenvoudigere manier om je team open te stellen voor internationale interns.',
+  'co-offer-sub':'Wij sourcen kandidaten, screenen op fit, coördineren introducties en ondersteunen de plaatsing zodat jouw team gefocust kan blijven op het werk zelf.',
+  'co-b6-title':'Gemaakt voor teams op Bali',
+  'co-b6-desc':'De service is afgestemd op de realiteit van internationale interns hosten op Bali, van timing en begeleiding tot universiteitsdocumenten en lokale onboarding.',
+  'costs-eyebrow':'Career accelerator programma',
+  'costs-heading':'Heldere prijsstructuur rond de plaatsing en de stap naar Bali.',
+  'costs-sub':'Studenten betalen niet voor de stage zelf. De fee is voor matching, coördinatie, onboarding en support rond de stage-ervaring op Bali.',
+  'costs-card-1-kicker':'Sollicitatiekosten',
+  'costs-card-1-title':'Gratis om te solliciteren',
+  'costs-card-1-sub':'Er zijn geen kosten om een profiel in te sturen, met ons te spreken of een eerste fit-check voor het Bali-programma te krijgen.',
+  'costs-card-1-li1':'Eerste sollicitatie en profielreview',
+  'costs-card-1-li2':'Introgesprek en eerste fitgesprek',
+  'costs-card-1-li3':'Geen betaling nodig totdat je besluit verder te gaan',
+  'costs-card-2-kicker':'Programmakosten',
+  'costs-card-2-title':'Programma voor plaatsing en verhuisbegeleiding',
+  'costs-card-2-sub':'Voeg hier het definitieve tarief toe zodra dit vaststaat. Dit is de gestructureerde supportlaag rond de plaatsing op Bali, niet een betaling voor de stage zelf.',
+  'costs-card-2-li1':'Matching en introducties met hostbedrijven',
+  'costs-card-2-li2':'Onboarding, aankomstplanning en lokale support',
+  'costs-card-2-li3':'Afstemming met universiteit en administratie waar nodig',
+  'costs-card-3-title':'Wat het programma omvat',
+  'costs-card-3-sub':'Hier wordt de studentwaarde tastbaar: stage-support, praktische coördinatie en de structuur rondom de stage-ervaring.',
+  'costs-card-3-li1':'Stagebegeleiding en matching met hostbedrijven',
+  'costs-card-3-li2':'Coördinatie en begeleiding voor vertrek',
+  'costs-card-3-li3':'Lokale onboarding en doorlopende supportstructuur',
+  'costs-card-4-kicker':'Apart begroten',
+  'costs-card-4-title':'Kosten buiten de programmakosten',
+  'costs-card-4-sub':'Expliciet zijn over uitsluitingen maakt het aanbod betrouwbaarder en helpt families het volledige plaatje vroeg te begrijpen.',
+  'costs-card-4-li1':'Vluchten, verzekering en visumkosten',
+  'costs-card-4-li2':'Huisvesting en dagelijkse persoonlijke uitgaven',
+  'costs-card-4-li3':'Optionele reizen, activiteiten en extra lifestylekosten',
+  'costs-th2':'Gebruikelijke range op Bali',
+  'costs-note':'De maandelijkse leefkosten hangen af van je kamerniveau, vervoerskeuze en hoe vaak je buiten de deur eet. Gebruik dit als planningsrange voor Bali, niet als vast bedrag.',
+  'costs-disclaimer':'Houd de programmakosten apart van vluchten, verzekering, visumkosten en persoonlijke lifestyle-uitgaven wanneer je opties vergelijkt.',
+  'trsf-eyebrow':'Support en zekerheden',
+  'trsf-heading':'Heldere structuur voor studenten, ouders en universiteiten.',
+  'trsf-sub':'Het programma voelt geloofwaardiger wanneer het supportmodel zichtbaar is. Dit zijn de praktische lagen rond de plaatsing die onzekerheid verlagen en de stap betrouwbaarder maken.',
+  'trsf-2-title':'Begeleiding rond huisvesting en aankomst',
+  'trsf-2-desc':'Studenten ontvangen duidelijke begeleiding rond huisvesting, aankomstinstructies en praktische context voordat ze reizen, zodat de eerste week op Bali rustiger voelt.',
+  'trsf-3-title':'Begeleiding rond visum en documenten',
+  'trsf-3-desc':'Studenten krijgen stap-voor-stap begeleiding voor de juiste visumroute, benodigde documenten en wat vóór vertrek geregeld moet zijn.',
+  'trsf-4-title':'Lokale support en noodcontact',
+  'trsf-4-desc':'Ons team blijft bereikbaar via WhatsApp en geeft lokale contactinformatie voor de praktische situaties die ertoe doen wanneer je in het buitenland woont.',
+  'trsf-5-title':'Universitaire aansluiting',
+  'trsf-5-desc':'De plaatsingsstructuur is ontworpen om aan te sluiten op stageovereenkomsten, begeleiding en andere universiteitsdocumentatie die studenten vaak nodig hebben voor goedkeuring of credits.',
+  'trsf-6-title':'Voorbereiding voor vertrek',
+  'trsf-6-desc':'Studenten kunnen voorbereidingsnotities krijgen over aankomst, lokale praktische zaken, verzekering en wat ze in de eerste dagen van het programma kunnen verwachten.',
+  'trsf-note':'Vragen over fit, veiligheid of documenten? Mail ons op <a href="mailto:hello@islandinternship.com">hello@islandinternship.com</a> en we reageren persoonlijk.',
+  'faq-eyebrow':'Veelgestelde vragen',
+  'faq-heading':'Directe antwoorden voordat je solliciteert.',
+  'faq-sub':'De basiszaken die studenten en ouders meestal willen begrijpen voordat ze verdergaan.',
+  'q4':'Is Bali een veilige plek om als intern te wonen?',
+  'a4':'Bali is een gevestigde bestemming voor studenten, remote teams en internationale communities. De meest voorkomende risico\'s zijn praktisch in plaats van dramatisch: verkeer, scooters, kleine diefstal en late-night transportkeuzes. We helpen studenten zich goed voor te bereiden, verstandige woongebieden te kiezen en te weten wie ze moeten contacteren als er iets misgaat.',
+  'a5':'Zeker. Veel studenten solliciteren samen. Als jij en een vriend of vriendin voor dezelfde Bali-intake en startperiode solliciteren, doen we ons best om jullie in hetzelfde huis te plaatsen. Vermeld het in je sollicitatie en we stemmen het af.',
+  'a6':'Alle stages verlopen in het Engels. Je moet professioneel in het Engels kunnen communiceren. Je hoeft geen Bahasa Indonesia te spreken om mee te doen aan het Bali-programma.',
+  'a7':'De meeste stages duren 3 tot 6 maanden, wat goed aansluit op standaard stage-eisen van universiteiten. Het minimum is 10 weken. We bevestigen de exacte duur bij de matching met een bedrijf en passen waar nodig aan om aan de minimale ureneisen van je universiteit te voldoen.',
+  'q2-extra':'Zijn de stages betaald?',
+  'a2-extra':'Nee. Stages zijn normaal gesproken onbetaald en de waarde zit in de plaatsing zelf: praktische werkervaring, mogelijke credit-compatibiliteit en sterker carrièrebewijs voor wat hierna komt.',
+  'q8':'Heb ik een visum nodig?',
+  'a8':'Ja. De exacte visumroute hangt af van je paspoort en hoe lang je op Bali blijft. We begeleiden studenten bij de juiste optie, de benodigde documenten en de timing vóór vertrek zodat het proces helder voelt in plaats van last-minute.',
+  'a10':'We houden lokale supportcontacten in Bali beschikbaar en delen duidelijke noodgeleiding vóór aankomst. Als er iets misgaat met je plaatsing, huisvesting, gezondheid of veiligheid, neem je contact op en helpen we je de juiste volgende stap te zetten. We raden ook sterk een goede student travel insurance aan vóór vertrek.',
+  'cta-eyebrow':'Start je sollicitatie',
+  'cta-heading':'Vertel ons je vakgebied en timing. Wij komen terug met de juiste volgende stap.',
+  'cta-sub':'De sollicitatie is gratis, duurt ongeveer 10 minuten en geeft ons wat we nodig hebben om je profiel voor Bali-plaatsingen te beoordelen. We reageren binnen 2 werkdagen.',
+  'cta-btn1':'Start je sollicitatie',
+  'cta-btn2':'Chat op WhatsApp',
+  'cta-note':'Gratis sollicitatie. Geen verplichting. We reageren binnen 2 werkdagen.',
+  'footer-mission-text':'Island Internship helpt studenten ervaring, netwerk en carrièrebewijs op te bouwen via gecureerde plaatsingen op Bali, met heldere support rond de verhuizing en het programma.',
+  'footer-link-apply':'Start je sollicitatie',
+  'footer-link-consult':'Plan een introgesprek',
+  'footer-link-dest':'Waarom Bali',
+  'footer-link-pl':'Bekijk de uitkomsten',
+  'mobile-cta-apply':'Solliciteer',
+  'mobile-cta-chat':'WhatsApp'
+});
 
 let currentLang = 'en';
 
