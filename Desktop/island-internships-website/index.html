@@ -1495,6 +1495,82 @@
       margin-bottom: 3rem;
     }
 
+    .company-universities {
+      margin-bottom: 3rem;
+      padding: 2.25rem;
+      border: 1px solid rgba(42,122,111,0.12);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(42,122,111,0.035), rgba(255,255,255,0.92));
+      box-shadow: 0 20px 42px rgba(26,26,46,0.05);
+    }
+    .company-universities-header {
+      max-width: 780px;
+      margin-bottom: 1.75rem;
+    }
+    .company-universities-title {
+      font-size: clamp(1.95rem, 3vw, 2.7rem);
+      color: var(--navy);
+      line-height: 1.08;
+      margin-bottom: 0.7rem;
+    }
+    .company-universities-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.78;
+      max-width: 720px;
+    }
+    .company-university-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .company-university-card {
+      min-height: 108px;
+      padding: 1.1rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.92);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+    .company-university-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(26,26,46,0.08);
+      border-color: rgba(42,122,111,0.24);
+    }
+    .company-university-kicker {
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .company-university-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.16;
+      color: var(--navy);
+    }
+    .company-universities-support {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.55rem;
+      max-width: 760px;
+    }
+    .company-universities-metric {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
     .company-benefit {
       background: var(--cream);
       border-radius: 8px;
@@ -1633,10 +1709,13 @@
 
     @media (max-width: 900px) {
       .companies-grid { grid-template-columns: repeat(2, 1fr); }
+      .company-university-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .companies-cta-box { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 600px) {
       .companies-grid { grid-template-columns: 1fr; }
+      .company-universities { padding: 1.5rem; }
+      .company-university-grid { grid-template-columns: 1fr; }
       .companies-cta-box { padding: 2rem 1.5rem; }
     }
 
@@ -3703,6 +3782,41 @@
     </div>
   </div>
 
+  <div class="company-universities fade-up delay-1">
+    <div class="company-universities-header">
+      <h3 class="company-universities-title" data-i18n="co-uni-title">International Talent from Leading European Universities</h3>
+      <p class="company-universities-sub" data-i18n="co-uni-sub">Our interns are ambitious students and graduates from respected universities across Europe, bringing strong academic backgrounds, international perspectives, and digital-native skills to growing companies.</p>
+    </div>
+    <div class="company-university-grid" role="list" aria-label="Universities represented by candidates">
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">Maastricht University</div>
+      </article>
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">Erasmus University Rotterdam</div>
+      </article>
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">University of Amsterdam</div>
+      </article>
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">Utrecht University</div>
+      </article>
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">Delft University of Technology</div>
+      </article>
+      <article class="company-university-card" role="listitem">
+        <div class="company-university-kicker" data-i18n="co-uni-card-kicker">European university</div>
+        <div class="company-university-name">Vrije Universiteit Amsterdam</div>
+      </article>
+    </div>
+    <p class="company-universities-support" data-i18n="co-uni-support">Many of our candidates study at internationally recognized European universities known for strong business, technology, and social science programs.</p>
+    <div class="company-universities-metric" data-i18n="co-uni-metric">Students from 30+ universities across Europe and beyond.</div>
+  </div>
+
   <div class="co-how fade-up delay-1">
     <div class="co-how-heading" data-i18n="co-how-heading">Simple 3-step process</div>
     <div class="co-steps">
@@ -4812,6 +4926,11 @@ Object.assign(t.en, {
   'co-offer-sub':'We source candidates, screen for fit, coordinate introductions, and support the placement so your team can stay focused on the work itself.',
   'co-b6-title':'Built for Bali-based teams',
   'co-b6-desc':'The service is shaped around the realities of hosting international interns in Bali, from timing and supervision to university paperwork and local onboarding.',
+  'co-uni-title':'International Talent from Leading European Universities',
+  'co-uni-sub':'Our interns are ambitious students and graduates from respected universities across Europe, bringing strong academic backgrounds, international perspectives, and digital-native skills to growing companies.',
+  'co-uni-card-kicker':'European university',
+  'co-uni-support':'Many of our candidates study at internationally recognized European universities known for strong business, technology, and social science programs.',
+  'co-uni-metric':'Students from 30+ universities across Europe and beyond.',
   'costs-eyebrow':'Career accelerator program',
   'costs-heading':'Clear pricing around the placement and the move to Bali.',
   'costs-sub':'Students are not paying for the internship itself. The fee is for matching, coordination, onboarding, and support around the Bali internship experience.',
@@ -5103,6 +5222,11 @@ Object.assign(t.nl, {
   'co-offer-sub':'Wij sourcen kandidaten, screenen op fit, coördineren introducties en ondersteunen de plaatsing zodat jouw team gefocust kan blijven op het werk zelf.',
   'co-b6-title':'Gemaakt voor teams op Bali',
   'co-b6-desc':'De service is afgestemd op de realiteit van internationale interns hosten op Bali, van timing en begeleiding tot universiteitsdocumenten en lokale onboarding.',
+  'co-uni-title':'Internationaal talent van toonaangevende Europese universiteiten',
+  'co-uni-sub':'Onze interns zijn ambitieuze studenten en afgestudeerden van gerespecteerde universiteiten in Europa, met sterke academische achtergronden, internationale perspectieven en digital-native vaardigheden voor groeiende bedrijven.',
+  'co-uni-card-kicker':'Europese universiteit',
+  'co-uni-support':'Veel van onze kandidaten studeren aan internationaal erkende Europese universiteiten die bekendstaan om sterke opleidingen in business, technologie en sociale wetenschappen.',
+  'co-uni-metric':'Studenten van 30+ universiteiten uit Europa en daarbuiten.',
   'costs-eyebrow':'Career accelerator programma',
   'costs-heading':'Heldere prijsstructuur rond de plaatsing en de stap naar Bali.',
   'costs-sub':'Studenten betalen niet voor de stage zelf. De fee is voor matching, coördinatie, onboarding en support rond de stage-ervaring op Bali.',
