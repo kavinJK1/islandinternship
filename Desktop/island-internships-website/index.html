@@ -351,7 +351,7 @@
     .photo-bg-3 {
       background:
         linear-gradient(180deg, rgba(10,16,30,0.08), rgba(10,16,30,0.5)),
-        url("images/moments-group.jpg") center 42% / cover no-repeat;
+        url("images/moments-beach.jpg") center 50% / cover no-repeat;
     }
 
     .photo-label {
@@ -610,11 +610,77 @@
         linear-gradient(180deg, rgba(10,12,22,0.06), rgba(10,12,22,0.26)),
         url("images/destination-bali.jpg") center 62% / cover no-repeat;
     }
-    .dest-bg-srilanka {
+    .dest-bg-community {
       background:
         linear-gradient(180deg, rgba(10,12,22,0.05), rgba(10,12,22,0.2)),
-        url("images/moments-beach.jpg") center 50% / cover no-repeat;
+        url("images/moments-group.jpg") center 42% / cover no-repeat;
     }
+    .secondary-destination-card {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) 1.1fr;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(26,26,46,0.06);
+    }
+    .secondary-destination-media {
+      min-height: 270px;
+      background:
+        linear-gradient(180deg, rgba(10,12,22,0.08), rgba(10,12,22,0.18)),
+        url("images/destination-srilanka.jpg") center 50% / cover no-repeat;
+    }
+    .secondary-destination-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .secondary-destination-kicker {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .secondary-destination-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      line-height: 1.02;
+      color: var(--navy);
+    }
+    .secondary-destination-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 560px;
+    }
+    .secondary-destination-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .secondary-destination-tag {
+      padding: 0.38rem 0.72rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.03em;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      background: var(--cream);
+      border-radius: 999px;
+    }
+    .secondary-destination-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--teal);
+      width: fit-content;
+    }
+    .secondary-destination-link svg { flex-shrink: 0; }
 
     .dest-overlay {
       position: absolute;
@@ -2725,6 +2791,7 @@
       .hero-headline { font-size: clamp(2.4rem, 8vw, 3.5rem); }
 
       .dest-grid { grid-template-columns: 1fr; }
+      .secondary-destination-card { grid-template-columns: 1fr; }
       .placements-grid { grid-template-columns: 1fr; }
       .placements-intro-list { grid-template-columns: 1fr; }
       .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -2831,10 +2898,10 @@
   <a href="#hero" class="nav-logo">Island<span>.</span>Internship</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#moments" data-i18n="nav-destinations">Tracks</a></li>
-    <li><a href="#placements" data-i18n="nav-placements">Outcomes</a></li>
+    <li><a href="/career-outcomes.html" data-i18n="nav-placements">Outcomes</a></li>
     <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#community" data-i18n="nav-companies">Community</a></li>
+    <li><a href="/community-lifestyle.html" data-i18n="nav-companies">Community</a></li>
     <li><a href="#cta-banner" class="nav-apply" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
   </ul>
   <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
@@ -3048,14 +3115,14 @@
           <span class="dest-tag" data-i18n="dest-bali-tag-3">Hospitality</span>
           <span class="dest-tag" data-i18n="dest-bali-tag-4">Impact teams</span>
         </div>
-        <a href="#placements" class="dest-link" onclick="openModal(event, 'Bali')">
+        <a href="/career-outcomes.html" class="dest-link">
           <span data-i18n="dest-bali-link">See the career outcomes</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
     <div class="dest-card fade-up delay-1">
-      <div class="dest-bg dest-bg-srilanka"></div>
+      <div class="dest-bg dest-bg-community"></div>
       <div class="dest-overlay"></div>
       <div class="dest-content">
         <p class="dest-region" data-i18n="dest-sl-region">Live in Bali</p>
@@ -3066,11 +3133,29 @@
           <span class="dest-tag" data-i18n="dest-sl-tag-3">Networking</span>
           <span class="dest-tag" data-i18n="dest-sl-tag-4">Weekends</span>
         </div>
-        <a href="#community" class="dest-link">
+        <a href="/community-lifestyle.html" class="dest-link">
           <span data-i18n="dest-sl-link">See life outside the internship</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+    </div>
+  </div>
+  <div class="secondary-destination-card fade-up delay-2">
+    <div class="secondary-destination-media" aria-hidden="true"></div>
+    <div class="secondary-destination-body">
+      <div class="secondary-destination-kicker" data-i18n="dest-sri-kicker">Also exploring Sri Lanka?</div>
+      <h3 class="secondary-destination-title" data-i18n="dest-sri-title">Sri Lanka remains part of the wider Island Internship direction.</h3>
+      <p class="secondary-destination-text" data-i18n="dest-sri-text">If you are looking for a smaller intake with a coastal setting, hospitality exposure, and a different pace from Bali, Sri Lanka is still on the map and can sit alongside the wider program.</p>
+      <div class="secondary-destination-tags">
+        <span class="secondary-destination-tag" data-i18n="dest-sri-tag-1">Hospitality</span>
+        <span class="secondary-destination-tag" data-i18n="dest-sri-tag-2">Sustainability</span>
+        <span class="secondary-destination-tag" data-i18n="dest-sri-tag-3">Smaller intake</span>
+        <span class="secondary-destination-tag" data-i18n="dest-sri-tag-4">Coastal living</span>
+      </div>
+      <a href="/sri-lanka.html" class="secondary-destination-link">
+        <span data-i18n="dest-sri-link">See the Sri Lanka page</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -3298,7 +3383,7 @@
       <span class="field-chip" data-i18n="pl-field-chip-5">Operations internship Bali</span>
       <span class="field-chip" data-i18n="pl-field-chip-6">Sustainability internship Bali</span>
     </div>
-    <a href="#moments" class="placements-apply-link" data-i18n="pl-apply-link">Explore the tracks</a>
+    <a href="/career-outcomes.html" class="placements-apply-link" data-i18n="pl-apply-link">Open the career outcomes page</a>
   </div>
 </section>
 
@@ -3352,6 +3437,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="placements-fields-row fade-up delay-2" style="margin-top: 2.25rem;">
+    <span class="placements-fields-label" data-i18n="com-link-label">Want the full community and lifestyle picture?</span>
+    <a href="/community-lifestyle.html" class="placements-apply-link" data-i18n="com-link">Open the community and lifestyle page</a>
   </div>
 </section>
 
@@ -4148,9 +4237,17 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
         <span data-i18n="footer-link-dest">See why Bali</span>
       </a>
-      <a class="footer-info-link" href="#placements">
+      <a class="footer-info-link" href="/career-outcomes.html">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         <span data-i18n="footer-link-pl">See the outcomes</span>
+      </a>
+      <a class="footer-info-link" href="/community-lifestyle.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
+        <span data-i18n="footer-link-community">Community and lifestyle</span>
+      </a>
+      <a class="footer-info-link" href="/sri-lanka.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span data-i18n="footer-link-sri">Sri Lanka</span>
       </a>
     </div>
   </div>
@@ -4185,9 +4282,10 @@
   <a href="#hero" class="footer-logo">Island<span>.</span>Internship</a>
   <ul class="footer-legal-links">
     <li><a href="#moments" data-i18n="nav-destinations">Tracks</a></li>
-    <li><a href="#placements" data-i18n="nav-placements">Outcomes</a></li>
+    <li><a href="/career-outcomes.html" data-i18n="nav-placements">Outcomes</a></li>
     <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="/community-lifestyle.html" data-i18n="nav-companies">Community</a></li>
     <li><a href="#cta-banner" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
   </ul>
   <span class="footer-copy">© 2026 Island Internship · Amsterdam, NL</span>
@@ -4500,6 +4598,7 @@ Object.assign(t.en, {
   'nav-destinations':'Tracks',
   'nav-placements':'Outcomes',
   'nav-costs':'Costs',
+  'nav-companies':'Community',
   'nav-apply':'Apply Now',
   'hero-eyebrow':'Career-focused internships in Bali',
   'hero-headline':'Launch your career from Bali.<br><em>Curated internships, network, and lifestyle in one semester.</em>',
@@ -4567,6 +4666,14 @@ Object.assign(t.en, {
   'dest-sl-tag-3':'Networking',
   'dest-sl-tag-4':'Weekends',
   'dest-sl-link':'See life outside the internship',
+  'dest-sri-kicker':'Also exploring Sri Lanka?',
+  'dest-sri-title':'Sri Lanka remains part of the wider Island Internship direction.',
+  'dest-sri-text':'If you are looking for a smaller intake with a coastal setting, hospitality exposure, and a different pace from Bali, Sri Lanka is still on the map and can sit alongside the wider program.',
+  'dest-sri-tag-1':'Hospitality',
+  'dest-sri-tag-2':'Sustainability',
+  'dest-sri-tag-3':'Smaller intake',
+  'dest-sri-tag-4':'Coastal living',
+  'dest-sri-link':'See the Sri Lanka page',
   'inc-eyebrow':'How it works',
   'inc-heading':'From first application to your first week in Bali.',
   'inc-sub':'The process is structured, transparent, and designed to move you from interest to placement without months of uncertainty.',
@@ -4659,7 +4766,7 @@ Object.assign(t.en, {
   'pl-field-chip-4':'Startup internship Bali',
   'pl-field-chip-5':'Operations internship Bali',
   'pl-field-chip-6':'Sustainability internship Bali',
-  'pl-apply-link':'Explore the tracks',
+  'pl-apply-link':'Open the career outcomes page',
   'com-eyebrow':'Community in Bali',
   'com-heading':'The internship matters more when the community around it is strong.',
   'com-sub':'Island Internship is not built as a solo drop-off placement. You arrive into an ambitious student community with shared routines, introductions, dinners, weekend plans, and people who make the move feel more connected from week one.',
@@ -4676,6 +4783,8 @@ Object.assign(t.en, {
   'com-s3':'Surf days, beach plans, and short island trips once the work week finishes.',
   'com-s4-num':'Network',
   'com-s4':'A mix of friends, peers, and professional contacts that grows through the placement.',
+  'com-link-label':'Want the full community and lifestyle picture?',
+  'com-link':'Open the community and lifestyle page',
   'test-heading':'What the experience feels like once students are in it.',
   'test-sub':'These first stories show the rhythm of a Bali placement from the inside: workdays, team culture, and the kind of environment students step into once they arrive.',
   'dil-eyebrow':'Need more clarity first?',
@@ -4770,6 +4879,8 @@ Object.assign(t.en, {
   'footer-link-consult':'Book an intro call',
   'footer-link-dest':'See why Bali',
   'footer-link-pl':'See the outcomes',
+  'footer-link-community':'Community and lifestyle',
+  'footer-link-sri':'Sri Lanka',
   'mobile-cta-apply':'Apply now',
   'mobile-cta-chat':'WhatsApp'
 });
@@ -4778,6 +4889,7 @@ Object.assign(t.nl, {
   'nav-destinations':'Tracks',
   'nav-placements':'Uitkomsten',
   'nav-costs':'Kosten',
+  'nav-companies':'Community',
   'nav-apply':'Solliciteer',
   'hero-eyebrow':'Carrieregerichte stages op Bali',
   'hero-headline':'Start je carriere vanuit Bali.<br><em>Gecureerde stages, netwerk en lifestyle in een semester.</em>',
@@ -4845,6 +4957,14 @@ Object.assign(t.nl, {
   'dest-sl-tag-3':'Netwerken',
   'dest-sl-tag-4':'Weekenden',
   'dest-sl-link':'Bekijk het leven naast je stage',
+  'dest-sri-kicker':'Ook Sri Lanka aan het overwegen?',
+  'dest-sri-title':'Sri Lanka blijft onderdeel van de bredere Island Internship-richting.',
+  'dest-sri-text':'Als je zoekt naar een kleinere intake, een kustsetting, hospitality exposure en een ander tempo dan Bali, blijft Sri Lanka onderdeel van het bredere programma.',
+  'dest-sri-tag-1':'Hospitality',
+  'dest-sri-tag-2':'Duurzaamheid',
+  'dest-sri-tag-3':'Kleinere intake',
+  'dest-sri-tag-4':'Kustleven',
+  'dest-sri-link':'Bekijk de Sri Lanka-pagina',
   'inc-eyebrow':'Hoe het werkt',
   'inc-heading':'Van eerste sollicitatie tot je eerste week op Bali.',
   'inc-sub':'Het proces is gestructureerd, transparant en ontworpen om je van interesse naar plaatsing te brengen zonder maanden van onzekerheid.',
@@ -4937,7 +5057,7 @@ Object.assign(t.nl, {
   'pl-field-chip-4':'Startup stage Bali',
   'pl-field-chip-5':'Operations stage Bali',
   'pl-field-chip-6':'Duurzaamheid stage Bali',
-  'pl-apply-link':'Bekijk de tracks',
+  'pl-apply-link':'Open de pagina met carrière-uitkomsten',
   'com-eyebrow':'Community op Bali',
   'com-heading':'De stage telt meer wanneer de community eromheen sterk is.',
   'com-sub':'Island Internship is niet opgebouwd als een solo drop-off placement. Je arriveert in een ambitieuze studentencommunity met gedeelde routines, introducties, diners, weekendplannen en mensen die de stap vanaf week één meer verbonden maken.',
@@ -4954,6 +5074,8 @@ Object.assign(t.nl, {
   'com-s3':'Surfdays, strandplannen en korte eilandtrips zodra de werkweek klaar is.',
   'com-s4-num':'Netwerk',
   'com-s4':'Een mix van vrienden, peers en professionele contacten die groeit tijdens de plaatsing.',
+  'com-link-label':'Wil je het volledige community- en lifestylebeeld zien?',
+  'com-link':'Open de community- en lifestylepagina',
   'test-heading':'Hoe de ervaring voelt zodra studenten erin zitten.',
   'test-sub':'Deze eerste verhalen laten het ritme van een plaatsing op Bali van binnenuit zien: werkdagen, teamcultuur en het soort omgeving waarin studenten terechtkomen.',
   'dil-eyebrow':'Eerst meer duidelijkheid nodig?',
@@ -5048,6 +5170,8 @@ Object.assign(t.nl, {
   'footer-link-consult':'Plan een introgesprek',
   'footer-link-dest':'Waarom Bali',
   'footer-link-pl':'Bekijk de uitkomsten',
+  'footer-link-community':'Community en lifestyle',
+  'footer-link-sri':'Sri Lanka',
   'mobile-cta-apply':'Solliciteer',
   'mobile-cta-chat':'WhatsApp'
 });
