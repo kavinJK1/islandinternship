@@ -1870,13 +1870,13 @@
       position: fixed;
       inset: 0;
       z-index: 200;
-      background: rgba(10,10,20,0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(16, 16, 26, 0.52);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      padding: 1.25rem;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -1884,51 +1884,54 @@
     .modal-overlay.open { opacity: 1; pointer-events: all; }
 
     .modal {
-      background: var(--cream);
-      border-radius: 12px;
+      background: #F8F3EA;
+      border: 1px solid rgba(107, 96, 80, 0.14);
+      border-radius: 14px;
       width: 100%;
-      max-width: 560px;
+      max-width: 620px;
       max-height: 92vh;
       overflow-y: auto;
+      box-shadow: 0 26px 70px rgba(26,26,46,0.14);
       transform: translateY(20px) scale(0.98);
-      transition: transform 0.35s cubic-bezier(.22,.68,0,1.15);
+      transition: transform 0.3s ease, opacity 0.3s ease;
       position: relative;
     }
     .modal-overlay.open .modal { transform: translateY(0) scale(1); }
 
     .modal-header {
-      padding: 2rem 2rem 1.25rem;
-      border-bottom: 1px solid var(--border);
+      padding: 2.15rem 2.35rem 1.4rem;
       position: relative;
     }
     .modal-tag {
-      font-size: 0.68rem;
+      font-size: 0.69rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.85rem;
       display: block;
     }
     .modal-title {
-      font-size: 1.65rem;
+      font-size: clamp(1.9rem, 4vw, 2.35rem);
       color: var(--navy);
-      line-height: 1.15;
+      line-height: 1.04;
       font-weight: 500;
+      letter-spacing: -0.01em;
     }
     .modal-subtitle {
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      margin-top: 0.4rem;
-      line-height: 1.55;
+      margin-top: 0.7rem;
+      line-height: 1.7;
+      max-width: 31rem;
     }
     .modal-close {
       position: absolute;
       top: 1.5rem; right: 1.5rem;
-      width: 32px; height: 32px;
+      width: 34px; height: 34px;
       border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--white);
+      border: 1px solid rgba(107, 96, 80, 0.15);
+      background: rgba(255,255,255,0.72);
       color: var(--muted);
       cursor: pointer;
       display: flex;
@@ -1936,51 +1939,65 @@
       justify-content: center;
       font-size: 0.85rem;
       line-height: 1;
-      transition: background 0.2s;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
-    .modal-close:hover { background: var(--cream-d); color: var(--navy); }
+    .modal-close:hover,
+    .modal-close:focus-visible {
+      background: var(--white);
+      color: var(--navy);
+      border-color: rgba(26,26,46,0.14);
+      outline: none;
+    }
 
-    .modal-body { padding: 1.75rem 2rem 2rem; }
+    .modal-body { padding: 0 2.35rem 2.35rem; }
 
-    .form-row {
+    .modal-form-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.85rem;
-      margin-bottom: 0.85rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 1.1rem;
     }
-    .form-row.full { grid-template-columns: 1fr; }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.45rem;
+    }
+    .form-group.span-2 { grid-column: 1 / -1; }
+    .form-group.required label::after {
+      content: " *";
+      color: var(--teal);
     }
     .form-group label {
-      font-size: 0.72rem;
+      font-size: 0.69rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #6F6A62;
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
       font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
+      font-size: 0.94rem;
       color: var(--navy);
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 0.7rem 0.875rem;
+      border: 1px solid rgba(112, 103, 88, 0.18);
+      border-radius: 8px;
+      padding: 0.78rem 0.95rem;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       width: 100%;
+      min-height: 47px;
     }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(42,122,111,0.1);
+      border-color: rgba(42,122,111,0.55);
+      box-shadow: 0 0 0 3px rgba(42,122,111,0.12);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #9A958D;
     }
     .form-group select {
       appearance: none;
@@ -1989,36 +2006,93 @@
       background-position: right 0.9rem center;
       padding-right: 2.5rem;
     }
-    .form-group textarea { resize: vertical; min-height: 88px; }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 128px;
+      line-height: 1.7;
+    }
+    .form-error {
+      min-height: 1.05rem;
+      font-size: 0.74rem;
+      line-height: 1.4;
+      color: var(--coral);
+    }
+    .form-group.is-error input,
+    .form-group.is-error select,
+    .form-group.is-error textarea {
+      border-color: rgba(200,80,58,0.45);
+      box-shadow: 0 0 0 3px rgba(200,80,58,0.10);
+    }
 
     .modal-submit {
       width: 100%;
-      margin-top: 1.25rem;
-      padding: 0.95rem;
+      margin-top: 1.4rem;
+      min-height: 49px;
+      padding: 0.95rem 1rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
       background: var(--teal);
       color: var(--white);
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.15s, opacity 0.15s;
     }
     .modal-submit:hover {
       background: var(--teal-deep);
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(42,122,111,0.25);
+      box-shadow: 0 10px 24px rgba(42,122,111,0.22);
+    }
+    .modal-submit:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(42,122,111,0.12);
+    }
+    .modal-submit:disabled {
+      cursor: wait;
+      opacity: 0.78;
+      transform: none;
+      box-shadow: none;
+    }
+    .modal-submit-spinner {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.38);
+      border-top-color: var(--white);
+      display: none;
+      flex-shrink: 0;
+      animation: modal-spin 0.8s linear infinite;
+    }
+    .modal-submit.is-loading .modal-submit-spinner { display: inline-block; }
+    .modal-submit-secondary {
+      max-width: 240px;
+      margin: 0 auto;
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid rgba(112, 103, 88, 0.18);
+      box-shadow: none;
+    }
+    .modal-submit-secondary:hover {
+      background: var(--cream-d);
+      color: var(--navy);
+      box-shadow: none;
     }
     .modal-note {
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       color: var(--muted);
-      margin-top: 0.75rem;
+      margin-top: 0.9rem;
+      line-height: 1.55;
     }
     .modal-success {
       display: none;
-      padding: 3rem 2rem;
+      padding: 2.8rem 2.35rem 3rem;
       text-align: center;
     }
     .modal-success.visible { display: block; }
@@ -2028,15 +2102,16 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      border: 1.5px solid var(--teal);
+      border: 1.5px solid rgba(42,122,111,0.18);
+      background: rgba(42,122,111,0.08);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.4rem;
       color: var(--teal);
     }
     .success-title {
-      font-size: 1.7rem;
+      font-size: 1.95rem;
       color: var(--navy);
       margin-bottom: 0.75rem;
       font-weight: 500;
@@ -2047,6 +2122,9 @@
       line-height: 1.7;
       max-width: 360px;
       margin: 0 auto 2rem;
+    }
+    @keyframes modal-spin {
+      to { transform: rotate(360deg); }
     }
 
     .lang-toggle {
@@ -2387,6 +2465,8 @@
       .testimonial-video-copy {
         padding: 1rem 1rem 1.15rem;
       }
+      .modal-form-grid { grid-template-columns: 1fr; }
+      .form-group.span-2 { grid-column: auto; }
 
       nav .nav-links {
         display: none;
@@ -2421,8 +2501,9 @@
       .placements-grid { grid-template-columns: 1fr; }
       .steps-list { grid-template-columns: 1fr; }
       .community-stats-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .modal-header, .modal-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .modal-header { padding: 1.65rem 1.35rem 1.1rem; }
+      .modal-body { padding: 0 1.35rem 1.55rem; }
+      .modal-success { padding: 2.2rem 1.35rem 2.4rem; }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .hero-stats { gap: 1.5rem; }
       .hero-photo-tall .photo-inner { min-height: 280px; }
@@ -3756,99 +3837,106 @@
 </section>
 
 <!-- ── APPLICATION MODAL ─────────────────────────────────────────── -->
-<div class="modal-overlay" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-overlay" id="apply-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-subtitle">
   <div class="modal">
     <div class="modal-header">
       <span class="modal-tag" data-i18n="modal-tag">Free application — no commitment</span>
-      <h2 class="modal-title" id="modal-title">Apply for Island Internship</h2>
-      <p class="modal-subtitle" data-i18n="modal-subtitle">Tell us about yourself and we'll come back to you within 2 business days.</p>
+      <h2 class="modal-title" id="modal-title" data-i18n="modal-title">Apply for Island Internship</h2>
+      <p class="modal-subtitle" id="modal-subtitle" data-i18n="modal-subtitle">Tell us about yourself and we'll come back to you within 2 business days.</p>
       <button class="modal-close" id="modal-close-btn" aria-label="Close">&#x2715;</button>
     </div>
     <div class="modal-form-wrap" id="modal-form-wrap">
       <div class="modal-body">
         <form id="apply-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-name">First name</label>
-              <input type="text" id="f-name" placeholder="Emma" data-i18n-ph="ph-fname" required />
+          <div class="modal-form-grid">
+            <div class="form-group required">
+              <label for="f-name" data-i18n="lbl-fname">First name</label>
+              <input class="form-control" type="text" id="f-name" name="first_name" autocomplete="given-name" placeholder="Emma" data-i18n-ph="ph-fname" data-error-required="err-fname" aria-describedby="f-name-error" required />
+              <p class="form-error" id="f-name-error" aria-live="polite"></p>
             </div>
-            <div class="form-group">
-              <label for="f-surname">Last name</label>
-              <input type="text" id="f-surname" placeholder="de Vries" data-i18n-ph="ph-lname" required />
+            <div class="form-group required">
+              <label for="f-surname" data-i18n="lbl-lname">Last name</label>
+              <input class="form-control" type="text" id="f-surname" name="last_name" autocomplete="family-name" placeholder="de Vries" data-i18n-ph="ph-lname" data-error-required="err-lname" aria-describedby="f-surname-error" required />
+              <p class="form-error" id="f-surname-error" aria-live="polite"></p>
             </div>
-          </div>
-          <div class="form-row full">
-            <div class="form-group">
-              <label for="f-email">Email address</label>
-              <input type="email" id="f-email" placeholder="emma@student.uva.nl" data-i18n-ph="ph-email" required />
+
+            <div class="form-group span-2 required">
+              <label for="f-email" data-i18n="lbl-email">Email address</label>
+              <input class="form-control" type="email" id="f-email" name="email" autocomplete="email" inputmode="email" placeholder="emma@student.uva.nl" data-i18n-ph="ph-email" data-error-required="err-email-required" data-error-email="err-email-invalid" aria-describedby="f-email-error" required />
+              <p class="form-error" id="f-email-error" aria-live="polite"></p>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-university">University</label>
-              <select id="f-university" required>
-                <option value="" disabled selected>Select your university</option>
+
+            <div class="form-group required">
+              <label for="f-university" data-i18n="lbl-uni">University</label>
+              <select class="form-control" id="f-university" name="university" data-error-required="err-uni" aria-describedby="f-university-error" required>
+                <option value="" disabled selected data-i18n="opt-uni-default">Select your university</option>
                 <option>Maastricht University</option>
                 <option>Universiteit van Amsterdam</option>
                 <option>Erasmus University</option>
                 <option>Tilburg University</option>
                 <option>Vrije Universiteit</option>
-                <option>Other Dutch university</option>
+                <option data-i18n="opt-uni-other">Other Dutch university</option>
               </select>
+              <p class="form-error" id="f-university-error" aria-live="polite"></p>
             </div>
-            <div class="form-group">
-              <label for="f-year">Study year</label>
-              <select id="f-year">
-                <option value="" disabled selected>Year</option>
-                <option>Year 2</option>
-                <option>Year 3</option>
-                <option>Year 4 (Master)</option>
-                <option>Pre-Master</option>
-                <option>Master</option>
+            <div class="form-group required">
+              <label for="f-year" data-i18n="lbl-year">Study year</label>
+              <select class="form-control" id="f-year" name="study_year" data-error-required="err-year" aria-describedby="f-year-error" required>
+                <option value="" disabled selected data-i18n="opt-year-default">Select study year</option>
+                <option value="Year 2" data-i18n="opt-year-2">Year 2</option>
+                <option value="Year 3" data-i18n="opt-year-3">Year 3</option>
+                <option value="Year 4 (Master)" data-i18n="opt-year-4">Year 4 (Master)</option>
+                <option value="Pre-Master" data-i18n="opt-year-pre">Pre-Master</option>
+                <option value="Master" data-i18n="opt-year-master">Master</option>
               </select>
+              <p class="form-error" id="f-year-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group required">
+              <label for="f-destination" data-i18n="lbl-dest">Destination</label>
+              <select class="form-control" id="f-destination" name="destination" data-error-required="err-dest" aria-describedby="f-destination-error" required>
+                <option value="" disabled selected data-i18n="opt-dest-default">Choose destination</option>
+                <option value="Bali" data-i18n="opt-dest-bali">Bali, Indonesia</option>
+                <option value="Sri Lanka" data-i18n="opt-dest-sl">Sri Lanka</option>
+                <option value="Both" data-i18n="opt-dest-both">Open to both</option>
+              </select>
+              <p class="form-error" id="f-destination-error" aria-live="polite"></p>
+            </div>
+            <div class="form-group required">
+              <label for="f-field" data-i18n="lbl-field">Internship field</label>
+              <select class="form-control" id="f-field" name="internship_field" data-error-required="err-field" aria-describedby="f-field-error" required>
+                <option value="" disabled selected data-i18n="opt-field-default">Choose field</option>
+                <option value="Marketing & Digital" data-i18n="opt-field-marketing">Marketing &amp; Digital</option>
+                <option value="Business Development" data-i18n="opt-field-bd">Business Development</option>
+                <option value="Sustainability & ESG" data-i18n="opt-field-esg">Sustainability &amp; ESG</option>
+                <option value="Hospitality Management" data-i18n="opt-field-hosp">Hospitality Management</option>
+                <option value="Startup Operations" data-i18n="opt-field-ops">Startup Operations</option>
+                <option value="Data & Tech" data-i18n="opt-field-data">Data &amp; Tech</option>
+              </select>
+              <p class="form-error" id="f-field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group span-2">
+              <label for="f-message" data-i18n="lbl-msg">Anything you'd like us to know (optional)</label>
+              <textarea class="form-control" id="f-message" name="message" placeholder="Your study background, preferred start date, or any questions…" data-i18n-ph="ph-msg"></textarea>
+              <p class="form-error" id="f-message-error" aria-live="polite"></p>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-destination">Destination</label>
-              <select id="f-destination" required>
-                <option value="" disabled selected>Choose destination</option>
-                <option value="Bali">Bali, Indonesia</option>
-                <option value="Sri Lanka">Sri Lanka</option>
-                <option value="Both">Open to both</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="f-field">Internship field</label>
-              <select id="f-field" required>
-                <option value="" disabled selected>Choose field</option>
-                <option value="Marketing & Digital">Marketing &amp; Digital</option>
-                <option value="Business Development">Business Development</option>
-                <option value="Sustainability & ESG">Sustainability &amp; ESG</option>
-                <option value="Hospitality Management">Hospitality Management</option>
-                <option value="Startup Operations">Startup Operations</option>
-                <option value="Data & Tech">Data &amp; Tech</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row full">
-            <div class="form-group">
-              <label for="f-message">Anything you'd like us to know (optional)</label>
-              <textarea id="f-message" placeholder="Your study background, preferred start date, or any questions…" data-i18n-ph="ph-msg"></textarea>
-            </div>
-          </div>
-          <button type="submit" class="modal-submit">Send application</button>
+          <button type="submit" class="modal-submit" id="modal-submit-btn">
+            <span class="modal-submit-spinner" aria-hidden="true"></span>
+            <span class="modal-submit-label" data-i18n="modal-submit">Send application</span>
+          </button>
           <p class="modal-note" data-i18n="modal-note">No payment required. We'll reply within 2 business days.</p>
         </form>
       </div>
     </div>
-    <div class="modal-success" id="modal-success">
+    <div class="modal-success" id="modal-success" role="status" aria-live="polite">
       <div class="success-mark">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <h3 class="success-title">Application received.</h3>
-      <p class="success-sub">Thank you — we'll review your profile and get back to you within 2 business days with your matched placement options.</p>
-      <button class="modal-submit" style="max-width:220px;margin:0 auto;display:block;" onclick="closeModal()">Back to homepage</button>
+      <h3 class="success-title" data-i18n="success-title">Application received.</h3>
+      <p class="success-sub" data-i18n="success-sub">Thank you — we'll review your profile and get back to you within 2 business days with your matched placement options.</p>
+      <button class="modal-submit modal-submit-secondary" type="button" onclick="closeModal()" data-i18n="modal-back">Back to homepage</button>
     </div>
   </div>
 </div>
@@ -4074,8 +4162,13 @@ const t = {
     'footer-link-privacy':'Privacy Policy',
     'modal-tag':'Free application — no commitment','modal-title':'Apply for Island Internship','modal-subtitle':'Tell us about yourself and we\'ll come back to you within 2 business days.',
     'lbl-fname':'First name','lbl-lname':'Last name','lbl-email':'Email address','lbl-uni':'University','lbl-year':'Study year','lbl-dest':'Destination','lbl-field':'Internship field','lbl-msg':'Anything you\'d like us to know (optional)',
+    'opt-uni-default':'Select your university','opt-uni-other':'Other Dutch university',
+    'opt-year-default':'Select study year','opt-year-2':'Year 2','opt-year-3':'Year 3','opt-year-4':'Year 4 (Master)','opt-year-pre':'Pre-Master','opt-year-master':'Master',
+    'opt-dest-default':'Choose destination','opt-dest-bali':'Bali, Indonesia','opt-dest-sl':'Sri Lanka','opt-dest-both':'Open to both',
+    'opt-field-default':'Choose field','opt-field-marketing':'Marketing & Digital','opt-field-bd':'Business Development','opt-field-esg':'Sustainability & ESG','opt-field-hosp':'Hospitality Management','opt-field-ops':'Startup Operations','opt-field-data':'Data & Tech',
     'ph-fname':'Emma','ph-lname':'de Vries','ph-email':'emma@student.uva.nl','ph-msg':'Your study background, preferred start date, or any questions…',
-    'modal-submit':'Send application','modal-note':'No payment required. We\'ll reply within 2 business days.',
+    'modal-submit':'Send application','modal-submit-loading':'Sending application...','modal-note':'No payment required. We\'ll reply within 2 business days.',
+    'err-fname':'Please enter your first name.','err-lname':'Please enter your last name.','err-email-required':'Please enter your email address.','err-email-invalid':'Enter a valid email address.','err-uni':'Select your university.','err-year':'Select your study year.','err-dest':'Choose a destination.','err-field':'Choose an internship field.',
     'success-title':'Application received.','success-sub':'Thank you — we\'ll review your profile and get back to you within 2 business days with your matched placement options.','modal-back':'Back to homepage',
   },
   nl: {
@@ -4207,8 +4300,13 @@ const t = {
     'footer-link-privacy':'Privacybeleid',
     'modal-tag':'Gratis sollicitatie — nergens aan vast','modal-title':'Solliciteer bij Island Internship','modal-subtitle':'Vertel ons over jezelf en we nemen binnen 2 werkdagen contact met je op.',
     'lbl-fname':'Voornaam','lbl-lname':'Achternaam','lbl-email':'E-mailadres','lbl-uni':'Universiteit','lbl-year':'Studiejaar','lbl-dest':'Bestemming','lbl-field':'Vakgebied stage','lbl-msg':'Iets wat je ons wilt laten weten (optioneel)',
+    'opt-uni-default':'Selecteer je universiteit','opt-uni-other':'Andere Nederlandse universiteit',
+    'opt-year-default':'Selecteer studiejaar','opt-year-2':'Jaar 2','opt-year-3':'Jaar 3','opt-year-4':'Jaar 4 (Master)','opt-year-pre':'Pre-master','opt-year-master':'Master',
+    'opt-dest-default':'Kies bestemming','opt-dest-bali':'Bali, Indonesië','opt-dest-sl':'Sri Lanka','opt-dest-both':'Open voor beide',
+    'opt-field-default':'Kies vakgebied','opt-field-marketing':'Marketing & Digital','opt-field-bd':'Business Development','opt-field-esg':'Duurzaamheid & ESG','opt-field-hosp':'Hospitality Management','opt-field-ops':'Startup Operations','opt-field-data':'Data & Tech',
     'ph-fname':'Emma','ph-lname':'de Vries','ph-email':'emma@student.uva.nl','ph-msg':'Je studieachtergrond, gewenste startdatum of eventuele vragen…',
-    'modal-submit':'Verstuur sollicitatie','modal-note':'Geen betaling vereist. We reageren binnen 2 werkdagen.',
+    'modal-submit':'Verstuur sollicitatie','modal-submit-loading':'Sollicitatie wordt verstuurd...','modal-note':'Geen betaling vereist. We reageren binnen 2 werkdagen.',
+    'err-fname':'Vul je voornaam in.','err-lname':'Vul je achternaam in.','err-email-required':'Vul je e-mailadres in.','err-email-invalid':'Vul een geldig e-mailadres in.','err-uni':'Selecteer je universiteit.','err-year':'Selecteer je studiejaar.','err-dest':'Kies een bestemming.','err-field':'Kies een vakgebied.',
     'success-title':'Sollicitatie ontvangen.','success-sub':'Bedankt — we beoordelen je profiel en nemen binnen 2 werkdagen contact met je op met je stageopties.','modal-back':'Terug naar de homepage',
   }
 };
@@ -4228,6 +4326,20 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const k = el.dataset.i18nPh;
     if (t[lang][k] !== undefined) el.placeholder = t[lang][k];
+  });
+  const submitBtn = document.getElementById('modal-submit-btn');
+  if (submitBtn) {
+    const submitLabelEl = submitBtn.querySelector('.modal-submit-label');
+    if (submitLabelEl) {
+      submitLabelEl.textContent = submitBtn.classList.contains('is-loading')
+        ? (t[lang]['modal-submit-loading'] || submitLabelEl.textContent)
+        : (t[lang]['modal-submit'] || submitLabelEl.textContent);
+    }
+  }
+  document.querySelectorAll('.form-control[data-active-error-key]').forEach(el => {
+    const k = el.dataset.activeErrorKey;
+    const errorEl = document.getElementById(`${el.id}-error`);
+    if (errorEl && t[lang][k] !== undefined) errorEl.textContent = t[lang][k];
   });
   document.getElementById('lt-en').classList.toggle('lt-active', lang === 'en');
   document.getElementById('lt-nl').classList.toggle('lt-active', lang === 'nl');
@@ -4270,24 +4382,89 @@ setLang(currentLang);
   const form        = document.getElementById('apply-form');
   const destSel     = document.getElementById('f-destination');
   const fieldSel    = document.getElementById('f-field');
+  const submitBtn   = document.getElementById('modal-submit-btn');
+  const submitLabel = submitBtn.querySelector('.modal-submit-label');
+  const firstField  = document.getElementById('f-name');
+  const controls    = Array.from(form.querySelectorAll('.form-control'));
+  const validationControls = controls.filter(el => el.hasAttribute('required') || el.type === 'email');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function getCopy(key) {
+    return (t[currentLang] && t[currentLang][key]) || '';
+  }
+
+  function getErrorEl(control) {
+    return document.getElementById(`${control.id}-error`);
+  }
+
+  function setSubmitting(isSubmitting) {
+    submitBtn.disabled = isSubmitting;
+    submitBtn.classList.toggle('is-loading', isSubmitting);
+    submitLabel.textContent = getCopy(isSubmitting ? 'modal-submit-loading' : 'modal-submit') || submitLabel.textContent;
+  }
+
+  function setFieldError(control, key) {
+    const group = control.closest('.form-group');
+    const errorEl = getErrorEl(control);
+    control.dataset.activeErrorKey = key;
+    control.setAttribute('aria-invalid', 'true');
+    if (group) group.classList.add('is-error');
+    if (errorEl) errorEl.textContent = getCopy(key);
+  }
+
+  function clearFieldError(control) {
+    const group = control.closest('.form-group');
+    const errorEl = getErrorEl(control);
+    delete control.dataset.activeErrorKey;
+    control.removeAttribute('aria-invalid');
+    if (group) group.classList.remove('is-error');
+    if (errorEl) errorEl.textContent = '';
+  }
+
+  function validateField(control) {
+    const value = control.value.trim();
+
+    if (control.hasAttribute('required') && !value) {
+      setFieldError(control, control.dataset.errorRequired);
+      return false;
+    }
+
+    if (control.type === 'email' && value && !emailPattern.test(value)) {
+      setFieldError(control, control.dataset.errorEmail);
+      return false;
+    }
+
+    clearFieldError(control);
+    return true;
+  }
+
+  function clearValidation() {
+    controls.forEach(clearFieldError);
+  }
 
   function openModal(e, destination, field) {
     if (e) e.preventDefault();
     formWrap.classList.remove('hidden');
     successPane.classList.remove('visible');
+    clearValidation();
+    setSubmitting(false);
     if (destination) destSel.value = destination;
     if (field)       fieldSel.value = field;
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      const first = form.querySelector('input:not([value]), input[value=""]');
-      if (first) first.focus();
-    }, 350);
+    setTimeout(() => firstField.focus(), 220);
   }
 
   function closeModal() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
+    setSubmitting(false);
+    if (successPane.classList.contains('visible')) {
+      form.reset();
+      formWrap.classList.remove('hidden');
+      successPane.classList.remove('visible');
+      clearValidation();
+    }
   }
 
   document.getElementById('modal-close-btn').addEventListener('click', closeModal);
@@ -4296,30 +4473,34 @@ setLang(currentLang);
     if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
   });
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const name  = document.getElementById('f-name').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const uni   = document.getElementById('f-university').value;
-    const dest  = destSel.value;
-    const fld   = fieldSel.value;
-    const fields = [
-      { el: document.getElementById('f-name'),       val: name  },
-      { el: document.getElementById('f-email'),      val: email },
-      { el: document.getElementById('f-university'), val: uni   },
-      { el: destSel,                                 val: dest  },
-      { el: fieldSel,                                val: fld   },
-    ];
-    let valid = true;
-    fields.forEach(({ el, val }) => {
-      if (!val) {
-        valid = false;
-        el.style.borderColor = 'var(--coral)';
-        el.style.boxShadow   = '0 0 0 3px rgba(200,80,58,0.12)';
-        el.addEventListener('input', () => { el.style.borderColor = ''; el.style.boxShadow = ''; }, { once: true });
-      }
+  controls.forEach(control => {
+    const eventName = control.tagName === 'SELECT' ? 'change' : 'input';
+    control.addEventListener(eventName, () => {
+      if (control.getAttribute('aria-invalid') === 'true' || control.value.trim()) validateField(control);
     });
-    if (!valid) return;
+    control.addEventListener('blur', () => {
+      if (control.hasAttribute('required') || control.value.trim()) validateField(control);
+    });
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    let firstInvalid = null;
+    validationControls.forEach(control => {
+      const isValid = validateField(control);
+      if (!isValid && !firstInvalid) firstInvalid = control;
+    });
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+
+    setSubmitting(true);
+    await new Promise(resolve => setTimeout(resolve, 700));
+    form.reset();
+    clearValidation();
+    setSubmitting(false);
     formWrap.classList.add('hidden');
     successPane.classList.add('visible');
   });
