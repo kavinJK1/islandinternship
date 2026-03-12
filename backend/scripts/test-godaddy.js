@@ -1,4 +1,4 @@
-node scripts/test-godaddy.js#!/usr/bin/env node
+#!/usr/bin/env node
 'use strict';
 
 /**
@@ -9,10 +9,9 @@ node scripts/test-godaddy.js#!/usr/bin/env node
  * Defaults to OTE environment. Set GODADDY_ENV=production in .env for live DNS.
  */
 
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
-
-const godaddy = require('../src/services/godaddy');
+// env.js auto-loads .env — no dotenv package needed
 const env     = require('../src/config/env');
+const godaddy = require('../src/services/godaddy');
 
 const PASS = '\x1b[32m✓\x1b[0m';
 const FAIL = '\x1b[31m✗\x1b[0m';
