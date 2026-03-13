@@ -2521,8 +2521,8 @@
     }
     .testimonial-videos-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
       margin-bottom: 2.5rem;
     }
     .testimonial-video-card {
@@ -2921,6 +2921,170 @@
       .photo-bg, .btn, .track-card, .testimonial-video-card, .story-card { transition: none; }
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
     }
+
+    /* ── TRUST AUTHENTICITY NOTE ──────────────────────────────────── */
+    .trust-authenticity {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── WHAT'S INCLUDED SECTION ──────────────────────────────────── */
+    #what-is-included {
+      background: var(--navy);
+      color: var(--white);
+    }
+    #what-is-included .eyebrow { color: var(--teal); }
+    #what-is-included .section-heading { color: var(--white); }
+    #what-is-included .section-sub { color: rgba(255,255,255,0.65); }
+
+    .included-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .included-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.4rem 1.2rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .included-card strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .included-card p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.6);
+    }
+    .included-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(42,122,111,0.18);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.2rem;
+    }
+    .included-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.25rem;
+    }
+    .included-note svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── OUTCOMES VISUAL CARDS ────────────────────────────────────── */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0 2rem;
+    }
+    .outcome-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,26,46,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(26,26,46,0.11);
+    }
+    .outcome-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .outcome-card-body {
+      padding: 1.25rem 1.2rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .outcome-card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--teal-faint);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.15rem;
+    }
+    .outcome-card-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .outcome-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .outcome-card-bullets {
+      list-style: none;
+      margin-top: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .outcome-card-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .outcome-card-bullets li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 1024px) {
+      .included-cards-grid { grid-template-columns: repeat(3, 1fr); }
+      .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .included-cards-grid { grid-template-columns: 1fr 1fr; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 420px) {
+      .included-cards-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -2929,11 +3093,11 @@
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">Island<span>.</span>Internship</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#moments" data-i18n="nav-destinations">Tracks</a></li>
-    <li><a href="/career-outcomes.html" data-i18n="nav-placements">Outcomes</a></li>
+    <li><a href="#included">How it Works</a></li>
+    <li><a href="#moments">Tracks</a></li>
+    <li><a href="#placements">Outcomes</a></li>
     <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="/community-lifestyle.html" data-i18n="nav-companies">Community</a></li>
     <li><a href="#cta-banner" class="nav-apply" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
   </ul>
   <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
@@ -3044,7 +3208,61 @@
     </div>
   </div>
   <div class="trust-footnote" data-i18n="trust-footnote">Replace the placeholders here once the confirmed intern, host-company, and university totals are locked for both destinations.</div>
+  <div class="trust-authenticity fade-up">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1L10.2 5.5L15 6.2L11.5 9.6L12.4 14.4L8 12L3.6 14.4L4.5 9.6L1 6.2L5.8 5.5L8 1Z" stroke="var(--teal)" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
+    <span>Every photo on this site was taken by our own team — no stock imagery, no filters.</span>
+  </div>
 </div>
+
+<!-- ── WHAT'S INCLUDED ────────────────────────────────────────────── -->
+<section id="what-is-included" class="section-wrap">
+  <div class="included-header">
+    <div class="eyebrow fade-up">Full program support</div>
+    <h2 class="section-heading fade-up delay-1">Everything handled so you can focus on the internship.</h2>
+    <p class="section-sub fade-up delay-2">The program fee covers placement, visa, arrival, and ongoing support. You pay monthly rent directly — everything else is taken care of.</p>
+  </div>
+  <div class="included-cards-grid fade-up delay-1">
+    <div class="included-card">
+      <div class="included-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      </div>
+      <strong>Internship Placement</strong>
+      <p>Matched to a curated host company in Bali or Lombok that fits your field and study goals.</p>
+    </div>
+    <div class="included-card">
+      <div class="included-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <strong>Visa Arrangement</strong>
+      <p>Send us your passport — we handle all visa paperwork, applications, and documentation.</p>
+    </div>
+    <div class="included-card">
+      <div class="included-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <strong>Housing Assistance</strong>
+      <p>We find accommodation options and present them to you. Monthly rent is paid directly by you.</p>
+    </div>
+    <div class="included-card">
+      <div class="included-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <strong>Airport Pickup</strong>
+      <p>We pick you up on arrival day so your first hours in country feel calm and organised.</p>
+    </div>
+    <div class="included-card">
+      <div class="included-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <strong>First Day Drop-off & Local Support</strong>
+      <p>We drop you at your internship on day one and remain available throughout your placement.</p>
+    </div>
+  </div>
+  <div class="included-note fade-up delay-2">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1L10.2 5.5L15 6.2L11.5 9.6L12.4 14.4L8 12L3.6 14.4L4.5 9.6L1 6.2L5.8 5.5L8 1Z" stroke="var(--teal)" stroke-width="1.4" fill="none" stroke-linejoin="round"/></svg>
+    <span>All of the above is included in the program fee — except monthly rent, which you pay directly to your accommodation.</span>
+  </div>
+</section>
 
 <!-- ── WHAT IT ACTUALLY LOOKS LIKE ──────────────────────────────── -->
 <section id="moments" class="section-wrap">
@@ -3227,166 +3445,61 @@
     <h2 class="section-heading fade-up delay-1" data-i18n="pl-heading">What students should leave the program with.</h2>
     <p class="section-sub fade-up delay-2" data-i18n="pl-sub">The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.</p>
   </div>
-  <div class="placements-intro fade-up">
-    <p class="placements-intro-copy" data-i18n="pl-intro-copy">Island Internship is positioned as a career accelerator because the outcome is not just time in Bali. It is the combination of practical experience, sharper career direction, and a more ambitious peer network.</p>
-    <ul class="placements-intro-list">
-      <li>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span data-i18n="pl-intro-point-1">Talk about actual projects in interviews, not just classroom work.</span>
-      </li>
-      <li>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span data-i18n="pl-intro-point-2">Build proof for your CV, portfolio, and LinkedIn profile.</span>
-      </li>
-      <li>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span data-i18n="pl-intro-point-3">Learn how teams in startups, agencies, hospitality, and impact businesses actually operate.</span>
-      </li>
-      <li>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span data-i18n="pl-intro-point-4">Return with a wider international network and clearer next-step thinking.</span>
-      </li>
-    </ul>
-  </div>
-  <div class="placements-grid">
-    <div class="placement-card fade-up">
-      <div class="placement-top">
-        <div class="placement-top-bg pt-1"></div>
-        <span class="placement-dest-badge" data-i18n="pl-1-badge">Outcome 01</span>
-      </div>
-      <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-1-company">CV and portfolio</div>
-        <div class="placement-field-row">
-          <span class="placement-field" data-i18n="pl-1-field">Career proof</span>
-          <span class="placement-type-badge" data-i18n="pl-1-type">Built on actual work</span>
+  <div class="outcomes-grid">
+    <div class="outcome-card fade-up">
+      <img class="outcome-card-img" src="images/community-working-1.jpg" alt="Student working at internship in Bali" loading="lazy">
+      <div class="outcome-card-body">
+        <div class="outcome-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         </div>
-        <h3 class="placement-title" data-i18n="pl-1-title">Projects you can actually speak about.</h3>
-        <p class="placement-desc" data-i18n="pl-1-desc">The best placements give you campaigns, reports, operational improvements, or partnership work that turns into concrete proof for interviews and future applications.</p>
-        <div class="placement-skills">
-          <span class="skill-tag" data-i18n="pl-1-skill-1">Case studies</span>
-          <span class="skill-tag" data-i18n="pl-1-skill-2">Project examples</span>
-          <span class="skill-tag" data-i18n="pl-1-skill-3">Interview stories</span>
-          <span class="skill-tag" data-i18n="pl-1-skill-4">Portfolio proof</span>
-        </div>
-        <div class="placement-meta">
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-1-meta-1-label">You leave with</strong>
-            <span data-i18n="pl-1-meta-1-value">Better examples on your CV and LinkedIn.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-1-meta-2-label">Built through</strong>
-            <span data-i18n="pl-1-meta-2-value">Deliverables, reporting, and project ownership.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-1-meta-3-label">Best for</strong>
-            <span data-i18n="pl-1-meta-3-value">Students who want stronger career proof fast.</span>
-          </div>
-        </div>
+        <div class="outcome-card-headline">Career Portfolio</div>
+        <p class="outcome-card-desc">Real deliverables you can speak about in every interview after you leave.</p>
+        <ul class="outcome-card-bullets">
+          <li>Campaign work, reports, and project ownership on your CV</li>
+          <li>Portfolio proof built through actual internship output</li>
+        </ul>
       </div>
     </div>
-    <div class="placement-card fade-up delay-1">
-      <div class="placement-top">
-        <div class="placement-top-bg pt-2"></div>
-        <span class="placement-dest-badge" data-i18n="pl-2-badge">Outcome 02</span>
-      </div>
-      <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-2-company">Business exposure</div>
-        <div class="placement-field-row">
-          <span class="placement-field" data-i18n="pl-2-field">How teams work</span>
-          <span class="placement-type-badge" data-i18n="pl-2-type">Closer to founders and operators</span>
+    <div class="outcome-card fade-up delay-1">
+      <img class="outcome-card-img" src="images/community-working-2.jpg" alt="Intern inside a Bali business team" loading="lazy">
+      <div class="outcome-card-body">
+        <div class="outcome-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
-        <h3 class="placement-title" data-i18n="pl-2-title">A better feel for how ambitious companies run.</h3>
-        <p class="placement-desc" data-i18n="pl-2-desc">Students get close to real operating environments in startups, agencies, hospitality brands, and impact businesses rather than staying at the edge of the team.</p>
-        <div class="placement-skills">
-          <span class="skill-tag" data-i18n="pl-2-skill-1">Team rhythm</span>
-          <span class="skill-tag" data-i18n="pl-2-skill-2">Meetings</span>
-          <span class="skill-tag" data-i18n="pl-2-skill-3">Execution</span>
-          <span class="skill-tag" data-i18n="pl-2-skill-4">Commercial awareness</span>
-        </div>
-        <div class="placement-meta">
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-2-meta-1-label">You build</strong>
-            <span data-i18n="pl-2-meta-1-value">Practical business judgement.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-2-meta-2-label">Through</strong>
-            <span data-i18n="pl-2-meta-2-value">Exposure to teams, deadlines, and feedback loops.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-2-meta-3-label">Useful for</strong>
-            <span data-i18n="pl-2-meta-3-value">Students still defining the kind of environment they want.</span>
-          </div>
-        </div>
+        <div class="outcome-card-headline">Business Exposure</div>
+        <p class="outcome-card-desc">Work close to founders and operators inside real international businesses.</p>
+        <ul class="outcome-card-bullets">
+          <li>Commercial awareness built through daily team exposure</li>
+          <li>Understand how startups, agencies, and hospitality brands run</li>
+        </ul>
       </div>
     </div>
-    <div class="placement-card fade-up delay-2">
-      <div class="placement-top">
-        <div class="placement-top-bg pt-3"></div>
-        <span class="placement-dest-badge" data-i18n="pl-3-badge">Outcome 03</span>
-      </div>
-      <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-3-company">International network</div>
-        <div class="placement-field-row">
-          <span class="placement-field" data-i18n="pl-3-field">People you keep</span>
-          <span class="placement-type-badge" data-i18n="pl-3-type">Community and company network</span>
+    <div class="outcome-card fade-up delay-2">
+      <img class="outcome-card-img" src="images/community-networking.jpg" alt="Island Internship students networking" loading="lazy">
+      <div class="outcome-card-body">
+        <div class="outcome-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h3 class="placement-title" data-i18n="pl-3-title">A network that is both social and professional.</h3>
-        <p class="placement-desc" data-i18n="pl-3-desc">You meet other interns, teams, founders, operators, and hospitality people while living in the same area and sharing a more international routine.</p>
-        <div class="placement-skills">
-          <span class="skill-tag" data-i18n="pl-3-skill-1">Peer network</span>
-          <span class="skill-tag" data-i18n="pl-3-skill-2">Coworking</span>
-          <span class="skill-tag" data-i18n="pl-3-skill-3">Introductions</span>
-          <span class="skill-tag" data-i18n="pl-3-skill-4">Community events</span>
-        </div>
-        <div class="placement-meta">
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-3-meta-1-label">You leave with</strong>
-            <span data-i18n="pl-3-meta-1-value">Contacts beyond your own university circle.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-3-meta-2-label">Built through</strong>
-            <span data-i18n="pl-3-meta-2-value">Shared housing, events, and daily work connections.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-3-meta-3-label">Best for</strong>
-            <span data-i18n="pl-3-meta-3-value">Students who value both belonging and ambition.</span>
-          </div>
-        </div>
+        <div class="outcome-card-headline">International Network</div>
+        <p class="outcome-card-desc">Connections across universities, industries, and countries that stay useful after you return.</p>
+        <ul class="outcome-card-bullets">
+          <li>Peer network beyond your own university circle</li>
+          <li>Professional contacts from partner companies and co-interns</li>
+        </ul>
       </div>
     </div>
-    <div class="placement-card fade-up delay-3">
-      <div class="placement-top">
-        <div class="placement-top-bg pt-2"></div>
-        <span class="placement-dest-badge" data-i18n="pl-4-badge">Outcome 04</span>
-      </div>
-      <div class="placement-body">
-        <div class="placement-company" data-i18n="pl-4-company">Career direction</div>
-        <div class="placement-field-row">
-          <span class="placement-field" data-i18n="pl-4-field">Clarity for what comes next</span>
-          <span class="placement-type-badge" data-i18n="pl-4-type">A smarter next move</span>
+    <div class="outcome-card fade-up delay-3">
+      <img class="outcome-card-img" src="images/community-group-2.jpg" alt="Students reflecting on internship direction" loading="lazy">
+      <div class="outcome-card-body">
+        <div class="outcome-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
         </div>
-        <h3 class="placement-title" data-i18n="pl-4-title">Return with more direction, not just memories.</h3>
-        <p class="placement-desc" data-i18n="pl-4-desc">A strong placement helps students understand whether they want startups, hospitality, operations, marketing, or another direction before the next career step.</p>
-        <div class="placement-skills">
-          <span class="skill-tag" data-i18n="pl-4-skill-1">Direction</span>
-          <span class="skill-tag" data-i18n="pl-4-skill-2">Confidence</span>
-          <span class="skill-tag" data-i18n="pl-4-skill-3">Better choices</span>
-          <span class="skill-tag" data-i18n="pl-4-skill-4">Next-step clarity</span>
-        </div>
-        <div class="placement-meta">
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-4-meta-1-label">You gain</strong>
-            <span data-i18n="pl-4-meta-1-value">A clearer view of the roles you want next.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-4-meta-2-label">Through</strong>
-            <span data-i18n="pl-4-meta-2-value">Daily exposure to real working environments.</span>
-          </div>
-          <div class="placement-meta-item">
-            <strong data-i18n="pl-4-meta-3-label">Useful for</strong>
-            <span data-i18n="pl-4-meta-3-value">Students who want their internship to shape the next chapter.</span>
-          </div>
-        </div>
+        <div class="outcome-card-headline">Career Direction</div>
+        <p class="outcome-card-desc">Return knowing what kind of work and environment you actually want next.</p>
+        <ul class="outcome-card-bullets">
+          <li>Clarity on roles, industries, and working styles before you graduate</li>
+          <li>Confidence to pursue the next step with better reasoning</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -3506,6 +3619,17 @@
       <div class="testimonial-video-copy">
         <strong>Life inside the Island Internship program</strong>
         <p>A closer look at what the internship experience looks and feels like from the inside.</p>
+      </div>
+    </div>
+    <div class="testimonial-video-card fade-up delay-3">
+      <div class="testimonial-video-media">
+        <video controls playsinline preload="metadata">
+          <source src="videos/testimonial-story-4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="testimonial-video-copy">
+        <strong>Student experience — Breda University of Applied Sciences</strong>
+        <p>A BUas student shares her experience doing an internship in Bali through Island Internship.</p>
       </div>
     </div>
   </div>
