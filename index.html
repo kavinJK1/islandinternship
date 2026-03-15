@@ -196,35 +196,45 @@
     .btn-white:hover { background: var(--cream); }
 
     /* ─── SECTION UTILITY ───────────────────────────────────────── */
-    .section-wrap { padding: 128px 5%; }
-    .section-wrap-sm { padding: 88px 5%; }
+    .section-wrap { padding: 136px 5%; }
+    .section-wrap-sm { padding: 96px 5%; }
 
     .eyebrow {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1.5px;
+      background: var(--teal);
+      flex-shrink: 0;
     }
 
     .section-heading {
-      font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
       color: var(--navy);
-      line-height: 1.06;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.35rem;
+      line-height: 1.05;
+      letter-spacing: -0.018em;
+      margin-bottom: 1.5rem;
       font-weight: 500;
     }
     .section-heading em { font-style: italic; color: var(--teal); }
 
     .section-sub {
-      font-size: 1rem;
+      font-size: 1.02rem;
       color: var(--muted);
-      line-height: 1.75;
-      max-width: 520px;
+      line-height: 1.85;
+      max-width: 540px;
     }
 
     .center { text-align: center; }
@@ -369,9 +379,12 @@
       left: 1rem;
       right: 1rem;
       z-index: 2;
-      padding: 0.8rem 0.95rem 0.9rem;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(17, 21, 34, 0.32);
+      padding: 0.85rem 1rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      background: rgba(12, 16, 28, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .photo-label-time {
       font-size: 0.65rem;
@@ -383,10 +396,10 @@
     }
     .photo-label-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 500;
       color: var(--white);
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* ─── SOCIAL PROOF / TRUST BAR ──────────────────────────────── */
@@ -413,16 +426,18 @@
     }
     .trust-stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 2.6rem;
       font-weight: 600;
-      color: var(--navy);
+      color: var(--teal);
       line-height: 1;
       margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
     }
     .trust-stat-label {
-      font-size: 0.75rem;
+      font-size: 0.73rem;
+      font-weight: 500;
       color: var(--muted);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
     }
     .trust-divider {
       width: 1px;
@@ -489,28 +504,30 @@
     .track-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.6rem;
+      border-radius: 12px;
+      padding: 1.75rem 1.6rem;
       min-height: 220px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
     .track-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(26,26,46,0.08);
-      border-color: rgba(42,122,111,0.24);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 44px rgba(26,26,46,0.1);
+      border-color: rgba(42,122,111,0.3);
     }
     .track-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
       background: rgba(42,122,111,0.08);
       color: var(--teal);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
     }
     .track-kicker {
       font-size: 0.64rem;
@@ -589,18 +606,18 @@
     }
 
     .dest-card {
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
       position: relative;
-      min-height: 460px;
+      min-height: 480px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       transition: transform 0.4s cubic-bezier(.22,.68,0,1.15), box-shadow 0.4s;
     }
     .dest-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(26,26,46,0.18);
+      transform: translateY(-7px);
+      box-shadow: 0 28px 64px rgba(26,26,46,0.2);
     }
 
     .dest-bg {
@@ -1104,14 +1121,15 @@
     .step {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem 1.6rem 1.9rem;
+      border-radius: 12px;
+      padding: 1.85rem 1.6rem 2rem;
       position: relative;
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
     }
     .step:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(26,26,46,0.09);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(26,26,46,0.1);
+      border-color: rgba(42,122,111,0.18);
     }
 
     .step-num-wrap {
@@ -1453,6 +1471,61 @@
       .dil-time { font-size: 0.68rem; }
     }
 
+
+    /* ─── COMPANIES SPLIT LAYOUT ─────────────────────────────────── */
+    .companies-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .companies-split-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      height: 400px;
+      position: relative;
+    }
+    .companies-split-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform 0.65s ease;
+      display: block;
+    }
+    .companies-split:hover .companies-split-photo img {
+      transform: scale(1.04);
+    }
+
+    .companies-learn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.02em;
+      margin-top: 1.75rem;
+      border-bottom: 1.5px solid rgba(42,122,111,0.3);
+      padding-bottom: 2px;
+      transition: gap 0.22s, border-color 0.22s;
+    }
+    .companies-learn-link:hover {
+      gap: 0.7rem;
+      border-color: var(--teal);
+    }
+    .companies-learn-link svg { flex-shrink: 0; }
+
+    @media (max-width: 860px) {
+      .companies-split {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .companies-split-photo { height: 280px; }
+    }
+
     /* ─── FOR COMPANIES ─────────────────────────────────────────── */
     #companies { background: var(--white); }
 
@@ -1471,8 +1544,14 @@
     .companies-teaser-item {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem 1.6rem;
+      border-radius: 12px;
+      padding: 1.85rem 1.7rem;
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+    }
+    .companies-teaser-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(26,26,46,0.09);
+      border-color: rgba(42,122,111,0.22);
     }
     .companies-grid {
       display: grid;
@@ -1715,7 +1794,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(42,122,111,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 65% 45%, rgba(42,122,111,0.22) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(42,122,111,0.08) 0%, transparent 50%);
     }
 
     .cta-inner {
@@ -1886,14 +1965,17 @@
     .testimonial-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       gap: 0;
-      transition: box-shadow 0.25s;
+      transition: box-shadow 0.28s, transform 0.28s;
     }
-    .testimonial-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.07); }
+    .testimonial-card:hover {
+      box-shadow: 0 16px 40px rgba(26,26,46,0.1);
+      transform: translateY(-3px);
+    }
 
     .video-placeholder {
       width: 100%;
@@ -1994,15 +2076,16 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 2rem 1.85rem;
+      padding: 2rem 1.85rem 1.85rem;
       display: flex;
       flex-direction: column;
       gap: 1.1rem;
-      transition: box-shadow 0.28s, transform 0.28s;
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     }
     .story-card:hover {
-      box-shadow: 0 16px 48px rgba(26,26,46,0.1);
-      transform: translateY(-4px);
+      box-shadow: 0 20px 52px rgba(26,26,46,0.11);
+      transform: translateY(-5px);
+      border-color: rgba(42,122,111,0.2);
     }
 
     .story-stars {
@@ -2013,11 +2096,12 @@
 
     .story-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      line-height: 1.75;
+      font-size: 1.22rem;
+      line-height: 1.72;
       color: var(--navy);
       flex: 1;
       font-style: italic;
+      letter-spacing: 0.005em;
     }
 
     .story-person {
@@ -3031,12 +3115,12 @@
     .included-icon {
       width: 42px;
       height: 42px;
-      background: rgba(42,122,111,0.18);
+      background: rgba(42,122,111,0.1);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.4rem;
     }
     .included-note {
       display: flex;
@@ -3945,10 +4029,20 @@
 
 <!-- ── FOR COMPANIES ──────────────────────────────────────────────── -->
 <section id="companies" class="section-wrap">
-  <div class="companies-header">
-    <div class="eyebrow fade-up" data-i18n="co-eyebrow">For host companies in Bali and Sri Lanka</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="co-heading">Host international interns with more structure and less admin.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="co-sub">For teams in Bali and Sri Lanka, Island Internship helps define the role, surface suitable student profiles, and support a smoother placement process from intro to onboarding.</p>
+
+  <div class="companies-split fade-up">
+    <div class="companies-split-text">
+      <div class="eyebrow" data-i18n="co-eyebrow">For host companies in Bali and Sri Lanka</div>
+      <h2 class="section-heading" data-i18n="co-heading">Host international interns with more structure and less admin.</h2>
+      <p class="section-sub" data-i18n="co-sub">For teams in Bali and Sri Lanka, Island Internship helps define the role, surface suitable student profiles, and support a smoother placement process from intro to onboarding.</p>
+      <a href="/companies.html" class="companies-learn-link fade-up delay-3">
+        Learn more about hosting interns
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="companies-split-photo fade-up delay-2">
+      <img src="images/community-working-1.jpg" alt="International interns working together in Bali" loading="lazy">
+    </div>
   </div>
 
   <div class="companies-teaser-row fade-up delay-1">
@@ -3973,13 +4067,6 @@
       <h3 class="cb-title">Flexible 3–6 month placements</h3>
       <p class="cb-desc">Structured around your team's pace, project cycle, or seasonal needs — with support for documentation throughout.</p>
     </div>
-  </div>
-
-  <div style="text-align:center;margin-bottom:2rem;">
-    <a href="/companies.html" style="display:inline-flex;align-items:center;gap:0.45rem;font-size:0.875rem;font-weight:600;color:var(--teal);letter-spacing:0.02em;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
-      Learn more about hosting interns
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </div>
 
   <div class="companies-cta-box fade-up delay-2">
