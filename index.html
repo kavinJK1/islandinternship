@@ -1981,9 +1981,13 @@
     /* ─── STORY CARDS (new testimonials) ────────────────────────── */
     .intern-stories-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-bottom: 2rem;
+    }
+    /* Center lone card when it falls first in a new row */
+    .intern-stories-grid .story-card:last-child:nth-child(3n+1) {
+      grid-column: 2;
     }
 
     .story-card {
@@ -2041,6 +2045,9 @@
     .story-av-2 { background: #b88830; }
     .story-av-3 { background: #5a6b8a; }
     .story-av-4 { background: var(--coral); }
+    .story-av-5 { background: #3a6e62; }
+    .story-av-6 { background: #6b4c8b; }
+    .story-av-7 { background: #a04535; }
 
     .story-info {
       display: flex;
@@ -2055,7 +2062,8 @@
       font-weight: 500;
     }
 
-    @media (max-width: 768px) { .intern-stories-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 960px) { .intern-stories-grid { grid-template-columns: repeat(2, 1fr); } .intern-stories-grid .story-card:last-child:nth-child(3n+1) { grid-column: auto; } }
+    @media (max-width: 640px) { .intern-stories-grid { grid-template-columns: 1fr; } }
 
     /* ─── MODAL ─────────────────────────────────────────────────── */
     .modal-overlay {
@@ -3065,7 +3073,7 @@
     }
     .outcome-card-img {
       width: 100%;
-      height: 270px;
+      height: 340px;
       object-fit: cover;
       object-position: center 30%;
       display: block;
@@ -3683,10 +3691,10 @@
       <div class="story-stars">★★★★★</div>
       <blockquote class="story-quote" data-i18n="t1-quote">"The placement at Ex Venture was structured, international, and easy to align with my university requirements. The support before departure made the move feel clear from the start."</blockquote>
       <div class="story-person">
-        <div class="story-avatar story-av-1">PH</div>
+        <div class="story-avatar story-av-1">TO</div>
         <div class="story-info">
-          <strong data-i18n="t1-name">Student Name</strong>
-          <span data-i18n="t1-detail">University Name</span>
+          <strong data-i18n="t1-name">Tom</strong>
+          <span data-i18n="t1-detail">Maastricht University</span>
           <span class="story-role-tag" data-i18n="t1-role">Ex Venture · Bali · Marketing internship · 5 months</span>
         </div>
       </div>
@@ -3696,10 +3704,10 @@
       <div class="story-stars">★★★★★</div>
       <blockquote class="story-quote" data-i18n="t2-quote">"I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support from the start."</blockquote>
       <div class="story-person">
-        <div class="story-avatar story-av-2">PH</div>
+        <div class="story-avatar story-av-2">YI</div>
         <div class="story-info">
-          <strong data-i18n="t2-name">Student Name</strong>
-          <span data-i18n="t2-detail">University Name</span>
+          <strong data-i18n="t2-name">Yirgalem</strong>
+          <span data-i18n="t2-detail">Maastricht University</span>
           <span class="story-role-tag" data-i18n="t2-role">Bali · Operations internship · 4 months</span>
         </div>
       </div>
@@ -3709,10 +3717,10 @@
       <div class="story-stars">★★★★★</div>
       <blockquote class="story-quote" data-i18n="t3-quote">"The 11:00 to 17:00 schedule worked well for me. It felt focused during the day, while still leaving time to enjoy Bali and settle into life abroad."</blockquote>
       <div class="story-person">
-        <div class="story-avatar story-av-3">PH</div>
+        <div class="story-avatar story-av-3">ME</div>
         <div class="story-info">
-          <strong data-i18n="t3-name">Student Name</strong>
-          <span data-i18n="t3-detail">University Name</span>
+          <strong data-i18n="t3-name">Meto</strong>
+          <span data-i18n="t3-detail">Maastricht University</span>
           <span class="story-role-tag" data-i18n="t3-role">Bali · Business internship · 6 months</span>
         </div>
       </div>
@@ -3722,11 +3730,50 @@
       <div class="story-stars">★★★★★</div>
       <blockquote class="story-quote" data-i18n="t4-quote">"Communication was calm and professional throughout. From placement details to university paperwork, everything felt organized and easy to follow."</blockquote>
       <div class="story-person">
-        <div class="story-avatar story-av-4">PH</div>
+        <div class="story-avatar story-av-4">GA</div>
         <div class="story-info">
-          <strong data-i18n="t4-name">Student Name</strong>
-          <span data-i18n="t4-detail">University Name</span>
+          <strong data-i18n="t4-name">Gabriel</strong>
+          <span data-i18n="t4-detail">Erasmus Rotterdam</span>
           <span class="story-role-tag" data-i18n="t4-role">Bali · Partnerships internship · 5 months</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card fade-up delay-2">
+      <div class="story-stars">★★★★★</div>
+      <blockquote class="story-quote" data-i18n="t5-quote">"The internship had real responsibility from week one. Working with an international team in Bali gave me a kind of professional exposure I couldn't have found at home."</blockquote>
+      <div class="story-person">
+        <div class="story-avatar story-av-5">ST</div>
+        <div class="story-info">
+          <strong data-i18n="t5-name">Stephen</strong>
+          <span data-i18n="t5-detail">Erasmus Rotterdam</span>
+          <span class="story-role-tag" data-i18n="t5-role">Ex Venture · Bali · Business development · 4 months</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card fade-up delay-1">
+      <div class="story-stars">★★★★★</div>
+      <blockquote class="story-quote" data-i18n="t6-quote">"My supervisor at Breda approved the placement quickly once she saw how it was structured. The learning agreement, goals, and documentation were all ready before I even needed to ask."</blockquote>
+      <div class="story-person">
+        <div class="story-avatar story-av-6">LI</div>
+        <div class="story-info">
+          <strong data-i18n="t6-name">Lisette</strong>
+          <span data-i18n="t6-detail">Breda University of Applied Sciences</span>
+          <span class="story-role-tag" data-i18n="t6-role">Bali · Marketing internship · 5 months</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card fade-up delay-2">
+      <div class="story-stars">★★★★★</div>
+      <blockquote class="story-quote" data-i18n="t7-quote">"I didn't know anyone going in. By the end of the first dinner I already had plans for the weekend. The community made it feel completely different from finding a placement on your own."</blockquote>
+      <div class="story-person">
+        <div class="story-avatar story-av-7">LN</div>
+        <div class="story-info">
+          <strong data-i18n="t7-name">Lina</strong>
+          <span data-i18n="t7-detail">Breda University of Applied Sciences</span>
+          <span class="story-role-tag" data-i18n="t7-role">Bali · Hospitality internship · 6 months</span>
         </div>
       </div>
     </div>
@@ -3801,6 +3848,13 @@
       <h3 class="cb-title">Flexible 3–6 month placements</h3>
       <p class="cb-desc">Structured around your team's pace, project cycle, or seasonal needs — with support for documentation throughout.</p>
     </div>
+  </div>
+
+  <div style="text-align:center;margin-bottom:2rem;">
+    <a href="/companies.html" style="display:inline-flex;align-items:center;gap:0.45rem;font-size:0.875rem;font-weight:600;color:var(--teal);letter-spacing:0.02em;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+      Learn more about hosting interns
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 
   <div class="companies-cta-box fade-up delay-2">
@@ -4416,17 +4470,19 @@ const t = {
     'test-video-1-title':'A typical day at Ex Venture','test-video-1-sub':'See how an internship can look inside one of our partner company environments in Bali.',
     'test-video-2-title':'Inside the Ex Venture workday','test-video-2-sub':'A student perspective on the daily rhythm, team setting, and internship experience.',
     't1-quote':'The placement at Ex Venture was structured, international, and easy to align with my university requirements. The support before departure made the move feel clear from the start.',
-    't1-name':'Student Name','t1-detail':'University Name','t1-role':'Ex Venture · Bali · Marketing internship · 5 months',
+    't1-name':'Tom','t1-detail':'Maastricht University','t1-role':'Ex Venture · Bali · Marketing internship · 5 months',
     't2-quote':'I appreciated how clearly the internship was scoped before I arrived. I knew the team, the schedule, and the kind of projects I would support from the start.',
-    't2-name':'Student Name','t2-detail':'University Name','t2-role':'Bali · Operations internship · 4 months',
+    't2-name':'Yirgalem','t2-detail':'Maastricht University','t2-role':'Bali · Operations internship · 4 months',
     't3-quote':'The 11:00 to 17:00 schedule worked well for me. It felt focused during the day, while still leaving time to enjoy Bali and settle into life abroad.',
-    't3-name':'Student Name','t3-detail':'University Name','t3-role':'Bali · Business internship · 6 months',
+    't3-name':'Meto','t3-detail':'Maastricht University','t3-role':'Bali · Business internship · 6 months',
     't4-quote':'Communication was calm and professional throughout. From placement details to university paperwork, everything felt organized and easy to follow.',
-    't4-name':'Student Name','t4-detail':'University Name','t4-role':'Bali · Partnerships internship · 5 months',
-    't5-quote':'I went with a friend from my programme, which helped with the first week. But even without that I think the group dynamic would have been fine — there were already people in the WhatsApp chat before any of us had even booked flights.',
-    't5-name':'Sara Rousseau','t5-detail':'Sustainability Studies, VU Amsterdam · 3 months',
-    't6-quote':'Honestly the logistics were the thing I was most stressed about — visa, accommodation, getting from the airport. All of it was sorted before I even landed. I just had to show up. The rest took care of itself.',
-    't6-name':'Noah Bakker','t6-detail':'Digital Business, Rotterdam University · 4 months',
+    't4-name':'Gabriel','t4-detail':'Erasmus Rotterdam','t4-role':'Bali · Partnerships internship · 5 months',
+    't5-quote':'The internship had real responsibility from week one. Working with an international team in Bali gave me a kind of professional exposure I couldn\'t have found at home.',
+    't5-name':'Stephen','t5-detail':'Erasmus Rotterdam','t5-role':'Ex Venture · Bali · Business development · 4 months',
+    't6-quote':'My supervisor at Breda approved the placement quickly once she saw how it was structured. The learning agreement, goals, and documentation were all ready before I even needed to ask.',
+    't6-name':'Lisette','t6-detail':'Breda University of Applied Sciences','t6-role':'Bali · Marketing internship · 5 months',
+    't7-quote':'I didn\'t know anyone going in. By the end of the first dinner I already had plans for the weekend. The community made it feel completely different from finding a placement on your own.',
+    't7-name':'Lina','t7-detail':'Breda University of Applied Sciences','t7-role':'Bali · Hospitality internship · 6 months',
     'pl-eyebrow':'Internship listings','pl-heading':'Browse example placements.','pl-sub':'These example listings show how internship opportunities are structured across Bali and Sri Lanka, with clear roles, destinations, durations, and focus areas.',
     'pl-1-company':'Ex Venture','pl-1-field':'Marketing & Digital','pl-1-type':'Startup environment','pl-1-title':'Growth Marketing Intern','pl-1-desc':'Support campaign planning, content production, and audience growth within Ex Venture\'s startup environment in Bali, working across founder-led brand and business initiatives.','pl-1-meta':'Startup / venture building','pl-1-dest':'Bali',
     'pl-2-company':'Sri Lanka sustainability partner','pl-2-field':'Sustainability & ESG','pl-2-type':'Business operations','pl-2-title':'Sustainability & Operations Intern','pl-2-desc':'Contribute to research, reporting, and operational projects for a Sri Lanka-based partner company working across sustainability, community, and business initiatives.','pl-2-meta':'Operations / impact projects','pl-2-dest':'Sri Lanka',
@@ -4562,17 +4618,19 @@ const t = {
     'test-video-1-title':'Een typische dag bij Ex Venture','test-video-1-sub':'Zie hoe een stage eruit kan zien binnen een van onze partnerbedrijven op Bali.',
     'test-video-2-title':'Binnen de werkdag van Ex Venture','test-video-2-sub':'Een studentenperspectief op het dagritme, de teamsetting en de stage-ervaring.',
     't1-quote':'De stage bij Ex Venture was gestructureerd, internationaal en goed af te stemmen op de eisen van mijn universiteit. De begeleiding voor vertrek gaf vanaf het begin veel duidelijkheid.',
-    't1-name':'Naam student','t1-detail':'Naam universiteit','t1-role':'Ex Venture · Bali · Marketingstage · 5 maanden',
+    't1-name':'Tom','t1-detail':'Universiteit Maastricht','t1-role':'Ex Venture · Bali · Marketingstage · 5 maanden',
     't2-quote':'Ik vond het prettig hoe duidelijk de stage was afgebakend voordat ik arriveerde. Ik wist met welk team ik zou werken, wat het schema was en welke projecten ik vanaf het begin zou ondersteunen.',
-    't2-name':'Naam student','t2-detail':'Naam universiteit','t2-role':'Bali · Operationele stage · 4 maanden',
+    't2-name':'Yirgalem','t2-detail':'Universiteit Maastricht','t2-role':'Bali · Operationele stage · 4 maanden',
     't3-quote':'Het schema van 11:00 tot 17:00 werkte voor mij heel goed. Overdag was het gefocust, en daarnaast bleef er genoeg tijd over om Bali te leren kennen en mijn ritme op te bouwen.',
-    't3-name':'Naam student','t3-detail':'Naam universiteit','t3-role':'Bali · Businessstage · 6 maanden',
+    't3-name':'Meto','t3-detail':'Universiteit Maastricht','t3-role':'Bali · Businessstage · 6 maanden',
     't4-quote':'De communicatie was gedurende het hele proces rustig en professioneel. Van plaatsingsdetails tot universiteitsdocumentatie voelde alles georganiseerd en overzichtelijk.',
-    't4-name':'Naam student','t4-detail':'Naam universiteit','t4-role':'Bali · Partnershipsstage · 5 maanden',
-    't5-quote':'Ik ging met een vriendin van mijn opleiding, wat in de eerste week hielp. Maar zelfs zonder haar denk ik dat de groepsdynamiek prima zou zijn geweest — er waren al mensen in de WhatsApp-chat voordat iemand van ons vluchten had geboekt.',
-    't5-name':'Sara Rousseau','t5-detail':'Duurzaamheidsstudies, VU Amsterdam · 3 maanden',
-    't6-quote':'Eerlijk gezegd was de logistiek het waar ik me het meest zorgen om maakte — visum, huisvesting, vervoer vanaf het vliegveld. Alles was geregeld voordat ik landde. Ik hoefde alleen maar op te komen dagen. De rest ging vanzelf.',
-    't6-name':'Noah Bakker','t6-detail':'Digital Business, Hogeschool Rotterdam · 4 maanden',
+    't4-name':'Gabriel','t4-detail':'Erasmus Universiteit Rotterdam','t4-role':'Bali · Partnershipsstage · 5 maanden',
+    't5-quote':'De stage had vanaf de eerste week echte verantwoordelijkheid. Werken met een internationaal team op Bali gaf mij een professionele ervaring die ik thuis nooit had kunnen opdoen.',
+    't5-name':'Stephen','t5-detail':'Erasmus Universiteit Rotterdam','t5-role':'Ex Venture · Bali · Business development · 4 maanden',
+    't6-quote':'Mijn stagebegeleider op Breda keurde de plaatsing snel goed zodra ze zag hoe de stage was opgezet. De leerovereenkomst, doelen en documentatie waren allemaal klaar voordat ik er zelf om vroeg.',
+    't6-name':'Lisette','t6-detail':'Breda University of Applied Sciences','t6-role':'Bali · Marketingstage · 5 maanden',
+    't7-quote':'Ik kende niemand bij aankomst. Aan het einde van het eerste diner had ik al plannen voor het weekend. De community maakte het heel anders dan zelf een stage zoeken.',
+    't7-name':'Lina','t7-detail':'Breda University of Applied Sciences','t7-role':'Bali · Hospitalitystage · 6 maanden',
     'pl-eyebrow':'Stageoverzicht','pl-heading':'Bekijk voorbeeldstages.','pl-sub':'Deze voorbeeldvacatures laten zien hoe stagekansen op Bali en Sri Lanka zijn opgebouwd, met duidelijke rollen, bestemmingen, duur en focusgebieden.',
     'pl-1-company':'Ex Venture','pl-1-field':'Marketing & Digital','pl-1-type':'Startupomgeving','pl-1-title':'Growth Marketing Stagiair','pl-1-desc':'Ondersteun campagneplanning, contentproductie en publieksgroei binnen de startupomgeving van Ex Venture op Bali, met exposure aan merk- en businessinitiatieven.','pl-1-meta':'Startup / venture building','pl-1-dest':'Bali',
     'pl-2-company':'Duurzaamheidspartner in Sri Lanka','pl-2-field':'Duurzaamheid & ESG','pl-2-type':'Business operations','pl-2-title':'Duurzaamheid & Operaties Stagiair','pl-2-desc':'Werk mee aan onderzoek, rapportage en operationele projecten voor een partnerbedrijf in Sri Lanka dat werkt aan duurzaamheid, community en businessinitiatieven.','pl-2-meta':'Operaties / impactprojecten','pl-2-dest':'Sri Lanka',
