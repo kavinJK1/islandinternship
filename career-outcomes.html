@@ -11,15 +11,27 @@
   <link rel="stylesheet" href="/css/editorial-pages.css" />
 </head>
 <body>
-  <nav class="sub-nav">
-    <a href="/index.html" class="sub-logo">Island<span>.</span>Internship</a>
-    <ul class="sub-nav-links">
-      <li><a href="/index.html">Home</a></li>
+  <nav id="main-nav">
+    <a href="/index.html" class="nav-logo">Island<span>.</span>Internship</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html#included">How it Works</a></li>
+      <li><a href="/index.html#moments">Tracks</a></li>
+      <li><a href="/index.html#placements" class="nav-current">Outcomes</a></li>
       <li><a href="/community-lifestyle.html">Community</a></li>
-      <li><a href="/sri-lanka.html">Sri Lanka</a></li>
-      <li><a href="/index.html#cta-banner">Apply</a></li>
+      <li><a href="/companies.html">Host Companies</a></li>
+      <li><a href="/index.html#costs">Costs</a></li>
+      <li><a href="/index.html#faq">FAQ</a></li>
+      <li><a href="/index.html#cta-banner" class="nav-apply">Apply Now</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
+  </script>
 
   <section class="page-hero hero-split">
     <div>
