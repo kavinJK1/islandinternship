@@ -360,7 +360,7 @@
     .photo-bg-3 {
       background:
         linear-gradient(180deg, rgba(10,16,30,0.08), rgba(10,16,30,0.5)),
-        url("images/community-cafe.jpg") center 50% / cover no-repeat;
+        url("images/community-activities.jpg") center 50% / cover no-repeat;
     }
 
     .photo-label {
@@ -2636,6 +2636,22 @@
       color: var(--teal);
     }
     .resource-link svg { flex-shrink: 0; }
+    .guide-form { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: auto; }
+    .guide-form input[type="email"] {
+      flex: 1; min-width: 0; padding: 0.58rem 0.85rem;
+      border: 1.5px solid var(--border); border-radius: 6px;
+      font-size: 0.83rem; font-family: 'Inter', sans-serif;
+      background: var(--cream); color: var(--text); outline: none;
+    }
+    .guide-form input[type="email"]:focus { border-color: var(--teal); }
+    .guide-form button {
+      padding: 0.58rem 1rem; background: var(--teal); color: var(--white);
+      border: none; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap; font-family: 'Inter', sans-serif;
+    }
+    .guide-form button:hover { background: var(--teal-deep); }
+    .guide-success { font-size: 0.82rem; color: var(--teal); font-weight: 500; display: none; margin-top: auto; }
+
     #day-in-life {
       background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(237,229,214,0.45));
     }
@@ -3580,10 +3596,11 @@
       </div>
     </div>
   </div>
-  <div class="community-photo-strip fade-up delay-2" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-top:2.5rem;border-radius:16px;overflow:hidden;">
-    <img src="images/moments-group.jpg" alt="Island Internship students together" style="width:100%;height:240px;object-fit:cover;object-position:center 30%;">
-    <img src="images/moments-beach.jpg" alt="Interns enjoying Bali lifestyle" style="width:100%;height:240px;object-fit:cover;object-position:center 25%;">
-    <img src="images/community-cafe.jpg" alt="Island Internship cohort at a Bali café" style="width:100%;height:240px;object-fit:cover;object-position:center 20%;">
+  <div class="community-photo-strip fade-up delay-2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:2.5rem;border-radius:16px;overflow:hidden;">
+    <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" style="width:100%;height:280px;object-fit:cover;object-position:center 30%;">
+    <img src="images/community-dinner-indoor.jpg" alt="Interns sharing a dinner together in Bali" style="width:100%;height:280px;object-fit:cover;object-position:center 40%;">
+    <img src="images/community-laughing.jpg" alt="Students laughing during orientation" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;">
+    <img src="images/community-orientation.jpg" alt="Orientation session with the intern cohort" style="width:100%;height:280px;object-fit:cover;object-position:center top;">
   </div>
   <div class="placements-fields-row fade-up delay-2" style="margin-top: 2.25rem;">
     <span class="placements-fields-label" data-i18n="com-link-label">Want the full community and lifestyle picture?</span>
@@ -3718,7 +3735,11 @@
       <h3 class="resource-title" data-i18n="dil-1-heading">The Bali Internship Guide</h3>
       <p class="resource-text" data-i18n="dil-1-desc">A practical overview of tracks, pricing, housing, visa basics, and what the application process looks like from first form to arrival.</p>
       <div class="resource-meta" data-i18n="dil-1-meta">Best for students still comparing Bali with other internship options.</div>
-      <a href="#cta-banner" class="resource-link" onclick="openModal(event)" data-i18n="dil-1-link">Request the guide</a>
+      <form class="guide-form" id="guide-email-form" novalidate>
+        <input type="email" name="email" placeholder="your@student.nl" required autocomplete="email" aria-label="Your email address" />
+        <button type="submit">Send me the guide</button>
+      </form>
+      <p class="guide-success" id="guide-success">Guide on its way — check your inbox.</p>
     </article>
     <article class="resource-card">
       <div class="resource-kicker" data-i18n="dil-2-title">AI fit quiz</div>
@@ -5620,6 +5641,22 @@ setLang(currentLang);
     successPane.classList.add('visible');
     setTimeout(() => successBackBtn.focus(), 50);
   });
+
+  // Guide email-only form
+  const guideForm = document.getElementById('guide-email-form');
+  const guideSuccess = document.getElementById('guide-success');
+  if (guideForm) {
+    guideForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const email = guideForm.querySelector('input[type="email"]');
+      if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.focus();
+        return;
+      }
+      guideForm.style.display = 'none';
+      guideSuccess.style.display = 'block';
+    });
+  }
 </script>
 </body>
 </html>
