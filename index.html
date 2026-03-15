@@ -344,11 +344,11 @@
     .photo-inner {
       width: 100%;
       height: 100%;
-      min-height: 200px;
+      min-height: 240px;
       position: relative;
       overflow: hidden;
     }
-    .hero-photo-tall .photo-inner { min-height: 440px; }
+    .hero-photo-tall .photo-inner { min-height: 490px; }
 
     .photo-bg {
       position: absolute;
@@ -1036,17 +1036,22 @@
     }
     .community-mosaic {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
       border-radius: 14px;
       overflow: hidden;
     }
     .community-mosaic img {
       width: 100%;
-      height: 190px;
+      height: 210px;
       object-fit: cover;
       display: block;
       transition: transform 0.5s ease;
+    }
+    .community-mosaic img:first-child {
+      grid-column: span 2;
+      height: 300px;
+      object-position: center 35%;
     }
     .community-mosaic img:hover { transform: scale(1.04); }
 
@@ -3136,8 +3141,8 @@
     /* ── OUTCOMES VISUAL CARDS ────────────────────────────────────── */
     .outcomes-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
       margin: 2rem 0 2rem;
     }
     .outcome-card {
@@ -3156,7 +3161,7 @@
     }
     .outcome-card-img {
       width: 100%;
-      height: 340px;
+      height: 280px;
       object-fit: cover;
       object-position: center 30%;
       display: block;
@@ -3765,7 +3770,7 @@
       </div>
     </div>
     <div class="outcome-card fade-up delay-3">
-      <img class="outcome-card-img" src="images/outcomes-mentorship.jpg" alt="Mentor guiding intern on career direction" loading="lazy">
+      <img class="outcome-card-img" src="images/community-cafe.jpg" alt="Intern reflecting on career direction in a Bali café" loading="lazy" style="object-position: center 20%;">
       <div class="outcome-card-body">
         <div class="outcome-card-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
@@ -3977,12 +3982,11 @@
       </ul>
     </div>
     <div class="community-mosaic fade-up delay-2">
-      <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" style="object-position:center 30%;">
       <img src="images/community-villa-group.jpg" alt="Intern cohort together at the villa" style="object-position:center 40%;">
+      <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" style="object-position:center 30%;">
       <img src="images/community-indoor-social.jpg" alt="Interns networking at an informal evening" style="object-position:center 45%;">
       <img src="images/community-dinner-indoor.jpg" alt="Interns sharing a dinner together" style="object-position:center 40%;">
       <img src="images/community-laughing.jpg" alt="Students laughing during orientation" style="object-position:center 25%;">
-      <img src="images/community-orientation.jpg" alt="Orientation session with the intern cohort" style="object-position:center top;">
     </div>
   </div>
   <div class="placements-fields-row fade-up delay-2" style="margin-top: 2.5rem;">
