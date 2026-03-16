@@ -3482,6 +3482,10 @@
       --sh-s:       0 2px 12px rgba(44,44,58,0.07);
       --sh-m:       0 6px 28px rgba(44,44,58,0.11);
       --sh-l:       0 16px 56px rgba(44,44,58,0.15);
+      /* Contrast upgrades — darken body and muted text */
+      --text:       #1A1A28;
+      --muted:      #565666;
+      --border:     #D2C9BB;
     }
 
     /* ── BODY ────────────────────────────────────────────────────── */
@@ -3515,6 +3519,10 @@
     #hero {
       background: linear-gradient(160deg, var(--warm) 0%, var(--cream) 55%, var(--sand) 100%);
       position: relative;
+      gap: 2.5rem;
+      grid-template-columns: 1fr 1.08fr;
+      min-height: 88vh;
+      padding-bottom: 5rem;
     }
 
     .hero-eyebrow {
@@ -3533,12 +3541,12 @@
 
     .hero-headline {
       font-family: 'Instrument Serif', 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5.5vw, 5.75rem);
+      font-size: clamp(2.9rem, 5.2vw, 5.6rem);
       font-weight: 400;
-      line-height: 0.96em;
-      letter-spacing: -0.038em;
+      line-height: 0.93em;
+      letter-spacing: -0.042em;
       color: var(--navy);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .hero-headline em {
       font-style: italic;
@@ -3570,11 +3578,12 @@
     @keyframes tw-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
 
     .hero-sub {
-      font-size: 1rem;
-      line-height: 1.72;
-      color: var(--muted);
-      max-width: 500px;
-      margin-bottom: 2rem;
+      font-size: 1.02rem;
+      line-height: 1.78;
+      color: var(--text);
+      opacity: 0.72;
+      max-width: 490px;
+      margin-bottom: 1.75rem;
     }
 
     .hero-proof-list {
@@ -3699,6 +3708,175 @@
       line-height: 1.1;
     }
     .dest-note { color: var(--muted); }
+
+    /* ── DESTINATION SWITCHER ────────────────────────────────────── */
+    .dest-switcher { margin-top: 2.5rem; }
+    .dest-stabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .dest-stab {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      padding: 0.6rem 2rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+      transition: border-color 0.2s;
+    }
+    .dest-stab-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      color: var(--navy);
+      opacity: 0.38;
+      transition: opacity 0.2s;
+    }
+    .dest-stab-sub {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+    .dest-stab.is-active { border-bottom-color: var(--teal); }
+    .dest-stab.is-active .dest-stab-name { opacity: 1; }
+    .dest-stab:hover .dest-stab-name { opacity: 0.75; }
+
+    .dest-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--sh-m);
+      transition: opacity 0.2s ease;
+    }
+    .dest-panel.is-switching { opacity: 0; }
+
+    .dest-panel-visual { position: relative; overflow: hidden; }
+    .dest-panel-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      min-height: 380px;
+      transition: opacity 0.2s ease;
+    }
+    .dest-panel-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background: rgba(10,12,20,0.52);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 0.35em 0.9em;
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .dest-panel-text {
+      padding: 2.5rem 2.5rem 2.5rem 2.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .dest-panel-region {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.7rem;
+    }
+    .dest-panel-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .dest-panel-body {
+      font-size: 0.94rem;
+      line-height: 1.76;
+      color: var(--text);
+      opacity: 0.75;
+      margin-bottom: 1.75rem;
+    }
+    .dest-pfacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .dest-pfact {
+      display: flex;
+      gap: 0.85rem;
+      align-items: baseline;
+    }
+    .dest-pfact-key {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 88px;
+      flex-shrink: 0;
+    }
+    .dest-pfact-val {
+      font-size: 0.88rem;
+      color: var(--text);
+      opacity: 0.85;
+      line-height: 1.45;
+    }
+    .dest-panel-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.75rem;
+    }
+    .dest-pill {
+      font-size: 0.69rem;
+      font-weight: 500;
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      background: rgba(42,122,111,0.08);
+      color: var(--teal);
+      border: 1px solid rgba(42,122,111,0.15);
+      letter-spacing: 0.04em;
+    }
+    .dest-panel-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      margin-top: auto;
+      transition: gap 0.2s;
+    }
+    .dest-panel-cta:hover { gap: 0.7rem; }
 
     /* ── MOMENTS / TRACKS SECTION ────────────────────────────────── */
     #moments { background: var(--cream); }
@@ -4018,13 +4196,20 @@
     /* ── SECTION HEADING UPGRADES ────────────────────────────────── */
     .section-heading {
       font-family: 'Instrument Serif', 'Cormorant Garamond', serif;
+      font-weight: 400;
       letter-spacing: -0.038em;
+      line-height: 1.0;
     }
-    .section-sub { color: var(--muted); line-height: 1.72; }
+    .section-sub {
+      color: var(--text);
+      opacity: 0.68;
+      line-height: 1.78;
+      font-size: 1.0rem;
+    }
     .eyebrow {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.13em;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--teal);
     }
@@ -4033,6 +4218,11 @@
     @media (max-width: 768px) {
       .hero-headline { font-size: clamp(2.4rem, 9vw, 3.8rem); }
       .hero-tw-wrap { font-size: clamp(1.6rem, 7vw, 2.8rem); }
+      .dest-panel { grid-template-columns: 1fr; }
+      .dest-panel-visual img { min-height: 260px; aspect-ratio: 16/9; }
+      .dest-panel-text { padding: 1.75rem; }
+      .dest-stab { padding: 0.5rem 1.25rem 0.75rem; }
+      .dest-stab-name { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -4409,47 +4599,53 @@
     <h2 class="section-heading fade-up delay-1" data-i18n="dest-heading">Two destination paths. One career-focused model.</h2>
     <p class="section-sub fade-up delay-2" data-i18n="dest-sub">Bali and Sri Lanka both sit within Island Internship. The application structure stays consistent; the difference is the local pace, company mix, and kind of environment you want around your internship.</p>
   </div>
-  <div class="dest-grid">
-    <div class="dest-card fade-up">
-      <img src="images/destination-bali.jpg" alt="Bali destination for Island Internship" loading="lazy" decoding="async" class="dest-img">
-      <div class="dest-overlay"></div>
-      <div class="dest-content">
-        <p class="dest-region" data-i18n="dest-bali-region">Indonesia • Bali</p>
-        <h3 class="dest-name" data-i18n="dest-bali-name">Bali</h3>
-        <p class="dest-copy" data-i18n="dest-bali-text">A higher-density ecosystem of startups, agencies, hospitality brands, coworking spaces, and international energy around the placement.</p>
-        <div class="dest-tags">
-          <span class="dest-tag" data-i18n="dest-bali-tag-1">Startups</span>
-          <span class="dest-tag" data-i18n="dest-bali-tag-2">Agencies</span>
-          <span class="dest-tag" data-i18n="dest-bali-tag-3">Hospitality</span>
-          <span class="dest-tag" data-i18n="dest-bali-tag-4">Impact teams</span>
-        </div>
-        <a href="/bali-placements.html" class="dest-link">
-          <span data-i18n="dest-bali-link">See Bali host companies</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
+  <div class="dest-switcher fade-up delay-2">
+    <div class="dest-stabs">
+      <button class="dest-stab is-active" data-dest="bali" aria-label="View Bali">
+        <span class="dest-stab-name">Bali</span>
+        <span class="dest-stab-sub">Indonesia</span>
+      </button>
+      <button class="dest-stab" data-dest="sri" aria-label="View Sri Lanka">
+        <span class="dest-stab-name">Sri Lanka</span>
+        <span class="dest-stab-sub">South Asia</span>
+      </button>
     </div>
-    <div class="dest-card fade-up delay-1">
-      <img src="images/destination-srilanka.jpg" alt="Sri Lanka destination for Island Internship" loading="lazy" decoding="async" class="dest-img">
-      <div class="dest-overlay"></div>
-      <div class="dest-content">
-        <p class="dest-region" data-i18n="dest-sri-region">South Asia • Sri Lanka</p>
-        <h3 class="dest-name" data-i18n="dest-sri-name">Sri Lanka</h3>
-        <p class="dest-copy" data-i18n="dest-sri-text">A close-knit coastal setting with strong hospitality, sustainability, operations, and business exposure for students who want a different island rhythm.</p>
-        <div class="dest-tags">
-          <span class="dest-tag" data-i18n="dest-sri-tag-1">Hospitality</span>
-          <span class="dest-tag" data-i18n="dest-sri-tag-2">Sustainability</span>
-          <span class="dest-tag" data-i18n="dest-sri-tag-3">Operations</span>
-          <span class="dest-tag" data-i18n="dest-sri-tag-4">Coastal living</span>
+    <div class="dest-panel" id="dest-panel">
+      <div class="dest-panel-visual">
+        <img id="dest-panel-img" src="images/destination-bali.jpg" alt="Bali, Indonesia" loading="lazy" decoding="async">
+        <div class="dest-panel-badge" id="dest-panel-badge">🇮🇩 Indonesia</div>
+      </div>
+      <div class="dest-panel-text" id="dest-panel-text">
+        <p class="dest-panel-region" id="dest-panel-region">Indonesia · Bali</p>
+        <h3 class="dest-panel-title" id="dest-panel-title">The energetic island base.</h3>
+        <p class="dest-panel-body" id="dest-panel-body">A dense ecosystem of startups, agencies, and hospitality brands built around international coworking culture. Fast-moving companies, creative projects, and a vibrant cohort of students built around the placement.</p>
+        <div class="dest-pfacts" id="dest-pfacts">
+          <div class="dest-pfact">
+            <span class="dest-pfact-key">Setting</span>
+            <span class="dest-pfact-val" id="dest-val-setting">International · Entrepreneurial · High-energy</span>
+          </div>
+          <div class="dest-pfact">
+            <span class="dest-pfact-key">Living costs</span>
+            <span class="dest-pfact-val" id="dest-val-cost">From €440/month — typically less than Amsterdam</span>
+          </div>
+          <div class="dest-pfact">
+            <span class="dest-pfact-key">Strong for</span>
+            <span class="dest-pfact-val" id="dest-val-tracks">Marketing, Growth, Startups, Hospitality</span>
+          </div>
         </div>
-        <a href="/sri-lanka-placements.html" class="dest-link">
-          <span data-i18n="dest-sri-link">See Sri Lanka host companies</span>
+        <div class="dest-panel-pills" id="dest-panel-pills">
+          <span class="dest-pill">Startups</span>
+          <span class="dest-pill">Agencies</span>
+          <span class="dest-pill">Hospitality</span>
+          <span class="dest-pill">Impact teams</span>
+        </div>
+        <a class="dest-panel-cta" id="dest-panel-cta" href="/bali-placements.html">
+          See Bali host companies
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <div class="dest-note fade-up delay-2" data-i18n="dest-note">Both destinations use the same structured application, matching, and onboarding model. The right choice depends on your field, pace, and the environment you want around the internship.</div>
 </section>
 
 <!-- ── WHAT IT ACTUALLY LOOKS LIKE ──────────────────────────────── -->
@@ -6573,6 +6769,70 @@ setLang(currentLang);
       });
     }, { threshold: 0.15 });
     els.forEach(e => obs.observe(e));
+  })();
+
+  // ── Destination switcher ──────────────────────────────────────
+  (function() {
+    const DATA = {
+      bali: {
+        img: 'images/destination-bali.jpg',
+        imgAlt: 'Bali, Indonesia',
+        badge: '🇮🇩 Indonesia',
+        region: 'Indonesia · Bali',
+        title: 'The energetic island base.',
+        body: 'A dense ecosystem of startups, agencies, and hospitality brands built around international coworking culture. Fast-moving companies, creative projects, and a vibrant cohort of students built around the placement.',
+        setting: 'International · Entrepreneurial · High-energy',
+        cost: 'From €440/month — typically less than Amsterdam',
+        tracks: 'Marketing, Growth, Startups, Hospitality',
+        pills: ['Startups', 'Agencies', 'Hospitality', 'Impact teams'],
+        ctaText: 'See Bali host companies',
+        ctaHref: '/bali-placements.html'
+      },
+      sri: {
+        img: 'images/destination-srilanka.jpg',
+        imgAlt: 'Sri Lanka',
+        badge: '🇱🇰 Sri Lanka',
+        region: 'South Asia · Sri Lanka',
+        title: 'The close-knit coastal setting.',
+        body: 'A quieter, more focused rhythm with strong exposure in hospitality, sustainability, and operations. Smaller cohort, deeper integration with local businesses, and a coastal environment for students who want a calmer working pace.',
+        setting: 'Coastal · Close-knit · Focused',
+        cost: 'Comparable to Bali — affordable island living',
+        tracks: 'Hospitality, Sustainability, Operations',
+        pills: ['Hospitality', 'Sustainability', 'Operations', 'Coastal living'],
+        ctaText: 'See Sri Lanka host companies',
+        ctaHref: '/sri-lanka-placements.html'
+      }
+    };
+    const tabs = document.querySelectorAll('.dest-stab');
+    const panel = document.getElementById('dest-panel');
+    if (!tabs.length || !panel) return;
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.dest;
+        if (tab.classList.contains('is-active')) return;
+        tabs.forEach(t => t.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        const d = DATA[key];
+        panel.classList.add('is-switching');
+        setTimeout(() => {
+          document.getElementById('dest-panel-img').src = d.img;
+          document.getElementById('dest-panel-img').alt = d.imgAlt;
+          document.getElementById('dest-panel-badge').textContent = d.badge;
+          document.getElementById('dest-panel-region').textContent = d.region;
+          document.getElementById('dest-panel-title').textContent = d.title;
+          document.getElementById('dest-panel-body').textContent = d.body;
+          document.getElementById('dest-val-setting').textContent = d.setting;
+          document.getElementById('dest-val-cost').textContent = d.cost;
+          document.getElementById('dest-val-tracks').textContent = d.tracks;
+          const pillsEl = document.getElementById('dest-panel-pills');
+          pillsEl.innerHTML = d.pills.map(p => `<span class="dest-pill">${p}</span>`).join('');
+          const cta = document.getElementById('dest-panel-cta');
+          cta.href = d.ctaHref;
+          cta.childNodes[0].textContent = d.ctaText + ' ';
+          panel.classList.remove('is-switching');
+        }, 200);
+      });
+    });
   })();
 
   // ── Track card tilt effect ─────────────────────────────────────
