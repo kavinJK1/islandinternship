@@ -849,10 +849,13 @@
     }
 
     /* ─── EXAMPLE PLACEMENTS ────────────────────────────────────── */
-    #placements {}
+    #placements {
+      padding-top: clamp(64px, 8vw, 88px);
+      padding-bottom: clamp(64px, 8vw, 88px);
+    }
 
     .placements-header {
-      margin-bottom: 4.5rem;
+      margin-bottom: 2rem;
     }
 
     .placements-grid {
@@ -3364,8 +3367,8 @@
     .outcomes-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin: 2rem 0 2rem;
+      gap: 1rem;
+      margin: 1rem 0 1rem;
     }
     .outcome-card {
       background: var(--white);
@@ -3384,15 +3387,15 @@
       width: 100%;
       display: block;
       border-radius: 16px 16px 0 0;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 12 / 5;
       object-fit: cover;
       object-position: center 20%;
     }
     .outcome-card-body {
-      padding: 1.35rem 1.3rem 1.45rem;
+      padding: 1rem 1rem 1.05rem;
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
+      gap: 0.45rem;
       flex: 1;
     }
     .outcome-card-icon {
@@ -3407,13 +3410,13 @@
     }
     .outcome-card-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--navy);
       line-height: 1.3;
     }
     .outcome-card-desc {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.55;
     }
@@ -3428,7 +3431,7 @@
       display: flex;
       align-items: flex-start;
       gap: 0.45rem;
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       color: var(--text);
       line-height: 1.5;
     }
@@ -3440,6 +3443,10 @@
       background: var(--teal);
       flex-shrink: 0;
       margin-top: 5px;
+    }
+
+    @media (min-width: 1320px) {
+      .outcomes-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
 
     @media (max-width: 1024px) {
@@ -3986,6 +3993,7 @@
       </div>
     </div>
     <div class="outcome-card fade-up delay-2">
+      <img class="outcome-card-img" src="images/community-networking.jpg" alt="Interns networking and building international connections" loading="lazy">
       <div class="outcome-card-body">
         <div class="outcome-card-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -3999,6 +4007,7 @@
       </div>
     </div>
     <div class="outcome-card fade-up delay-3">
+      <img class="outcome-card-img" src="images/community-cafe.jpg" alt="Intern reflecting on career direction in a Bali café" loading="lazy">
       <div class="outcome-card-body">
         <div class="outcome-card-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
@@ -4223,8 +4232,6 @@
       <img src="images/community-villa-group.jpg" alt="Intern cohort together at the villa" loading="lazy">
       <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" loading="lazy">
       <img src="images/community-indoor-social.jpg" alt="Interns networking at an informal evening" loading="lazy">
-      <img src="images/community-dinner-indoor.jpg" alt="Interns sharing a dinner together" loading="lazy">
-      <img src="images/community-laughing.jpg" alt="Students laughing during orientation" loading="lazy">
     </div>
   </div>
   <div class="placements-fields-row fade-up delay-2" style="margin-top: 2.5rem;">
