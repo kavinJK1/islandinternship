@@ -1,0 +1,35 @@
+{
+  "skill_name": "island-ui",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The hero section feels generic. Rewrite the HeroSection component to feel more editorial and premium — bigger serif headline, the rotating phrases should be bolder, and the gallery photo labels should overlap the photos slightly. Keep it light/cream, not dark.",
+      "expected_output": "Updated HeroSection in sections.tsx with Playfair Display headline, bolder rotating phrase display, and photo labels with absolute positioning overlapping the photo. All using CSS vars from globals.css, no hardcoded colours.",
+      "files": ["components/home/sections.tsx", "app/globals.css"]
+    },
+    {
+      "id": 2,
+      "prompt": "Add a new section to the homepage called ReframSection that goes right after the hero. It should have a bold stat callout: '€440/mo in Bali vs €1,100/mo in Amsterdam' displayed in a large editorial style with two columns — left column Bali, right column Amsterdam — with a simple 'vs' divider between them. Light cream background. Add the copy to data/homepage.ts first.",
+      "expected_output": "New reframe data block in data/homepage.ts, new ReframeSection component in sections.tsx with two-column stat layout using Playfair Display for the numbers, referenced in home-page.tsx in the correct position.",
+      "files": ["data/homepage.ts", "components/home/sections.tsx", "components/home/home-page.tsx"]
+    },
+    {
+      "id": 3,
+      "prompt": "The CostsSection has a comparison callout showing Bali vs Amsterdam costs but it looks plain. Make it a proper feature card with forest green border on the left side, the Bali total number large in Playfair serif, and a small 'vs Netherlands avg' comparison line underneath. Should feel editorial not like a pricing table.",
+      "expected_output": "Updated CostsSection or its sub-component in sections.tsx with styled comparison card. Playfair number, forest-green left border accent, CSS vars throughout. No hardcoded hex values.",
+      "files": ["components/home/sections.tsx", "app/globals.css"]
+    },
+    {
+      "id": 4,
+      "prompt": "The FAQ section accordion doesn't animate when opening/closing. Add a smooth height transition to the FAQ answers so they expand and collapse with a 0.3s ease animation. The icon should also rotate 45deg when open.",
+      "expected_output": "FaqSection in sections.tsx updated with CSS height transition (max-height technique or details/summary with animation) and icon rotation on open state. Uses transition with ease timing.",
+      "files": ["components/home/sections.tsx", "app/globals.css"]
+    },
+    {
+      "id": 5,
+      "prompt": "I want to add a photo strip between the TestimonialsSection and the ResourcesSection — a full-width horizontal row of 6 community photos from the /images/ folder that scrolls slightly on mouse move (parallax effect). The photos should be slightly overlapping with rounded corners.",
+      "expected_output": "New PhotoStrip component added to sections.tsx, inserted in home-page.tsx between Testimonials and Resources. Uses CSS for overlap layout, border-radius, optional JS parallax on mousemove. Images use next/image with loading=lazy.",
+      "files": ["components/home/sections.tsx", "components/home/home-page.tsx"]
+    }
+  ]
+}

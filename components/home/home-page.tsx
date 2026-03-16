@@ -1,6 +1,9 @@
 import { ApplicationModalProvider } from "@/components/home/application-modal";
 import { DestinationExplorer } from "@/components/home/destination-explorer";
 import { Header } from "@/components/home/header";
+import { PhotoStrip } from "@/components/home/photo-strip";
+import { ReframeSection } from "@/components/home/reframe-section";
+import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
   CommunitySection,
   CompaniesSection,
@@ -28,11 +31,13 @@ export function HomePage() {
         <main>
           <HeroSection />
           <TrustSection />
+          <ReframeSection />
           <CostsSection />
           <IncludedHighlightsSection />
           <ProcessSection />
           <DestinationExplorer />
           <TracksSection />
+          <PhotoStrip />
           <OutcomesSection />
           <TestimonialsSection />
           <CommunitySection />
@@ -44,6 +49,7 @@ export function HomePage() {
         </main>
         <Footer />
         <MobileActionBar />
+        <ScrollObserver />
       </div>
     </ApplicationModalProvider>
   );

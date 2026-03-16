@@ -1,6 +1,6 @@
 :root {
-  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: var(--font-sans, "DM Sans", "Helvetica Neue", sans-serif);
+  --font-serif: var(--font-serif, "Playfair Display", Georgia, serif);
   --bg: #f6f0e6;
   --bg-soft: #fbf7f1;
   --bg-sand: #ecdfce;
@@ -113,23 +113,24 @@ video {
 .hero-title {
   margin: 0.7rem 0 0;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(2.55rem, 5.6vw, 5.45rem);
-  font-weight: 500;
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  color: #243029;
+  font-size: clamp(2.6rem, 5.6vw, 5.6rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #1e2822;
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4.5vw, 4.4rem);
+  font-size: clamp(2.2rem, 4.2vw, 4.5rem);
+  line-height: 0.97;
 }
 
 .section-copy,
 .hero-copy {
-  margin: 1.15rem 0 0;
-  max-width: 650px;
-  font-size: 1rem;
-  line-height: 1.82;
+  margin: 1.25rem 0 0;
+  max-width: 620px;
+  font-size: 1.02rem;
+  line-height: 1.84;
   color: var(--muted);
 }
 
@@ -1070,30 +1071,62 @@ video {
 }
 
 .testimonials-section {
-  background:
-    radial-gradient(circle at 50% 0%, rgba(41, 90, 77, 0.22) 0%, transparent 36%),
-    linear-gradient(180deg, #151c1a 0%, #101614 100%);
-  color: var(--dark-text);
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.95) 0%, rgba(240, 231, 218, 0.8) 100%);
+  color: var(--text);
 }
 
-.testimonials-section .eyebrow,
-.final-cta-section .eyebrow {
-  color: rgba(255, 255, 255, 0.64);
+.testimonials-section .eyebrow {
+  color: var(--forest);
 }
 
-.testimonials-section .eyebrow::before,
-.final-cta-section .eyebrow::before {
-  background: currentColor;
+.testimonials-section .eyebrow::before {
+  background: var(--forest);
 }
 
-.testimonials-section .section-title,
-.final-cta-section .section-title {
-  color: #fff;
+.testimonials-section .section-title {
+  color: #1e2822;
 }
 
-.testimonials-section .section-copy,
-.final-cta-section .section-copy {
-  color: var(--dark-muted);
+.testimonials-section .section-copy {
+  color: var(--muted);
+}
+
+/* Light testimonial cards */
+.testimonials-section .dark-card {
+  background: linear-gradient(180deg, rgba(255, 254, 250, 0.97) 0%, rgba(252, 247, 240, 0.99) 100%);
+  border: 1px solid rgba(41, 61, 52, 0.09);
+  box-shadow: var(--shadow-sm);
+}
+
+.testimonials-section .video-copy strong,
+.testimonials-section .story-person strong {
+  color: var(--text);
+}
+
+.testimonials-section .video-copy p {
+  color: var(--muted);
+}
+
+.testimonials-section .story-card blockquote {
+  color: #1e2a25;
+}
+
+.testimonials-section .story-stars {
+  color: var(--amber);
+}
+
+.testimonials-section .story-avatar {
+  background: rgba(41, 90, 77, 0.08);
+  border-color: rgba(41, 90, 77, 0.14);
+  color: var(--forest);
+}
+
+.testimonials-section .story-person span {
+  color: var(--muted);
+}
+
+.testimonials-section .story-person small {
+  color: var(--forest);
 }
 
 .video-grid {
@@ -1189,9 +1222,9 @@ video {
 
 .post-proof-section {
   padding: 1.6rem 0;
-  background: #101614;
-  border-top: 1px solid var(--dark-line);
-  border-bottom: 1px solid var(--dark-line);
+  background: rgba(236, 228, 216, 0.72);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .post-proof-layout {
@@ -1203,12 +1236,23 @@ video {
 
 .post-proof-layout p:not(.post-proof-headline) {
   margin: 0.6rem 0 0;
-  color: var(--dark-muted);
+  color: var(--muted);
 }
 
 .post-proof-headline {
-  color: #fff;
+  color: #1e2822;
   font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.post-proof-section .button-ghost-light {
+  background: rgba(41, 90, 77, 0.06);
+  border-color: rgba(41, 90, 77, 0.2);
+  color: var(--forest);
+}
+
+.post-proof-section .button-ghost-light:hover {
+  border-color: rgba(41, 90, 77, 0.32);
+  color: var(--forest-deep);
 }
 
 .post-proof-actions {
@@ -1425,9 +1469,40 @@ video {
 
 .final-cta-section {
   background:
-    radial-gradient(circle at 80% 20%, rgba(173, 122, 60, 0.15) 0%, transparent 28%),
-    radial-gradient(circle at 20% 100%, rgba(41, 90, 77, 0.22) 0%, transparent 36%),
-    linear-gradient(180deg, #17201d 0%, #111816 100%);
+    radial-gradient(circle at 80% 15%, rgba(173, 122, 60, 0.11) 0%, transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(41, 90, 77, 0.1) 0%, transparent 35%),
+    linear-gradient(180deg, #f5f0e7 0%, #ebe1d4 100%);
+}
+
+.final-cta-section .eyebrow {
+  color: var(--forest);
+}
+
+.final-cta-section .eyebrow::before {
+  background: var(--forest);
+}
+
+.final-cta-section .section-title {
+  color: #1e2822;
+}
+
+.final-cta-section .section-copy {
+  color: var(--muted);
+}
+
+.final-cta-actions p {
+  color: var(--muted);
+}
+
+.final-cta-section .button-ghost-light {
+  background: rgba(41, 90, 77, 0.06);
+  border-color: rgba(41, 90, 77, 0.22);
+  color: var(--forest);
+}
+
+.final-cta-section .button-ghost-light:hover {
+  border-color: rgba(41, 90, 77, 0.36);
+  color: var(--forest-deep);
 }
 
 .final-cta-layout {
@@ -1855,5 +1930,160 @@ video {
 
   .mobile-action-bar {
     display: grid;
+  }
+
+  .reframe-inner {
+    gap: 3rem;
+  }
+}
+
+/* ─── REFRAME SECTION ───────────────────────────────────────────── */
+.reframe-section {
+  padding: clamp(96px, 11vw, 152px) 0;
+  background: linear-gradient(180deg, rgba(228, 218, 202, 0.85) 0%, rgba(246, 239, 229, 0.65) 100%);
+}
+
+.reframe-inner {
+  max-width: 800px;
+  display: grid;
+  gap: 4.5rem;
+}
+
+.reframe-beat {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reframe-beat.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reframe-line {
+  margin: 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.95rem, 4.2vw, 3.9rem);
+  font-weight: 400;
+  line-height: 1.07;
+  letter-spacing: -0.038em;
+  color: #1c2822;
+}
+
+.reframe-line em {
+  font-style: italic;
+  color: var(--forest);
+}
+
+.reframe-sub {
+  margin: 1rem 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+}
+
+.reframe-beat:last-child .reframe-line {
+  font-size: clamp(2.3rem, 5.2vw, 4.9rem);
+}
+
+.reframe-beat:last-child .reframe-sub {
+  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+  color: var(--forest);
+  font-style: italic;
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* ─── PHOTO STRIP ───────────────────────────────────────────────── */
+.photo-strip {
+  overflow: hidden;
+  padding: 1rem 0;
+  background: var(--bg-sand);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.photo-strip-track {
+  display: flex;
+  gap: 0.85rem;
+  width: max-content;
+  animation: strip-scroll 44s linear infinite;
+}
+
+.photo-strip:hover .photo-strip-track {
+  animation-play-state: paused;
+}
+
+@keyframes strip-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.photo-strip-item {
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.photo-strip-item img {
+  display: block;
+  height: 210px;
+  width: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.photo-strip-item:hover img {
+  transform: scale(1.04);
+}
+
+.photo-strip-caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 2rem 0.85rem 0.7rem;
+  background: linear-gradient(to top, rgba(10,16,14,0.72) 0%, transparent 100%);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+
+.photo-strip-item:hover .photo-strip-caption {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-strip-track { animation: none; }
+  .photo-strip-item img { transition: none; }
+}
+
+/* ─── SCROLL REVEAL ─────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reframe-beat {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

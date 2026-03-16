@@ -18,7 +18,9 @@
       "Bash(npx:*)",
       "WebFetch(domain:educaare.framer.website)",
       "WebFetch(domain:coachify.framer.website)",
-      "WebFetch(domain:event-verse.framer.website)"
+      "WebFetch(domain:event-verse.framer.website)",
+      "Bash(npm run:*)",
+      "Bash(lsof:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

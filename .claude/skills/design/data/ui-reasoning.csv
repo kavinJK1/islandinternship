@@ -1,0 +1,26 @@
+product_type,recommended_style,color_mood,typography_mood,key_effects,anti_patterns,severity
+SaaS (General),Hero + Features + CTA,Trust blue + Orange CTA,Clean geometric,Glassmorphism cards hover lift,Cluttered hero with too many CTAs,HIGH
+Fintech/Crypto,Conversion-Optimized,Deep purple + Amber accents,Modern sans-serif,Dark mode glassmorphism,Light backgrounds reduce trust,MEDIUM
+Restaurant/Food,Menu-First Visual,Warm red + Gold accents,Friendly rounded,Food photography parallax,Stock photos instead of real food,HIGH
+Healthcare App,Clean Clinical,Teal + White + Green CTA,Accessible readable,Subtle fade transitions,Red as primary color triggers anxiety,HIGH
+E-commerce (Fashion),Product-Forward Grid,Neutral + Bold accent,Elegant serif headings,Smooth product zoom hover,Busy backgrounds competing with product,HIGH
+Travel/Hospitality,Immersive Full-Bleed,Ocean blue + Warm sunset,Adventurous display,Full-screen video hero,Too much text above the fold,MEDIUM
+EdTech/Education,Progress-Focused,Purple + Pink highlights,Friendly approachable,Completion animations gamification,Overwhelming information density,HIGH
+Real Estate,Trust + Proof,Forest green + Gold,Professional serif,Map integrations smooth scroll,Fake urgency tactics destroy trust,HIGH
+Legal/Professional,Minimal Authority,Navy + Steel blue,Serif headings for authority,Subtle slide-in animations,Comic or display fonts look unprofessional,HIGH
+Fitness/Wellness,Energy + Transformation,Green + Energetic yellow,Bold condensed headings,Before/after reveals animated counters,Passive sedentary imagery,MEDIUM
+Marketing Agency,Bold Creative,Any bold combination,Display experimental,Cursor effects scroll animations,Being so creative users can't find CTA,HIGH
+Developer Tools,Utility First,Dark + Cyan/Green accents,Monospace + clean sans,Syntax highlighting smooth transitions,Decorative elements that slow load time,MEDIUM
+Startup (B2B),Social Proof Driven,Blue + Green CTA,Clean geometric sans,Counter animations logo marquee,Skipping social proof section,HIGH
+Nonprofit/NGO,Impact + Emotion,Green + Warm amber,Humanist friendly,Impact counters photo storytelling,Corporate cold aesthetic kills empathy,MEDIUM
+Beauty/Cosmetics,Sensory Premium,Rose + Gold + Blush,Elegant script accents,Smooth product reveal parallax,Harsh industrial fonts,MEDIUM
+Gaming,Immersive Dark,Purple + Gold + Neon,Bold display fonts,Particle effects glow animations,Light mode feels out of context,LOW
+News/Media,Scannable Editorial,Dark neutral + Red accents,Editorial serif,Lazy load infinite scroll,Autoplaying video with sound,HIGH
+Sustainability/Green,Authentic Natural,Earth greens + Warm cream,Humanist readable,Nature photography subtle grain,Plastic or corporate imagery,HIGH
+Recruitment/HR,Trust + Efficiency,Blue + Teal,Clean professional,Progress indicators smooth form steps,Lengthy application forms above fold,HIGH
+Insurance,Reassurance First,Navy + Green checkmarks,Trustworthy serif,Calm transitions minimal animation,Fear-based imagery backfires,MEDIUM
+Luxury/Premium,Editorial Minimalism,Black + Gold + Off-white,Refined serif minimal,Slow cinematic transitions,Discount language devalues brand,HIGH
+Cybersecurity,Dark Authority,Dark + Cyan warnings,Technical mono,Matrix-style subtle animations,Red alert overuse causes alarm fatigue,MEDIUM
+Photography,Portfolio Showcase,Black + White + Minimal,Minimal sans or serif,Full-bleed lightbox hover reveal,Watermarks obscuring the work,HIGH
+Architecture/Design,Spatial Minimal,Warm neutrals + Black,Refined geometric,Smooth page transitions parallax,Cluttered portfolio without curation,MEDIUM
+Logistics/Delivery,Efficient + Clear,Orange + Dark navy,Bold readable sans,Tracking animations real-time updates,Confusing status language,HIGH

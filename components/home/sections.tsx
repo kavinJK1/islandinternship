@@ -37,9 +37,9 @@ function SectionIntro({
 }) {
   return (
     <div className={`section-intro ${centered ? "section-intro-centered" : ""}`}>
-      <span className="eyebrow">{eyebrow}</span>
-      <h2 className="section-title">{title}</h2>
-      <p className="section-copy">{copy}</p>
+      <span className="eyebrow reveal">{eyebrow}</span>
+      <h2 className="section-title reveal reveal-delay-1">{title}</h2>
+      <p className="section-copy reveal reveal-delay-2">{copy}</p>
     </div>
   );
 }
@@ -50,7 +50,9 @@ export function HeroSection() {
       <div className="container hero-layout">
         <div className="hero-copy-column">
           <span className="eyebrow">{hero.eyebrow}</span>
-          <h1 className="hero-title">{hero.title}</h1>
+          <h1 className="hero-title">
+            You need to do your<br />internship anyway.
+          </h1>
           <HeroPhrases phrases={hero.rotatingPhrases} />
           <p className="hero-copy">{hero.subtitle}</p>
           <ul className="hero-checks">
@@ -63,7 +65,7 @@ export function HeroSection() {
           </ul>
           <div className="hero-actions">
             <OpenApplicationButton className="button button-primary" source="Hero">
-              {hero.primaryCta}
+              Apply free — takes 10 minutes
             </OpenApplicationButton>
             <Link href={siteLinks.matchQuiz} className="button button-secondary">
               {hero.secondaryCta}
@@ -242,8 +244,8 @@ export function TracksSection() {
       <div className="container">
         <SectionIntro eyebrow={tracks.eyebrow} title={tracks.title} copy={tracks.intro} />
         <div className="track-grid">
-          {tracks.items.map((track) => (
-            <article key={track.title} className="premium-card track-card">
+          {tracks.items.map((track, i) => (
+            <article key={track.title} className={`premium-card track-card reveal reveal-delay-${Math.min(i % 3, 4) + 1}`}>
               <div className="track-number">{track.number}</div>
               <span className="track-kicker">{track.kicker}</span>
               <h3>{track.title}</h3>
@@ -335,8 +337,8 @@ export function TestimonialsSection() {
           </div>
 
           <div className="story-grid">
-            {testimonials.stories.map((item) => (
-              <article key={item.name} className="dark-card story-card">
+            {testimonials.stories.map((item, i) => (
+              <article key={item.name} className={`dark-card story-card reveal reveal-delay-${(i % 2) + 1}`}>
                 <span className="story-stars">★★★★★</span>
                 <blockquote>{item.quote}</blockquote>
                 <div className="story-person">

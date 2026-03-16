@@ -1,0 +1,19 @@
+data_type,best_chart,colors,accessibility,library
+Comparison over time,Line chart,Single hue with 10-90% range for multiple lines,Add data point markers. Include alt text with trend summary.,Recharts / Chart.js
+Part-of-whole,Donut chart,Max 5 segments. Primary palette with enough contrast between slices.,Label slices directly — don't rely on legend alone. Include total in center.,Chart.js / Recharts
+Ranking comparison,Horizontal bar,Single hue. Highlight top bar with accent color.,Sort bars by value. Label each bar with value.,Recharts / D3.js
+Distribution,Histogram,Single neutral color. Accent on outlier bins.,Label x-axis with clear range labels. Provide summary statistics.,D3.js / Recharts
+Correlation,Scatter plot,Primary color dots. Secondary accent for highlighted clusters.,Include regression line if showing trend. Provide axis labels with units.,D3.js / Plotly
+Geographic data,Choropleth map,Sequential color scale. Light = low. Dark = high.,Color-blind safe palette (viridis or cividis). Include legend with value ranges.,Mapbox / Leaflet / D3.js
+Flow/funnel,Funnel chart,Gradient same hue darkening as funnel narrows.,Label each stage with value and drop-off percent.,Recharts / Chart.js
+Progress to goal,Radial gauge,Single accent color. Gray background track.,Include numeric value and % label in center. Add goal marker.,D3.js / custom SVG
+Multi-metric dashboard,Sparklines,Consistent palette across all sparklines. Trend color: green up red down.,Keep sparklines small (60-100px wide). Use for trend only not exact values.,Recharts / Victory
+Hierarchical data,Treemap,Categorical palette. High contrast between sibling nodes.,Label larger areas. Provide hover tooltip for small areas.,D3.js / Recharts
+Network relationships,Force-directed graph,Node color by category. Edge color by relationship type.,Keep node count under 200 for readability. Add zoom and filter.,D3.js / Sigma.js
+Real-time streaming,Live line chart,Single line. Accent dot on latest point.,Show timestamp on x-axis. Include pause/play control.,Recharts / D3.js
+Survey / Likert scale,Diverging bar chart,Red-to-green diverging palette centered at neutral.,Label both ends of scale. Include sample size.,Recharts / D3.js
+Financial performance,Candlestick chart,Green for positive (close > open). Red for negative (close < open).,Include volume bars below. Show date range selector.,TradingView / Lightweight Charts
+Bubble comparison,Bubble chart,Primary hue for positive. Secondary for negative. Size = third variable.,Explain what bubble size represents. Limit to 20-30 bubbles.,D3.js / Plotly
+Heatmap calendar,Calendar heatmap,Sequential green (GitHub style). Gray for empty days.,Include month/year labels. Show tooltip with exact value on hover.,D3.js / Cal-heatmap
+Waterfall / bridge,Waterfall chart,Green for positive. Red for negative. Gray for total bars.,Label each bar with delta value. Clearly mark start and end totals.,Recharts / D3.js
+Age/gender pyramid,Population pyramid,Two contrasting hues (one per side). Neutral background.,Label both axes clearly. Include total count.,D3.js / Recharts
