@@ -2171,7 +2171,6 @@
       font-weight: 500;
     }
 
-    @media (max-width: 960px) { .intern-stories-grid { grid-template-columns: repeat(2, 1fr); } .intern-stories-grid .story-card:last-child:nth-child(3n+1) { grid-column: auto; } }
     @media (max-width: 640px) { .intern-stories-grid { grid-template-columns: 1fr; } }
 
     /* ─── MODAL ─────────────────────────────────────────────────── */
@@ -2984,7 +2983,7 @@
       padding: 3rem 5%;
       text-align: center;
     }
-    .post-proof-cta p {
+    .post-proof-cta p:not(.post-proof-cta-headline) {
       font-size: 1rem;
       color: var(--muted);
       margin: 0 0 1.4rem;
@@ -3005,6 +3004,197 @@
       line-height: 1.7;
     }
     .mobile-cta-bar { display: none; }
+
+    /* ─── REFERENCE-MATCH DESIGN UPGRADE ───────────────────────── */
+    /* Tighter tracking (Coachify/Educaare) */
+    .section-heading {
+      letter-spacing: -0.038em;
+    }
+    .hero-headline {
+      letter-spacing: -0.044em;
+    }
+
+    /* Track cards: 20px radius, cleaner padding */
+    .track-card {
+      border-radius: 20px;
+      padding: 2.4rem 2.1rem;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .track-card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Destination cards: 20px radius */
+    .dest-card { border-radius: 20px; }
+
+    /* Step cards: 20px radius */
+    .step { border-radius: 20px; }
+
+    /* Placement cards: 20px radius */
+    .placement-card { border-radius: 20px; }
+
+    /* ─── TESTIMONIALS: Full editorial redesign ──────────────── */
+    #testimonials {
+      background: var(--cream);
+    }
+
+    /* Video cards: remove dark navy shell, cleaner container */
+    .testimonial-video-media {
+      padding: 0;
+      background: transparent;
+    }
+    .testimonial-video-card video {
+      border-radius: 14px 14px 0 0;
+    }
+    .testimonial-video-card {
+      border-radius: 20px;
+    }
+
+    /* Story grid: 2-column (editorial, more space) */
+    .intern-stories-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 0;
+    }
+    /* Last lone card (7th): span both cols, max half width */
+    .intern-stories-grid .story-card:last-child:nth-child(2n+1) {
+      grid-column: 1;
+    }
+
+    /* Story card: generous padding, 20px radius, no transform hover */
+    .story-card {
+      padding: 2.75rem 2.5rem;
+      border-radius: 20px;
+      gap: 2rem;
+      background: var(--white);
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .story-card:hover {
+      transform: none;
+      box-shadow: 0 16px 48px rgba(26,26,46,0.09);
+      border-color: rgba(42,122,111,0.22);
+    }
+
+    /* Hide star ratings — replaced by decorative quote mark */
+    .story-stars { display: none; }
+
+    /* Large decorative opening quote mark above quote */
+    .story-quote {
+      font-size: 1.42rem;
+      line-height: 1.72;
+      position: relative;
+      padding-top: 3rem;
+    }
+    .story-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.3rem;
+      left: -0.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem;
+      line-height: 1;
+      color: var(--teal);
+      opacity: 0.22;
+      font-style: normal;
+    }
+
+    /* Attribution: cleaner, more refined */
+    .story-person {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .story-avatar {
+      width: 40px;
+      height: 40px;
+      font-size: 0.68rem;
+    }
+    .story-info strong { font-size: 0.875rem; font-weight: 600; }
+    .story-info > span:not(.story-role-tag) { font-size: 0.78rem; }
+    .story-role-tag {
+      font-size: 0.73rem !important;
+    }
+
+    /* ─── POST-TESTIMONIAL CTA: Editorial treatment ──────────── */
+    .post-proof-cta {
+      background: var(--cream-d);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .post-proof-cta-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .post-proof-cta p:not(.post-proof-cta-headline) {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 46ch;
+      margin-inline: auto;
+      margin-bottom: 2.25rem;
+      line-height: 1.85;
+    }
+    .post-proof-cta .btn-post-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.9rem 2.4rem;
+      border-radius: 5px;
+      transition: background 0.2s, transform 0.18s;
+    }
+    .post-proof-cta .btn-post-proof:hover {
+      background: var(--teal-deep);
+      transform: translateY(-1px);
+    }
+    .post-proof-cta .btn-post-proof-ghost {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--teal);
+      margin-top: 1rem;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+    .post-proof-cta .btn-post-proof-ghost:hover { opacity: 0.65; }
+    .post-proof-cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ─── COMMUNITY: Image-first (Maison style) ─────────────── */
+    .community-mosaic { order: -1; }
+    .community-inner {
+      grid-template-columns: 1.15fr 1fr;
+    }
+
+    /* ─── INCLUDED GRID: 20px radius ───────────────────────── */
+    .included-grid {
+      border-radius: 20px;
+    }
+
+    /* ─── COMPANIES: Rounder cards ──────────────────────────── */
+    .company-panel { border-radius: 20px; }
+    .resource-card { border-radius: 20px; }
+    .pricing-card { border-radius: 20px; }
+
+    /* ─── TRUST SAFETY: Rounder cards ──────────────────────── */
+    .ts-card { border-radius: 16px; }
 
     /* ─── RESPONSIVE ────────────────────────────────────────────── */
     @media (max-width: 1024px) {
@@ -3035,6 +3225,7 @@
       .placements-grid { grid-template-columns: 1fr; }
       .placements-intro-list { grid-template-columns: 1fr; }
       .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .community-mosaic { order: 0; }
       .faq-grid { grid-template-columns: 1fr; gap: 0; }
       .faq-col:first-child details:first-child { border-top: 1px solid var(--border); }
       .faq-col:nth-child(2) details:first-child { border-top: none; }
@@ -4034,10 +4225,11 @@
 
 <!-- ── POST-TESTIMONIAL CTA ─────────────────────────────────────── -->
 <div class="post-proof-cta fade-up">
-  <p>These are real students, real universities, real placements. If it sounds like the right fit, the next step is a free application.</p>
+  <p class="post-proof-cta-headline">Real students. Real universities.<br>Real placements.</p>
+  <p>If this sounds like the right fit, the next step is a free 10-minute application.</p>
   <div class="post-proof-cta-actions">
-    <a href="#cta-banner" class="btn" onclick="openModal(event)" style="background:linear-gradient(90deg,var(--teal),#2ea88f);color:#fff;padding:.75rem 1.4rem;border-radius:10px;font-weight:700;text-decoration:none;">Start your application — it's free</a>
-    <a href="/match-quiz.html" class="costs-cta-link" style="align-self:center;">Not sure yet? Take the match quiz →</a>
+    <a href="#cta-banner" class="btn-post-proof" onclick="openModal(event)">Start your free application</a>
+    <a href="/match-quiz.html" class="btn-post-proof-ghost">Not sure yet? Take the match quiz →</a>
   </div>
 </div>
 
