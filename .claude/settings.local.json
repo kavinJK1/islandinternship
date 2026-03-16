@@ -15,7 +15,9 @@
       "Bash(sleep:*)",
       "Bash(vercel:*)",
       "Bash(npx vercel:*)",
-      "Bash(npx:*)"
+      "Bash(npx:*)",
+      "WebFetch(domain:educaare.framer.website)",
+      "WebFetch(domain:coachify.framer.website)"
     ]
   },
   "enableAllProjectMcpServers": true,

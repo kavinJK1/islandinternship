@@ -600,6 +600,36 @@
       color: var(--teal);
       transform: translateY(-1px);
     }
+    /* ─── MOMENTS PHOTO STRIP ───────────────────────────────────── */
+    .moments-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+    .moments-strip-photo {
+      border-radius: 10px;
+    }
+    .moments-strip-photo img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .moments-strip-caption {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.02em;
+      font-style: italic;
+    }
+    @media (max-width: 767px) {
+      .moments-strip { grid-template-columns: 1fr 1fr; }
+      .moments-strip-photo:last-child { display: none; }
+    }
     /* ─── DESTINATIONS ──────────────────────────────────────────── */
     #destinations {}
 
@@ -631,7 +661,7 @@
       display: block;
       width: 100%;
       border-radius: 12px;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center 35%;
     }
@@ -650,7 +680,7 @@
       left: 0;
       right: 0;
       z-index: 2;
-      padding: 1.75rem;
+      padding: 2rem;
     }
 
     .dest-region {
@@ -3947,6 +3977,18 @@
     <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, null, 'Startup Operations')" data-i18n="track-search-4">Startup internships</a>
     <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, null, 'Sustainability & ESG')" data-i18n="track-search-5">Sustainability internships</a>
   </div>
+  <div class="moments-strip fade-up delay-3">
+    <div class="moments-strip-photo">
+      <img src="images/moments-beach.jpg" alt="Students near the beach outside of work hours in Bali" loading="lazy">
+    </div>
+    <div class="moments-strip-photo">
+      <img src="images/moments-group.jpg" alt="Intern cohort together on a weekend in Bali" loading="lazy">
+    </div>
+    <div class="moments-strip-photo">
+      <img src="images/moments-hills.jpg" alt="Rice terraces and hills — the environment surrounding the placement" loading="lazy">
+    </div>
+  </div>
+  <p class="moments-strip-caption fade-up delay-4">The internship runs Monday to Friday. The setting handles everything outside it.</p>
 </section>
 
 <!-- ── INTERNSHIP LISTINGS ────────────────────────────────────────── -->
