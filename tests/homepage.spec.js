@@ -33,15 +33,15 @@ test.describe('Homepage structure and visual audit', () => {
     console.log(`✓ Destinations (y=${destBB.y}) appears before Tracks (y=${tracksBB.y})`);
   });
 
-  test('hero photo 3 uses welcome group image (not pool)', async ({ page }) => {
+  test('hero photo 3 uses orientation image (not pool)', async ({ page }) => {
     await page.goto(BASE);
-    const styleTag = await page.evaluate(() => {
-      const styles = Array.from(document.querySelectorAll('style'));
-      return styles.map(s => s.textContent).join('\n');
-    });
-    expect(styleTag).not.toContain('community-group-pool.jpg');
-    expect(styleTag).toContain('community-working-2.jpg');
-    console.log('✓ Hero photo 3 uses community-working-2.jpg (support/working context)');
+    const imgSrcs = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('#hero img')).map(i => i.src)
+    );
+    const combined = imgSrcs.join('\n');
+    expect(combined).not.toContain('community-group-pool.jpg');
+    expect(combined).toContain('community-orientation.jpg');
+    console.log('✓ Hero photo 3 uses community-orientation.jpg');
   });
 
   test('career outcomes network card uses networking image', async ({ page }) => {
