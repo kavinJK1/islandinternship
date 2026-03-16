@@ -322,6 +322,13 @@
       color: var(--muted);
       letter-spacing: 0.02em;
     }
+    .hero-unis {
+      font-size: 0.76rem;
+      color: var(--muted);
+      opacity: 0.72;
+      margin-top: 0.35rem;
+      letter-spacing: 0.01em;
+    }
 
     /* ─── HERO VISUAL ───────────────────────────────────────────── */
     .hero-visual {
@@ -2929,6 +2936,46 @@
       font-size: 0.8rem;
       color: var(--muted);
     }
+    .costs-cta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .costs-cta-link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(42,122,111,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .costs-cta-link:hover { border-color: var(--teal); }
+
+    /* ─── POST-TESTIMONIAL CTA ───────────────────────────────────── */
+    .post-proof-cta {
+      background: linear-gradient(135deg, #f0f7fb 0%, #e8f4f0 100%);
+      border-top: 1px solid rgba(42,122,111,0.12);
+      border-bottom: 1px solid rgba(42,122,111,0.12);
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    .post-proof-cta p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.4rem;
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+    .post-proof-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     .cta-note {
       margin-top: 1rem;
       font-size: 0.8rem;
@@ -3272,9 +3319,10 @@
     </ul>
     <div class="hero-ctas fade-up delay-4">
       <a href="#cta-banner" class="btn btn-primary" onclick="openModal(event)" data-i18n="hero-cta1">Start your application</a>
-      <a href="#destinations" class="btn btn-outline" data-i18n="hero-cta2">Compare destinations</a>
+      <a href="/match-quiz.html" class="btn btn-outline" data-i18n="hero-cta2">Take the match quiz</a>
     </div>
     <p class="hero-support fade-up delay-5" data-i18n="hero-support">Free application · No commitment · Reply within 2 business days</p>
+    <p class="hero-unis fade-up delay-5">Placed students from Maastricht University, UvA, Erasmus, and more.</p>
   </div>
 
   <div class="hero-visual fade-up delay-2">
@@ -3326,12 +3374,12 @@
     <div class="trust-divider"></div>
     <div class="trust-stat">
       <div class="trust-stat-num">5+</div>
-      <div class="trust-stat-label" data-i18n="ts-credit">Universities represented</div>
+      <div class="trust-stat-label" data-i18n="ts-credit">Dutch universities</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">2</div>
-      <div class="trust-stat-label" data-i18n="ts-fee">Destination paths</div>
+      <div class="trust-stat-num">100%</div>
+      <div class="trust-stat-label" data-i18n="ts-fee">Credit-eligible placements</div>
     </div>
   </div>
   <div class="trust-unis-row">
@@ -3476,6 +3524,10 @@
   </div>
 
   <div class="pricing-disclaimer fade-up delay-2" data-i18n="costs-disclaimer">The program fee covers placement support and logistics. Keep it separate from flights, insurance, visa costs, and your monthly living budget when comparing options.</div>
+  <div class="costs-cta fade-up delay-3">
+    <a href="#cta-banner" class="btn btn-primary" onclick="openModal(event)">Check if you qualify — free application</a>
+    <a href="#included" class="costs-cta-link">See what's included in the program fee →</a>
+  </div>
 </section>
 
 <!-- ── WHAT'S INCLUDED ────────────────────────────────────────────── -->
@@ -3952,6 +4004,15 @@
   </div>
 
 </section>
+
+<!-- ── POST-TESTIMONIAL CTA ─────────────────────────────────────── -->
+<div class="post-proof-cta fade-up">
+  <p>These are real students, real universities, real placements. If it sounds like the right fit, the next step is a free application.</p>
+  <div class="post-proof-cta-actions">
+    <a href="#cta-banner" class="btn" onclick="openModal(event)" style="background:linear-gradient(90deg,var(--teal),#2ea88f);color:#fff;padding:.75rem 1.4rem;border-radius:10px;font-weight:700;text-decoration:none;">Start your application — it's free</a>
+    <a href="/match-quiz.html" class="costs-cta-link" style="align-self:center;">Not sure yet? Take the match quiz →</a>
+  </div>
+</div>
 
 <!-- ── COMMUNITY ─────────────────────────────────────────────────── -->
 <section id="community" class="section-wrap">
