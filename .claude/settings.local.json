@@ -17,7 +17,8 @@
       "Bash(npx vercel:*)",
       "Bash(npx:*)",
       "WebFetch(domain:educaare.framer.website)",
-      "WebFetch(domain:coachify.framer.website)"
+      "WebFetch(domain:coachify.framer.website)",
+      "WebFetch(domain:event-verse.framer.website)"
     ]
   },
   "enableAllProjectMcpServers": true,
