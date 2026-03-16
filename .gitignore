@@ -2,5 +2,10 @@
 .DS_Store
 *.env
 node_modules/
+.next/
+tsconfig.tsbuildinfo
 videos/*.mp4
 videos/*.zip
+
+public/videos/*.mp4
+public/videos/*.zip
