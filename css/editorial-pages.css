@@ -215,12 +215,13 @@ body {
 }
 
 .hero-media {
-  min-height: 520px;
   border-radius: 10px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
   box-shadow: 0 24px 60px rgba(26, 26, 46, 0.12);
+}
+.hero-media img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .eyebrow {
@@ -811,19 +812,15 @@ body {
 
 .gallery-photo-card {
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
   border: 1px solid var(--border);
   box-shadow: 0 4px 16px rgba(26, 26, 46, 0.07);
 }
 .gallery-photo-card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  border-radius: 10px;
 }
-.gallery-photo-card:hover img { transform: scale(1.04); }
 .gallery-card-label {
   position: absolute;
   bottom: 0;

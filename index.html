@@ -334,7 +334,6 @@
 
     .hero-photo {
       border-radius: 6px;
-      overflow: hidden;
       position: relative;
     }
     .hero-photo-tall {
@@ -343,34 +342,29 @@
 
     .photo-inner {
       width: 100%;
-      height: 100%;
-      min-height: 240px;
       position: relative;
-      overflow: hidden;
     }
-    .hero-photo-tall .photo-inner { min-height: 490px; }
+
+    .photo-img {
+      display: block;
+      width: 100%;
+      border-radius: 6px;
+    }
 
     .photo-bg {
       position: absolute;
       inset: 0;
-      transition: transform 0.6s ease;
+      pointer-events: none;
     }
-    .hero-photo:hover .photo-bg { transform: scale(1.03); }
 
     .photo-bg-1 {
-      background:
-        linear-gradient(180deg, rgba(10,16,30,0.1), rgba(10,16,30,0.55)),
-        url("images/hero-placement.jpg") center 48% / cover no-repeat;
+      background: linear-gradient(180deg, rgba(10,16,30,0.1), rgba(10,16,30,0.55));
     }
     .photo-bg-2 {
-      background:
-        linear-gradient(180deg, rgba(10,16,30,0.06), rgba(10,16,30,0.48)),
-        url("images/hero-group.jpg") center 25% / cover no-repeat;
+      background: linear-gradient(180deg, rgba(10,16,30,0.06), rgba(10,16,30,0.48));
     }
     .photo-bg-3 {
-      background:
-        linear-gradient(180deg, rgba(10,16,30,0.08), rgba(10,16,30,0.52)),
-        url("images/community-orientation.jpg") center 30% / cover no-repeat;
+      background: linear-gradient(180deg, rgba(10,16,30,0.08), rgba(10,16,30,0.52));
     }
 
     .photo-label {
@@ -601,18 +595,12 @@
     }
     .moments-strip-photo {
       border-radius: 10px;
-      overflow: hidden;
-      height: 240px;
     }
     .moments-strip-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
       display: block;
-      transition: transform 0.5s ease;
+      border-radius: 10px;
     }
-    .moments-strip-photo:hover img { transform: scale(1.03); }
     .moments-strip-caption {
       margin-top: 1.1rem;
       font-size: 0.78rem;
@@ -640,12 +628,7 @@
 
     .dest-card {
       border-radius: 12px;
-      overflow: hidden;
       position: relative;
-      min-height: 480px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
       transition: transform 0.4s cubic-bezier(.22,.68,0,1.15), box-shadow 0.4s;
     }
     .dest-card:hover {
@@ -653,22 +636,10 @@
       box-shadow: 0 28px 64px rgba(26,26,46,0.2);
     }
 
-    .dest-bg {
-      position: absolute;
-      inset: 0;
-      transition: transform 0.6s ease;
-    }
-    .dest-card:hover .dest-bg { transform: scale(1.04); }
-
-    .dest-bg-bali {
-      background:
-        linear-gradient(180deg, rgba(10,12,22,0.06), rgba(10,12,22,0.26)),
-        url("images/destination-bali.jpg") center 62% / cover no-repeat;
-    }
-    .dest-bg-sri {
-      background:
-        linear-gradient(180deg, rgba(10,12,22,0.05), rgba(10,12,22,0.2)),
-        url("images/destination-srilanka.jpg") center 50% / cover no-repeat;
+    .dest-img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
     }
 
     .dest-overlay {
@@ -676,10 +647,14 @@
       inset: 0;
       background: linear-gradient(to top, rgba(10,12,22,0.8) 0%, rgba(10,12,22,0.1) 55%, transparent 100%);
       z-index: 1;
+      border-radius: 12px;
     }
 
     .dest-content {
-      position: relative;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       z-index: 2;
       padding: 2rem;
     }
@@ -1072,21 +1047,14 @@
       grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
       border-radius: 14px;
-      overflow: hidden;
     }
     .community-mosaic img {
       width: 100%;
-      height: 210px;
-      object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
     }
     .community-mosaic img:first-child {
       grid-column: span 2;
-      height: 300px;
-      object-position: center 35%;
     }
-    .community-mosaic img:hover { transform: scale(1.04); }
 
     #community .section-heading { color: var(--white); }
     #community .eyebrow { color: rgba(255,255,255,0.55); }
@@ -1521,20 +1489,11 @@
 
     .companies-split-photo {
       border-radius: 14px;
-      overflow: hidden;
-      height: 400px;
-      position: relative;
     }
     .companies-split-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-      transition: transform 0.65s ease;
       display: block;
-    }
-    .companies-split:hover .companies-split-photo img {
-      transform: scale(1.04);
+      border-radius: 14px;
     }
 
     .companies-learn-link {
@@ -1561,7 +1520,6 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-      .companies-split-photo { height: 280px; }
     }
 
     /* ─── FOR COMPANIES ─────────────────────────────────────────── */
@@ -3067,7 +3025,6 @@
       .modal-actions .modal-submit-secondary { width: 100%; }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .hero-stats { gap: 1.5rem; }
-      .hero-photo-tall .photo-inner { min-height: 280px; }
       body { padding-bottom: 82px; }
       .mobile-cta-bar {
         position: fixed;
@@ -3182,7 +3139,6 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 16px;
-      overflow: hidden;
       box-shadow: 0 2px 12px rgba(26,26,46,0.05), 0 6px 28px rgba(26,26,46,0.04);
       transition: transform 0.28s ease, box-shadow 0.28s ease;
       display: flex;
@@ -3194,10 +3150,8 @@
     }
     .outcome-card-img {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
-      object-position: center 30%;
       display: block;
+      border-radius: 16px 16px 0 0;
     }
     .outcome-card-body {
       padding: 1.5rem 1.4rem 1.65rem;
@@ -3326,6 +3280,7 @@
   <div class="hero-visual fade-up delay-2">
     <div class="hero-photo hero-photo-tall">
       <div class="photo-inner">
+        <img src="images/hero-placement.jpg" alt="Students at internship placement in Bali" loading="lazy" class="photo-img">
         <div class="photo-bg photo-bg-1"></div>
         <div class="photo-label">
           <div class="photo-label-time" data-i18n="p1-time">Credit-ready placement</div>
@@ -3335,6 +3290,7 @@
     </div>
     <div class="hero-photo">
       <div class="photo-inner">
+        <img src="images/hero-group.jpg" alt="Intern cohort group together in Bali" loading="lazy" class="photo-img">
         <div class="photo-bg photo-bg-2"></div>
         <div class="photo-label">
           <div class="photo-label-time" data-i18n="p2-time">Lower cost of living</div>
@@ -3344,6 +3300,7 @@
     </div>
     <div class="hero-photo">
       <div class="photo-inner">
+        <img src="images/community-orientation.jpg" alt="Students during orientation week in Bali" loading="lazy" class="photo-img">
         <div class="photo-bg photo-bg-3"></div>
         <div class="photo-label">
           <div class="photo-label-time" data-i18n="p3-time">Full support included</div>
@@ -3630,7 +3587,7 @@
   </div>
   <div class="dest-grid">
     <div class="dest-card fade-up">
-      <div class="dest-bg dest-bg-bali"></div>
+      <img src="images/destination-bali.jpg" alt="Bali destination for Island Internship" loading="lazy" class="dest-img">
       <div class="dest-overlay"></div>
       <div class="dest-content">
         <p class="dest-region" data-i18n="dest-bali-region">Indonesia • Bali</p>
@@ -3649,7 +3606,7 @@
       </div>
     </div>
     <div class="dest-card fade-up delay-1">
-      <div class="dest-bg dest-bg-sri"></div>
+      <img src="images/destination-srilanka.jpg" alt="Sri Lanka destination for Island Internship" loading="lazy" class="dest-img">
       <div class="dest-overlay"></div>
       <div class="dest-content">
         <p class="dest-region" data-i18n="dest-sri-region">South Asia • Sri Lanka</p>
@@ -3815,7 +3772,7 @@
       </div>
     </div>
     <div class="outcome-card fade-up delay-3">
-      <img class="outcome-card-img" src="images/community-cafe.jpg" alt="Intern reflecting on career direction in a Bali café" loading="lazy" style="object-position: center 20%;">
+      <img class="outcome-card-img" src="images/community-cafe.jpg" alt="Intern reflecting on career direction in a Bali café" loading="lazy">
       <div class="outcome-card-body">
         <div class="outcome-card-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
@@ -4027,11 +3984,11 @@
       </ul>
     </div>
     <div class="community-mosaic fade-up delay-2">
-      <img src="images/community-villa-group.jpg" alt="Intern cohort together at the villa" style="object-position:center 40%;">
-      <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" style="object-position:center 30%;">
-      <img src="images/community-indoor-social.jpg" alt="Interns networking at an informal evening" style="object-position:center 45%;">
-      <img src="images/community-dinner-indoor.jpg" alt="Interns sharing a dinner together" style="object-position:center 40%;">
-      <img src="images/community-laughing.jpg" alt="Students laughing during orientation" style="object-position:center 25%;">
+      <img src="images/community-villa-group.jpg" alt="Intern cohort together at the villa" loading="lazy">
+      <img src="images/community-casatua.jpg" alt="Island Internship cohort at Casa Tua Bali" loading="lazy">
+      <img src="images/community-indoor-social.jpg" alt="Interns networking at an informal evening" loading="lazy">
+      <img src="images/community-dinner-indoor.jpg" alt="Interns sharing a dinner together" loading="lazy">
+      <img src="images/community-laughing.jpg" alt="Students laughing during orientation" loading="lazy">
     </div>
   </div>
   <div class="placements-fields-row fade-up delay-2" style="margin-top: 2.5rem;">
@@ -4090,7 +4047,7 @@
       </a>
     </div>
     <div class="companies-split-photo fade-up delay-2">
-      <img src="images/sri-lanka-workspace.jpg" alt="Interns working together at a host company workspace in Bali or Sri Lanka" loading="lazy" style="object-position: center 25%;">
+      <img src="images/sri-lanka-workspace.jpg" alt="Interns working together at a host company workspace in Bali or Sri Lanka" loading="lazy">
     </div>
   </div>
 

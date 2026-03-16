@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(which playwright:*)",
+      "Bash(npx playwright:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "WebFetch(domain:www.framer.com)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(node:*)",
+      "Bash(sleep:*)",
+      "Bash(vercel:*)",
+      "Bash(npx vercel:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
+}
