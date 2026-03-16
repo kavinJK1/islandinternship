@@ -756,8 +756,10 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .hero-media {
-    min-height: 400px;
+  .hero-media img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 30%;
   }
 
   .directory-feature,
