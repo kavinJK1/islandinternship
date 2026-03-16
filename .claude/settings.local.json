@@ -14,7 +14,8 @@
       "Bash(node:*)",
       "Bash(sleep:*)",
       "Bash(vercel:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(npx:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
