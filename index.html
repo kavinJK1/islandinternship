@@ -370,7 +370,7 @@
     .photo-bg-3 {
       background:
         linear-gradient(180deg, rgba(10,16,30,0.04), rgba(10,16,30,0.42)),
-        url("images/community-group-2.jpg") center 35% / cover no-repeat;
+        url("images/community-working-2.jpg") center 40% / cover no-repeat;
     }
 
     .photo-label {
@@ -591,6 +591,39 @@
       border-color: rgba(42,122,111,0.26);
       color: var(--teal);
       transform: translateY(-1px);
+    }
+    /* ─── MOMENTS PHOTO STRIP ───────────────────────────────────── */
+    .moments-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+    .moments-strip-photo {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 240px;
+    }
+    .moments-strip-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .moments-strip-photo:hover img { transform: scale(1.03); }
+    .moments-strip-caption {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.02em;
+      font-style: italic;
+    }
+    @media (max-width: 767px) {
+      .moments-strip { grid-template-columns: 1fr 1fr; }
+      .moments-strip-photo:last-child { display: none; }
     }
     /* ─── DESTINATIONS ──────────────────────────────────────────── */
     #destinations {}
@@ -3717,12 +3750,24 @@
     <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, null, 'Startup Operations')" data-i18n="track-search-4">Startup internships</a>
     <a href="#cta-banner" class="track-search-chip" onclick="openModal(event, null, 'Sustainability & ESG')" data-i18n="track-search-5">Sustainability internships</a>
   </div>
+  <div class="moments-strip fade-up delay-3">
+    <div class="moments-strip-photo">
+      <img src="images/moments-beach.jpg" alt="Students near the beach outside of work hours in Bali" loading="lazy">
+    </div>
+    <div class="moments-strip-photo">
+      <img src="images/moments-group.jpg" alt="Intern cohort together on a weekend in Bali" loading="lazy">
+    </div>
+    <div class="moments-strip-photo">
+      <img src="images/moments-hills.jpg" alt="Rice terraces and hills — the environment surrounding the placement" loading="lazy">
+    </div>
+  </div>
+  <p class="moments-strip-caption fade-up delay-4">The internship runs Monday to Friday. The setting handles everything outside it.</p>
 </section>
 
 <!-- ── INTERNSHIP LISTINGS ────────────────────────────────────────── -->
 <section id="placements" class="section-wrap">
   <div class="placements-header">
-    <div class="eyebrow fade-up" data-i18n="pl-eyebrow">Career outcomes</div>
+    <div class="eyebrow fade-up" data-i18n="pl-eyebrow">What you build during the internship</div>
     <h2 class="section-heading fade-up delay-1" data-i18n="pl-heading">What students should leave the program with.</h2>
     <p class="section-sub fade-up delay-2" data-i18n="pl-sub">The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.</p>
   </div>
@@ -3998,9 +4043,9 @@
 <!-- ── DAY IN THE LIFE ───────────────────────────────────────────── -->
 <section id="day-in-life" class="section-wrap">
   <div class="dil-header">
-    <div class="eyebrow fade-up" data-i18n="dil-eyebrow">Need more clarity first?</div>
-    <h2 class="section-heading fade-up delay-1" data-i18n="dil-heading">A guide, track match, or live session can be the easier first step.</h2>
-    <p class="section-sub fade-up delay-2" data-i18n="dil-sub">Not every student is ready to apply immediately. These entry points make the research stage lighter while keeping the path into the program clear.</p>
+    <div class="eyebrow fade-up" data-i18n="dil-eyebrow">Before you apply</div>
+    <h2 class="section-heading fade-up delay-1" data-i18n="dil-heading">Read the guide, take the quiz, or join a live session — then decide.</h2>
+    <p class="section-sub fade-up delay-2" data-i18n="dil-sub">Not ready to apply yet? These resources give you a clear view of the program, your fit, and what to expect — before you commit to anything.</p>
   </div>
   <div class="resource-grid fade-up delay-1">
     <article class="resource-card">
@@ -4045,7 +4090,7 @@
       </a>
     </div>
     <div class="companies-split-photo fade-up delay-2">
-      <img src="images/sri-lanka-workspace.jpg" alt="Interns working together at a host company in Bali" loading="lazy" style="object-position: center 25%;">
+      <img src="images/sri-lanka-workspace.jpg" alt="Interns working together at a host company workspace in Bali or Sri Lanka" loading="lazy" style="object-position: center 25%;">
     </div>
   </div>
 
@@ -4610,7 +4655,7 @@ const t = {
     't6-name':'Lisette','t6-detail':'Breda University of Applied Sciences','t6-role':'Bali · Marketing internship · 5 months',
     't7-quote':'I didn\'t know anyone going in. By the end of the first dinner I already had plans for the weekend. The community made it feel completely different from finding a placement on your own.',
     't7-name':'Lina','t7-detail':'Breda University of Applied Sciences','t7-role':'Bali · Hospitality internship · 6 months',
-    'pl-eyebrow':'Internship listings','pl-heading':'Browse example placements.','pl-sub':'These example listings show how internship opportunities are structured across Bali and Sri Lanka, with clear roles, destinations, durations, and focus areas.',
+    'pl-eyebrow':'What you build during the internship','pl-heading':'What students should leave the program with.','pl-sub':'The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.',
     'pl-1-company':'Ex Venture','pl-1-field':'Marketing & Digital','pl-1-type':'Startup environment','pl-1-title':'Growth Marketing Intern','pl-1-desc':'Support campaign planning, content production, and audience growth within Ex Venture\'s startup environment in Bali, working across founder-led brand and business initiatives.','pl-1-meta':'Startup / venture building','pl-1-dest':'Bali',
     'pl-2-company':'Sri Lanka sustainability partner','pl-2-field':'Sustainability & ESG','pl-2-type':'Business operations','pl-2-title':'Sustainability & Operations Intern','pl-2-desc':'Contribute to research, reporting, and operational projects for a Sri Lanka-based partner company working across sustainability, community, and business initiatives.','pl-2-meta':'Operations / impact projects','pl-2-dest':'Sri Lanka',
     'pl-3-company':'Bali startup partner','pl-3-field':'Business Operations','pl-3-type':'Startup environment','pl-3-title':'Operations & Partnerships Intern','pl-3-desc':'Support internal operations, partner coordination, and cross-functional projects within a fast-moving startup environment in Bali.','pl-3-meta':'Startup / SME','pl-3-dest':'Bali',
@@ -4664,7 +4709,7 @@ const t = {
     'co-b6-title':'Designed for Bali and Sri Lanka hosts','co-b6-desc':'The service is built around the realities of hosting interns in Bali and Sri Lanka, not copied from a generic recruitment model.',
     'co-cta-heading':'Become a host company','co-cta-sub':'Tell us about your business, the kind of role you want to fill, and your preferred timing. We\'ll reply within 2 business days.',
     'pl-fields-label':'Also available in','pl-apply-link':'Browse all fields',
-    'dil-eyebrow':'Day in the life','dil-heading':'What student life can look like on placement.','dil-sub':'A typical internship day combines a focused afternoon schedule with time to settle into life in Bali or Sri Lanka.',
+    'dil-eyebrow':'Before you apply','dil-heading':'Read the guide, take the quiz, or join a live session — then decide.','dil-sub':'Not ready to apply yet? These resources give you a clear view of the program, your fit, and what to expect — before you commit to anything.',
     'dil-1-title':'Morning routine before work','dil-1-desc':'Time for breakfast, getting ready, and heading to your host company or workspace before the internship day begins at 11:00.',
     'dil-2-title':'Internship hours begin','dil-2-desc':'You start at 11:00 and work on project-based tasks with your supervisor and team, often in a startup, business, hospitality, or operations setting.',
     'dil-3-title':'Lunch break','dil-3-desc':'A one-hour lunch break in the middle of the day, either with colleagues, nearby cafes, or other students in the area.',
@@ -4953,7 +4998,7 @@ Object.assign(t.en, {
   'step-4-desc':'You land with structure around you: housing guidance, onboarding, community touchpoints, and a host company ready for your first week.',
   'inc-note-title':'Free application. No commitment until you want to move forward.',
   'inc-note-text':'The first step is simply sharing your profile. We only move into matching conversations and placement details once the direction feels right for you.',
-  'pl-eyebrow':'Career outcomes',
+  'pl-eyebrow':'What you build during the internship',
   'pl-heading':'What students should leave the program with.',
   'pl-sub':'The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.',
   'pl-intro-copy':'Island Internship is positioned as a career accelerator because the outcome is more than time in one location. It is the combination of practical experience, sharper career direction, and a more ambitious peer network.',
@@ -5053,9 +5098,9 @@ Object.assign(t.en, {
   'com-link':'Open the community and lifestyle page',
   'test-heading':'What the experience feels like once students are in it.',
   'test-sub':'These first stories show the rhythm of a placement from the inside: workdays, team culture, and the kind of environment students step into once they arrive.',
-  'dil-eyebrow':'Need more clarity first?',
-  'dil-heading':'A guide, track match, or live session can be the easier first step.',
-  'dil-sub':'Not every student is ready to apply immediately. These entry points make the research stage lighter while keeping the path into the program clear.',
+  'dil-eyebrow':'Before you apply',
+  'dil-heading':'Read the guide, take the quiz, or join a live session — then decide.',
+  'dil-sub':'Not ready to apply yet? These resources give you a clear view of the program, your fit, and what to expect — before you commit to anything.',
   'dil-1-title':'Guide',
   'dil-1-heading':'The Island Internship Guide',
   'dil-1-desc':'A practical overview of tracks, pricing, housing, visa basics, and what the application process looks like from first form to arrival.',

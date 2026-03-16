@@ -40,8 +40,8 @@ test.describe('Homepage structure and visual audit', () => {
       return styles.map(s => s.textContent).join('\n');
     });
     expect(styleTag).not.toContain('community-group-pool.jpg');
-    expect(styleTag).toContain('community-group-2.jpg');
-    console.log('✓ Hero photo 3 uses community-group-2.jpg');
+    expect(styleTag).toContain('community-working-2.jpg');
+    console.log('✓ Hero photo 3 uses community-working-2.jpg (support/working context)');
   });
 
   test('career outcomes network card uses networking image', async ({ page }) => {
