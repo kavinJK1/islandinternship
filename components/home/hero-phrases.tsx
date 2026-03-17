@@ -1,17 +1,53 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const TYPING_MS = 52;
+const DELETING_MS = 28;
+const PAUSE_AFTER_TYPE = 1900;
+const PAUSE_AFTER_DELETE = 320;
 
 export function HeroPhrases({ phrases }: { phrases: string[] }) {
-  const [index, setIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setIndex((current) => (current + 1) % phrases.length);
-    }, 2400);
+    const target = phrases[phraseIdx];
 
-    return () => window.clearInterval(timer);
-  }, [phrases.length]);
+    const tick = () => {
+      if (isTyping) {
+        if (displayed.length < target.length) {
+          setDisplayed(target.slice(0, displayed.length + 1));
+          timeout.current = setTimeout(tick, TYPING_MS);
+        } else {
+          timeout.current = setTimeout(() => setIsTyping(false), PAUSE_AFTER_TYPE);
+        }
+      } else {
+        if (displayed.length > 0) {
+          setDisplayed((d) => d.slice(0, -1));
+          timeout.current = setTimeout(tick, DELETING_MS);
+        } else {
+          timeout.current = setTimeout(() => {
+            setPhraseIdx((i) => (i + 1) % phrases.length);
+            setIsTyping(true);
+          }, PAUSE_AFTER_DELETE);
+        }
+      }
+    };
 
-  return <p className="hero-rotating-line">{phrases[index]}</p>;
+    timeout.current = setTimeout(tick, isTyping ? TYPING_MS : DELETING_MS);
+    return () => {
+      if (timeout.current) clearTimeout(timeout.current);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [displayed, isTyping, phraseIdx]);
+
+  return (
+    <p className="hero-rotating-line" aria-live="polite">
+      {displayed}
+      <span className="typewriter-cursor" aria-hidden="true">|</span>
+    </p>
+  );
 }

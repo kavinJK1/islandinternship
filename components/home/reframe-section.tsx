@@ -43,7 +43,7 @@ export function ReframeSection() {
           }
         });
       },
-      { threshold: 0.3, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
     );
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
@@ -56,12 +56,15 @@ export function ReframeSection() {
           <div
             key={i}
             className="reframe-beat"
-            style={{ transitionDelay: `${i * 0.06}s` }}
+            style={{ transitionDelay: `${i * 0.08}s` }}
           >
-            <p className="reframe-line">
-              {beat.em ? <em>{beat.em}</em> : beat.line}
-            </p>
-            {beat.sub && <p className="reframe-sub">{beat.sub}</p>}
+            <span className="reframe-num">0{i + 1}</span>
+            <div className="reframe-content">
+              <p className="reframe-line">
+                {beat.em ? <em>{beat.em}</em> : beat.line}
+              </p>
+              {beat.sub && <p className="reframe-sub">{beat.sub}</p>}
+            </div>
           </div>
         ))}
       </div>
