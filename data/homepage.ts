@@ -48,7 +48,7 @@ export const navigation: NavItem[] = [
     label: "Destinations",
     slot: "center",
     dropdown: [
-      { href: "/bali.html", label: "Bali, Indonesia" },
+      { href: "/bali-placements.html", label: "Bali, Indonesia" },
       { href: "/sri-lanka.html", label: "Sri Lanka" },
     ],
   },
@@ -791,7 +791,7 @@ export const costTeaser = {
   nl: { label: "Amsterdam / Rotterdam — typical budget", value: "€900 – €1,400" },
   note: "Same required semester. Different location. In Bali, most students spend significantly less — while gaining more real-world exposure.",
   cta: "See full cost breakdown",
-  ctaHref: "#costs",
+  ctaHref: "#faq",
 };
 
 export const featuredTracks = {

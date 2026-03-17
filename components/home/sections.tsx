@@ -748,7 +748,7 @@ export function TestimonialsTeaser() {
             <span className="eyebrow">Student stories</span>
             <h2 className="section-title">Real students. Real outcomes.</h2>
           </div>
-          <a href="#" className="stories-see-all">See all stories →</a>
+          <a href={siteLinks.community} className="stories-see-all">See all stories →</a>
         </div>
         <div className="stories-slider-wrap">
           <div className="stories-slider">
@@ -822,7 +822,7 @@ export function FaqTeaser() {
           ))}
         </div>
         <div className="faq-teaser-footer">
-          <a href="/faq.html" className="inline-link">
+          <a href="#faq" className="inline-link">
             See all questions <Icon name="arrow-right" className="icon" />
           </a>
         </div>
