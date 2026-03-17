@@ -1,10 +1,10 @@
 import { ApplicationModalProvider } from "@/components/home/application-modal";
+import { DestinationExplorer } from "@/components/home/destination-explorer";
 import { Header } from "@/components/home/header";
 import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
   CostTeaser,
-  DestinationTeaser,
   FaqTeaser,
   FinalCtaSection,
   Footer,
@@ -27,7 +27,7 @@ export function HomePage() {
           <HeroSection />
           <TrustSection />
           <ReframeSection />
-          <DestinationTeaser />
+          <DestinationExplorer />
           <ProcessSection />
           <TracksTeaser />
           <TestimonialsTeaser />

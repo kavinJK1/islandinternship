@@ -30,8 +30,6 @@ function destinationCenter(rotation: [number, number, number]): [number, number]
   return [-rotation[0], -rotation[1]];
 }
 
-const destSwapNames = ["Bali", "Sri Lanka"];
-
 export function DestinationExplorer() {
   const [selected, setSelected] = useState<DestinationKey>("bali");
   const [rotation, setRotation] = useState<[number, number, number]>(initialRotation.bali);
@@ -39,19 +37,13 @@ export function DestinationExplorer() {
   const dragStart = useRef<{ x: number; y: number; rotation: [number, number, number] } | null>(null);
   const activeDestination = destinations[selected];
 
-  const [destSwapIdx, setDestSwapIdx] = useState(0);
-  const [destSwapVisible, setDestSwapVisible] = useState(true);
+  const [titleVisible, setTitleVisible] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDestSwapVisible(false);
-      setTimeout(() => {
-        setDestSwapIdx((i) => (i + 1) % destSwapNames.length);
-        setDestSwapVisible(true);
-      }, 280);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, []);
+    setTitleVisible(false);
+    const t = setTimeout(() => setTitleVisible(true), 200);
+    return () => clearTimeout(t);
+  }, [selected]);
 
   useEffect(() => {
     const target = initialRotation[selected];
@@ -134,9 +126,9 @@ export function DestinationExplorer() {
             <em
               className="dest-swap-word"
               aria-live="polite"
-              style={{ opacity: destSwapVisible ? 1 : 0, transform: destSwapVisible ? "translateY(0)" : "translateY(8px)" }}
+              style={{ opacity: titleVisible ? 1 : 0, transform: titleVisible ? "translateY(0)" : "translateY(8px)" }}
             >
-              {destSwapNames[destSwapIdx]}
+              {activeDestination.name}
             </em>
             {" "}— pick your setting.
           </h2>
