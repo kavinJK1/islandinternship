@@ -29,11 +29,13 @@ export function Header() {
             </svg>
           </button>
           <div className="nav-dropdown-menu">
-            {item.dropdown.map((sub) => (
-              <a key={sub.href} href={sub.href} className="nav-dropdown-item" onClick={onClick}>
-                {sub.label}
-              </a>
-            ))}
+            <div className="nav-dropdown-menu-inner">
+              {item.dropdown.map((sub) => (
+                <a key={sub.href} href={sub.href} className="nav-dropdown-item" onClick={onClick}>
+                  {sub.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       );

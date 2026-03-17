@@ -25,7 +25,9 @@
       "WebFetch(domain:www.navbar.gallery)",
       "WebFetch(domain:www.ditto.words.com)",
       "WebSearch",
-      "WebFetch(domain:dittowords.com)"
+      "WebFetch(domain:dittowords.com)",
+      "WebFetch(domain:www.uva.nl)",
+      "WebFetch(domain:commons.wikimedia.org)"
     ]
   },
   "enableAllProjectMcpServers": true,

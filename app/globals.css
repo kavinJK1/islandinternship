@@ -440,19 +440,25 @@ video {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(-8px);
+  /* padding-top bridges the gap so hover isn't lost when moving to menu */
+  padding-top: 10px;
+  transform: translateX(-50%) translateY(-4px);
+  background: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 200;
+}
+
+.nav-dropdown-menu-inner {
   background: white;
   border: 1px solid rgba(41, 61, 52, 0.1);
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(33, 40, 35, 0.12), 0 2px 8px rgba(33, 40, 35, 0.06);
   min-width: 200px;
   padding: 8px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  z-index: 200;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,

@@ -291,7 +291,7 @@ export const destinations: Record<
     ],
     tags: ["Startups", "Agencies", "Hospitality", "Coworking culture"],
     ctaLabel: "Explore Bali",
-    ctaHref: siteLinks.bali,
+    ctaHref: "#destinations",
     accentClass: "is-bali",
   },
   sriLanka: {
@@ -300,7 +300,7 @@ export const destinations: Record<
     region: "South Asia · Sri Lanka",
     markerLabel: "Sri Lanka",
     coordinates: [80.7718, 7.8731],
-    image: "/images/destination-srilanka.jpg",
+    image: "/images/sri-lanka-workspace.jpg",
     alt: "Sri Lanka destination for Island Internship",
     panelTitle: "The calmer coastal rhythm.",
     panelBody:
