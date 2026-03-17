@@ -21,7 +21,11 @@
       "WebFetch(domain:event-verse.framer.website)",
       "Bash(npm run:*)",
       "Bash(lsof:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:www.navbar.gallery)",
+      "WebFetch(domain:www.ditto.words.com)",
+      "WebSearch",
+      "WebFetch(domain:dittowords.com)"
     ]
   },
   "enableAllProjectMcpServers": true,

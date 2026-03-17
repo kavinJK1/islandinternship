@@ -39,24 +39,25 @@ export const siteLinks = {
 };
 
 export type NavItem =
-  | { href: string; label: string; dropdown?: never }
-  | { label: string; href?: never; dropdown: Array<{ href: string; label: string }> };
+  | { href: string; label: string; slot?: "center" | "right"; dropdown?: never }
+  | { label: string; slot?: "center" | "right"; href?: never; dropdown: Array<{ href: string; label: string }> };
 
 export const navigation: NavItem[] = [
-  { href: "#how-it-works", label: "How it Works" },
+  { href: "#how-it-works", label: "How it Works", slot: "center" },
   {
     label: "Destinations",
+    slot: "center",
     dropdown: [
       { href: "/bali.html", label: "Bali, Indonesia" },
       { href: "/sri-lanka.html", label: "Sri Lanka" },
     ],
   },
-  { href: "#tracks", label: "Tracks" },
-  { href: "/career-outcomes.html", label: "Outcomes" },
-  { href: "#testimonials", label: "Stories" },
-  { href: "/host-companies.html", label: "Host Companies" },
-  { href: "/companies.html", label: "For Businesses" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#tracks", label: "Tracks", slot: "center" },
+  { href: "/career-outcomes.html", label: "Outcomes", slot: "center" },
+  { href: "#testimonials", label: "Stories", slot: "center" },
+  { href: "#faq", label: "FAQ", slot: "center" },
+  { href: "/host-companies.html", label: "Host Companies", slot: "right" },
+  { href: "/companies.html", label: "For Businesses", slot: "right" },
 ];
 
 export const hero = {
