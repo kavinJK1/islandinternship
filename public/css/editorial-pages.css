@@ -24,7 +24,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: var(--cream);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@ h2,
 h3,
 h4,
 blockquote {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 500;
   margin: 0;
 }
@@ -81,7 +81,7 @@ body {
 }
 
 .nav-logo {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--navy);
@@ -175,7 +175,7 @@ body {
   gap: 0.45rem;
   font-size: 0.8rem;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: var(--text);
   opacity: 0.65;
   padding: 7px 16px 7px 12px;
@@ -739,7 +739,7 @@ body {
   line-height: 1.18;
   color: var(--navy);
   margin-bottom: 0.55rem;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
 }
 

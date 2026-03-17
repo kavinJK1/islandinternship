@@ -44,17 +44,11 @@ export type NavItem =
 
 export const navigation: NavItem[] = [
   { href: "#how-it-works", label: "How it Works", slot: "center" },
-  {
-    label: "Destinations",
-    slot: "center",
-    dropdown: [
-      { href: "/bali-placements.html", label: "Bali, Indonesia" },
-      { href: "/sri-lanka.html", label: "Sri Lanka" },
-    ],
-  },
+  { href: "#destinations", label: "Destinations", slot: "center" },
   { href: "#tracks", label: "Tracks", slot: "center" },
   { href: "/career-outcomes.html", label: "Outcomes", slot: "center" },
   { href: "#testimonials", label: "Stories", slot: "center" },
+  { href: "/community-lifestyle.html", label: "Community", slot: "center" },
   { href: "#faq", label: "FAQ", slot: "center" },
   { href: "/companies.html", label: "For Businesses", slot: "right" },
 ];
