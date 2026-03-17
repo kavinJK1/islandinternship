@@ -1,120 +1,58 @@
 "use client";
 
-import { startTransition, useEffect, useRef, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import Image from "next/image";
-import { geoDistance, geoGraticule10, geoInterpolate, geoOrthographic, geoPath } from "d3-geo";
+import { geoEquirectangular, geoPath, geoGraticule10 } from "d3-geo";
 import { feature } from "topojson-client";
 import worldAtlas from "world-atlas/countries-110m.json";
-import { destinations, DestinationKey } from "@/data/homepage";
-import { Icon } from "@/components/home/icons";
+import { destinations, DestinationKey, siteLinks } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
 
-const WIDTH = 560;
-const HEIGHT = 560;
-const projectionScale = 248;
-const atlas = worldAtlas as {
-  objects: {
-    countries: unknown;
-  };
-};
-const landCollection = feature(atlas as never, atlas.objects.countries as never) as unknown as GeoJSON.FeatureCollection;
+const MAP_W = 1100;
+const MAP_H = 520;
+
+const atlas = worldAtlas as { objects: { countries: unknown } };
+const landCollection = feature(
+  atlas as never,
+  atlas.objects.countries as never
+) as unknown as GeoJSON.FeatureCollection;
 const graticule = geoGraticule10();
-const amsterdam: [number, number] = [4.9041, 52.3676];
 
-const initialRotation: Record<DestinationKey, [number, number, number]> = {
-  bali: [-115.1889, 8.4095, 0],
-  sriLanka: [-80.7718, -7.8731, 0],
+// Flat equirectangular projection centred on SE Asia / Indian Ocean
+const projection = geoEquirectangular()
+  .scale(450)
+  .center([100, 5])
+  .translate([MAP_W / 2, MAP_H / 2]);
+
+const pathGen = geoPath(projection);
+
+// Pre-compute at module load (never changes)
+const landPaths = landCollection.features.map((f) => pathGen(f) ?? "");
+const graticulePath = pathGen(graticule) ?? "";
+
+const pinPos: Record<DestinationKey, [number, number]> = {
+  bali: (projection(destinations.bali.coordinates) as [number, number]) ?? [0, 0],
+  sriLanka: (projection(destinations.sriLanka.coordinates) as [number, number]) ?? [0, 0],
 };
-
-function destinationCenter(rotation: [number, number, number]): [number, number] {
-  return [-rotation[0], -rotation[1]];
-}
 
 export function DestinationExplorer() {
   const [selected, setSelected] = useState<DestinationKey>("bali");
-  const [rotation, setRotation] = useState<[number, number, number]>(initialRotation.bali);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStart = useRef<{ x: number; y: number; rotation: [number, number, number] } | null>(null);
-  const activeDestination = destinations[selected];
+  const [fadeIn, setFadeIn] = useState(true);
 
-  const [titleVisible, setTitleVisible] = useState(true);
+  const active = destinations[selected];
+  const inactiveKey: DestinationKey = selected === "bali" ? "sriLanka" : "bali";
+  const inactive = destinations[inactiveKey];
 
+  // Fade transition on switch
   useEffect(() => {
-    setTitleVisible(false);
-    const t = setTimeout(() => setTitleVisible(true), 200);
+    setFadeIn(false);
+    const t = setTimeout(() => setFadeIn(true), 180);
     return () => clearTimeout(t);
   }, [selected]);
 
-  useEffect(() => {
-    const target = initialRotation[selected];
-    let frame = 0;
-
-    const animate = () => {
-      setRotation((current) => {
-        const next: [number, number, number] = [
-          current[0] + (target[0] - current[0]) * 0.12,
-          current[1] + (target[1] - current[1]) * 0.12,
-          0,
-        ];
-
-        if (Math.abs(next[0] - target[0]) < 0.05 && Math.abs(next[1] - target[1]) < 0.05) {
-          return target;
-        }
-
-        frame = requestAnimationFrame(animate);
-        return next;
-      });
-    };
-
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, [selected]);
-
-  const projection = geoOrthographic()
-    .translate([WIDTH / 2, HEIGHT / 2])
-    .scale(projectionScale)
-    .rotate(rotation)
-    .clipAngle(90);
-
-  const path = geoPath(projection);
-  const routeLine = geoInterpolate(amsterdam, activeDestination.coordinates);
-  const routeCoordinates = Array.from({ length: 24 }, (_, index) => routeLine(index / 23));
-  const routePath = path({
-    type: "LineString",
-    coordinates: routeCoordinates,
-  } as GeoJSON.LineString);
-
-  const isVisible = (coords: [number, number]) =>
-    geoDistance(destinationCenter(rotation), coords) < Math.PI / 2 - 0.08;
-
-  const getMarkerPoint = (coords: [number, number]) => projection(coords);
-
-  const handlePointerDown = (event: React.PointerEvent<SVGSVGElement>) => {
-    dragStart.current = {
-      x: event.clientX,
-      y: event.clientY,
-      rotation,
-    };
-    setIsDragging(true);
-  };
-
-  const handlePointerMove = (event: React.PointerEvent<SVGSVGElement>) => {
-    if (!dragStart.current || !isDragging) return;
-
-    const dx = event.clientX - dragStart.current.x;
-    const dy = event.clientY - dragStart.current.y;
-
-    setRotation([
-      dragStart.current.rotation[0] + dx * 0.35,
-      Math.max(-50, Math.min(50, dragStart.current.rotation[1] - dy * 0.28)),
-      0,
-    ]);
-  };
-
-  const handlePointerUp = () => {
-    dragStart.current = null;
-    setIsDragging(false);
-  };
+  function switchTo(key: DestinationKey) {
+    startTransition(() => setSelected(key));
+  }
 
   return (
     <section id="destinations" className="section destination-section">
@@ -126,146 +64,162 @@ export function DestinationExplorer() {
             <em
               className="dest-swap-word"
               aria-live="polite"
-              style={{ opacity: titleVisible ? 1 : 0, transform: titleVisible ? "translateY(0)" : "translateY(8px)" }}
+              style={{
+                opacity: fadeIn ? 1 : 0,
+                transform: fadeIn ? "translateY(0)" : "translateY(6px)",
+              }}
             >
-              {activeDestination.name}
-            </em>
-            {" "}— pick your setting.
+              {active.name}
+            </em>{" "}
+            — pick your setting.
           </h2>
           <p className="section-copy">
-            Two island bases. Same structured support, same placement quality. The difference is pace, scene, and the
-            environment around your internship. Compare them below.
+            Two island bases. Two options to shape your internship. Compare them and pick the one that suits your goals and lifestyle.
           </p>
         </div>
 
-        <div className="destination-layout">
-          <div className="globe-panel premium-card">
-            <div className="globe-panel-copy">
-              <span className="globe-kicker">Interactive globe</span>
-              <p>
-                Drag to rotate. Click a destination marker or one of the island switches to recenter the globe and
-                update the placement story.
-              </p>
-            </div>
-            <svg
-              className={`globe ${isDragging ? "is-dragging" : ""}`}
-              viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-              onPointerDown={handlePointerDown}
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
-              onPointerLeave={handlePointerUp}
-            >
-              <defs>
-                <radialGradient id="globeGlow" cx="50%" cy="40%" r="60%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.85)" />
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                </radialGradient>
-              </defs>
-              <circle className="globe-sphere" cx={WIDTH / 2} cy={HEIGHT / 2} r={projectionScale + 6} />
-              <circle className="globe-halo" cx={WIDTH / 2} cy={HEIGHT / 2} r={projectionScale + 36} />
-              <path className="globe-graticule" d={path(graticule) ?? ""} />
-              {landCollection.features.map((shape, index) => (
-                <path key={index} className="globe-land" d={path(shape) ?? ""} />
-              ))}
-              {routePath ? <path className="globe-route" d={routePath} /> : null}
-              {isVisible(amsterdam) && getMarkerPoint(amsterdam) ? (
-                <g className="globe-city globe-city-origin" transform={`translate(${getMarkerPoint(amsterdam)?.[0]}, ${getMarkerPoint(amsterdam)?.[1]})`}>
-                  <circle r="6" />
-                  <text y="-14">Amsterdam</text>
-                </g>
-              ) : null}
-              {(Object.entries(destinations) as Array<[DestinationKey, (typeof destinations)[DestinationKey]]>).map(([key, item]) => {
-                const point = getMarkerPoint(item.coordinates);
+        {/* Map container */}
+        <div className="flatmap-wrap premium-card">
 
-                if (!point || !isVisible(item.coordinates)) return null;
-
-                return (
-                  <g
-                    key={key}
-                    className={`globe-marker ${selected === key ? "is-active" : ""}`}
-                    transform={`translate(${point[0]}, ${point[1]})`}
-                    onClick={() => startTransition(() => setSelected(key))}
-                  >
-                    <circle r="8" />
-                    <circle className="globe-marker-ring" r="15" />
-                    <text y="-18">{item.name}</text>
-                  </g>
-                );
-              })}
-            </svg>
+          {/* Pill selectors */}
+          <div className="flatmap-pills">
+            {(Object.keys(destinations) as DestinationKey[]).map((key) => (
+              <button
+                key={key}
+                type="button"
+                className={`flatmap-pill ${selected === key ? "is-active" : ""}`}
+                onClick={() => switchTo(key)}
+              >
+                {destinations[key].name}
+                <span className="flatmap-pill-icon">
+                  {selected === key ? "✓" : "›"}
+                </span>
+              </button>
+            ))}
           </div>
 
-          <div className="destination-copy premium-card">
-            <div className="destination-switches" role="tablist" aria-label="Choose destination">
-              {(Object.entries(destinations) as Array<[DestinationKey, (typeof destinations)[DestinationKey]]>).map(([key, item]) => (
-                <button
+          {/* SVG world map */}
+          <svg
+            viewBox={`0 0 ${MAP_W} ${MAP_H}`}
+            className="flatmap-svg"
+            aria-hidden="true"
+          >
+            <rect width={MAP_W} height={MAP_H} className="flatmap-sea" />
+            <path d={graticulePath} className="flatmap-graticule" />
+            {landPaths.map((d, i) => (
+              <path key={i} d={d} className="flatmap-land" />
+            ))}
+
+            {/* Route line: Amsterdam → selected destination */}
+            {/* Pin markers */}
+            {(Object.keys(destinations) as DestinationKey[]).map((key) => {
+              const [px, py] = pinPos[key];
+              const isActive = key === selected;
+              return (
+                <g
                   key={key}
-                  type="button"
-                  className={`destination-switch ${selected === key ? "is-active" : ""}`}
-                  onClick={() => startTransition(() => setSelected(key))}
+                  className={`flatmap-pin ${isActive ? "is-active" : ""}`}
+                  transform={`translate(${px},${py})`}
+                  onClick={() => switchTo(key)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Select ${destinations[key].name}`}
+                  onKeyDown={(e) => e.key === "Enter" && switchTo(key)}
                 >
-                  <span>{item.name}</span>
-                  <small>{item.country}</small>
-                </button>
-              ))}
-            </div>
+                  {/* Pulse ring (active only) */}
+                  <circle r="20" className="flatmap-pin-pulse" />
+                  {/* Teardrop pin */}
+                  <path
+                    className="flatmap-pin-body"
+                    d="M0,-22 C9,-22 16,-15 16,-7 C16,4 0,22 0,22 C0,22 -16,4 -16,-7 C-16,-15 -9,-22 0,-22 Z"
+                  />
+                  <circle r="5" cy="-7" className="flatmap-pin-inner" />
+                </g>
+              );
+            })}
+          </svg>
 
-            <div className={`destination-hero ${activeDestination.accentClass}`}>
-              <div className="destination-image-wrap">
-                <Image
-                  src={activeDestination.image}
-                  alt={activeDestination.alt}
-                  fill
-                  className="destination-image"
-                  sizes="(max-width: 900px) 100vw, 35vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className="destination-content">
-                <p className="destination-region">{activeDestination.region}</p>
-                <h3>{activeDestination.panelTitle}</h3>
-                <p>{activeDestination.panelBody}</p>
-                <div className="destination-facts">
-                  {activeDestination.facts.map((fact) => (
-                    <div key={fact.label}>
-                      <span>{fact.label}</span>
-                      <strong>{fact.value}</strong>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          {/* Active destination card (left) */}
+          <div
+            className="flatmap-card flatmap-card-active"
+            style={{ opacity: fadeIn ? 1 : 0, transition: "opacity 0.18s ease" }}
+          >
+            <div className="flatmap-card-img-wrap">
+              <Image
+                src={active.image}
+                alt={active.alt}
+                fill
+                className="flatmap-card-img"
+                style={{ objectFit: "cover" }}
+                sizes="360px"
+              />
             </div>
-
-            <div className="destination-story-grid">
-              <div>
-                <span className="destination-story-label">What this changes</span>
-                <h4>{activeDestination.storyTitle}</h4>
-                <p>{activeDestination.storyBody}</p>
+            <div className="flatmap-card-body">
+              <p className="flatmap-card-location">
+                <em>{active.name}</em>
+                <span className="flatmap-card-country">, {active.country}</span>
+              </p>
+              <h3 className="flatmap-card-heading">{active.panelTitle}</h3>
+              <p className="flatmap-card-copy">{active.panelBody}</p>
+              <div className="flatmap-card-facts">
+                {active.facts.map((fact) => (
+                  <div key={fact.label} className="flatmap-fact-row">
+                    <span className="flatmap-fact-label">{fact.label}</span>
+                    <span className="flatmap-fact-value">{fact.value}</span>
+                  </div>
+                ))}
               </div>
-              <div>
-                <span className="destination-story-label">Environment markers</span>
-                <div className="chip-row">
-                  {activeDestination.tags.map((tag) => (
-                    <span key={tag} className="chip">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="destination-actions">
-                  <a href={activeDestination.ctaHref} className="button button-secondary">
-                    {activeDestination.ctaLabel}
-                  </a>
-                  <OpenApplicationButton
-                    className="button button-primary"
-                    destination={activeDestination.name}
-                    source={`Destination explorer: ${activeDestination.name}`}
-                  >
-                    Ask about {activeDestination.name}
-                  </OpenApplicationButton>
-                </div>
+              <OpenApplicationButton
+                className="button button-primary flatmap-cta"
+                destination={active.name}
+                source={`Destination map: ${active.name}`}
+              >
+                Apply for {active.name} →
+              </OpenApplicationButton>
+            </div>
+          </div>
+
+          {/* Preview card (right) — click to switch */}
+          <div
+            className="flatmap-card flatmap-card-preview"
+            onClick={() => switchTo(inactiveKey)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && switchTo(inactiveKey)}
+            aria-label={`Switch to ${inactive.name}`}
+            style={{ opacity: fadeIn ? 1 : 0, transition: "opacity 0.18s ease" }}
+          >
+            <div className="flatmap-preview-img-wrap">
+              <Image
+                src={inactive.image}
+                alt={inactive.alt}
+                fill
+                className="flatmap-card-img"
+                style={{ objectFit: "cover" }}
+                sizes="280px"
+              />
+            </div>
+            <div className="flatmap-preview-body">
+              <p className="flatmap-card-location">
+                <em>{inactive.name}</em>
+              </p>
+              <h4 className="flatmap-preview-heading">{inactive.panelTitle}</h4>
+              <p className="flatmap-preview-hint">Tap the map to explore →</p>
+              <div className="flatmap-preview-actions">
+                <a href="#costs" className="button button-secondary flatmap-preview-btn">
+                  Compare costs
+                </a>
+                <OpenApplicationButton
+                  className="button button-primary flatmap-preview-btn"
+                  destination={inactive.name}
+                  source={`Destination preview: ${inactive.name}`}
+                >
+                  Apply for {inactive.name} →
+                </OpenApplicationButton>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
