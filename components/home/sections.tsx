@@ -4,7 +4,11 @@ import {
   companies,
   community,
   costs,
+  costTeaser,
+  destinationTeaser,
   faqs,
+  faqTeaser,
+  featuredTracks,
   finalCta,
   hero,
   includedHighlights,
@@ -661,5 +665,165 @@ export function MobileActionBar() {
         WhatsApp
       </a>
     </div>
+  );
+}
+
+export function DestinationTeaser() {
+  const sides = [destinationTeaser.bali, destinationTeaser.sriLanka];
+  return (
+    <section id="destinations" className="section destination-teaser-section">
+      <div className="container">
+        <SectionIntro eyebrow={destinationTeaser.eyebrow} title={destinationTeaser.title} copy="" />
+        <div className="dest-teaser-grid">
+          {sides.map((d) => (
+            <article key={d.name} className="premium-card dest-teaser-card">
+              <div className="dest-teaser-image-wrap">
+                <Image
+                  src={d.image}
+                  alt={d.alt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                />
+                <div className="dest-teaser-overlay" />
+                <span className="dest-teaser-tag">{d.tag}</span>
+              </div>
+              <div className="dest-teaser-body">
+                <h3>{d.headline}</h3>
+                <ul className="dest-teaser-points">
+                  {d.points.map((p) => (
+                    <li key={p}>
+                      <Icon name="check" className="icon" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="dest-teaser-meta">
+                  <span className="dest-teaser-label">Best for</span>
+                  <strong>{d.bestFor}</strong>
+                </div>
+                <a href={d.href} className="inline-link dest-teaser-cta">
+                  {d.cta} <Icon name="arrow-right" className="icon" />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TracksTeaser() {
+  return (
+    <section id="tracks" className="section tracks-teaser-section">
+      <div className="container">
+        <div className="tracks-teaser-layout">
+          <SectionIntro eyebrow={featuredTracks.eyebrow} title={featuredTracks.title} copy="" />
+          <div className="tracks-teaser-grid">
+            {featuredTracks.items.map((track) => (
+              <article key={track.title} className="premium-card tracks-teaser-card">
+                <span className="track-kicker">{track.kicker}</span>
+                <h3>{track.title}</h3>
+                <p>{track.body}</p>
+              </article>
+            ))}
+          </div>
+          <div className="tracks-teaser-footer">
+            <a href={featuredTracks.ctaHref} className="button button-secondary">
+              {featuredTracks.cta}
+              <Icon name="arrow-right" className="icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TestimonialsTeaser() {
+  const featured = testimonials.stories.slice(0, 3);
+  return (
+    <section id="testimonials" className="section testimonials-teaser-section">
+      <div className="container">
+        <SectionIntro eyebrow={testimonials.eyebrow} title="What students say once they are in it." copy="" />
+        <div className="testimonials-teaser-grid">
+          {featured.map((item) => (
+            <article key={item.name} className="premium-card testi-teaser-card">
+              <span className="story-stars">★★★★★</span>
+              <blockquote>{item.quote}</blockquote>
+              <div className="story-person">
+                <span className="story-avatar">{item.initials}</span>
+                <div>
+                  <strong>{item.name}</strong>
+                  <span>{item.detail}</span>
+                  <small>{item.role}</small>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="testi-teaser-footer">
+          <a href="/community-lifestyle.html" className="inline-link">
+            Read more student stories <Icon name="arrow-right" className="icon" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CostTeaser() {
+  return (
+    <section className="cost-teaser-section">
+      <div className="container">
+        <div className="cost-teaser-layout">
+          <div className="cost-teaser-intro">
+            <span className="eyebrow">{costTeaser.eyebrow}</span>
+            <h2 className="cost-teaser-title">{costTeaser.title}</h2>
+            <p className="cost-teaser-note">{costTeaser.note}</p>
+            <a href={costTeaser.ctaHref} className="inline-link">
+              {costTeaser.cta} <Icon name="arrow-right" className="icon" />
+            </a>
+          </div>
+          <div className="cost-teaser-compare">
+            <div className="cost-teaser-pill cost-teaser-pill--bali">
+              <span>{costTeaser.bali.label}</span>
+              <strong>{costTeaser.bali.value}</strong>
+            </div>
+            <div className="cost-teaser-pill cost-teaser-pill--nl">
+              <span>{costTeaser.nl.label}</span>
+              <strong>{costTeaser.nl.value}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FaqTeaser() {
+  return (
+    <section className="section faq-teaser-section">
+      <div className="container">
+        <SectionIntro eyebrow={faqTeaser.eyebrow} title={faqTeaser.title} copy="" />
+        <div className="faq-grid">
+          {faqTeaser.items.map((item, index) => (
+            <details key={item.question} className="faq-card premium-card" open={index === 0}>
+              <summary>
+                <span>{item.question}</span>
+                <Icon name="arrow-right" className="icon" />
+              </summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+        <div className="faq-teaser-footer">
+          <a href="/faq.html" className="inline-link">
+            See all questions <Icon name="arrow-right" className="icon" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }

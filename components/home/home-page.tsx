@@ -1,23 +1,19 @@
 import { ApplicationModalProvider } from "@/components/home/application-modal";
-import { DestinationExplorer } from "@/components/home/destination-explorer";
 import { Header } from "@/components/home/header";
-import { PhotoStrip } from "@/components/home/photo-strip";
 import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
-  CommunitySection,
-  CostsSection,
-  FaqSection,
+  CostTeaser,
+  DestinationTeaser,
+  FaqTeaser,
   FinalCtaSection,
   Footer,
   HeroSection,
-  IncludedHighlightsSection,
-  MidPageCta,
   MobileActionBar,
   OutcomesTeaser,
   ProcessSection,
-  TestimonialsSection,
-  TracksSection,
+  TestimonialsTeaser,
+  TracksTeaser,
   TrustSection,
 } from "@/components/home/sections";
 
@@ -31,17 +27,13 @@ export function HomePage() {
           <HeroSection />
           <TrustSection />
           <ReframeSection />
-          <IncludedHighlightsSection />
+          <DestinationTeaser />
           <ProcessSection />
-          <DestinationExplorer />
-          <TracksSection />
-          <MidPageCta />
-          <PhotoStrip />
-          <CommunitySection />
-          <TestimonialsSection />
+          <TracksTeaser />
+          <TestimonialsTeaser />
           <OutcomesTeaser />
-          <CostsSection />
-          <FaqSection />
+          <CostTeaser />
+          <FaqTeaser />
           <FinalCtaSection />
         </main>
         <Footer />
