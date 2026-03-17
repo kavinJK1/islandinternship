@@ -1101,7 +1101,6 @@ video {
   aspect-ratio: 3 / 2;
   display: block;
   object-fit: cover;
-  object-position: top center;
   width: 100%;
   border-radius: var(--radius-md) var(--radius-md) 0 0;
 }

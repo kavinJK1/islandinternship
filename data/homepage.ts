@@ -374,6 +374,7 @@ export const outcomes = {
       icon: "grid" as const,
       image: "/images/outcomes-office.jpg",
       alt: "Student working at internship in Bali",
+      objectPosition: "center bottom",
       title: "Career Portfolio",
       body: "Real deliverables you can speak about in every interview after you leave.",
       points: [
@@ -385,6 +386,7 @@ export const outcomes = {
       icon: "pulse" as const,
       image: "/images/outcomes-workspace.jpg",
       alt: "Interns collaborating on a project in a tropical workspace",
+      objectPosition: "center",
       title: "Business Exposure",
       body: "Work close to founders and operators inside real international businesses.",
       points: [
@@ -396,6 +398,7 @@ export const outcomes = {
       icon: "users" as const,
       image: "/images/community-networking.jpg",
       alt: "Interns networking and building international connections",
+      objectPosition: "center",
       title: "International Network",
       body: "Connections across universities, industries, and countries that stay useful after you return.",
       points: [
@@ -407,6 +410,7 @@ export const outcomes = {
       icon: "compass" as const,
       image: "/images/community-cafe.jpg",
       alt: "Intern reflecting on career direction in a Bali cafe",
+      objectPosition: "center",
       title: "Career Direction",
       body: "Return knowing what kind of work and environment you actually want next.",
       points: [

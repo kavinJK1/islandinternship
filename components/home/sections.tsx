@@ -299,7 +299,7 @@ export function OutcomesSection() {
         <div className="outcome-grid">
           {outcomes.items.map((item) => (
             <article key={item.title} className="premium-card outcome-card">
-              <Image src={item.image} alt={item.alt} width={720} height={480} className="outcome-image" sizes="(max-width: 640px) 50vw, (max-width: 1320px) 50vw, 25vw" />
+              <Image src={item.image} alt={item.alt} width={720} height={480} className="outcome-image" sizes="(max-width: 640px) 50vw, (max-width: 1320px) 50vw, 25vw" style={{ objectPosition: item.objectPosition }} />
               <div className="outcome-body">
                 <div className="card-icon">
                   <Icon name={item.icon} className="icon" />
