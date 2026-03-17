@@ -20,7 +20,8 @@
       "WebFetch(domain:coachify.framer.website)",
       "WebFetch(domain:event-verse.framer.website)",
       "Bash(npm run:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(curl:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
