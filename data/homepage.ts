@@ -733,6 +733,106 @@ export const finalCta = {
   note: "Free application · No commitment · Reply within 2 business days",
 };
 
+export const destinationTeaser = {
+  eyebrow: "Two island settings",
+  title: "Bali or Sri Lanka — both work. The vibe is different.",
+  bali: {
+    name: "Bali",
+    tag: "Indonesia · High energy",
+    headline: "The energetic island base.",
+    points: [
+      "Denser startup and agency ecosystem",
+      "International coworking culture",
+      "Broader student scene around you",
+    ],
+    bestFor: "Marketing, growth, startups, hospitality",
+    image: "/images/destination-bali.jpg",
+    alt: "Bali destination for Island Internship",
+    cta: "Explore Bali",
+    href: "/bali-placements.html",
+  },
+  sriLanka: {
+    name: "Sri Lanka",
+    tag: "South Asia · Coastal calm",
+    headline: "The calmer coastal rhythm.",
+    points: [
+      "Close-knit hospitality and operations scene",
+      "Boutique and sustainability-focused companies",
+      "More intimate, slower-paced environment",
+    ],
+    bestFor: "Hospitality, sustainability, operations",
+    image: "/images/destination-srilanka.jpg",
+    alt: "Sri Lanka destination for Island Internship",
+    cta: "Explore Sri Lanka",
+    href: "/sri-lanka-placements.html",
+  },
+  ctaLabel: "Compare destinations in detail",
+  ctaHref: "#",
+};
+
+export const costTeaser = {
+  eyebrow: "Cost advantage",
+  title: "Your internship semester, often for less than staying home.",
+  bali: { label: "Bali — estimated monthly total", value: "€440 – €630" },
+  nl: { label: "Amsterdam / Rotterdam — typical budget", value: "€900 – €1,400" },
+  note: "Same required semester. Different location. In Bali, most students spend significantly less — while gaining more real-world exposure.",
+  cta: "See full cost breakdown",
+  ctaHref: "#costs",
+};
+
+export const featuredTracks = {
+  eyebrow: "Internship tracks",
+  title: "Real work across six fields.",
+  items: [
+    {
+      kicker: "Marketing",
+      title: "Digital Marketing",
+      body: "Campaign planning, content creation, social growth, and brand execution inside fast-moving island-based teams.",
+    },
+    {
+      kicker: "Business",
+      title: "Business Development",
+      body: "Outreach, partnerships, market research, and commercial projects with ambitious international businesses.",
+    },
+    {
+      kicker: "Tech & AI",
+      title: "Startup, AI & Technology",
+      body: "AI-forward startups, digital ventures, and tech operations teams — cross-functional exposure from day one.",
+    },
+  ],
+  cta: "View all 6 tracks",
+  ctaHref: "#tracks",
+};
+
+export const faqTeaser = {
+  eyebrow: "Quick answers",
+  title: "The questions students ask first.",
+  items: [
+    {
+      question: "Does this count for my university credits?",
+      answer: "Yes. Host companies provide an official internship agreement, a named supervisor, and all documentation your university needs. We recommend confirming with your coordinator early — we help prepare the paperwork.",
+    },
+    {
+      question: "Is it cheaper than doing my internship in the Netherlands?",
+      answer: "For most students, yes. Monthly living costs in Bali run €440–€630. That is typically lower than renting a room and living in Amsterdam, Rotterdam, or Utrecht.",
+    },
+    {
+      question: "Do I get help finding the placement?",
+      answer: "Yes — finding your placement is our job. You tell us your field and timing, and we match you with a suitable company. No cold emailing required.",
+    },
+    {
+      question: "Is housing included?",
+      answer: "Housing is arranged as part of the program. You get a private room in a central, safe area. The cost is paid separately in-destination and is factored into the monthly living estimate.",
+    },
+    {
+      question: "Are the internships paid?",
+      answer: "No — internships are unpaid. The value is the placement itself: real work experience, university credit, and deliverables for your CV that you can speak to in every interview after.",
+    },
+  ],
+  cta: "Read all FAQs",
+  ctaHref: "#faq",
+};
+
 export const applicationForm = {
   universities: [
     "Maastricht University",
