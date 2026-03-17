@@ -1086,35 +1086,50 @@ video {
 
 .outcome-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .outcome-card {
   overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .outcome-image {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   display: block;
   object-fit: cover;
+  object-position: top center;
   width: 100%;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .outcome-body {
-  padding: 1rem 1rem 1.1rem;
+  padding: 1.1rem 1.1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .outcome-body h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .outcome-body p {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0.2rem 0 0;
 }
 
 .outcome-body .card-list {
-  margin-top: 0.85rem;
+  margin-top: 0.7rem;
 }
 
 .testimonials-section {
@@ -1816,6 +1831,7 @@ video {
 }
 
 @media (max-width: 1320px) {
+  .outcome-grid,
   .feature-grid,
   .company-grid,
   .process-grid {
@@ -1949,9 +1965,9 @@ video {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* outcome goes 1-col on mobile for proper image sizing */
+  /* outcome stays 2-col on mobile */
   .outcome-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* hide extra hero photos on mobile — show only the first */
