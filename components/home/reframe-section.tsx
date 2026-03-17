@@ -1,69 +1,69 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const beats = [
+const slides = [
   {
-    line: "Every Dutch degree has a required internship semester.",
-    em: null,
+    index: "01",
+    text: "Every Dutch degree has a required internship semester.",
     sub: null,
+    tone: "neutral",
   },
   {
-    line: "Most students do it close to home.",
-    em: null,
+    index: "02",
+    text: "Most students do it close to home.",
     sub: "Same city. Same rent. Same CV as everyone else from their cohort.",
+    tone: "muted",
   },
   {
-    line: "Some go to Bali — and come back different.",
-    em: null,
+    index: "03",
+    text: "Some go to Bali or Sri Lanka — and come back different.",
     sub: "Real startup exposure. International network. Lower monthly costs than Amsterdam.",
+    tone: "vivid",
   },
   {
-    line: null,
-    em: "The semester is required.",
+    index: "04",
+    text: "The semester is required.",
     sub: "What you do with it is not.",
+    tone: "bold",
   },
 ];
 
 export function ReframeSection() {
-  const ref = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
 
   useEffect(() => {
-    const els = ref.current?.querySelectorAll<HTMLElement>(".reframe-beat");
-    if (!els?.length || !window.IntersectionObserver) {
-      els?.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
-    );
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const onScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = -rect.top;
+      const sectionHeight = rect.height - window.innerHeight;
+      if (sectionHeight <= 0) return;
+      const progress = Math.max(0, Math.min(1, sectionTop / sectionHeight));
+      const idx = Math.min(slides.length - 1, Math.floor(progress * slides.length));
+      setActiveIdx(idx);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <section ref={ref} className="reframe-section">
-      <div className="container reframe-inner">
-        {beats.map((beat, i) => (
+    <section ref={sectionRef} className="story-scroll-section">
+      <div className="story-scroll-sticky">
+        {slides.map((slide, i) => (
           <div
             key={i}
-            className="reframe-beat"
-            style={{ transitionDelay: `${i * 0.08}s` }}
+            className={`story-slide story-slide-${slide.tone} ${i === activeIdx ? "is-active" : ""}`}
           >
-            <span className="reframe-num">0{i + 1}</span>
-            <div className="reframe-content">
-              <p className="reframe-line">
-                {beat.em ? <em>{beat.em}</em> : beat.line}
-              </p>
-              {beat.sub && <p className="reframe-sub">{beat.sub}</p>}
+            <div className="story-slide-inner">
+              <span className="story-index">{slide.index}</span>
+              <p className="story-text">{slide.text}</p>
+              {slide.sub && <p className="story-sub">{slide.sub}</p>}
             </div>
           </div>
         ))}

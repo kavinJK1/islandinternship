@@ -10,7 +10,6 @@ import {
   faqTeaser,
   featuredTracks,
   finalCta,
-  hero,
   includedHighlights,
   outcomeTeaser,
   outcomes,
@@ -25,7 +24,6 @@ import {
 } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
 import { GuideSignupCard } from "@/components/home/guide-card";
-import { HeroPhrases } from "@/components/home/hero-phrases";
 import { Icon } from "@/components/home/icons";
 
 function SectionIntro({
@@ -51,47 +49,35 @@ function SectionIntro({
 export function HeroSection() {
   return (
     <section id="hero" className="hero-section">
-      <div className="container hero-layout">
-        <div className="hero-copy-column">
-          <span className="eyebrow">{hero.eyebrow}</span>
-          <h1 className="hero-title">
-            You need to do your<br />internship anyway.
+      <div className="hero-bg-wrap">
+        <Image
+          src="/images/hero-placement.jpg"
+          alt="Island internship lifestyle"
+          fill
+          priority
+          className="hero-bg-img"
+          style={{ objectFit: "cover", objectPosition: "center 30%" }}
+          sizes="100vw"
+        />
+        <div className="hero-overlay" />
+      </div>
+      <div className="container hero-content">
+        <div className="hero-text-wrap">
+          <p className="hero-pre">Built for Dutch students · Credit-eligible · Real startups abroad</p>
+          <h1 className="hero-headline">
+            <span className="hero-line hero-line-1">You need to do your</span>
+            <span className="hero-line hero-line-2">internship anyway.</span>
+            <span className="hero-line hero-line-3">Do it somewhere that</span>
+            <span className="hero-line hero-line-4">changes your trajectory.</span>
           </h1>
-          <HeroPhrases phrases={hero.rotatingPhrases} />
-          <p className="hero-copy">{hero.subtitle}</p>
-          <ul className="hero-checks">
-            {hero.bullets.map((item) => (
-              <li key={item}>
-                <Icon name="check" className="icon" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
           <div className="hero-actions">
-            <OpenApplicationButton className="button button-primary" source="Hero">
-              Apply free — takes 10 minutes
+            <OpenApplicationButton className="button button-hero-primary" source="Hero">
+              Apply now
             </OpenApplicationButton>
-            <Link href={siteLinks.matchQuiz} className="button button-secondary">
-              {hero.secondaryCta}
-            </Link>
+            <a href="#destinations" className="button button-hero-secondary">
+              Explore destinations
+            </a>
           </div>
-          <div className="hero-meta">
-            <span>{hero.support}</span>
-            <span>{hero.note}</span>
-          </div>
-        </div>
-
-        <div className="hero-gallery">
-          {hero.gallery.map((item, index) => (
-            <article key={item.label} className={`hero-frame hero-frame-${index + 1}`}>
-              <Image src={item.image} alt={item.alt} width={760} height={960} priority={index === 0} sizes="(max-width: 640px) 0px, (max-width: 1100px) 50vw, 33vw" />
-              <div className="hero-frame-overlay" />
-              <div className="hero-frame-caption">
-                <small>{item.label}</small>
-                <strong>{item.text}</strong>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
@@ -742,31 +728,36 @@ export function TracksTeaser() {
 }
 
 export function TestimonialsTeaser() {
-  const featured = testimonials.stories.slice(0, 3);
   return (
-    <section id="testimonials" className="section testimonials-teaser-section">
+    <section id="testimonials" className="section stories-section">
       <div className="container">
-        <SectionIntro eyebrow={testimonials.eyebrow} title="What students say once they are in it." copy="" />
-        <div className="testimonials-teaser-grid">
-          {featured.map((item) => (
-            <article key={item.name} className="premium-card testi-teaser-card">
-              <span className="story-stars">★★★★★</span>
-              <blockquote>{item.quote}</blockquote>
-              <div className="story-person">
-                <span className="story-avatar">{item.initials}</span>
-                <div>
-                  <strong>{item.name}</strong>
-                  <span>{item.detail}</span>
-                  <small>{item.role}</small>
+        <div className="stories-header">
+          <div>
+            <span className="eyebrow">Student stories</span>
+            <h2 className="section-title">Real students. Real outcomes.</h2>
+          </div>
+          <a href="#" className="stories-see-all">See all stories →</a>
+        </div>
+        <div className="stories-slider-wrap">
+          <div className="stories-slider">
+            {testimonials.stories.slice(0, 7).map((s, i) => (
+              <div key={i} className="story-card-slide">
+                <div className="story-card-img-wrap">
+                  <Image
+                    src="/images/hero-group.jpg"
+                    alt={s.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="260px"
+                  />
+                </div>
+                <div className="story-card-slide-body">
+                  <p className="story-card-quote">&ldquo;{s.quote}&rdquo;</p>
+                  <p className="story-card-author">{s.name} · {s.detail}</p>
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
-        <div className="testi-teaser-footer">
-          <a href="/community-lifestyle.html" className="inline-link">
-            Read more student stories <Icon name="arrow-right" className="icon" />
-          </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
