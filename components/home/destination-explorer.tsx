@@ -5,7 +5,7 @@ import Image from "next/image";
 import { geoEquirectangular, geoPath, geoGraticule10 } from "d3-geo";
 import { feature } from "topojson-client";
 import worldAtlas from "world-atlas/countries-110m.json";
-import { destinations, DestinationKey, siteLinks } from "@/data/homepage";
+import { destinations, DestinationKey } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
 
 const MAP_W = 1100;
@@ -169,13 +169,9 @@ export function DestinationExplorer() {
                   </div>
                 ))}
               </div>
-              <OpenApplicationButton
-                className="button button-primary flatmap-cta"
-                destination={active.name}
-                source={`Destination map: ${active.name}`}
-              >
-                Apply for {active.name} →
-              </OpenApplicationButton>
+              <a href={active.ctaHref} className="button button-primary flatmap-cta">
+                Learn more about {active.name} →
+              </a>
             </div>
           </div>
 
@@ -209,13 +205,9 @@ export function DestinationExplorer() {
                 <a href="#costs" className="button button-secondary flatmap-preview-btn">
                   Compare costs
                 </a>
-                <OpenApplicationButton
-                  className="button button-primary flatmap-preview-btn"
-                  destination={inactive.name}
-                  source={`Destination preview: ${inactive.name}`}
-                >
-                  Apply for {inactive.name} →
-                </OpenApplicationButton>
+                <a href={inactive.ctaHref} className="button button-primary flatmap-preview-btn">
+                  Learn more →
+                </a>
               </div>
             </div>
           </div>

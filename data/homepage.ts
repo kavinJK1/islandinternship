@@ -36,14 +36,25 @@ export const siteLinks = {
   infoSession: "mailto:hello@islandinternship.com?subject=Info%20session",
 };
 
-export const navigation = [
+export type NavItem =
+  | { href: string; label: string; dropdown?: never }
+  | { label: string; href?: never; dropdown: Array<{ href: string; label: string }> };
+
+export const navigation: NavItem[] = [
   { href: "#how-it-works", label: "How it Works" },
-  { href: "#destinations", label: "Destinations" },
+  {
+    label: "Destinations",
+    dropdown: [
+      { href: "/bali-placements.html", label: "Bali, Indonesia" },
+      { href: "/sri-lanka.html", label: "Sri Lanka" },
+    ],
+  },
   { href: "#tracks", label: "Tracks" },
   { href: "/career-outcomes.html", label: "Outcomes" },
   { href: "#testimonials", label: "Stories" },
+  { href: "/companies.html", label: "For Businesses" },
   { href: "#faq", label: "FAQ" },
-] as const;
+];
 
 export const hero = {
   eyebrow: "Real internships abroad · Credit-eligible · Built for Dutch students",
