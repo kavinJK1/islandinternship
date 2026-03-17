@@ -25,7 +25,9 @@ export const siteLinks = {
   matchQuiz: "/match-quiz.html",
   community: "/community-lifestyle.html",
   companies: "/companies.html",
+  hostCompanies: "/host-companies.html",
   outcomes: "/career-outcomes.html",
+  bali: "/bali.html",
   baliPlacements: "/bali-placements.html",
   sriLankaPlacements: "/sri-lanka-placements.html",
   sriLanka: "/sri-lanka.html",
@@ -45,13 +47,14 @@ export const navigation: NavItem[] = [
   {
     label: "Destinations",
     dropdown: [
-      { href: "/bali-placements.html", label: "Bali, Indonesia" },
+      { href: "/bali.html", label: "Bali, Indonesia" },
       { href: "/sri-lanka.html", label: "Sri Lanka" },
     ],
   },
   { href: "#tracks", label: "Tracks" },
   { href: "/career-outcomes.html", label: "Outcomes" },
   { href: "#testimonials", label: "Stories" },
+  { href: "/host-companies.html", label: "Host Companies" },
   { href: "/companies.html", label: "For Businesses" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -287,8 +290,8 @@ export const destinations: Record<
       { label: "Strong for", value: "Marketing, growth, startups, hospitality" },
     ],
     tags: ["Startups", "Agencies", "Hospitality", "Coworking culture"],
-    ctaLabel: "See Bali host companies",
-    ctaHref: siteLinks.baliPlacements,
+    ctaLabel: "Explore Bali",
+    ctaHref: siteLinks.bali,
     accentClass: "is-bali",
   },
   sriLanka: {
@@ -311,8 +314,8 @@ export const destinations: Record<
       { label: "Strong for", value: "Hospitality, operations, sustainability, guest experience" },
     ],
     tags: ["Coastal living", "Hospitality", "Sustainability", "Operations"],
-    ctaLabel: "See Sri Lanka host companies",
-    ctaHref: siteLinks.sriLankaPlacements,
+    ctaLabel: "Explore Sri Lanka",
+    ctaHref: siteLinks.sriLanka,
     accentClass: "is-sri-lanka",
   },
 };
