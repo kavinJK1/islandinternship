@@ -744,32 +744,67 @@ video {
   color: var(--forest);
 }
 
-.trust-item span,
-.trust-universities span {
+.trust-item span {
   color: var(--muted);
   font-size: 0.82rem;
 }
 
-.trust-universities {
+/* ─── UNIVERSITY LOGO STRIP ─────────────────────────────────────── */
+.trust-logos-strip {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.2rem;
   align-items: center;
-  padding-top: 1rem;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
 }
 
-.trust-universities > span:first-child {
+.trust-logos-label {
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.7rem;
+  color: var(--soft-text);
+  white-space: nowrap;
+}
+
+.trust-logos-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.25rem;
+}
+
+.trust-logo-img {
+  height: 26px !important;
+  width: auto !important;
+  filter: grayscale(1) brightness(0) opacity(0.32);
+  transition: filter 0.2s ease;
+}
+
+.trust-logo-img:hover {
+  filter: grayscale(1) brightness(0) opacity(0.55);
+}
+
+.trust-logo-text {
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--soft-text);
 }
 
-.trust-universities > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1rem;
+@media (max-width: 640px) {
+  .trust-logos-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .trust-logos-row {
+    gap: 1rem 1.75rem;
+  }
+  .trust-logo-img {
+    height: 20px !important;
+  }
 }
 
 .costs-section {

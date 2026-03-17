@@ -96,12 +96,24 @@ export function TrustSection() {
             </div>
           ))}
         </div>
-        <div className="trust-universities">
-          <span>Students join from</span>
-          <div>
-            {trustUniversities.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+        <div className="trust-logos-strip">
+          <span className="trust-logos-label">Students join from</span>
+          <div className="trust-logos-row">
+            {trustUniversities.map((uni) =>
+              uni.logo ? (
+                <Image
+                  key={uni.name}
+                  src={uni.logo}
+                  alt={uni.name}
+                  width={0}
+                  height={28}
+                  style={{ width: "auto", height: "28px" }}
+                  className="trust-logo-img"
+                />
+              ) : (
+                <span key={uni.name} className="trust-logo-text">{uni.name}</span>
+              )
+            )}
           </div>
         </div>
       </div>

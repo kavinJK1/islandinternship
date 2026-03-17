@@ -103,13 +103,13 @@ export const trustMetrics = [
   { value: "100%", label: "Credit-eligible" },
 ];
 
-export const trustUniversities = [
-  "Maastricht University",
-  "Universiteit van Amsterdam",
-  "Erasmus University",
-  "Tilburg University",
-  "Vrije Universiteit",
-  "Hogeschool Rotterdam",
+export const trustUniversities: Array<{ name: string; logo: string | null }> = [
+  { name: "Maastricht University",      logo: "/logos/universities/maastricht-university.svg" },
+  { name: "Universiteit van Amsterdam", logo: "/logos/universities/universiteit-van-amsterdam.svg" },
+  { name: "Erasmus University",         logo: "/logos/universities/erasmus-university-rotterdam.svg" },
+  { name: "Tilburg University",         logo: "/logos/universities/tilburg-university.svg" },
+  { name: "Vrije Universiteit",         logo: "/logos/universities/vu-amsterdam.png" },
+  { name: "Hogeschool Rotterdam",       logo: null },
 ];
 
 export const costs = {
