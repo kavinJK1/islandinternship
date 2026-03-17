@@ -6,7 +6,6 @@ import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
   CommunitySection,
-  CompaniesSection,
   CostsSection,
   FaqSection,
   FinalCtaSection,
@@ -15,10 +14,8 @@ import {
   IncludedHighlightsSection,
   MidPageCta,
   MobileActionBar,
-  OutcomesSection,
+  OutcomesTeaser,
   ProcessSection,
-  ResourcesSection,
-  SafeguardsSection,
   TestimonialsSection,
   TracksSection,
   TrustSection,
@@ -40,15 +37,12 @@ export function HomePage() {
           <TracksSection />
           <MidPageCta />
           <PhotoStrip />
-          <OutcomesSection />
           <CommunitySection />
           <TestimonialsSection />
+          <OutcomesTeaser />
           <CostsSection />
-          <SafeguardsSection />
-          <ResourcesSection />
           <FaqSection />
           <FinalCtaSection />
-          <CompaniesSection />
         </main>
         <Footer />
         <MobileActionBar />

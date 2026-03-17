@@ -40,7 +40,7 @@ export const navigation = [
   { href: "#how-it-works", label: "How it Works" },
   { href: "#destinations", label: "Destinations" },
   { href: "#tracks", label: "Tracks" },
-  { href: "#outcomes", label: "Outcomes" },
+  { href: "/career-outcomes.html", label: "Outcomes" },
   { href: "#testimonials", label: "Stories" },
   { href: "#faq", label: "FAQ" },
 ] as const;
@@ -712,11 +712,24 @@ export const faqs = {
   ],
 };
 
+export const outcomeTeaser = {
+  eyebrow: "What you leave with",
+  title: "Career proof. International network. A semester that actually changes your trajectory.",
+  items: [
+    { icon: "grid" as const, label: "Career Portfolio", detail: "Real deliverables for every interview" },
+    { icon: "pulse" as const, label: "Business Exposure", detail: "Work inside real international companies" },
+    { icon: "users" as const, label: "International Network", detail: "Connections that outlast the internship" },
+    { icon: "compass" as const, label: "Career Direction", detail: "Leave knowing exactly what you want next" },
+  ],
+  cta: "See student outcomes",
+  ctaHref: "/career-outcomes.html",
+};
+
 export const finalCta = {
-  eyebrow: "You need to do an internship anyway",
-  title: "Do it somewhere worth going. Tell us your field — we handle the rest.",
+  eyebrow: "Your required internship semester",
+  title: "Do it in Bali. Do it in Sri Lanka. Do it somewhere worth remembering.",
   body:
-    "The application is free and takes about 10 minutes. We review your profile and reply within 2 business days. No commitment until the direction feels right for you.",
+    "The application takes 10 minutes and is completely free. Tell us your field, your timing, and what you are looking for — we handle the matching, the logistics, and everything in between.",
   note: "Free application · No commitment · Reply within 2 business days",
 };
 

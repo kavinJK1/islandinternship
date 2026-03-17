@@ -8,7 +8,7 @@ import {
   finalCta,
   hero,
   includedHighlights,
-  navigation,
+  outcomeTeaser,
   outcomes,
   processSteps,
   resources,
@@ -550,6 +550,38 @@ export function FaqSection() {
   );
 }
 
+export function OutcomesTeaser() {
+  return (
+    <section className="outcomes-teaser-section">
+      <div className="container">
+        <div className="outcomes-teaser-layout">
+          <div className="outcomes-teaser-intro">
+            <span className="eyebrow">{outcomeTeaser.eyebrow}</span>
+            <h2 className="outcomes-teaser-title">{outcomeTeaser.title}</h2>
+            <Link href={outcomeTeaser.ctaHref} className="button button-secondary outcomes-teaser-cta">
+              {outcomeTeaser.cta}
+              <Icon name="arrow-right" className="icon" />
+            </Link>
+          </div>
+          <div className="outcomes-teaser-grid">
+            {outcomeTeaser.items.map((item) => (
+              <div key={item.label} className="outcomes-teaser-item">
+                <div className="card-icon">
+                  <Icon name={item.icon} className="icon" />
+                </div>
+                <div>
+                  <strong>{item.label}</strong>
+                  <span>{item.detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FinalCtaSection() {
   return (
     <section id="cta-banner" className="section final-cta-section">
@@ -589,13 +621,14 @@ export function Footer() {
         <div>
           <h3>Explore</h3>
           <div className="footer-links">
-            {navigation.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
+            <a href="#how-it-works">How it Works</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#tracks">Tracks</a>
+            <Link href={siteLinks.outcomes}>Career Outcomes</Link>
             <Link href={siteLinks.community}>Community</Link>
-            <Link href={siteLinks.companies}>Host companies</Link>
+            <Link href={siteLinks.companies}>Host Companies</Link>
+            <a href="#testimonials">Stories</a>
+            <a href="#faq">FAQ</a>
           </div>
         </div>
         <div>
