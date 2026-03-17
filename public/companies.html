@@ -115,17 +115,19 @@
 </head>
 <body>
   <nav id="main-nav">
-    <a href="/index.html" class="nav-logo">Island<span>.</span>Internship</a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="/index.html#included">How it Works</a></li>
-      <li><a href="/index.html#moments">Tracks</a></li>
-      <li><a href="/index.html#placements">Outcomes</a></li>
-      <li><a href="/community-lifestyle.html">Community</a></li>
-      <li><a href="/companies.html" class="nav-current">Host Companies</a></li>
-      <li><a href="/index.html#costs">Costs</a></li>
-      <li><a href="/index.html#faq">FAQ</a></li>
-      <li><a href="/index.html#cta-banner" class="nav-apply">Apply Now</a></li>
-    </ul>
+    <a href="/" class="nav-logo">Island<span>.</span>Internship</a>
+    <div class="nav-pill-wrap" id="nav-pill-wrap">
+      <a href="/#how-it-works" class="nav-pill-link">How it Works</a>
+      <a href="/#destinations" class="nav-pill-link">Destinations</a>
+      <a href="/#tracks" class="nav-pill-link">Tracks</a>
+      <a href="/career-outcomes.html" class="nav-pill-link">Outcomes</a>
+      <a href="/#testimonials" class="nav-pill-link">Stories</a>
+      <a href="/#faq" class="nav-pill-link">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="/companies.html" class="nav-for-biz nav-current">For Businesses</a>
+      <a href="/" class="nav-apply-btn">Apply now</a>
+    </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -133,8 +135,13 @@
   <script>
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-pill-wrap').classList.toggle('open'));
   </script>
+
+  <a href="javascript:history.back()" class="back-button">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 11.5L4.5 7 9 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back
+  </a>
 
   <section class="page-hero hero-split">
     <div>

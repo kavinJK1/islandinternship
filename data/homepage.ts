@@ -300,7 +300,7 @@ export const destinations: Record<
     region: "South Asia · Sri Lanka",
     markerLabel: "Sri Lanka",
     coordinates: [80.7718, 7.8731],
-    image: "/images/sri-lanka-workspace.jpg",
+    image: "/images/destination-srilanka.jpg",
     alt: "Sri Lanka destination for Island Internship",
     panelTitle: "The calmer coastal rhythm.",
     panelBody:

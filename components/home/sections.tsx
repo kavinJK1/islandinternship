@@ -807,7 +807,7 @@ export function CostTeaser() {
 
 export function FaqTeaser() {
   return (
-    <section className="section faq-teaser-section">
+    <section id="faq" className="section faq-teaser-section">
       <div className="container">
         <SectionIntro eyebrow={faqTeaser.eyebrow} title={faqTeaser.title} copy="" />
         <div className="faq-grid">

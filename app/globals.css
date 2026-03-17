@@ -185,10 +185,18 @@ video {
   background: linear-gradient(135deg, var(--forest) 0%, var(--ocean) 100%);
   color: #fff;
   box-shadow: 0 14px 32px rgba(41, 90, 77, 0.2);
+  animation: btn-glow-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 14px 32px rgba(41, 90, 77, 0.2), 0 0 0 0 rgba(41, 90, 77, 0.3); }
+  50%       { box-shadow: 0 14px 32px rgba(41, 90, 77, 0.2), 0 0 18px 6px rgba(41, 90, 77, 0.12); }
 }
 
 .button-primary:hover {
   background: linear-gradient(135deg, var(--forest-deep) 0%, #385d66 100%);
+  animation: none;
+  box-shadow: 0 6px 24px rgba(41, 90, 77, 0.42);
 }
 
 .button-secondary {
