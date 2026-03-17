@@ -80,7 +80,7 @@ export function HeroSection() {
         <div className="hero-gallery">
           {hero.gallery.map((item, index) => (
             <article key={item.label} className={`hero-frame hero-frame-${index + 1}`}>
-              <Image src={item.image} alt={item.alt} width={760} height={960} priority={index === 0} />
+              <Image src={item.image} alt={item.alt} width={760} height={960} priority={index === 0} sizes="(max-width: 640px) 0px, (max-width: 1100px) 50vw, 33vw" />
               <div className="hero-frame-overlay" />
               <div className="hero-frame-caption">
                 <small>{item.label}</small>
@@ -217,7 +217,7 @@ export function IncludedHighlightsSection() {
 
 export function ProcessSection() {
   return (
-    <section id="included" className="section process-section">
+    <section id="how-it-works" className="section process-section">
       <div className="container">
         <SectionIntro eyebrow={processSteps.eyebrow} title={processSteps.title} copy={processSteps.intro} />
         <div className="process-grid">
@@ -238,9 +238,30 @@ export function ProcessSection() {
   );
 }
 
+export function MidPageCta() {
+  return (
+    <div className="mid-cta-strip">
+      <div className="container mid-cta-inner">
+        <div className="mid-cta-text">
+          <strong>Not sure which direction yet?</strong>
+          <span>The application is free. We review your profile and match you — no commitment required.</span>
+        </div>
+        <div className="mid-cta-actions">
+          <OpenApplicationButton className="button button-primary" source="Mid-page CTA">
+            Apply free — takes 10 minutes
+          </OpenApplicationButton>
+          <Link href={siteLinks.matchQuiz} className="button button-secondary">
+            Take the AI fit quiz
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TracksSection() {
   return (
-    <section id="moments" className="section tracks-section">
+    <section id="tracks" className="section tracks-section">
       <div className="container">
         <SectionIntro eyebrow={tracks.eyebrow} title={tracks.title} copy={tracks.intro} />
         <div className="track-grid">
@@ -251,7 +272,7 @@ export function TracksSection() {
               <h3>{track.title}</h3>
               <p>{track.body}</p>
               <OpenApplicationButton className="inline-cta" field={track.field} source={`Track: ${track.title}`}>
-                Ask about this track
+                Apply for this track
                 <Icon name="arrow-right" className="icon" />
               </OpenApplicationButton>
             </article>
@@ -272,13 +293,13 @@ export function TracksSection() {
 
 export function OutcomesSection() {
   return (
-    <section id="placements" className="section outcomes-section">
+    <section id="outcomes" className="section outcomes-section">
       <div className="container">
         <SectionIntro eyebrow={outcomes.eyebrow} title={outcomes.title} copy={outcomes.intro} />
         <div className="outcome-grid">
           {outcomes.items.map((item) => (
             <article key={item.title} className="premium-card outcome-card">
-              <Image src={item.image} alt={item.alt} width={720} height={480} className="outcome-image" />
+              <Image src={item.image} alt={item.alt} width={720} height={480} className="outcome-image" sizes="(max-width: 640px) 100vw, 50vw" />
               <div className="outcome-body">
                 <div className="card-icon">
                   <Icon name={item.icon} className="icon" />
@@ -298,14 +319,14 @@ export function OutcomesSection() {
           ))}
         </div>
         <div className="chip-row">
-          <span className="chip-label">Common Bali internship searches</span>
+          <span className="chip-label">Popular searches</span>
           {outcomes.chips.map((item) => (
             <span key={item} className="chip">
               {item}
             </span>
           ))}
           <Link href={siteLinks.outcomes} className="inline-link">
-            Open the career outcomes page
+            See all outcomes →
           </Link>
         </div>
       </div>
@@ -390,14 +411,14 @@ export function CommunitySection() {
             ))}
           </ul>
           <Link href={siteLinks.community} className="inline-link">
-            Open the community and lifestyle page
+            See life inside the program →
           </Link>
         </div>
 
         <div className="community-mosaic">
           {community.images.map((image, index) => (
             <div key={image.image} className={`community-shot community-shot-${index + 1}`}>
-              <Image src={image.image} alt={image.alt} width={900} height={900} />
+              <Image src={image.image} alt={image.alt} fill loading="lazy" sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
             </div>
           ))}
         </div>
@@ -408,7 +429,7 @@ export function CommunitySection() {
 
 export function ResourcesSection() {
   return (
-    <section id="day-in-life" className="section resources-section">
+    <section id="resources" className="section resources-section">
       <div className="container">
         <SectionIntro eyebrow={resources.eyebrow} title={resources.title} copy={resources.intro} />
         <div className="resource-grid">
@@ -445,7 +466,7 @@ export function CompaniesSection() {
             </Link>
           </div>
           <div className="split-image">
-            <Image src={companies.image} alt={companies.imageAlt} width={1000} height={720} />
+            <Image src={companies.image} alt={companies.imageAlt} fill loading="lazy" sizes="(max-width: 1320px) 100vw, 50vw" style={{ objectFit: "cover" }} />
           </div>
         </div>
 

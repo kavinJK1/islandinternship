@@ -4,24 +4,24 @@ import { useEffect, useRef } from "react";
 
 const beats = [
   {
-    line: "Every degree program has an internship semester.",
+    line: "Every Dutch degree has a required internship semester.",
     em: null,
     sub: null,
   },
   {
-    line: "Most students stay in the Netherlands.",
+    line: "Most students do it close to home.",
     em: null,
-    sub: "Same city. Same rent. Same CV as everyone else.",
+    sub: "Same city. Same rent. Same CV as everyone else from their cohort.",
   },
   {
-    line: "Some students chose differently.",
+    line: "Some go to Bali — and come back different.",
     em: null,
-    sub: "They went to Bali — and paid less to do it.",
+    sub: "Real startup exposure. International network. Lower monthly costs than Amsterdam.",
   },
   {
     line: null,
     em: "The semester is required.",
-    sub: "The location is not.",
+    sub: "What you do with it is not.",
   },
 ];
 

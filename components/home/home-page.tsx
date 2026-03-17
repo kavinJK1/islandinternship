@@ -13,6 +13,7 @@ import {
   Footer,
   HeroSection,
   IncludedHighlightsSection,
+  MidPageCta,
   MobileActionBar,
   OutcomesSection,
   ProcessSection,
@@ -27,25 +28,27 @@ export function HomePage() {
   return (
     <ApplicationModalProvider>
       <div className="site-shell">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main>
+        <main id="main-content">
           <HeroSection />
           <TrustSection />
           <ReframeSection />
-          <CostsSection />
           <IncludedHighlightsSection />
           <ProcessSection />
           <DestinationExplorer />
           <TracksSection />
+          <MidPageCta />
           <PhotoStrip />
           <OutcomesSection />
-          <TestimonialsSection />
           <CommunitySection />
-          <ResourcesSection />
-          <CompaniesSection />
+          <TestimonialsSection />
+          <CostsSection />
           <SafeguardsSection />
+          <ResourcesSection />
           <FaqSection />
           <FinalCtaSection />
+          <CompaniesSection />
         </main>
         <Footer />
         <MobileActionBar />

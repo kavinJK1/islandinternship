@@ -30,12 +30,28 @@ function destinationCenter(rotation: [number, number, number]): [number, number]
   return [-rotation[0], -rotation[1]];
 }
 
+const destSwapNames = ["Bali", "Sri Lanka"];
+
 export function DestinationExplorer() {
   const [selected, setSelected] = useState<DestinationKey>("bali");
   const [rotation, setRotation] = useState<[number, number, number]>(initialRotation.bali);
   const [isDragging, setIsDragging] = useState(false);
   const dragStart = useRef<{ x: number; y: number; rotation: [number, number, number] } | null>(null);
   const activeDestination = destinations[selected];
+
+  const [destSwapIdx, setDestSwapIdx] = useState(0);
+  const [destSwapVisible, setDestSwapVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDestSwapVisible(false);
+      setTimeout(() => {
+        setDestSwapIdx((i) => (i + 1) % destSwapNames.length);
+        setDestSwapVisible(true);
+      }, 280);
+    }, 3200);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const target = initialRotation[selected];
@@ -113,10 +129,20 @@ export function DestinationExplorer() {
       <div className="container">
         <div className="section-intro section-intro-centered">
           <span className="eyebrow">Choose your island setting</span>
-          <h2 className="section-title">A real destination explorer, not just a tab swapper.</h2>
+          <h2 className="section-title">
+            Your internship in{" "}
+            <em
+              className="dest-swap-word"
+              aria-live="polite"
+              style={{ opacity: destSwapVisible ? 1 : 0, transform: destSwapVisible ? "translateY(0)" : "translateY(8px)" }}
+            >
+              {destSwapNames[destSwapIdx]}
+            </em>
+            {" "}— pick your setting.
+          </h2>
           <p className="section-copy">
-            Spin the globe, compare the island rhythm, and see how Bali and Sri Lanka change the surrounding environment
-            of the same core internship model.
+            Two island bases. Same structured support, same placement quality. The difference is pace, scene, and the
+            environment around your internship. Compare them below.
           </p>
         </div>
 
@@ -197,9 +223,10 @@ export function DestinationExplorer() {
                 <Image
                   src={activeDestination.image}
                   alt={activeDestination.alt}
-                  width={760}
-                  height={620}
+                  fill
                   className="destination-image"
+                  sizes="(max-width: 900px) 100vw, 35vw"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="destination-content">

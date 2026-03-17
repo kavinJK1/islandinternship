@@ -37,29 +37,29 @@ export const siteLinks = {
 };
 
 export const navigation = [
-  { href: "#included", label: "How it Works" },
+  { href: "#how-it-works", label: "How it Works" },
   { href: "#destinations", label: "Destinations" },
-  { href: "#moments", label: "Tracks" },
-  { href: "#placements", label: "Outcomes" },
+  { href: "#tracks", label: "Tracks" },
+  { href: "#outcomes", label: "Outcomes" },
   { href: "#testimonials", label: "Stories" },
   { href: "#faq", label: "FAQ" },
 ] as const;
 
 export const hero = {
-  eyebrow: "For students with a required internship semester",
+  eyebrow: "Real internships abroad · Credit-eligible · Built for Dutch students",
   title: "Your required internship semester, built into a better life chapter.",
   subtitle:
-    "Most students complete their required internship in the Netherlands. Some choose Bali or Sri Lanka instead — lower living costs, stronger exposure, and every logistical detail sorted before they fly.",
+    "Most Dutch students do their required semester at home. A growing number go to Bali or Sri Lanka — working inside real startups and international businesses, with every logistical detail sorted before they fly.",
   rotatingPhrases: ["Do it in Bali.", "Do it in Sri Lanka.", "Make it count."],
   bullets: [
-    "Credit-ready placements aligned with university internship requirements — across startups, agencies, hospitality brands, and growth teams.",
-    "Placement, visa guidance, housing support, airport pickup, and orientation week handled before departure.",
-    "Monthly living costs from €440 in Bali — typically lower than a semester in Amsterdam or Rotterdam.",
+    "Matched to startups, agencies, hospitality brands, and AI-forward teams — credit-eligible from day one.",
+    "Visa guidance, private housing, airport pickup, and orientation week — fully arranged before you fly.",
+    "Monthly costs from €440 in Bali. Typically less than a semester in Amsterdam or Rotterdam.",
   ],
   primaryCta: "Start your application",
   secondaryCta: "Take the AI fit quiz",
   support: "Free application · No commitment · Reply within 2 business days",
-  note: "Placed students from Maastricht University, UvA, Erasmus, Tilburg, and more.",
+  note: "Students from Maastricht, UvA, Erasmus, Tilburg, VU, Breda, and more.",
   gallery: [
     {
       image: "/images/hero-placement.jpg",
@@ -83,10 +83,10 @@ export const hero = {
 };
 
 export const trustMetrics = [
-  { value: "30+", label: "Interns placed" },
-  { value: "20+", label: "Partner companies" },
-  { value: "5+", label: "Dutch universities" },
-  { value: "100%", label: "Credit-eligible placements" },
+  { value: "30+", label: "Students placed" },
+  { value: "20+", label: "Host companies" },
+  { value: "6", label: "Dutch universities" },
+  { value: "100%", label: "Credit-eligible" },
 ];
 
 export const trustUniversities = [
@@ -121,7 +121,7 @@ export const costs = {
       kicker: "Program fee",
       title: "Placement and relocation support",
       description:
-        "The program fee covers placement matching, visa guidance, airport pickup, orientation week, and on-the-ground support throughout your stay.",
+        "The program fee covers placement matching, visa guidance, airport pickup, orientation week, and on-the-ground support throughout your stay. The exact fee is discussed on your intro call — it varies by destination and timing.",
       points: [
         "Placement matching and company introductions",
         "Onboarding, arrival planning, and local support",
@@ -129,23 +129,11 @@ export const costs = {
       ],
     },
     {
-      icon: "shield" as const,
-      kicker: "Included",
-      title: "What the program includes",
-      description:
-        "From application to arrival, the logistics are handled so you arrive ready for the internship — not still planning it.",
-      points: [
-        "Placement support and host company matching",
-        "Pre-departure coordination and visa guidance",
-        "Airport pickup, orientation week, and local support",
-      ],
-    },
-    {
       icon: "wallet" as const,
       kicker: "Budget separately",
-      title: "Costs to plan outside the fee",
+      title: "Costs outside the program fee",
       description:
-        "These are the same costs you'd have anywhere — accommodation, food, travel. In Bali, they tend to run lower than in a Dutch city.",
+        "These are the same costs you'd have anywhere — accommodation, food, travel. In Bali, they tend to run lower than a Dutch city.",
       points: [
         "Flights, insurance, and visa-related costs",
         "Accommodation and everyday personal spending",
@@ -308,7 +296,7 @@ export const destinations: Record<
       "Sri Lanka works well for students who care about guest experience, sustainability, boutique hospitality, and operational visibility. The environment feels more grounded and less saturated — still international, just less frantic.",
     facts: [
       { label: "Setting", value: "Coastal · Close-knit · Slower-paced" },
-      { label: "Living costs", value: "Competitive island living with a softer day-to-day spend" },
+      { label: "Living costs", value: "Comparable to Bali — typically lower than a Dutch city" },
       { label: "Strong for", value: "Hospitality, operations, sustainability, guest experience" },
     ],
     tags: ["Coastal living", "Hospitality", "Sustainability", "Operations"],
@@ -320,9 +308,9 @@ export const destinations: Record<
 
 export const tracks = {
   eyebrow: "Internship tracks",
-  title: "Choose the type of work you want to build around.",
+  title: "Six tracks. Real companies. Real work.",
   intro:
-    "The program is built around clear internship tracks across Bali and Sri Lanka, so students understand the kind of companies, work, and exposure they are applying for.",
+    "Each track maps to a specific type of company, role, and work environment. Pick what fits your degree requirements and career direction — we handle the matching.",
   items: [
     {
       number: "01",
@@ -361,17 +349,17 @@ export const tracks = {
     },
     {
       number: "06",
-      kicker: "Startup",
-      title: "Startup Internships",
-      body: "Get close to founders, cross-functional work, and practical execution inside young companies where you can learn quickly.",
-      field: "Startup Operations",
+      kicker: "Tech & AI",
+      title: "Startup, AI & Technology",
+      body: "Join AI-forward startups, digital ventures, and tech operations teams where you work across functions, touch real systems, and build skills that travel beyond the internship.",
+      field: "Data & Tech",
     },
   ],
   popular: [
     "Marketing internships",
     "Business internships",
     "Hospitality internships",
-    "Startup internships",
+    "Tech & AI internships",
     "Sustainability internships",
   ],
 };
@@ -618,40 +606,40 @@ export const companies = {
 };
 
 export const safeguards = {
-  eyebrow: "Support and safeguards",
-  title: "Clear structure for students, parents, and universities.",
+  eyebrow: "For students, parents, and university coordinators",
+  title: "University-compatible. Structurally sound. Supported throughout.",
   intro:
-    "The program feels more credible when the support model is visible. These are the practical layers around the placement that reduce uncertainty and make the move easier to trust.",
+    "Every practical layer a coordinator, parent, or student needs to see before approving a move abroad — documentation, housing, visa guidance, and a local support contact from day one.",
   cards: [
+    {
+      icon: "file" as const,
+      title: "University documentation handled",
+      body: "Internship agreements, learning objective forms, and supervisor evaluation sheets aligned with Dutch university requirements — ready before you ask your coordinator.",
+    },
     {
       icon: "shield" as const,
       title: "Verified host companies",
-      body: "Selected host companies provide official internship agreements, a named supervisor, and the documentation universities require.",
-    },
-    {
-      icon: "home" as const,
-      title: "Housing and arrival guidance",
-      body: "Students receive clear housing guidance, arrival instructions, and practical context before they travel.",
+      body: "Every host company provides an official internship agreement, a named supervisor, and the documentation your university needs to approve the placement.",
     },
     {
       icon: "map-pin" as const,
       title: "Visa and paperwork guidance",
-      body: "Step-by-step support for the visa route, required documentation, and what needs to be arranged before departure.",
+      body: "Step-by-step support for the visa route, required documentation, and what needs to be arranged before departure — no last-minute scrambling.",
     },
     {
       icon: "phone" as const,
       title: "Local support and emergency contact",
-      body: "The team stays reachable through WhatsApp and provides local contact guidance for the practical issues that matter when living abroad.",
+      body: "The team stays reachable through WhatsApp and provides local contact guidance for the practical issues that come up when living abroad.",
     },
     {
-      icon: "file" as const,
-      title: "University documentation handled",
-      body: "Internship agreements, learning objective forms, and supervisor evaluation sheets can be aligned with multiple Dutch universities.",
+      icon: "home" as const,
+      title: "Housing and arrival guidance",
+      body: "Clear housing options, arrival instructions, and practical context before you travel — so your first days feel organised, not chaotic.",
     },
     {
       icon: "calendar" as const,
-      title: "Preparation before departure",
-      body: "Students receive preparation notes around arrival, local practicalities, insurance, and what to expect in the first days of the program.",
+      title: "Pre-departure preparation",
+      body: "A preparation brief covering arrival, local practicalities, insurance, and what to expect in the first week — sent before you fly.",
     },
   ],
 };
@@ -660,12 +648,17 @@ export const faqs = {
   eyebrow: "Common questions",
   title: "Straight answers before you apply.",
   intro:
-    "The basics students and parents usually want to understand before moving ahead.",
+    "The questions students and parents ask most before moving ahead.",
   items: [
     {
-      question: "Is this specifically for students who need to complete a required internship for their degree?",
+      question: "Is this specifically for students who need to complete a required internship?",
       answer:
         "Yes — that is the primary use case. Most students who join Island Internship have a mandatory internship semester built into their degree, and the placement structure is designed around that requirement.",
+    },
+    {
+      question: "Can this internship count for my university credits?",
+      answer:
+        "Yes. Host companies provide an official internship agreement, a named supervisor, and the documentation universities require to approve the placement. We recommend confirming with your study coordinator early, and we can help you prepare the paperwork.",
     },
     {
       question: "Is doing my internship abroad more expensive than staying in the Netherlands?",
@@ -673,34 +666,29 @@ export const faqs = {
         "For most students, it is cheaper. Monthly living costs in Bali run €440–€630, which is typically lower than renting a room and covering expenses in Amsterdam, Rotterdam, or Utrecht.",
     },
     {
-      question: "Can this internship count for my university credits?",
+      question: "What does the program fee cover — and how much is it?",
       answer:
-        "Yes. Host companies provide an official internship agreement, a supervisor, and are willing to complete university assessment paperwork. We still recommend confirming with your study coordinator early.",
-    },
-    {
-      question: "Are the internships paid?",
-      answer:
-        "No — internships are normally unpaid. The value is in the placement itself: practical work experience, university credit compatibility, and stronger career proof for what comes next.",
+        "The program fee covers placement matching, visa guidance, airport pickup, orientation week, and on-the-ground support throughout your stay. The exact fee depends on your destination and timing, and is discussed on your intro call after applying. There is no cost to apply.",
     },
     {
       question: "Do I get help finding my internship placement?",
       answer:
-        "Yes. Finding a placement is our job, not yours. You tell us your background and field of interest, and we match you with a suitable company from the network.",
+        "Yes. Finding a placement is our job, not yours. You tell us your background and field of interest, and we match you with a suitable company from the network — no cold emailing required.",
     },
     {
       question: "Is housing included in the program?",
       answer:
-        "Housing is arranged as part of the program guidance. You get a private room in shared housing in a central, safe area, while the housing cost is paid separately in-destination.",
+        "Housing is arranged as part of the program guidance. You get a private room in shared housing in a central, safe area. The housing cost is paid separately in-destination and is factored into the monthly living estimate.",
     },
     {
-      question: "Is Bali a safe place to live as an intern?",
+      question: "Are the internships paid?",
       answer:
-        "Bali is a well-established destination for students, remote teams, and international communities. The most common risks are practical rather than dramatic, and students are prepared properly before departure.",
+        "No — internships are normally unpaid. The value is in the placement itself: practical work experience, university credit, and real deliverables for your CV.",
     },
     {
-      question: "What level of English is required?",
+      question: "Is Bali safe to live in as a student?",
       answer:
-        "All internships are conducted in English. You need to be able to communicate professionally in English, but you do not need Bahasa Indonesia.",
+        "Bali is a well-established destination for students, remote workers, and international communities. The most common challenges are practical rather than dramatic — and students are prepared properly before departure.",
     },
     {
       question: "How long are the internships?",
@@ -710,22 +698,22 @@ export const faqs = {
     {
       question: "Do I need a visa?",
       answer:
-        "Yes. The exact route depends on your passport and how long you plan to stay. We guide students through the right option and timeline before departure.",
+        "Yes. The exact route depends on your passport and length of stay. We guide students through the right visa option and timeline before departure.",
     },
     {
       question: "What if something goes wrong during my stay?",
       answer:
-        "Local support contacts are available and students receive clear emergency guidance before arrival. If there is a problem with placement, housing, health, or safety, we help with the next step.",
+        "You have a local support contact and clear emergency guidance before you arrive. If there is a problem with the placement, housing, or anything else, we help you work through the next step — you are not dealing with it alone.",
     },
   ],
 };
 
 export const finalCta = {
   eyebrow: "You need to do an internship anyway",
-  title: "Do it in Bali or Sri Lanka. Tell us your field and timing — we will handle the rest.",
+  title: "Do it somewhere worth going. Tell us your field — we handle the rest.",
   body:
-    "The application is free, takes about 10 minutes, and gives us what we need to review your profile for a Bali or Sri Lanka placement. We reply within 2 business days.",
-  note: "Free application. No commitment required. We reply within 2 business days.",
+    "The application is free and takes about 10 minutes. We review your profile and reply within 2 business days. No commitment until the direction feels right for you.",
+  note: "Free application · No commitment · Reply within 2 business days",
 };
 
 export const applicationForm = {
