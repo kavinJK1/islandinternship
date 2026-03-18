@@ -15,6 +15,7 @@ import {
   includedHighlights,
   outcomeTeaser,
   outcomes,
+  packages,
   processSteps,
   resources,
   safeguards,
@@ -838,6 +839,62 @@ export function CostComparisonSection() {
           </table>
           <p className="cost-comparison-callout">{costComparison.callout}</p>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function PackagesSection() {
+  return (
+    <section id="packages" className="section packages-section">
+      <div className="container">
+        <div className="section-intro section-intro-centered fade-up">
+          <span className="eyebrow">{packages.eyebrow}</span>
+          <h2 className="section-title">{packages.title}</h2>
+          <p className="packages-free-notice">{packages.freeNotice}</p>
+        </div>
+        <div className="packages-cards">
+          {packages.tiers.map((tier, i) => (
+            <article
+              key={tier.id}
+              className={`packages-card fade-up${i === 1 ? " delay-1" : ""}${tier.highlighted ? " packages-card-highlighted" : ""}`}
+            >
+              {tier.badge && (
+                <div className="packages-badge">{tier.badge}</div>
+              )}
+              <div className="packages-card-header">
+                <h3 className="packages-name">{tier.name}</h3>
+                <div className="packages-price">{tier.price}</div>
+                <p className="packages-best-for">
+                  <span className="packages-best-for-label">Best for</span>{" "}
+                  {tier.bestFor}
+                </p>
+              </div>
+              {tier.description && (
+                <p className="packages-description">{tier.description}</p>
+              )}
+              <ul className="packages-features">
+                {tier.features.map((feat) => (
+                  <li key={feat.label} className={`packages-feature${feat.included ? " packages-feature-yes" : " packages-feature-no"}`}>
+                    <span className="packages-feature-icon" aria-hidden="true">
+                      {feat.included ? "✓" : "—"}
+                    </span>
+                    <span>{feat.label}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="packages-cta">
+                <OpenApplicationButton
+                  className={`button ${tier.highlighted ? "button-primary" : "button-secondary"}`}
+                  source={`Packages — ${tier.name}`}
+                >
+                  Apply free
+                </OpenApplicationButton>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="packages-disclaimer">{packages.disclaimer}</p>
       </div>
     </section>
   );

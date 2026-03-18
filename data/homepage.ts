@@ -856,6 +856,63 @@ export const faqTeaser = {
   ctaHref: "#faq",
 };
 
+export const packages = {
+  eyebrow: "Packages",
+  title: "Choose the support level that fits your style.",
+  freeNotice: "Free to apply — no commitment until you're matched.",
+  tiers: [
+    {
+      id: "essentials",
+      name: "Essentials",
+      price: "€449",
+      badge: null as string | null,
+      bestFor: "Students comfortable arranging arrival and living logistics themselves",
+      description: null as string | null,
+      features: [
+        { label: "Placement matching", included: true },
+        { label: "Internship documents support", included: true },
+        { label: "Visa guidance", included: true },
+        { label: "24/7 support", included: true },
+        { label: "WhatsApp community", included: true },
+        { label: "Airport pickup", included: false },
+        { label: "Accommodation arranged", included: false },
+        { label: "Scooter arranged", included: false },
+        { label: "SIM card ready on arrival", included: false },
+        { label: "Orientation week", included: false },
+        { label: "Optional scooter lessons", included: false },
+        { label: "Arranging Indonesian scooter licence", included: false },
+      ],
+      highlighted: false,
+    },
+    {
+      id: "full-support",
+      name: "Full Support",
+      price: "€649",
+      badge: "Most chosen" as string | null,
+      bestFor: "Most students, especially first-time interns abroad",
+      description:
+        "For students who want a smoother, more guided start abroad — with support not only securing the internship, but also settling in once they arrive. From airport pickup and accommodation setup to scooter arrangement, optional lessons, and help arranging an Indonesian scooter licence.",
+      features: [
+        { label: "Placement matching", included: true },
+        { label: "Internship documents support", included: true },
+        { label: "Visa guidance", included: true },
+        { label: "24/7 support", included: true },
+        { label: "WhatsApp community", included: true },
+        { label: "Airport pickup", included: true },
+        { label: "Accommodation arranged", included: true },
+        { label: "Scooter arranged", included: true },
+        { label: "SIM card ready on arrival", included: true },
+        { label: "Orientation week", included: true },
+        { label: "Optional scooter lessons", included: true },
+        { label: "Arranging Indonesian scooter licence", included: true },
+      ],
+      highlighted: true,
+    },
+  ],
+  disclaimer:
+    "Accommodation, scooter rental, licence fees, and living costs are paid separately. Full Support covers guidance, coordination, and arrangement support.",
+};
+
 export const applicationForm = {
   universities: [
     "Maastricht University",
