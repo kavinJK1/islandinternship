@@ -3639,18 +3639,18 @@ video {
   transform: none;
   animation: none;
   min-height: 1.05em;
-  color: var(--amber);
+  color: #7ecaac;
 }
 
 .hero-type-text {
-  color: var(--amber);
+  color: #7ecaac;
 }
 
 .hero-type-cursor {
   display: inline-block;
   width: 3px;
   height: 0.85em;
-  background: var(--amber);
+  background: #7ecaac;
   border-radius: 1px;
   margin-left: 3px;
   vertical-align: middle;
