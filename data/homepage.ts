@@ -48,7 +48,7 @@ export const navigation: NavItem[] = [
   { href: "#destinations", label: "Destinations", slot: "center" },
   { href: "#tracks", label: "Tracks", slot: "center" },
   { href: "/career-outcomes.html", label: "Outcomes", slot: "center" },
-  { href: "#testimonials", label: "Stories", slot: "center" },
+  { href: "/stories", label: "Student Stories", slot: "center" },
   { href: "/pricing", label: "Pricing", slot: "center" },
   { href: "/community-lifestyle.html", label: "Community", slot: "center" },
   { href: "#faq", label: "FAQ", slot: "center" },
