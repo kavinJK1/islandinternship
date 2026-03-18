@@ -16,6 +16,7 @@ import {
   outcomeTeaser,
   outcomes,
   pricing,
+  pricingTeaser,
   processSteps,
   resources,
   safeguards,
@@ -915,6 +916,34 @@ export function PricingSection() {
           ))}
         </div>
         <p className="pricing-disclaimer">{pricing.disclaimer}</p>
+      </div>
+    </section>
+  );
+}
+
+export function PricingTeaserSection() {
+  return (
+    <section id="pricing" className="pricing-teaser-section">
+      <div className="container">
+        <div className="pricing-teaser-intro fade-up">
+          <span className="eyebrow">{pricingTeaser.eyebrow}</span>
+          <h2 className="pricing-teaser-title">{pricingTeaser.title}</h2>
+        </div>
+        <div className="pricing-teaser-grid fade-up delay-1">
+          {pricingTeaser.tiers.map((tier) => (
+            <div key={tier.name} className="pricing-teaser-item">
+              <div className="pricing-teaser-price">{tier.price}</div>
+              <div className="pricing-teaser-name">{tier.name}</div>
+              <p className="pricing-teaser-summary">{tier.summary}</p>
+            </div>
+          ))}
+        </div>
+        <div className="pricing-teaser-footer fade-up delay-2">
+          <a href={pricingTeaser.ctaHref} className="button button-primary pricing-teaser-cta">
+            {pricingTeaser.cta} →
+          </a>
+          <p className="pricing-teaser-notice">{pricingTeaser.freeNotice}</p>
+        </div>
       </div>
     </section>
   );

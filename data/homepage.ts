@@ -48,7 +48,7 @@ export const navigation: NavItem[] = [
   { href: "#tracks", label: "Tracks", slot: "center" },
   { href: "/career-outcomes.html", label: "Outcomes", slot: "center" },
   { href: "#testimonials", label: "Stories", slot: "center" },
-  { href: "#pricing", label: "Pricing", slot: "center" },
+  { href: "/pricing", label: "Pricing", slot: "center" },
   { href: "/community-lifestyle.html", label: "Community", slot: "center" },
   { href: "#faq", label: "FAQ", slot: "center" },
   { href: "/companies.html", label: "For Businesses", slot: "right" },
@@ -901,6 +901,27 @@ export const pricing = {
   ],
   disclaimer:
     "Accommodation, scooter rental, licence fees, and living costs are paid separately. Full Support covers guidance, coordination, and arrangement support.",
+};
+
+export const pricingTeaser = {
+  eyebrow: "Transparent pricing",
+  title: "Two packages. Free to apply.",
+  tiers: [
+    {
+      price: "€449",
+      name: "Essentials",
+      summary: "Placement, documents, visa guidance, 24/7 support",
+    },
+    {
+      price: "€649",
+      name: "Full Support",
+      summary:
+        "Everything, plus airport pickup, accommodation, scooter, SIM card, and orientation",
+    },
+  ],
+  cta: "See full pricing",
+  ctaHref: "/pricing",
+  freeNotice: "Free to apply — no commitment until you're matched.",
 };
 
 export const applicationForm = {
