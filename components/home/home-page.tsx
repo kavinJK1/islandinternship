@@ -4,6 +4,7 @@ import { Header } from "@/components/home/header";
 import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
+  CostComparisonSection,
   CostTeaser,
   FaqTeaser,
   FinalCtaSection,
@@ -33,6 +34,7 @@ export function HomePage() {
           <TestimonialsTeaser />
           <OutcomesTeaser />
           <CostTeaser />
+          <CostComparisonSection />
           <FaqTeaser />
           <FinalCtaSection />
         </main>

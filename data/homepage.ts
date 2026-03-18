@@ -152,10 +152,10 @@ export const costs = {
   table: [
     ["Private accommodation", "Starts from €180"],
     ["Scooter rental", "€50 – €70"],
-    ["Petrol", "€10 – €20"],
-    ["Meals at local restaurants", "€70 – €120"],
+    ["Petrol", "€8 – €15"],
+    ["Meals at local restaurants", "€50 – €120"],
     ["Coffee / cafes", "€20 – €40"],
-    ["Gym", "€15 – €30"],
+    ["Gym", "€30 – €75"],
     ["Surf lessons / activities", "€40 – €70"],
     ["Weekend trips", "€40 – €80"],
     ["Local transport", "€15 – €30"],
@@ -163,7 +163,7 @@ export const costs = {
   totalLabel: "Estimated monthly total",
   totalValue: "€440 – €630",
   note:
-    "Monthly living cost depends on room standard, transport choice, and how often you eat out. Use this as a Bali planning range, not a fixed bill.",
+    "Monthly living cost depends on room standard, bike type, and how often you eat out. Use this as a Bali planning range, not a fixed bill.",
   comparison: {
     bali: "€440 – €630",
     dutchCities: "€900 – €1,400",
@@ -785,7 +785,23 @@ export const costTeaser = {
   nl: { label: "Amsterdam / Rotterdam — typical budget", value: "€900 – €1,400" },
   note: "Same required semester. Different location. In Bali, most students spend significantly less — while gaining more real-world exposure.",
   cta: "See full cost breakdown",
-  ctaHref: "#faq",
+  ctaHref: "#cost-comparison",
+};
+
+export const costComparison = {
+  eyebrow: "Monthly cost breakdown",
+  title: "Bali vs the Netherlands — side by side.",
+  rows: [
+    { item: "Rent / accommodation", bali: "€180 – €600", nl: "€600 – €900" },
+    { item: "Food", bali: "€50+", nl: "€250 – €350" },
+    { item: "Scooter / transport", bali: "€50 – €130+", nl: "€90 – €120 (OV card)" },
+    { item: "Gym", bali: "€30 – €75+", nl: "€30 – €50" },
+    { item: "Phone / data", bali: "€8 – €10", nl: "€20 – €30" },
+    { item: "Petrol", bali: "€8 – €15", nl: "—" },
+    { item: "Travelling / going out", bali: "€50+", nl: "€100+" },
+  ],
+  total: { item: "Estimated monthly total", bali: "€440 – €630+", nl: "€990 – €1,450" },
+  callout: "Same internship. Bali typically costs less than staying in the Netherlands.",
 };
 
 export const featuredTracks = {

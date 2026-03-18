@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   companies,
   community,
+  costComparison,
   costs,
   costTeaser,
   destinationTeaser,
@@ -799,6 +800,47 @@ export function CostTeaser() {
               <strong>{costTeaser.nl.value}</strong>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CostComparisonSection() {
+  return (
+    <section id="cost-comparison" className="section cost-comparison-section fade-up">
+      <div className="container">
+        <div className="cost-comparison-header">
+          <span className="eyebrow">{costComparison.eyebrow}</span>
+          <h2 className="section-title">{costComparison.title}</h2>
+        </div>
+        <div className="cost-comparison-table-wrap">
+          <table className="cost-comparison-table">
+            <thead>
+              <tr>
+                <th className="col-item">Monthly expense</th>
+                <th className="col-bali">Bali</th>
+                <th className="col-nl">Netherlands</th>
+              </tr>
+            </thead>
+            <tbody>
+              {costComparison.rows.map((row, i) => (
+                <tr key={row.item} className={i % 2 === 0 ? "row-even" : "row-odd"}>
+                  <td className="col-item">{row.item}</td>
+                  <td className="col-bali">{row.bali}</td>
+                  <td className="col-nl">{row.nl}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr className="total-row">
+                <td className="col-item">{costComparison.total.item}</td>
+                <td className="col-bali">{costComparison.total.bali}</td>
+                <td className="col-nl">{costComparison.total.nl}</td>
+              </tr>
+            </tfoot>
+          </table>
+          <p className="cost-comparison-callout">{costComparison.callout}</p>
         </div>
       </div>
     </section>

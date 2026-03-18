@@ -2731,6 +2731,131 @@ video {
   border-top: 1px solid var(--line);
 }
 
+/* ── Cost comparison table ─────────────────────────── */
+.cost-comparison-section {
+  padding: clamp(40px, 5vw, 72px) 0;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+}
+
+.cost-comparison-header {
+  margin-bottom: 2rem;
+}
+
+.cost-comparison-table-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--bg-stone);
+  box-shadow: var(--shadow-sm);
+}
+
+.cost-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.cost-comparison-table thead tr {
+  background: var(--bg-sand);
+}
+
+.cost-comparison-table thead th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.cost-comparison-table thead th.col-bali {
+  background: var(--forest);
+  color: #fff;
+}
+
+.cost-comparison-table tbody tr.row-even {
+  background: var(--bg);
+}
+
+.cost-comparison-table tbody tr.row-odd {
+  background: var(--bg-soft);
+}
+
+.cost-comparison-table tbody tr:hover {
+  background: rgba(41, 90, 77, 0.04);
+}
+
+.cost-comparison-table td {
+  padding: 0.9rem 1.25rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--bg-stone);
+  vertical-align: middle;
+}
+
+.cost-comparison-table td.col-item {
+  font-weight: 500;
+}
+
+.cost-comparison-table td.col-bali {
+  background: rgba(41, 90, 77, 0.07);
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.cost-comparison-table td.col-nl {
+  color: var(--muted);
+}
+
+.cost-comparison-table tfoot .total-row td {
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-sand);
+  font-weight: 700;
+  font-size: 1rem;
+  border-top: 2px solid var(--bg-stone);
+  border-bottom: none;
+}
+
+.cost-comparison-table tfoot .total-row td.col-bali {
+  background: rgba(41, 90, 77, 0.12);
+  color: var(--forest);
+  font-size: 1.05rem;
+}
+
+.cost-comparison-table tfoot .total-row td.col-nl {
+  color: var(--muted);
+}
+
+.cost-comparison-callout {
+  padding: 1.1rem 1.5rem;
+  background: rgba(41, 90, 77, 0.06);
+  border-top: 1px solid rgba(41, 90, 77, 0.14);
+  color: var(--forest);
+  font-weight: 500;
+  font-size: 0.88rem;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .cost-comparison-table {
+    font-size: 0.8rem;
+  }
+
+  .cost-comparison-table thead th,
+  .cost-comparison-table td,
+  .cost-comparison-table tfoot .total-row td {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .cost-comparison-table tfoot .total-row td {
+    font-size: 0.9rem;
+  }
+}
+
 .cost-teaser-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
