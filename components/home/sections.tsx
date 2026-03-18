@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroHeadline } from "@/components/home/hero-headline";
 import {
   companies,
   community,
@@ -65,12 +66,7 @@ export function HeroSection() {
       <div className="container hero-content">
         <div className="hero-text-wrap">
           <p className="hero-pre">Built for Dutch students · Credit-eligible · Real startups abroad</p>
-          <h1 className="hero-headline">
-            <span className="hero-line hero-line-1">You need to do your</span>
-            <span className="hero-line hero-line-2">internship anyway.</span>
-            <span className="hero-line hero-line-3">Do it somewhere that</span>
-            <span className="hero-line hero-line-4">changes your trajectory.</span>
-          </h1>
+          <HeroHeadline />
           <div className="hero-actions">
             <OpenApplicationButton className="button button-hero-primary" source="Hero">
               Apply now

@@ -3402,6 +3402,30 @@ video {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Typewriter headline */
+.hero-typewriter-line {
+  opacity: 1;
+  transform: none;
+  animation: none;
+  min-height: 1.05em;
+}
+
+.hero-type-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1px;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: type-cursor-blink 0.55s step-end infinite;
+}
+
+@keyframes type-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 .hero-actions {
   display: flex;
   gap: 12px;
