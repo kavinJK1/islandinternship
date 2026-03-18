@@ -3367,10 +3367,14 @@ video {
 
 .hero-pre {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(0, 0, 0, 0.72);
+  background: rgba(255, 255, 255, 0.55);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
   margin-bottom: 1.5rem;
 }
 
@@ -3378,10 +3382,11 @@ video {
   display: flex;
   flex-direction: column;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(2.6rem, 5.5vw, 5rem);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
   color: white;
   margin-bottom: 2.5rem;
 }

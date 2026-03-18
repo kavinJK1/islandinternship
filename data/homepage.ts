@@ -94,7 +94,6 @@ export const trustMetrics = [
   { value: "30+", label: "Students placed" },
   { value: "20+", label: "Host companies" },
   { value: "6", label: "Dutch universities" },
-  { value: "100%", label: "Credit-eligible" },
 ];
 
 export const trustUniversities: Array<{ name: string; logo: string | null }> = [

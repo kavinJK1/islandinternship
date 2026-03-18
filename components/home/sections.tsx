@@ -65,7 +65,7 @@ export function HeroSection() {
       </div>
       <div className="container hero-content">
         <div className="hero-text-wrap">
-          <p className="hero-pre">Built for Dutch students · Credit-eligible · Real startups abroad</p>
+          <p className="hero-pre">Built for Dutch students · Real startups abroad</p>
           <HeroHeadline />
           <div className="hero-actions">
             <OpenApplicationButton className="button button-hero-primary" source="Hero">
