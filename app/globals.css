@@ -494,6 +494,19 @@ video {
   color: var(--forest);
 }
 
+.nav-dropdown-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bg-stone);
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-dot {
+  background: var(--forest);
+}
+
 /* ── Hamburger ── */
 .menu-button {
   display: none;
@@ -3029,14 +3042,14 @@ video {
 }
 
 /* ─── PRICING ────────────────────────────────────────────────────── */
-/* ── Pricing page back button bar ── */
-.pricing-page-bar {
+/* ── Sub-page back button bar (used on /pricing, /stories, etc.) ── */
+.page-back-bar {
   background: var(--bg-soft);
   border-bottom: 1px solid var(--bg-stone);
   padding: 0.75rem 0;
 }
 
-.pricing-back-btn {
+.page-back-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -3048,7 +3061,7 @@ video {
   transition: color 0.18s ease;
 }
 
-.pricing-back-btn:hover {
+.page-back-btn:hover {
   color: var(--forest);
 }
 

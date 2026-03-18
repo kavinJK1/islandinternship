@@ -26,9 +26,9 @@ export default function PricingPage() {
         </a>
         <Header />
         <main id="main-content">
-          <div className="pricing-page-bar">
+          <div className="page-back-bar">
             <div className="container">
-              <Link href="/" className="pricing-back-btn">
+              <Link href="/" className="page-back-btn">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -36,6 +36,7 @@ export default function PricingPage() {
               </Link>
             </div>
           </div>
+
           <PricingSection />
           <CostComparisonSection />
           <PricingFaqsSection />

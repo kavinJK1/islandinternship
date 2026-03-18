@@ -40,7 +40,8 @@ export function Header() {
             <div className="nav-dropdown-menu-inner">
               {item.dropdown.map((sub) => (
                 <a key={sub.href} href={resolveHref(sub.href)} className="nav-dropdown-item" onClick={onClick}>
-                  {sub.label}
+                  <span className="nav-dropdown-dot" aria-hidden="true" />
+                  <span>{sub.label}</span>
                 </a>
               ))}
             </div>
