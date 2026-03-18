@@ -2,61 +2,46 @@
 
 import { useEffect, useState } from "react";
 
-const LINES = [
-  "You need to do your",
-  "internship anyway.",
-  "Do it somewhere that",
-  "changes your trajectory.",
-];
+const LOCATIONS = ["Bali.", "Sri Lanka.", "somewhere that matters."];
 
 export function HeroHeadline() {
-  const [lineIdx, setLineIdx] = useState(0);
-  const [charIdx, setCharIdx] = useState(0);
-  const [lines, setLines] = useState(["", "", "", ""]);
-  const [cursorVisible, setCursorVisible] = useState(true);
+  const [idx, setIdx] = useState(0);
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    if (lineIdx >= LINES.length) {
-      const t = setTimeout(() => setCursorVisible(false), 900);
+    const phrase = LOCATIONS[idx];
+
+    if (!deleting && text.length < phrase.length) {
+      const t = setTimeout(() => setText(phrase.slice(0, text.length + 1)), 75);
       return () => clearTimeout(t);
     }
 
-    const current = LINES[lineIdx];
-
-    if (charIdx < current.length) {
-      const t = setTimeout(() => {
-        setLines((prev) => {
-          const next = [...prev];
-          next[lineIdx] = current.slice(0, charIdx + 1);
-          return next;
-        });
-        setCharIdx((c) => c + 1);
-      }, 30);
+    if (!deleting && text.length === phrase.length) {
+      const t = setTimeout(() => setDeleting(true), 2200);
       return () => clearTimeout(t);
     }
 
-    // Line finished — pause then move to next
-    const t = setTimeout(() => {
-      setLineIdx((l) => l + 1);
-      setCharIdx(0);
-    }, 180);
-    return () => clearTimeout(t);
-  }, [lineIdx, charIdx]);
+    if (deleting && text.length > 0) {
+      const t = setTimeout(() => setText((s) => s.slice(0, -1)), 40);
+      return () => clearTimeout(t);
+    }
 
-  const activeLine = Math.min(lineIdx, LINES.length - 1);
+    if (deleting && text.length === 0) {
+      setDeleting(false);
+      setIdx((i) => (i + 1) % LOCATIONS.length);
+    }
+  }, [text, deleting, idx]);
 
   return (
     <h1 className="hero-headline">
-      {LINES.map((_, i) => (
-        <span key={i} className="hero-line hero-typewriter-line">
-          {lines[i]}
-          {cursorVisible && i === activeLine && (
-            <span className="hero-type-cursor" aria-hidden="true" />
-          )}
-          {/* keep line height while empty */}
-          {lines[i] === "" && <span aria-hidden="true">&thinsp;</span>}
-        </span>
-      ))}
+      <span className="hero-line hero-line-1">You need to do your</span>
+      <span className="hero-line hero-line-2">internship anyway.</span>
+      <span className="hero-line hero-typewriter-line">
+        Do it in&nbsp;
+        <span className="hero-type-text">{text}</span>
+        <span className="hero-type-cursor" aria-hidden="true" />
+      </span>
     </h1>
   );
 }

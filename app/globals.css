@@ -3410,6 +3410,10 @@ video {
   min-height: 1.05em;
 }
 
+.hero-type-text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .hero-type-cursor {
   display: inline-block;
   width: 3px;
