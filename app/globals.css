@@ -4503,3 +4503,69 @@ video {
     font-size: 3.5rem;
   }
 }
+
+/* ─── STORIES PAGE ───────────────────────────────────────────────── */
+.stories-page-hero {
+  background: var(--bg);
+  border-bottom: 1px solid var(--bg-stone);
+}
+
+.stories-page-title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0.5rem 0 0.75rem;
+  max-width: 680px;
+}
+
+.stories-videos-section {
+  background: var(--dark);
+}
+
+.stories-sub-heading {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--dark-muted);
+  margin-bottom: 1.5rem;
+}
+
+.stories-featured-section {
+  background: var(--dark);
+  padding-bottom: clamp(40px, 5vw, 72px);
+}
+
+.stories-quotes-section {
+  background: var(--dark);
+}
+
+/* 3-column grid for quote cards on full stories page */
+.stories-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* "See all stories" CTA strip on the home page teaser */
+.stories-teaser-cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .stories-quotes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .stories-quotes-grid {
+    grid-template-columns: 1fr;
+  }
+}

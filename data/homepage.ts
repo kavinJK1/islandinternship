@@ -23,6 +23,7 @@ export const siteLinks = {
   whatsapp: "https://wa.me/31683660360",
   apply: "#apply",
   matchQuiz: "/match-quiz.html",
+  stories: "/stories",
   community: "/community-lifestyle.html",
   companies: "/companies.html",
   hostCompanies: "/host-companies.html",

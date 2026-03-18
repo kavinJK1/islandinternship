@@ -746,7 +746,9 @@ export function TestimonialsTeaser() {
             <span className="eyebrow">Student stories</span>
             <h2 className="section-title">Real students. Real outcomes.</h2>
           </div>
-          <a href={siteLinks.community} className="stories-see-all">See all stories →</a>
+          <Link href={siteLinks.stories} className="stories-see-all">
+            See all stories →
+          </Link>
         </div>
 
         {/* Momentum testimonial — featured pull quote */}
@@ -759,13 +761,13 @@ export function TestimonialsTeaser() {
           </footer>
         </blockquote>
 
-        {/* Stagger card slider */}
+        {/* 3 story cards */}
         <div className="stories-slider-wrap">
           <div className="stories-slider">
-            {testimonials.stories.slice(0, 7).map((s, i) => (
+            {testimonials.stories.slice(0, 3).map((s, i) => (
               <div
                 key={i}
-                className={`story-card-slide fade-up delay-${Math.min(i + 1, 5)}`}
+                className={`story-card-slide fade-up delay-${i + 1}`}
               >
                 <div className="story-card-img-wrap">
                   <Image
@@ -783,6 +785,14 @@ export function TestimonialsTeaser() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* CTA to full stories page */}
+        <div className="stories-teaser-cta fade-up delay-3">
+          <Link href={siteLinks.stories} className="button button-secondary">
+            Watch all videos &amp; read more stories
+            <Icon name="arrow-right" className="icon" />
+          </Link>
         </div>
       </div>
     </section>
@@ -1032,6 +1042,98 @@ export function PricingFaqsSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function FullStoriesSection() {
+  return (
+    <>
+      {/* Page hero */}
+      <section className="section stories-page-hero">
+        <div className="container">
+          <span className="eyebrow reveal">{testimonials.eyebrow}</span>
+          <h1 className="stories-page-title reveal reveal-delay-1">{testimonials.title}</h1>
+          <p className="section-copy reveal reveal-delay-2">{testimonials.intro}</p>
+        </div>
+      </section>
+
+      {/* Videos — all four */}
+      <section className="section stories-videos-section">
+        <div className="container">
+          <h2 className="stories-sub-heading reveal">Video stories</h2>
+          <div className="video-grid">
+            {testimonials.videos.map((item) => (
+              <article key={item.title} className="dark-card video-card fade-up">
+                <div className="video-frame">
+                  <video controls playsInline preload="metadata">
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                </div>
+                <div className="video-copy">
+                  <strong>{item.title}</strong>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured pull quote */}
+      <section className="stories-featured-section">
+        <div className="container">
+          <blockquote className="momentum-testimonial fade-up">
+            <span className="momentum-quote-mark" aria-hidden="true">&ldquo;</span>
+            <p className="momentum-quote-text">{testimonials.stories[4].quote}</p>
+            <footer className="momentum-quote-footer">
+              <span className="momentum-author">{testimonials.stories[4].name}</span>
+              <span className="momentum-role">{testimonials.stories[4].role}</span>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* All testimonial cards — 3-column grid */}
+      <section className="section stories-quotes-section">
+        <div className="container">
+          <h2 className="stories-sub-heading reveal">What students say</h2>
+          <div className="stories-quotes-grid">
+            {testimonials.stories.map((item, i) => (
+              <article key={item.name} className={`dark-card story-card fade-up delay-${Math.min(i % 3, 4) + 1}`}>
+                <span className="story-stars">★★★★★</span>
+                <blockquote>{item.quote}</blockquote>
+                <div className="story-person">
+                  <span className="story-avatar">{item.initials}</span>
+                  <div>
+                    <strong>{item.name}</strong>
+                    <span>{item.detail}</span>
+                    <small>{item.role}</small>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="post-proof-section">
+        <div className="container post-proof-layout">
+          <div>
+            <p className="post-proof-headline">{testimonials.postCta.title}</p>
+            <p>{testimonials.postCta.body}</p>
+          </div>
+          <div className="post-proof-actions">
+            <OpenApplicationButton className="button button-primary" source="Stories page CTA">
+              Start your free application
+            </OpenApplicationButton>
+            <Link href={siteLinks.matchQuiz} className="button button-ghost-light">
+              Not sure yet? Take the match quiz
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
