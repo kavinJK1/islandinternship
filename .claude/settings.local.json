@@ -28,7 +28,8 @@
       "WebFetch(domain:dittowords.com)",
       "WebFetch(domain:www.uva.nl)",
       "WebFetch(domain:commons.wikimedia.org)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "WebFetch(domain:featurescomparisontable.framer.website)"
     ]
   },
   "enableAllProjectMcpServers": true,

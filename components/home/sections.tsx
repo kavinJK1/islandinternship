@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroHeadline } from "@/components/home/hero-headline";
@@ -859,6 +860,8 @@ export function CostComparisonSection() {
 }
 
 export function PricingSection() {
+  const essentials = pricing.tiers[0];
+  const fullSupport = pricing.tiers[1];
   return (
     <section id="pricing" className="section pricing-section">
       <div className="container">
@@ -866,55 +869,81 @@ export function PricingSection() {
           <span className="eyebrow">{pricing.eyebrow}</span>
           <h2 className="section-title">{pricing.title}</h2>
           <p className="section-copy">{pricing.copy}</p>
-          <p className="pricing-free-notice">{pricing.freeNotice}</p>
         </div>
-        <div className="pricing-grid">
-          {pricing.tiers.map((tier, i) => (
-            <article
-              key={tier.id}
-              className={`pricing-card fade-up${i === 1 ? " delay-1" : ""}${tier.highlighted ? " pricing-card-highlighted" : ""}`}
-            >
-              {tier.badge && (
-                <span className="pricing-badge">{tier.badge}</span>
+
+        <div className="ct-wrap fade-up delay-1">
+          <div className="ct-grid">
+
+            {/* ── Header row ── */}
+            <div className="ct-cell ct-label-cell ct-header-label">
+              <span className="ct-features-heading">What&rsquo;s included</span>
+            </div>
+            <div className="ct-cell ct-plan-header ct-plan-neutral">
+              <h3 className="ct-plan-name">{essentials.name}</h3>
+              <div className="ct-plan-price">{essentials.price}</div>
+              <p className="ct-plan-bestfor">
+                <span className="ct-bestfor-label">Best for</span> {essentials.bestFor}
+              </p>
+              <OpenApplicationButton className="button pricing-btn-outline" source="Pricing table — Essentials">
+                Apply free
+              </OpenApplicationButton>
+            </div>
+            <div className="ct-cell ct-plan-header ct-plan-featured">
+              {fullSupport.badge && (
+                <span className="ct-plan-badge">{fullSupport.badge}</span>
               )}
-              <div className="pricing-card-top">
-                <h3 className="pricing-name">{tier.name}</h3>
-                <div className="pricing-price">{tier.price}</div>
-                <p className="pricing-best-for">
-                  <span className="pricing-best-for-label">Best for</span>{" "}
-                  {tier.bestFor}
-                </p>
-                {tier.description && (
-                  <p className="pricing-description">{tier.description}</p>
-                )}
-              </div>
-              <ul className="pricing-features">
-                {pricing.features.map((label, j) => {
-                  const included = tier.included[j];
-                  return (
-                    <li
-                      key={label}
-                      className={`pricing-feature${included ? " pricing-feature-yes" : " pricing-feature-no"}`}
-                    >
-                      <span className="pricing-feature-icon" aria-hidden="true">
-                        {included ? "✓" : "—"}
-                      </span>
-                      <span>{label}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="pricing-cta">
-                <OpenApplicationButton
-                  className={`button ${tier.highlighted ? "pricing-btn-filled" : "pricing-btn-outline"}`}
-                  source={`Pricing — ${tier.name}`}
-                >
-                  Apply free
-                </OpenApplicationButton>
-              </div>
-            </article>
-          ))}
+              <h3 className="ct-plan-name">{fullSupport.name}</h3>
+              <div className="ct-plan-price">{fullSupport.price}</div>
+              <p className="ct-plan-bestfor">
+                <span className="ct-bestfor-label">Best for</span> {fullSupport.bestFor}
+              </p>
+              {fullSupport.description && (
+                <p className="ct-plan-description">{fullSupport.description}</p>
+              )}
+              <OpenApplicationButton className="button pricing-btn-white" source="Pricing table — Full Support">
+                Apply free
+              </OpenApplicationButton>
+            </div>
+
+            {/* ── Feature rows ── */}
+            {pricing.features.map((label, j) => (
+              <Fragment key={label}>
+                <div className="ct-cell ct-label-cell ct-feature-label">
+                  {label}
+                </div>
+                <div className="ct-cell ct-value-cell ct-value-neutral">
+                  {essentials.included[j] ? (
+                    <span className="ct-check ct-check-neutral" aria-label="Included">✓</span>
+                  ) : (
+                    <span className="ct-dash" aria-label="Not included">—</span>
+                  )}
+                </div>
+                <div className="ct-cell ct-value-cell ct-value-featured">
+                  {fullSupport.included[j] ? (
+                    <span className="ct-check ct-check-featured" aria-label="Included">✓</span>
+                  ) : (
+                    <span className="ct-dash ct-dash-featured" aria-label="Not included">—</span>
+                  )}
+                </div>
+              </Fragment>
+            ))}
+
+            {/* ── Footer row ── */}
+            <div className="ct-cell ct-label-cell ct-footer-label" />
+            <div className="ct-cell ct-footer-cell ct-footer-neutral">
+              <OpenApplicationButton className="button pricing-btn-outline" source="Pricing table bottom — Essentials">
+                Apply free
+              </OpenApplicationButton>
+            </div>
+            <div className="ct-cell ct-footer-cell ct-footer-featured">
+              <OpenApplicationButton className="button pricing-btn-white" source="Pricing table bottom — Full Support">
+                Apply free
+              </OpenApplicationButton>
+            </div>
+
+          </div>
         </div>
+
         <p className="pricing-disclaimer">{pricing.disclaimer}</p>
       </div>
     </section>
