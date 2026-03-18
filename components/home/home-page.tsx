@@ -1,11 +1,10 @@
 import { ApplicationModalProvider } from "@/components/home/application-modal";
+import { CostSection } from "@/components/home/cost-section";
 import { DestinationExplorer } from "@/components/home/destination-explorer";
 import { Header } from "@/components/home/header";
 import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
-  CostComparisonSection,
-  CostTeaser,
   FaqTeaser,
   FinalCtaSection,
   Footer,
@@ -33,8 +32,7 @@ export function HomePage() {
           <TracksTeaser />
           <TestimonialsTeaser />
           <OutcomesTeaser />
-          <CostTeaser />
-          <CostComparisonSection />
+          <CostSection />
           <FaqTeaser />
           <FinalCtaSection />
         </main>

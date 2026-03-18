@@ -2731,6 +2731,59 @@ video {
   border-top: 1px solid var(--line);
 }
 
+/* ── Cost expand button ─────────────────────────────── */
+.cost-expand-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.cost-expand-icon {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.cost-expand-icon.is-rotated {
+  transform: rotate(90deg);
+}
+
+/* ── Cost breakdown expand panel ─────────────────────── */
+@keyframes expand-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cost-breakdown-expand {
+  margin-top: 2.5rem;
+  animation: expand-down 0.35s ease;
+}
+
+.cost-breakdown-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.5;
+  margin: 0 0 2rem;
+  max-width: 680px;
+}
+
+.cost-cursor {
+  display: inline-block;
+  width: 2px;
+  background: var(--forest);
+  margin-left: 2px;
+  animation: cursor-blink 0.7s step-end infinite;
+  vertical-align: baseline;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 /* ── Cost comparison table ─────────────────────────── */
 .cost-comparison-section {
   padding: clamp(40px, 5vw, 72px) 0;
