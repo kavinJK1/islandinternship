@@ -2831,8 +2831,8 @@ video {
 /* ── Cost comparison table ─────────────────────────── */
 .cost-comparison-section {
   padding: clamp(40px, 5vw, 72px) 0;
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
+  background: white;
+  border-top: 1px solid var(--bg-stone);
 }
 
 .cost-comparison-header {
@@ -3053,7 +3053,7 @@ video {
 }
 
 .pricing-section {
-  background: var(--bg-sand);
+  background: var(--bg);
 }
 
 /* Clarity strip */
@@ -3065,7 +3065,8 @@ video {
   border: 1px solid var(--bg-stone);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--bg-soft);
+  background: white;
+  box-shadow: var(--shadow-sm);
 }
 
 .pricing-clarity-item {
@@ -3134,16 +3135,18 @@ video {
   align-items: flex-start;
   gap: 1.125rem;
   margin-top: 1.5rem;
-  padding: 1.5rem 1.625rem;
-  background: rgba(41, 90, 77, 0.05);
-  border: 1px solid rgba(41, 90, 77, 0.14);
-  border-radius: var(--radius-sm);
+  padding: 1.375rem 1.625rem;
+  background: white;
+  border: 1px solid var(--bg-stone);
+  border-left: 4px solid var(--forest);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .pricing-why-icon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(41, 90, 77, 0.1);
   color: var(--forest);
@@ -3171,7 +3174,7 @@ video {
 
 /* Pricing page FAQs */
 .pricing-faqs-section {
-  background: var(--bg-soft);
+  background: var(--bg-sand);
   border-top: 1px solid var(--bg-stone);
 }
 
@@ -3265,7 +3268,7 @@ video {
 
 /* ── Label column ── */
 .ct-label-cell {
-  background: var(--bg-soft);
+  background: white;
   font-family: var(--font-sans), sans-serif;
   font-size: 0.875rem;
   color: var(--text);
@@ -3294,7 +3297,7 @@ video {
 
 .ct-footer-label {
   border-bottom: none;
-  background: var(--bg-soft);
+  background: white;
 }
 
 /* ── Neutral plan column (Essentials) ── */
@@ -3474,7 +3477,7 @@ video {
   padding: 0.5rem 1.375rem;
   background: var(--bg-sand);
   border-bottom: 1px solid var(--bg-stone);
-  border-top: 1px solid var(--bg-stone);
+  border-top: 2px solid var(--bg-stone);
 }
 
 .ct-category-label {
@@ -3483,7 +3486,7 @@ video {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--soft-text);
+  color: var(--muted);
 }
 
 /* ── CTA buttons ── */
