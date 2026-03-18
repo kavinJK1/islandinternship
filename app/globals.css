@@ -3033,6 +3033,125 @@ video {
   background: var(--bg-sand);
 }
 
+/* Clarity strip */
+.pricing-clarity-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 1.5rem;
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.pricing-clarity-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-soft);
+  border-right: 1px solid var(--bg-stone);
+}
+
+.pricing-clarity-item:last-child {
+  border-right: none;
+}
+
+.pricing-clarity-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--soft-text);
+}
+
+.pricing-clarity-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .pricing-clarity-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-clarity-item {
+    border-right: none;
+    border-bottom: 1px solid var(--bg-stone);
+  }
+
+  .pricing-clarity-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Why Full Support */
+.pricing-why-full {
+  margin-top: 1.5rem;
+  padding: 1.375rem 1.5rem;
+  background: rgba(41, 90, 77, 0.05);
+  border-left: 3px solid var(--forest);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.pricing-why-title {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--forest);
+  margin-bottom: 0.4rem;
+}
+
+.pricing-why-body {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+/* Pricing page FAQs */
+.pricing-faqs-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--bg-stone);
+}
+
+.pricing-faqs-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pricing-faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pricing-faq-q {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.pricing-faq-a {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .pricing-faqs-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .pricing-disclaimer {
   margin: 1.75rem auto 0;
   max-width: 580px;
@@ -3228,6 +3347,10 @@ video {
   font-size: 0.78rem;
   line-height: 1.62;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.ct-plan-description-neutral {
+  color: var(--muted);
 }
 
 /* ── Check / Dash icons ── */

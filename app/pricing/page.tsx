@@ -6,6 +6,7 @@ import {
   CostComparisonSection,
   Footer,
   MobileActionBar,
+  PricingFaqsSection,
   PricingSection,
 } from "@/components/home/sections";
 
@@ -26,6 +27,7 @@ export default function PricingPage() {
         <main id="main-content">
           <PricingSection />
           <CostComparisonSection />
+          <PricingFaqsSection />
         </main>
         <Footer />
         <MobileActionBar />

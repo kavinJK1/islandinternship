@@ -801,7 +801,7 @@ export const costComparison = {
     { item: "Travelling / going out", bali: "€50+", nl: "€100+" },
   ],
   total: { item: "Estimated monthly total", bali: "€440 – €630+", nl: "€990 – €1,450" },
-  callout: "Same internship. Bali typically costs less than staying in the Netherlands.",
+  callout: "What many students spend on rent alone in the Netherlands can be more than their total monthly cost in Bali.",
 };
 
 export const featuredTracks = {
@@ -859,8 +859,8 @@ export const faqTeaser = {
 
 export const pricing = {
   eyebrow: "Program fees",
-  title: "Simple, transparent pricing. Free to apply.",
-  copy: "No registration fee. No commitment until you're matched. Choose the level of support that fits how you travel.",
+  title: "Two ways to do your internship abroad",
+  copy: "Free to apply. No commitment until you're matched. Choose the level of support that fits how independently you want to arrive and settle in.",
   freeNotice: "Free to apply — no commitment until you're matched.",
   features: [
     "Placement matching",
@@ -883,7 +883,8 @@ export const pricing = {
       price: "€449",
       badge: null as string | null,
       bestFor: "Students comfortable arranging arrival and living logistics themselves",
-      description: null as string | null,
+      description:
+        "For students who want help securing the internship and handling the required documents, while arranging accommodation, transport, and arrival themselves.",
       included: [true, true, true, true, true, false, false, false, false, false, false, false],
       highlighted: false,
     },
@@ -897,6 +898,29 @@ export const pricing = {
         "For students who want a smoother, more guided start abroad, with support not only securing the internship, but also settling in once they arrive — from airport pickup and accommodation setup to scooter arrangement, optional lessons, and help arranging an Indonesian scooter licence.",
       included: [true, true, true, true, true, true, true, true, true, true, true, true],
       highlighted: true,
+    },
+  ],
+  clarityStrip: [
+    { label: "Included in your fee", value: "Placement and support" },
+    { label: "Arranged for you (Full Support)", value: "Accommodation, scooter, SIM, arrival logistics" },
+    { label: "Paid separately", value: "Rent, scooter rental, licence fees, living costs" },
+  ],
+  whyFull: {
+    title: "Why most students choose Full Support",
+    body: "Because the hardest part is usually not getting the internship. It is arriving in a new country with accommodation, transport, and local setup already sorted.",
+  },
+  faqs: [
+    {
+      question: "When do I pay?",
+      answer: "You apply for free and only decide once you have a placement match.",
+    },
+    {
+      question: "Are housing and scooter costs included?",
+      answer: "No. We can help arrange them, but they are paid separately.",
+    },
+    {
+      question: "Can I upgrade to Full Support later?",
+      answer: "Usually yes, depending on timing and availability.",
     },
   ],
   disclaimer:

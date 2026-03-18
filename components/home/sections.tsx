@@ -884,6 +884,9 @@ export function PricingSection() {
               <p className="ct-plan-bestfor">
                 <span className="ct-bestfor-label">Best for</span> {essentials.bestFor}
               </p>
+              {essentials.description && (
+                <p className="ct-plan-description ct-plan-description-neutral">{essentials.description}</p>
+              )}
               <OpenApplicationButton className="button pricing-btn-outline" source="Pricing table — Essentials">
                 Apply free
               </OpenApplicationButton>
@@ -944,7 +947,38 @@ export function PricingSection() {
           </div>
         </div>
 
+        {/* Clarity strip */}
+        <div className="pricing-clarity-strip fade-up delay-2">
+          {pricing.clarityStrip.map((item) => (
+            <div key={item.label} className="pricing-clarity-item">
+              <span className="pricing-clarity-label">{item.label}</span>
+              <span className="pricing-clarity-value">{item.value}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Why Full Support */}
+        <div className="pricing-why-full fade-up delay-3">
+          <h3 className="pricing-why-title">{pricing.whyFull.title}</h3>
+          <p className="pricing-why-body">{pricing.whyFull.body}</p>
+        </div>
+
         <p className="pricing-disclaimer">{pricing.disclaimer}</p>
+      </div>
+    </section>
+  );
+}
+
+export function PricingFaqsSection() {
+  return (
+    <section className="section pricing-faqs-section">
+      <div className="container pricing-faqs-wrap">
+        {pricing.faqs.map((faq) => (
+          <div key={faq.question} className="pricing-faq-item">
+            <h3 className="pricing-faq-q">{faq.question}</h3>
+            <p className="pricing-faq-a">{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
