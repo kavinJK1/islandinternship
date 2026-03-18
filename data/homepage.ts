@@ -862,6 +862,7 @@ export const pricing = {
   title: "Two ways to do your internship abroad",
   copy: "Free to apply. No commitment until you're matched. Choose the level of support that fits how independently you want to arrive and settle in.",
   freeNotice: "Free to apply — no commitment until you're matched.",
+  featureGroupLabels: ["Core placement", "Arrival & setup"],
   features: [
     "Placement matching",
     "Internship documents support",

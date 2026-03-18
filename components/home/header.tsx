@@ -1,15 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { navigation } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
-
-const centerItems = navigation.filter((i) => !i.slot || i.slot === "center");
-const rightItems = navigation.filter((i) => i.slot === "right");
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const centerItems = navigation.filter((i) => !i.slot || i.slot === "center");
+  const rightItems = navigation.filter((i) => i.slot === "right");
+
+  function resolveHref(href: string): string {
+    if (href.startsWith("#") && !isHome) return `/${href}`;
+    return href;
+  }
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
@@ -31,7 +39,7 @@ export function Header() {
           <div className="nav-dropdown-menu">
             <div className="nav-dropdown-menu-inner">
               {item.dropdown.map((sub) => (
-                <a key={sub.href} href={sub.href} className="nav-dropdown-item" onClick={onClick}>
+                <a key={sub.href} href={resolveHref(sub.href)} className="nav-dropdown-item" onClick={onClick}>
                   {sub.label}
                 </a>
               ))}
@@ -40,8 +48,9 @@ export function Header() {
         </div>
       );
     }
+    const href = resolveHref(item.href);
     return (
-      <a key={item.href} href={item.href} className="nav-pill-item" onClick={onClick}>
+      <a key={item.label} href={href} className="nav-pill-item" onClick={onClick}>
         {item.label}
       </a>
     );
@@ -52,7 +61,7 @@ export function Header() {
       <div className="container header-inner">
 
         {/* Logo */}
-        <a className="brand" href="#hero">
+        <a className="brand" href={isHome ? "#hero" : "/"}>
           Island<span>.</span>Internship
         </a>
 
@@ -64,7 +73,7 @@ export function Header() {
         {/* Right actions — desktop */}
         <div className="header-actions">
           {rightItems.map((item) => (
-            <a key={item.href as string} href={item.href as string} className="nav-action-link">
+            <a key={item.label} href={resolveHref(item.href as string)} className="nav-action-link">
               {item.label}
             </a>
           ))}

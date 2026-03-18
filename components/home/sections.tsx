@@ -859,6 +859,22 @@ export function CostComparisonSection() {
   );
 }
 
+function CtaCheckIcon() {
+  return (
+    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true">
+      <path d="M1.5 5L5 8.5L11.5 1.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CtaDashIcon() {
+  return (
+    <svg width="12" height="2" viewBox="0 0 12 2" fill="none" aria-hidden="true">
+      <path d="M1 1H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function PricingSection() {
   const essentials = pricing.tiers[0];
   const fullSupport = pricing.tiers[1];
@@ -908,24 +924,42 @@ export function PricingSection() {
               </OpenApplicationButton>
             </div>
 
-            {/* ── Feature rows ── */}
+            {/* ── Feature rows with group separators ── */}
             {pricing.features.map((label, j) => (
               <Fragment key={label}>
-                <div className="ct-cell ct-label-cell ct-feature-label">
-                  {label}
-                </div>
+                {/* Group label separator rows */}
+                {j === 0 && (
+                  <div className="ct-category-row">
+                    <span className="ct-category-label">{pricing.featureGroupLabels[0]}</span>
+                  </div>
+                )}
+                {j === 5 && (
+                  <div className="ct-category-row">
+                    <span className="ct-category-label">{pricing.featureGroupLabels[1]}</span>
+                  </div>
+                )}
+
+                <div className="ct-cell ct-label-cell ct-feature-label">{label}</div>
                 <div className="ct-cell ct-value-cell ct-value-neutral">
                   {essentials.included[j] ? (
-                    <span className="ct-check ct-check-neutral" aria-label="Included">✓</span>
+                    <span className="ct-check ct-check-neutral" aria-label="Included">
+                      <CtaCheckIcon />
+                    </span>
                   ) : (
-                    <span className="ct-dash" aria-label="Not included">—</span>
+                    <span className="ct-dash" aria-label="Not included">
+                      <CtaDashIcon />
+                    </span>
                   )}
                 </div>
                 <div className="ct-cell ct-value-cell ct-value-featured">
                   {fullSupport.included[j] ? (
-                    <span className="ct-check ct-check-featured" aria-label="Included">✓</span>
+                    <span className="ct-check ct-check-featured" aria-label="Included">
+                      <CtaCheckIcon />
+                    </span>
                   ) : (
-                    <span className="ct-dash ct-dash-featured" aria-label="Not included">—</span>
+                    <span className="ct-dash ct-dash-featured" aria-label="Not included">
+                      <CtaDashIcon />
+                    </span>
                   )}
                 </div>
               </Fragment>
@@ -949,18 +983,28 @@ export function PricingSection() {
 
         {/* Clarity strip */}
         <div className="pricing-clarity-strip fade-up delay-2">
-          {pricing.clarityStrip.map((item) => (
+          {pricing.clarityStrip.map((item, i) => (
             <div key={item.label} className="pricing-clarity-item">
-              <span className="pricing-clarity-label">{item.label}</span>
-              <span className="pricing-clarity-value">{item.value}</span>
+              <span className={`pricing-clarity-dot pricing-clarity-dot-${i}`} aria-hidden="true" />
+              <div>
+                <span className="pricing-clarity-label">{item.label}</span>
+                <span className="pricing-clarity-value">{item.value}</span>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Why Full Support */}
         <div className="pricing-why-full fade-up delay-3">
-          <h3 className="pricing-why-title">{pricing.whyFull.title}</h3>
-          <p className="pricing-why-body">{pricing.whyFull.body}</p>
+          <div className="pricing-why-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <div>
+            <h3 className="pricing-why-title">{pricing.whyFull.title}</h3>
+            <p className="pricing-why-body">{pricing.whyFull.body}</p>
+          </div>
         </div>
 
         <p className="pricing-disclaimer">{pricing.disclaimer}</p>
@@ -972,13 +1016,20 @@ export function PricingSection() {
 export function PricingFaqsSection() {
   return (
     <section className="section pricing-faqs-section">
-      <div className="container pricing-faqs-wrap">
-        {pricing.faqs.map((faq) => (
-          <div key={faq.question} className="pricing-faq-item">
-            <h3 className="pricing-faq-q">{faq.question}</h3>
-            <p className="pricing-faq-a">{faq.answer}</p>
-          </div>
-        ))}
+      <div className="container">
+        <div className="pricing-faqs-header">
+          <span className="eyebrow">Before you commit</span>
+          <h2 className="pricing-faqs-title">Quick answers</h2>
+        </div>
+        <div className="pricing-faqs-wrap">
+          {pricing.faqs.map((faq, i) => (
+            <div key={faq.question} className="pricing-faq-card">
+              <span className="pricing-faq-num">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="pricing-faq-q">{faq.question}</h3>
+              <p className="pricing-faq-a">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
