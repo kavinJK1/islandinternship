@@ -3300,33 +3300,34 @@ video {
   background: white;
 }
 
-/* ── Neutral plan column (Essentials) ── */
+/* ── Neutral plan column (Essentials) — warm ivory ── */
 .ct-plan-neutral {
-  background: white;
+  background: #F8F4EE;
 }
 
 .ct-value-neutral {
-  background: white;
+  background: #F8F4EE;
+  border-bottom-color: #DDD4C7;
   justify-content: center;
   display: flex;
   align-items: center;
 }
 
 .ct-footer-neutral {
-  background: white;
+  background: #F8F4EE;
   border-bottom: none;
   padding: 1.375rem;
 }
 
-/* ── Featured plan column (Full Support) ── */
+/* ── Featured plan column (Full Support) — rich tinted green ── */
 .ct-plan-featured,
 .ct-value-featured,
 .ct-footer-featured {
-  background: var(--forest);
+  background: #E8F0EB;
 }
 
 .ct-value-featured {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: #B8CEBC;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3347,18 +3348,18 @@ video {
 }
 
 .ct-plan-neutral {
-  border-bottom-color: var(--bg-stone);
+  border-bottom-color: #DDD4C7;
 }
 
 .ct-plan-featured {
-  border-bottom-color: rgba(255, 255, 255, 0.14);
+  border-bottom-color: #9AAE9E;
 }
 
 .ct-plan-badge {
   display: inline-flex;
   align-self: flex-start;
-  background: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.95);
+  background: #1F5A49;
+  color: #F7F2EC;
   font-family: var(--font-sans), sans-serif;
   font-size: 0.63rem;
   font-weight: 700;
@@ -3377,11 +3378,11 @@ video {
 }
 
 .ct-plan-neutral .ct-plan-name {
-  color: var(--soft-text);
+  color: #7A7D78;
 }
 
 .ct-plan-featured .ct-plan-name {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(23, 57, 47, 0.55);
 }
 
 .ct-plan-price {
@@ -3393,11 +3394,11 @@ video {
 }
 
 .ct-plan-neutral .ct-plan-price {
-  color: var(--text);
+  color: #21322C;
 }
 
 .ct-plan-featured .ct-plan-price {
-  color: white;
+  color: #17392F;
 }
 
 .ct-plan-bestfor {
@@ -3406,11 +3407,11 @@ video {
 }
 
 .ct-plan-neutral .ct-plan-bestfor {
-  color: var(--muted);
+  color: #5F665F;
 }
 
 .ct-plan-featured .ct-plan-bestfor {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(23, 57, 47, 0.65);
 }
 
 .ct-bestfor-label {
@@ -3421,21 +3422,21 @@ video {
 }
 
 .ct-plan-neutral .ct-bestfor-label {
-  color: var(--soft-text);
+  color: #9A9E98;
 }
 
 .ct-plan-featured .ct-bestfor-label {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(23, 57, 47, 0.45);
 }
 
 .ct-plan-description {
   font-size: 0.78rem;
   line-height: 1.62;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(23, 57, 47, 0.6);
 }
 
 .ct-plan-description-neutral {
-  color: var(--muted);
+  color: #5F665F;
 }
 
 /* ── Check / Dash icons ── */
@@ -3446,27 +3447,27 @@ video {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 800;
 }
 
+/* Essentials check: muted soft green */
 .ct-check-neutral {
   background: rgba(41, 90, 77, 0.1);
-  color: var(--forest);
+  color: #5A8A7A;
 }
 
+/* Full Support check: deep forest on light green */
 .ct-check-featured {
-  background: rgba(255, 255, 255, 0.18);
-  color: white;
+  background: rgba(23, 57, 47, 0.12);
+  color: #17392F;
 }
 
 .ct-dash {
-  font-size: 0.9rem;
-  color: var(--bg-stone);
+  color: #C8C0B6;
 }
 
+/* Full Support dash: muted on light green */
 .ct-dash-featured {
-  color: rgba(255, 255, 255, 0.2);
+  color: #9AAE9E;
 }
 
 /* ── Category separator rows ── */
@@ -3504,26 +3505,30 @@ video {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Essentials — warm muted outline */
 .pricing-btn-outline {
   background: transparent;
-  border: 2px solid var(--forest);
-  color: var(--forest);
+  border: 2px solid #A0B2A8;
+  color: #3D6B5E;
 }
 
 .pricing-btn-outline:hover {
-  background: var(--forest);
+  background: #3D6B5E;
+  border-color: #3D6B5E;
   color: white;
 }
 
+/* Full Support — solid deep forest on light green bg */
 .pricing-btn-white {
-  background: white;
-  border: 2px solid white;
-  color: var(--forest);
+  background: #17392F;
+  border: 2px solid #17392F;
+  color: #F7F2EC;
 }
 
 .pricing-btn-white:hover {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(255, 255, 255, 0.88);
+  background: #0F2920;
+  border-color: #0F2920;
+  color: #F7F2EC;
 }
 
 /* ── Alternating row tint on label column ── */
