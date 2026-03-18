@@ -11,7 +11,7 @@ import {
   HeroSection,
   MobileActionBar,
   OutcomesTeaser,
-  PackagesSection,
+  PricingSection,
   ProcessSection,
   TestimonialsTeaser,
   TracksTeaser,
@@ -34,7 +34,7 @@ export function HomePage() {
           <TestimonialsTeaser />
           <OutcomesTeaser />
           <CostSection />
-          <PackagesSection />
+          <PricingSection />
           <FaqTeaser />
           <FinalCtaSection />
         </main>

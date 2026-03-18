@@ -15,7 +15,7 @@ import {
   includedHighlights,
   outcomeTeaser,
   outcomes,
-  packages,
+  pricing,
   processSteps,
   resources,
   safeguards,
@@ -857,49 +857,56 @@ export function CostComparisonSection() {
   );
 }
 
-export function PackagesSection() {
+export function PricingSection() {
   return (
-    <section id="packages" className="section packages-section">
+    <section id="pricing" className="section pricing-section">
       <div className="container">
         <div className="section-intro section-intro-centered fade-up">
-          <span className="eyebrow">{packages.eyebrow}</span>
-          <h2 className="section-title">{packages.title}</h2>
-          <p className="packages-free-notice">{packages.freeNotice}</p>
+          <span className="eyebrow">{pricing.eyebrow}</span>
+          <h2 className="section-title">{pricing.title}</h2>
+          <p className="section-copy">{pricing.copy}</p>
+          <p className="pricing-free-notice">{pricing.freeNotice}</p>
         </div>
-        <div className="packages-cards">
-          {packages.tiers.map((tier, i) => (
+        <div className="pricing-grid">
+          {pricing.tiers.map((tier, i) => (
             <article
               key={tier.id}
-              className={`packages-card fade-up${i === 1 ? " delay-1" : ""}${tier.highlighted ? " packages-card-highlighted" : ""}`}
+              className={`pricing-card fade-up${i === 1 ? " delay-1" : ""}${tier.highlighted ? " pricing-card-highlighted" : ""}`}
             >
               {tier.badge && (
-                <div className="packages-badge">{tier.badge}</div>
+                <span className="pricing-badge">{tier.badge}</span>
               )}
-              <div className="packages-card-header">
-                <h3 className="packages-name">{tier.name}</h3>
-                <div className="packages-price">{tier.price}</div>
-                <p className="packages-best-for">
-                  <span className="packages-best-for-label">Best for</span>{" "}
+              <div className="pricing-card-top">
+                <h3 className="pricing-name">{tier.name}</h3>
+                <div className="pricing-price">{tier.price}</div>
+                <p className="pricing-best-for">
+                  <span className="pricing-best-for-label">Best for</span>{" "}
                   {tier.bestFor}
                 </p>
+                {tier.description && (
+                  <p className="pricing-description">{tier.description}</p>
+                )}
               </div>
-              {tier.description && (
-                <p className="packages-description">{tier.description}</p>
-              )}
-              <ul className="packages-features">
-                {tier.features.map((feat) => (
-                  <li key={feat.label} className={`packages-feature${feat.included ? " packages-feature-yes" : " packages-feature-no"}`}>
-                    <span className="packages-feature-icon" aria-hidden="true">
-                      {feat.included ? "✓" : "—"}
-                    </span>
-                    <span>{feat.label}</span>
-                  </li>
-                ))}
+              <ul className="pricing-features">
+                {pricing.features.map((label, j) => {
+                  const included = tier.included[j];
+                  return (
+                    <li
+                      key={label}
+                      className={`pricing-feature${included ? " pricing-feature-yes" : " pricing-feature-no"}`}
+                    >
+                      <span className="pricing-feature-icon" aria-hidden="true">
+                        {included ? "✓" : "—"}
+                      </span>
+                      <span>{label}</span>
+                    </li>
+                  );
+                })}
               </ul>
-              <div className="packages-cta">
+              <div className="pricing-cta">
                 <OpenApplicationButton
-                  className={`button ${tier.highlighted ? "button-primary" : "button-secondary"}`}
-                  source={`Packages — ${tier.name}`}
+                  className={`button ${tier.highlighted ? "pricing-btn-filled" : "pricing-btn-outline"}`}
+                  source={`Pricing — ${tier.name}`}
                 >
                   Apply free
                 </OpenApplicationButton>
@@ -907,7 +914,7 @@ export function PackagesSection() {
             </article>
           ))}
         </div>
-        <p className="packages-disclaimer">{packages.disclaimer}</p>
+        <p className="pricing-disclaimer">{pricing.disclaimer}</p>
       </div>
     </section>
   );
