@@ -26,6 +26,7 @@ import {
   trustUniversities,
 } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
+import { StatsCounter } from "@/components/home/stats-counter";
 import { GuideSignupCard } from "@/components/home/guide-card";
 import { Icon } from "@/components/home/icons";
 
@@ -86,33 +87,29 @@ export function TrustSection() {
   return (
     <section className="trust-band">
       <div className="container">
-        <div className="trust-grid">
-          {trustMetrics.map((item) => (
-            <div key={item.label} className="trust-item">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </div>
+        <StatsCounter metrics={trustMetrics} />
         <div className="trust-logos-strip">
           <span className="trust-logos-label">Students join from</span>
-          <div className="trust-logos-row">
-            {trustUniversities.map((uni) =>
-              uni.logo ? (
-                <Image
-                  key={uni.name}
-                  src={uni.logo}
-                  alt={uni.name}
-                  width={0}
-                  height={28}
-                  style={{ width: "auto", height: "28px" }}
-                  className="trust-logo-img"
-                />
-              ) : (
-                <span key={uni.name} className="trust-logo-text">{uni.name}</span>
-              )
-            )}
-          </div>
+        </div>
+      </div>
+      {/* full-bleed ticker outside container */}
+      <div className="trust-ticker-wrap" aria-label="Universities represented">
+        <div className="trust-ticker-track">
+          {[...trustUniversities, ...trustUniversities].map((uni, i) =>
+            uni.logo ? (
+              <Image
+                key={`${uni.name}-${i}`}
+                src={uni.logo}
+                alt={uni.name}
+                width={0}
+                height={28}
+                style={{ width: "auto", height: "28px" }}
+                className="trust-logo-img"
+              />
+            ) : (
+              <span key={`${uni.name}-${i}`} className="trust-logo-text">{uni.name}</span>
+            )
+          )}
         </div>
       </div>
     </section>
@@ -738,20 +735,36 @@ export function TracksTeaser() {
 }
 
 export function TestimonialsTeaser() {
+  const featured = testimonials.stories[4]; // Stephen — "real responsibility from week one"
   return (
     <section id="testimonials" className="section stories-section">
       <div className="container">
-        <div className="stories-header">
+        <div className="stories-header fade-up">
           <div>
             <span className="eyebrow">Student stories</span>
             <h2 className="section-title">Real students. Real outcomes.</h2>
           </div>
           <a href={siteLinks.community} className="stories-see-all">See all stories →</a>
         </div>
+
+        {/* Momentum testimonial — featured pull quote */}
+        <blockquote className="momentum-testimonial fade-up delay-1">
+          <span className="momentum-quote-mark" aria-hidden="true">&ldquo;</span>
+          <p className="momentum-quote-text">{featured.quote}</p>
+          <footer className="momentum-quote-footer">
+            <span className="momentum-author">{featured.name}</span>
+            <span className="momentum-role">{featured.role}</span>
+          </footer>
+        </blockquote>
+
+        {/* Stagger card slider */}
         <div className="stories-slider-wrap">
           <div className="stories-slider">
             {testimonials.stories.slice(0, 7).map((s, i) => (
-              <div key={i} className="story-card-slide">
+              <div
+                key={i}
+                className={`story-card-slide fade-up delay-${Math.min(i + 1, 5)}`}
+              >
                 <div className="story-card-img-wrap">
                   <Image
                     src="/images/hero-group.jpg"
