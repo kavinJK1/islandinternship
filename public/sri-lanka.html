@@ -13,20 +13,28 @@
   <link rel="stylesheet" href="/css/site-nav.css" />
   <script src="/js/site-nav.js" defer></script>
 </head>
-<body class="has-site-nav" data-nav-current="sri-lanka">
+<body class="has-site-nav">
   <nav id="main-nav">
     <a href="/" class="nav-logo">Island<span>.</span>Internship</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="/#how-it-works">How it Works</a></li>
-      <li><a href="/bali-placements.html">Bali</a></li>
-      <li><a href="/sri-lanka.html" class="nav-current" aria-current="page">Sri Lanka</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-trigger" type="button">
+          Destinations
+          <svg width="9" height="5" viewBox="0 0 9 5" fill="none" aria-hidden="true"><path d="M1 1l3.5 3L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/bali-placements.html"><span class="nav-dropdown-dot"></span>Bali</a></li>
+          <li><a href="/sri-lanka.html" class="nav-current" aria-current="page"><span class="nav-dropdown-dot"></span>Sri Lanka</a></li>
+        </ul>
+      </li>
       <li><a href="/#tracks">Tracks</a></li>
       <li><a href="/career-outcomes.html">Outcomes</a></li>
       <li><a href="/stories">Student Stories</a></li>
       <li><a href="/pricing">Pricing</a></li>
       <li><a href="/community-lifestyle.html">Community</a></li>
       <li><a href="/#faq">FAQ</a></li>
-      <li><a href="/companies.html">For Businesses</a></li>
+      <li class="nav-gap"><a href="/companies.html">For Businesses</a></li>
       <li><a href="/#apply" class="nav-apply">Apply Now</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">

@@ -58,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -1476,16 +1477,16 @@ video {
 }
 
 .video-frame {
-  background: #0a0a0a;
-  border-radius: 6px 6px 0 0;
+  height: 320px;
   overflow: hidden;
+  border-radius: 6px 6px 0 0;
 }
 
 .video-frame video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-copy,
