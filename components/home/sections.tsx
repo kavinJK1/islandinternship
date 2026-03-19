@@ -344,7 +344,7 @@ export function TestimonialsSection() {
             {testimonials.videos.map((item) => (
               <article key={item.title} className="dark-card video-card">
                 <div className="video-frame">
-                  <video controls playsInline preload="metadata">
+                  <video controls playsInline preload="auto">
                     <source src={item.video} type="video/mp4" />
                   </video>
                 </div>
@@ -1073,7 +1073,7 @@ export function FullStoriesSection() {
             {testimonials.videos.map((item) => (
               <article key={item.title} className="dark-card video-card fade-up">
                 <div className="video-frame">
-                  <video controls playsInline preload="metadata">
+                  <video controls playsInline preload="auto">
                     <source src={item.video} type="video/mp4" />
                   </video>
                 </div>

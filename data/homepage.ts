@@ -28,7 +28,7 @@ export const siteLinks = {
   companies: "/companies.html",
   hostCompanies: "/host-companies.html",
   outcomes: "/career-outcomes.html",
-  bali: "/bali.html",
+  bali: "/bali-placements.html",
   baliPlacements: "/bali-placements.html",
   sriLankaPlacements: "/sri-lanka-placements.html",
   sriLanka: "/sri-lanka.html",
@@ -49,7 +49,7 @@ export const navigation: NavItem[] = [
     label: "Destinations",
     slot: "center",
     dropdown: [
-      { href: "/bali.html", label: "Bali" },
+      { href: "/bali-placements.html", label: "Bali" },
       { href: "/sri-lanka.html", label: "Sri Lanka" },
     ],
   },
@@ -63,7 +63,7 @@ export const navigation: NavItem[] = [
 ];
 
 export const hero = {
-  eyebrow: "Real internships abroad · Credit-eligible · Built for Dutch students",
+  eyebrow: "Bali · Sri Lanka · Your required semester, done differently",
   title: "Your required internship semester, built into a better life chapter.",
   subtitle:
     "Most Dutch students do their required semester at home. A growing number go to Bali or Sri Lanka — working inside real startups and international businesses, with every logistical detail sorted before they fly.",
