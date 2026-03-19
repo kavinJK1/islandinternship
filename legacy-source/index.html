@@ -118,7 +118,7 @@
       opacity: 1 !important;
       background: var(--teal);
       padding: 0.5rem 1.2rem;
-      border-radius: 4px;
+      border-radius: 8px;
       transition: background 0.2s !important;
     }
     .nav-apply:hover { background: var(--teal-deep) !important; }
@@ -150,7 +150,7 @@
       font-weight: 600;
       letter-spacing: 0.03em;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
       min-height: 44px;
@@ -165,7 +165,7 @@
       background: var(--coral);
       color: var(--white);
       padding: 0.95rem 2.2rem;
-      border-radius: 5px;
+      border-radius: 8px;
       box-shadow: 0 2px 12px rgba(200,80,58,0.2);
       font-size: 0.875rem;
       letter-spacing: 0.045em;
@@ -196,8 +196,8 @@
     .btn-white:hover { background: var(--cream); }
 
     /* ─── SECTION UTILITY ───────────────────────────────────────── */
-    .section-wrap { padding: 168px 5%; }
-    .section-wrap-sm { padding: 112px 5%; }
+    .section-wrap { padding: 72px 5%; }
+    .section-wrap-sm { padding: 56px 5%; }
 
     .eyebrow {
       display: inline-flex;
@@ -223,8 +223,8 @@
     .section-heading {
       font-size: clamp(2.5rem, 4.5vw, 4.2rem);
       color: var(--navy);
-      line-height: 1.02;
-      letter-spacing: -0.026em;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
       margin-bottom: 1.75rem;
       font-weight: 500;
     }
@@ -249,6 +249,17 @@
       gap: 5rem;
       align-items: center;
       padding-top: 110px;
+      position: relative;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -273,7 +284,7 @@
       font-size: clamp(3.2rem, 6.2vw, 5.8rem);
       color: var(--navy);
       line-height: 1.0;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.02em;
       margin-bottom: 2.25rem;
       font-weight: 500;
     }
@@ -436,7 +447,7 @@
     }
     .trust-stat-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.4rem;
+      font-size: clamp(2.2rem, 4vw, 3rem);
       font-weight: 600;
       color: var(--teal);
       line-height: 1;
@@ -743,9 +754,9 @@
     .included-item {
       background: var(--white);
       padding: 2.25rem 2rem;
-      transition: background 0.25s;
+      transition: background 0.25s, transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .included-item:hover { background: var(--cream); }
+    .included-item:hover { background: var(--cream); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,46,0.1); }
 
     .included-icon {
       width: 36px;
@@ -1784,7 +1795,7 @@
 
     /* ─── CTA BANNER ────────────────────────────────────────────── */
     #cta-banner {
-      background: var(--navy);
+      background: linear-gradient(135deg, var(--navy) 0%, #2a2a44 100%);
       position: relative;
       overflow: hidden;
     }
@@ -2713,7 +2724,9 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 20px 50px rgba(26,26,46,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .resource-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,46,0.1); }
     .resource-kicker {
       font-size: 0.72rem;
       font-weight: 600;
@@ -2979,12 +2992,11 @@
     .mobile-cta-bar { display: none; }
 
     /* ─── REFERENCE-MATCH DESIGN UPGRADE ───────────────────────── */
-    /* Tighter tracking (Coachify/Educaare) */
     .section-heading {
-      letter-spacing: -0.038em;
+      letter-spacing: -0.01em;
     }
     .hero-headline {
-      letter-spacing: -0.044em;
+      letter-spacing: -0.02em;
     }
 
     /* Track cards: 20px radius, cleaner padding */
@@ -3171,8 +3183,8 @@
 
     /* ─── RESPONSIVE ────────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .section-wrap { padding: 120px 5%; }
-      .section-wrap-sm { padding: 80px 5%; }
+      .section-wrap { padding: 64px 5%; }
+      .section-wrap-sm { padding: 48px 5%; }
       .included-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-list { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .steps-list::before { display: none; }
@@ -3246,8 +3258,8 @@
 
     @media (max-width: 640px) {
       .testimonial-videos-grid { grid-template-columns: 1fr; }
-      .section-wrap { padding: 88px 5%; }
-      .section-wrap-sm { padding: 64px 5%; }
+      .section-wrap { padding: 56px 5%; }
+      .section-wrap-sm { padding: 44px 5%; }
       .placements-grid { grid-template-columns: 1fr; }
       .steps-list { grid-template-columns: 1fr; }
       .community-stats-grid { grid-template-columns: 1fr; }
@@ -3673,7 +3685,9 @@
       border: 1px solid var(--border);
       border-radius: var(--card-r);
       box-shadow: var(--sh-s);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .pricing-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,46,0.1); }
     .costs-table { border-color: var(--border); }
     .costs-table th { background: var(--cream-d); color: var(--navy); border-color: var(--border); }
     .costs-table td { border-color: var(--border); }
@@ -4093,7 +4107,9 @@
       border: 1px solid var(--border);
       border-radius: var(--card-r);
       box-shadow: var(--sh-s);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .ts-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,46,0.1); }
 
     /* ── FAQ ─────────────────────────────────────────────────────── */
     #faq { background: var(--cream); }
@@ -4102,7 +4118,7 @@
 
     /* ── CTA BANNER — Premium dark ───────────────────────────────── */
     #cta-banner {
-      background: var(--dark-bg);
+      background: linear-gradient(135deg, var(--navy) 0%, #2a2a44 100%);
       position: relative;
       overflow: hidden;
     }
@@ -4325,17 +4341,17 @@
 <div id="trust" class="fade-up">
   <div class="trust-stats-row">
     <div class="trust-stat">
-      <div class="trust-stat-num">30+</div>
+      <div class="trust-stat-num">14+</div>
       <div class="trust-stat-label" data-i18n="ts-islands">Interns placed</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">20+</div>
+      <div class="trust-stat-num">9+</div>
       <div class="trust-stat-label" data-i18n="ts-fields">Partner companies</div>
     </div>
     <div class="trust-divider"></div>
     <div class="trust-stat">
-      <div class="trust-stat-num">5+</div>
+      <div class="trust-stat-num">6</div>
       <div class="trust-stat-label" data-i18n="ts-credit">Dutch universities</div>
     </div>
     <div class="trust-divider"></div>
