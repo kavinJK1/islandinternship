@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/editorial-pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site-nav.css" />
+  <script src="/js/site-nav.js" defer></script>
   <style>
     /* ─── PROCESS STEPS ─────────────────────────────────────────── */
     .process-steps {
@@ -113,31 +116,28 @@
     }
   </style>
 </head>
-<body>
+<body class="has-site-nav" data-nav-current="companies">
   <nav id="main-nav">
-    <a href="/" class="nav-logo">Island<span>.</span>Internship</a>
-    <div class="nav-pill-wrap" id="nav-pill-wrap">
-      <a href="/#how-it-works" class="nav-pill-link">How it Works</a>
-      <a href="/#destinations" class="nav-pill-link">Destinations</a>
-      <a href="/#tracks" class="nav-pill-link">Tracks</a>
-      <a href="/career-outcomes.html" class="nav-pill-link">Outcomes</a>
-      <a href="/#testimonials" class="nav-pill-link">Stories</a>
-      <a href="/community-lifestyle.html" class="nav-pill-link">Community</a>
-      <a href="/#faq" class="nav-pill-link">FAQ</a>
-    </div>
-    <div class="nav-actions">
-      <a href="/companies.html" class="nav-for-biz nav-current">For Businesses</a>
-      <a href="/" class="nav-apply-btn">Apply now</a>
-    </div>
+    <a href="#hero" class="nav-logo">Island<span>.</span>Internship</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#included">How it Works</a></li>
+      <li><a href="#moments">Tracks</a></li>
+      <li><a href="#placements">Outcomes</a></li>
+      <li><a href="/community-lifestyle.html">Community</a></li>
+      <li><a href="/companies.html">Host Companies</a></li>
+      <li><a href="#costs" data-i18n="nav-costs">Costs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta-banner" class="nav-apply" onclick="openModal(event)" data-i18n="nav-apply">Apply Now</a></li>
+    </ul>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+      <span id="lt-en" class="lt-active">EN</span>
+      <span class="lt-sep">|</span>
+      <span id="lt-nl">NL</span>
+    </button>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
-  <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-pill-wrap').classList.toggle('open'));
-  </script>
 
   <a href="javascript:history.back()" class="back-button">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 11.5L4.5 7 9 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
