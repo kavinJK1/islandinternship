@@ -3264,7 +3264,7 @@ video {
   margin-top: 2.75rem;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 2px 0 rgba(41,61,52,0.06), 0 20px 60px rgba(27,37,32,0.13);
   border: 1px solid var(--bg-stone);
 }
 
@@ -3275,7 +3275,7 @@ video {
 
 /* Base cell */
 .ct-cell {
-  padding: 1rem 1.375rem;
+  padding: 1.1rem 1.5rem;
   border-bottom: 1px solid var(--bg-stone);
 }
 
@@ -3290,22 +3290,23 @@ video {
 }
 
 .ct-header-label {
-  padding: 1.75rem 1.375rem 1.5rem;
+  padding: 2rem 1.5rem 1.75rem;
   align-items: flex-end;
 }
 
 .ct-features-heading {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   color: var(--soft-text);
 }
 
 .ct-feature-label {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 .ct-footer-label {
@@ -3320,7 +3321,7 @@ video {
 
 .ct-value-neutral {
   background: #F8F4EE;
-  border-bottom-color: #DDD4C7;
+  border-bottom-color: #E3D9CC;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -3329,18 +3330,18 @@ video {
 .ct-footer-neutral {
   background: #F8F4EE;
   border-bottom: none;
-  padding: 1.375rem;
+  padding: 1.5rem;
 }
 
-/* ── Featured plan column (Full Support) — rich tinted green ── */
+/* ── Featured plan column (Full Support) — deep forest dark ── */
 .ct-plan-featured,
 .ct-value-featured,
 .ct-footer-featured {
-  background: #E8F0EB;
+  background: #1A2B25;
 }
 
 .ct-value-featured {
-  border-bottom-color: #B8CEBC;
+  border-bottom-color: rgba(255, 255, 255, 0.07);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3348,59 +3349,60 @@ video {
 
 .ct-footer-featured {
   border-bottom: none;
-  padding: 1.375rem;
+  padding: 1.5rem;
 }
 
 /* ── Plan headers ── */
 .ct-plan-header {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.75rem 1.375rem 1.5rem;
-  border-bottom-width: 2px;
+  gap: 0.65rem;
+  padding: 2rem 1.5rem 1.75rem;
+  border-bottom-width: 1px;
 }
 
 .ct-plan-neutral {
-  border-bottom-color: #DDD4C7;
+  border-bottom-color: #E3D9CC;
 }
 
 .ct-plan-featured {
-  border-bottom-color: #9AAE9E;
+  border-bottom-color: rgba(255, 255, 255, 0.09);
 }
 
+/* Badge: white pill on dark bg */
 .ct-plan-badge {
   display: inline-flex;
   align-self: flex-start;
-  background: #1F5A49;
-  color: #F7F2EC;
+  background: white;
+  color: #1A2B25;
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.63rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 100px;
 }
 
 .ct-plan-name {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 .ct-plan-neutral .ct-plan-name {
-  color: #7A7D78;
+  color: #8A8E88;
 }
 
 .ct-plan-featured .ct-plan-name {
-  color: rgba(23, 57, 47, 0.55);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .ct-plan-price {
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.2rem, 3.5vw, 2.9rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -3411,7 +3413,7 @@ video {
 }
 
 .ct-plan-featured .ct-plan-price {
-  color: #17392F;
+  color: white;
 }
 
 .ct-plan-bestfor {
@@ -3424,12 +3426,12 @@ video {
 }
 
 .ct-plan-featured .ct-plan-bestfor {
-  color: rgba(23, 57, 47, 0.65);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .ct-bestfor-label {
   font-weight: 700;
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -3439,13 +3441,13 @@ video {
 }
 
 .ct-plan-featured .ct-bestfor-label {
-  color: rgba(23, 57, 47, 0.45);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .ct-plan-description {
   font-size: 0.78rem;
-  line-height: 1.62;
-  color: rgba(23, 57, 47, 0.6);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .ct-plan-description-neutral {
@@ -3457,41 +3459,44 @@ video {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-/* Essentials check: muted soft green */
+/* Essentials: soft sage circle */
 .ct-check-neutral {
-  background: rgba(41, 90, 77, 0.1);
-  color: #5A8A7A;
+  background: rgba(41, 90, 77, 0.12);
+  color: #4A8070;
 }
 
-/* Full Support check: deep forest on light green */
+/* Full Support: glowing white circle on dark bg */
 .ct-check-featured {
-  background: rgba(23, 57, 47, 0.12);
-  color: #17392F;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
 }
 
 .ct-dash {
-  color: #C8C0B6;
+  color: #D4CAC0;
 }
 
-/* Full Support dash: muted on light green */
 .ct-dash-featured {
-  color: #9AAE9E;
+  color: rgba(255, 255, 255, 0.18);
 }
 
 /* ── Category separator rows ── */
 .ct-category-row {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1.375rem;
-  background: var(--bg-sand);
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  border-top: 1px solid var(--bg-stone);
   border-bottom: 1px solid var(--bg-stone);
-  border-top: 2px solid var(--bg-stone);
+}
+
+/* Override featured cells inside category rows */
+.ct-value-featured.ct-category-row {
+  border-top-color: rgba(255, 255, 255, 0.07);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
 }
 
 .ct-category-label {
@@ -3509,19 +3514,19 @@ video {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 11px 20px;
+  padding: 12px 20px;
   border-radius: 100px;
   font-family: var(--font-sans), sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
 /* Essentials — warm muted outline */
 .pricing-btn-outline {
   background: transparent;
-  border: 2px solid #A0B2A8;
+  border: 1.5px solid #B0A898;
   color: #3D6B5E;
 }
 
@@ -3531,22 +3536,15 @@ video {
   color: white;
 }
 
-/* Full Support — solid deep forest on light green bg */
+/* Full Support — white pill on dark bg */
 .pricing-btn-white {
-  background: #17392F;
-  border: 2px solid #17392F;
-  color: #F7F2EC;
+  background: white;
+  border: 1.5px solid white;
+  color: #1A2B25;
 }
 
 .pricing-btn-white:hover {
-  background: #0F2920;
-  border-color: #0F2920;
-  color: #F7F2EC;
-}
-
-/* ── Alternating row tint on label column ── */
-.ct-label-cell:nth-child(6n) {
-  background: rgba(0, 0, 0, 0.015);
+  opacity: 0.88;
 }
 
 /* ── Mobile: horizontal scroll ── */

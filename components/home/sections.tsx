@@ -937,16 +937,24 @@ export function PricingSection() {
             {/* ── Feature rows with group separators ── */}
             {pricing.features.map((label, j) => (
               <Fragment key={label}>
-                {/* Group label separator rows */}
+                {/* Group label separator rows — 3 cells so each column keeps its own bg */}
                 {j === 0 && (
-                  <div className="ct-category-row">
-                    <span className="ct-category-label">{pricing.featureGroupLabels[0]}</span>
-                  </div>
+                  <>
+                    <div className="ct-cell ct-label-cell ct-category-row">
+                      <span className="ct-category-label">{pricing.featureGroupLabels[0]}</span>
+                    </div>
+                    <div className="ct-cell ct-value-neutral ct-category-row" />
+                    <div className="ct-cell ct-value-featured ct-category-row" />
+                  </>
                 )}
                 {j === 5 && (
-                  <div className="ct-category-row">
-                    <span className="ct-category-label">{pricing.featureGroupLabels[1]}</span>
-                  </div>
+                  <>
+                    <div className="ct-cell ct-label-cell ct-category-row">
+                      <span className="ct-category-label">{pricing.featureGroupLabels[1]}</span>
+                    </div>
+                    <div className="ct-cell ct-value-neutral ct-category-row" />
+                    <div className="ct-cell ct-value-featured ct-category-row" />
+                  </>
                 )}
 
                 <div className="ct-cell ct-label-cell ct-feature-label">{label}</div>
