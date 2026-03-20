@@ -23,6 +23,7 @@ export const siteLinks = {
   whatsapp: "https://wa.me/31683660360",
   apply: "#apply",
   matchQuiz: "/match-quiz.html",
+  tracksPage: "/tracks.html",
   stories: "/stories",
   community: "/community-lifestyle.html",
   companies: "/companies.html",
@@ -744,7 +745,7 @@ export const outcomeTeaser = {
 export const finalCta = {
   eyebrow: "Your required internship semester",
   title: "Do it in Bali. Do it in Sri Lanka. Do it somewhere worth remembering.",
-  phrases: ["Bali.", "Sri Lanka.", "somewhere worth remembering."],
+  phrases: ["Do it in Bali.", "Do it in Sri Lanka.", "Do it somewhere worth remembering."],
   body:
     "The application takes 10 minutes and is completely free. Tell us your field, your timing, and what you are looking for — we handle the matching, the logistics, and everything in between.",
   note: "Free application · No commitment · Reply within 2 business days",
@@ -834,7 +835,7 @@ export const featuredTracks = {
     },
   ],
   cta: "View all 6 tracks",
-  ctaHref: "#tracks",
+  ctaHref: siteLinks.tracksPage,
 };
 
 export const faqTeaser = {

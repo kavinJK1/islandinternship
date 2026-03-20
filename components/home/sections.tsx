@@ -70,7 +70,7 @@ export function HeroSection() {
       </div>
       <div className="container hero-content">
         <div className="hero-text-wrap">
-          <p className="hero-pre">Built for Dutch students · Real startups abroad</p>
+          <p className="hero-pre">Required internship · Bali or Sri Lanka</p>
           <HeroHeadline />
           <div className="hero-actions">
             <OpenApplicationButton className="button button-hero-primary" source="Hero">
@@ -594,6 +594,7 @@ export function FinalCtaSection() {
                 className="final-cta-typewriter-line"
                 cursorClassName="hero-type-cursor"
                 phrases={finalCta.phrases}
+                prefix=""
                 textClassName="hero-type-text"
               />
             </span>
@@ -632,7 +633,7 @@ export function Footer() {
           <div className="footer-links">
             <a href="#how-it-works">How it Works</a>
             <a href="#destinations">Destinations</a>
-            <a href="#tracks">Tracks</a>
+            <Link href={siteLinks.tracksPage}>Tracks</Link>
             <Link href={siteLinks.outcomes}>Career Outcomes</Link>
             <Link href={siteLinks.community}>Community</Link>
             <Link href={siteLinks.companies}>Host Companies</Link>
@@ -724,7 +725,7 @@ export function TracksTeaser() {
     <section id="tracks" className="section tracks-teaser-section">
       <div className="container">
         <div className="tracks-teaser-layout">
-          <SectionIntro eyebrow={featuredTracks.eyebrow} title={featuredTracks.title} copy="" />
+          <SectionIntro eyebrow={featuredTracks.eyebrow} title={featuredTracks.title} copy="" centered />
           <div className="tracks-teaser-grid">
             {featuredTracks.items.map((track) => (
               <article key={track.title} className="premium-card tracks-teaser-card">
@@ -735,10 +736,10 @@ export function TracksTeaser() {
             ))}
           </div>
           <div className="tracks-teaser-footer">
-            <a href={featuredTracks.ctaHref} className="button button-secondary">
+            <Link href={featuredTracks.ctaHref} className="button button-secondary">
               {featuredTracks.cta}
               <Icon name="arrow-right" className="icon" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -2736,7 +2736,8 @@ video {
 
 .tracks-teaser-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 340px));
+  justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -4045,10 +4046,10 @@ video {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: #111915;
   display: inline-block;
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55), 0 0px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
 }
 
 .hero-headline {
@@ -4086,18 +4087,18 @@ video {
   transform: none;
   animation: none;
   min-height: 1.05em;
-  color: var(--forest);
+  color: #111915;
 }
 
 .hero-type-text {
-  color: var(--forest);
+  color: #111915;
 }
 
 .hero-type-cursor {
   display: inline-block;
   width: 3px;
   height: 0.85em;
-  background: var(--forest);
+  background: #111915;
   border-radius: 1px;
   margin-left: 3px;
   vertical-align: middle;
@@ -4428,6 +4429,8 @@ video {
   display: flex;
   gap: 1.25rem;
   width: max-content;
+  min-width: 100%;
+  justify-content: center;
 }
 
 .story-card-slide {

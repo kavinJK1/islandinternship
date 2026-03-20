@@ -15,6 +15,7 @@
     outcomes: '[data-nav-target="outcomes"]',
     pricing: '[data-nav-target="pricing"]',
     stories: '[data-nav-target="stories"]',
+    tracks: '[data-nav-target="tracks"]',
   };
 
   const closeMenu = () => {

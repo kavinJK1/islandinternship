@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Tracks | Island Internship</title>
+  <meta name="description" content="Explore all six Island Internship tracks across marketing, business, hospitality, operations, sustainability, and startup or AI-focused roles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/editorial-pages.css" />
+  <link rel="stylesheet" href="/css/site-nav.css" />
+  <script src="/js/site-nav.js" defer></script>
+  <style>
+    .track-page-card {
+      min-height: 100%;
+    }
+
+    .track-page-number {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: rgba(42, 122, 111, 0.24);
+    }
+
+    .track-page-field {
+      display: inline-flex;
+      margin-top: 1rem;
+      padding: 0.38rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(245, 240, 232, 0.72);
+      font-size: 0.76rem;
+      color: var(--navy);
+    }
+
+    .track-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .track-choice-card {
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--white);
+      box-shadow: 0 16px 34px rgba(26, 26, 46, 0.05);
+    }
+
+    .track-choice-card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.45rem;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .track-choice-card p {
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .track-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+
+    .track-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(42, 122, 111, 0.06);
+      border: 1px solid rgba(42, 122, 111, 0.14);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 980px) {
+      .track-choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="has-site-nav" data-nav-current="tracks">
+  <nav id="main-nav" aria-label="Primary">
+    <a href="/" class="nav-logo">Island<span>.</span>Internship</a>
+    <div class="nav-center-shell">
+      <ul class="nav-links">
+        <li><a href="/#how-it-works" class="nav-pill-item">How it Works</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-pill-item nav-dropdown-trigger" data-nav-target="destinations">
+            Destinations
+            <svg width="9" height="5" viewBox="0 0 9 5" fill="none" aria-hidden="true"><path d="M1 1l3.5 3L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-menu-inner">
+              <a href="/bali-placements.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>Bali</span>
+              </a>
+              <a href="/sri-lanka.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>Sri Lanka</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/tracks.html" class="nav-pill-item" data-nav-target="tracks">Tracks</a></li>
+        <li><a href="/career-outcomes.html" class="nav-pill-item" data-nav-target="outcomes">Outcomes</a></li>
+        <li><a href="/stories" class="nav-pill-item" data-nav-target="stories">Student Stories</a></li>
+        <li><a href="/pricing" class="nav-pill-item" data-nav-target="pricing">Pricing</a></li>
+        <li><a href="/community-lifestyle.html" class="nav-pill-item" data-nav-target="community">Community</a></li>
+        <li><a href="/#faq" class="nav-pill-item">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <a href="/companies.html" class="nav-action-link" data-nav-target="companies">For Businesses</a>
+      <a href="/#cta-banner" class="nav-apply">Apply now</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <a href="/#how-it-works" class="nav-pill-item">How it Works</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-pill-item nav-dropdown-trigger" data-nav-target="destinations">
+          Destinations
+          <svg width="9" height="5" viewBox="0 0 9 5" fill="none" aria-hidden="true"><path d="M1 1l3.5 3L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-menu-inner">
+            <a href="/bali-placements.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              <span>Bali</span>
+            </a>
+            <a href="/sri-lanka.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              <span>Sri Lanka</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="/tracks.html" class="nav-pill-item" data-nav-target="tracks">Tracks</a>
+      <a href="/career-outcomes.html" class="nav-pill-item" data-nav-target="outcomes">Outcomes</a>
+      <a href="/stories" class="nav-pill-item" data-nav-target="stories">Student Stories</a>
+      <a href="/pricing" class="nav-pill-item" data-nav-target="pricing">Pricing</a>
+      <a href="/community-lifestyle.html" class="nav-pill-item" data-nav-target="community">Community</a>
+      <a href="/#faq" class="nav-pill-item">FAQ</a>
+      <a href="/companies.html" class="nav-action-link" data-nav-target="companies">For Businesses</a>
+      <a href="/#cta-banner" class="nav-apply mobile-nav-apply">Apply now</a>
+    </div>
+  </div>
+
+  <a href="javascript:history.back()" class="back-button">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 11.5L4.5 7 9 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back
+  </a>
+
+  <section class="page-hero hero-split">
+    <div>
+      <div class="eyebrow">Internship tracks</div>
+      <h1 class="headline">Six tracks. <em>Real companies. Real work.</em></h1>
+      <p class="lead">Each track maps to a specific type of company, role, and work environment. Pick what fits your degree requirements and career direction, then we handle the matching around your background, timing, and destination.</p>
+      <ul class="hero-points">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Marketing, business, hospitality, operations, sustainability, and startup or AI-focused roles.</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Track choice shapes the company type, work style, and the kind of career proof you leave with.</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>You do not need every answer today. The application and fit quiz help us narrow the strongest direction.</span>
+        </li>
+      </ul>
+      <div class="cta-row">
+        <a href="/match-quiz.html" class="btn btn-primary">Take the match quiz</a>
+        <a href="/#cta-banner" class="btn btn-outline">Start your application</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="/images/hero-placement.jpg" alt="Students collaborating during an internship placement" loading="lazy">
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">All six tracks</div>
+      <h2 class="section-title">The areas students can be matched into.</h2>
+      <p class="section-sub">These tracks are not abstract labels. They reflect the actual style of work students step into once they are matched with a host company in Bali or Sri Lanka.</p>
+    </div>
+    <div class="cards-3 track-page-grid">
+      <article class="info-card track-page-card">
+        <span class="track-page-number">01</span>
+        <div class="info-card-kicker">Marketing</div>
+        <h3>Digital Marketing</h3>
+        <p>Support campaign planning, content creation, social growth, and brand execution inside fast-moving island-based teams.</p>
+        <span class="track-page-field">Marketing &amp; Digital</span>
+      </article>
+      <article class="info-card track-page-card">
+        <span class="track-page-number">02</span>
+        <div class="info-card-kicker">Growth</div>
+        <h3>Business Development</h3>
+        <p>Work on outreach, partnerships, market research, lead generation, and commercial projects with ambitious businesses.</p>
+        <span class="track-page-field">Business Development</span>
+      </article>
+      <article class="info-card track-page-card">
+        <span class="track-page-number">03</span>
+        <div class="info-card-kicker">Hospitality</div>
+        <h3>Hospitality and Guest Experience</h3>
+        <p>Learn inside boutique hotels, villa brands, restaurants, and experience-led businesses focused on service and operations.</p>
+        <span class="track-page-field">Hospitality Management</span>
+      </article>
+      <article class="info-card track-page-card">
+        <span class="track-page-number">04</span>
+        <div class="info-card-kicker">Operations</div>
+        <h3>Operations and Project Management</h3>
+        <p>Step into roles that sharpen structure, coordination, systems thinking, and day-to-day execution.</p>
+        <span class="track-page-field">Startup Operations</span>
+      </article>
+      <article class="info-card track-page-card">
+        <span class="track-page-number">05</span>
+        <div class="info-card-kicker">Impact</div>
+        <h3>NGO and Sustainability</h3>
+        <p>Contribute to impact-led projects across sustainability, community programs, ESG reporting, and purpose-driven operations.</p>
+        <span class="track-page-field">Sustainability &amp; ESG</span>
+      </article>
+      <article class="info-card track-page-card">
+        <span class="track-page-number">06</span>
+        <div class="info-card-kicker">Tech &amp; AI</div>
+        <h3>Startup, AI &amp; Technology</h3>
+        <p>Join AI-forward startups, digital ventures, and tech operations teams where you work across functions, touch real systems, and build skills that travel beyond the internship.</p>
+        <span class="track-page-field">Data &amp; Tech</span>
+      </article>
+    </div>
+    <div class="track-chip-row">
+      <span class="track-chip">Marketing internships</span>
+      <span class="track-chip">Business internships</span>
+      <span class="track-chip">Hospitality internships</span>
+      <span class="track-chip">Tech &amp; AI internships</span>
+      <span class="track-chip">Sustainability internships</span>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">How students choose</div>
+      <h2 class="section-title">The right track is usually about three things.</h2>
+    </div>
+    <div class="track-choice-grid">
+      <article class="track-choice-card">
+        <h3>The kind of work you want to talk about later.</h3>
+        <p>Think about the stories you want for interviews, CV lines, and future applications. The strongest track is usually the one that produces the clearest proof.</p>
+      </article>
+      <article class="track-choice-card">
+        <h3>The team environment you want around you.</h3>
+        <p>Some students want startup pace and founder exposure. Others want hospitality systems, guest experience, or a more operational rhythm day to day.</p>
+      </article>
+      <article class="track-choice-card">
+        <h3>The direction you want after the internship.</h3>
+        <p>If you already know what you want next, we can match around it. If you are still narrowing it down, the quiz and intro call help clarify the best route.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="page-band">
+    <h3>Not sure which track fits best yet?</h3>
+    <p>You do not need to lock everything in before you speak with us. The fit quiz narrows the direction, and the application gives us enough context to recommend the strongest company environments for you.</p>
+    <div class="cta-row">
+      <a href="/match-quiz.html" class="btn btn-primary">Take the AI fit quiz</a>
+      <a href="/#cta-banner" class="btn btn-outline">Apply for Island Internship</a>
+    </div>
+    <div class="band-note">Free application. No commitment required. We reply within 2 business days.</div>
+  </section>
+
+  <footer class="simple-footer">
+    <div class="simple-footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/community-lifestyle.html">Community</a>
+      <a href="/career-outcomes.html">Career Outcomes</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+    <div class="simple-footer-copy">© 2026 Island Internship · islandinternship.com</div>
+  </footer>
+</body>
+</html>
