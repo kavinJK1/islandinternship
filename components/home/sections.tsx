@@ -70,7 +70,7 @@ export function HeroSection() {
       </div>
       <div className="container hero-content">
         <div className="hero-text-wrap">
-          <p className="hero-pre">Required internship · Bali or Sri Lanka</p>
+          <p className="hero-pre">Bali & Sri Lanka · Real internships abroad · Credit-eligible</p>
           <HeroHeadline />
           <div className="hero-actions">
             <OpenApplicationButton className="button button-hero-primary" source="Hero">
