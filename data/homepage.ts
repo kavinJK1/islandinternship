@@ -599,12 +599,12 @@ export const resources = {
     },
     {
       kicker: "Cost guide",
-      title: "How much does a Bali internship actually cost?",
-      body: "A detailed breakdown of the program fee, monthly living costs, one-off costs, and how Bali compares to staying in the Netherlands.",
-      meta: "The most common question students have before applying — answered with real numbers.",
+      title: "Full 2026 Bali Budget Breakdown",
+      body: "Accommodation, food, transport, visa, and program fee — all itemised. No guesswork.",
+      meta: "Best for students and parents building a realistic budget before deciding.",
       type: "link" as const,
       href: "/blog-bali-internship-cost.html",
-      cta: "Read the cost breakdown",
+      cta: "Read the cost guide →",
     },
   ],
 };
