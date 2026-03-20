@@ -1,0 +1,61 @@
+body.has-site-nav {
+  font-family: "DM Sans", "Inter", sans-serif;
+  background: linear-gradient(180deg, #fdfaf5 0%, #f5f0e8 100%);
+  color: #1f2822;
+}
+
+main.section.container {
+  width: min(820px, calc(100% - 40px));
+  padding: clamp(72px, 10vw, 120px) 0 96px;
+}
+
+main.section.container h1,
+main.section.container h2,
+main.section.container h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #1a1a2e;
+}
+
+main.section.container h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 0.98;
+  margin-bottom: 1rem;
+}
+
+main.section.container h2 {
+  margin-top: 2.25rem;
+  font-size: clamp(1.8rem, 3.4vw, 2.55rem);
+  line-height: 1.05;
+}
+
+main.section.container p,
+main.section.container li {
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #6f736c;
+}
+
+main.section.container a:not(.btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.3rem;
+  font-weight: 600;
+  color: #295a4d;
+}
+
+main.section.container .btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.35rem;
+  font-family: "DM Sans", "Inter", sans-serif;
+}
+
+@media (max-width: 640px) {
+  main.section.container {
+    width: min(100% - 28px, 820px);
+    padding: 56px 0 72px;
+  }
+}
