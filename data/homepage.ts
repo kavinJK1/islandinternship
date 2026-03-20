@@ -981,20 +981,39 @@ export const pricing = {
 export const pricingTeaser = {
   eyebrow: "Transparent pricing",
   title: "Two packages. Free to apply.",
+  intro: "You only pay once you're matched — there is no cost to apply.",
   tiers: [
     {
       price: "€449",
       name: "Essentials",
-      summary: "Placement, documents, visa guidance, 24/7 support",
+      badge: null as string | null,
+      featured: false,
+      summary: "For students comfortable arranging arrival logistics themselves.",
+      highlights: [
+        "Placement matching",
+        "Internship documents support",
+        "Visa guidance",
+        "24/7 support",
+        "WhatsApp community access",
+      ],
     },
     {
       price: "€649",
       name: "Full Support",
-      summary:
-        "Everything, plus airport pickup, accommodation, scooter, SIM card, and orientation",
+      badge: "Most chosen" as string | null,
+      featured: true,
+      summary: "Everything handled — arrival, accommodation, scooter, and orientation.",
+      highlights: [
+        "Everything in Essentials",
+        "Airport pickup",
+        "Accommodation arranged",
+        "Scooter + SIM card on arrival",
+        "Orientation week included",
+      ],
     },
   ],
-  cta: "See full pricing",
+  costNote: "Typical Bali living costs: €440–€630/month — often less than Amsterdam.",
+  cta: "See full pricing and cost breakdown",
   ctaHref: "/pricing",
   freeNotice: "Free to apply — no commitment until you're matched.",
 };

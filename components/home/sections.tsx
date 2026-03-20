@@ -932,6 +932,7 @@ export function PricingSection() {
           <p className="section-copy">{pricing.copy}</p>
         </div>
 
+        <p className="ct-mobile-hint" aria-hidden="true">← Swipe to compare options →</p>
         <div className="ct-wrap fade-up delay-1">
           <div className="ct-grid">
 
@@ -1184,25 +1185,64 @@ export function PricingTeaserSection() {
   return (
     <section id="pricing" className="pricing-teaser-section">
       <div className="container">
-        <div className="pricing-teaser-intro fade-up">
+
+        {/* Section header */}
+        <div className="ptc-intro fade-up">
           <span className="eyebrow">{pricingTeaser.eyebrow}</span>
           <h2 className="pricing-teaser-title">{pricingTeaser.title}</h2>
+          <p className="ptc-intro-copy">{pricingTeaser.intro}</p>
         </div>
-        <div className="pricing-teaser-grid fade-up delay-1">
+
+        {/* Comparison cards */}
+        <div className="ptc-grid fade-up delay-1">
           {pricingTeaser.tiers.map((tier) => (
-            <div key={tier.name} className="pricing-teaser-item">
-              <div className="pricing-teaser-price">{tier.price}</div>
-              <div className="pricing-teaser-name">{tier.name}</div>
-              <p className="pricing-teaser-summary">{tier.summary}</p>
+            <div
+              key={tier.name}
+              className={`ptc-card ${tier.featured ? "ptc-card-featured" : "ptc-card-neutral"}`}
+            >
+              {tier.badge && (
+                <span className="ptc-badge">{tier.badge}</span>
+              )}
+              <div className="ptc-header">
+                <span className="ptc-tier-name">{tier.name}</span>
+                <div className="ptc-price">{tier.price}</div>
+                <p className="ptc-summary">{tier.summary}</p>
+              </div>
+              <ul className="ptc-features">
+                {tier.highlights.map((item) => (
+                  <li key={item} className="ptc-feature-item">
+                    <span
+                      className={`ptc-check ${tier.featured ? "ptc-check-featured" : "ptc-check-neutral"}`}
+                      aria-hidden="true"
+                    >
+                      <CtaCheckIcon />
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <OpenApplicationButton
+                className={`button ptc-cta ${tier.featured ? "pricing-btn-white" : "pricing-btn-outline"}`}
+                source={`Home pricing — ${tier.name}`}
+              >
+                Apply free
+              </OpenApplicationButton>
             </div>
           ))}
         </div>
-        <div className="pricing-teaser-footer fade-up delay-2">
-          <a href={pricingTeaser.ctaHref} className="button button-primary pricing-teaser-cta">
+
+        {/* Footer: cost context + full breakdown link */}
+        <div className="ptc-footer fade-up delay-2">
+          <p className="ptc-cost-note">
+            <Icon name="map-pin" className="icon ptc-cost-icon" />
+            {pricingTeaser.costNote}
+          </p>
+          <a href={pricingTeaser.ctaHref} className="inline-link">
             {pricingTeaser.cta} →
           </a>
           <p className="pricing-teaser-notice">{pricingTeaser.freeNotice}</p>
         </div>
+
       </div>
     </section>
   );
