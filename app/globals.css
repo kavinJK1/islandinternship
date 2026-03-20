@@ -4118,8 +4118,8 @@ video {
 }
 
 .button-hero-primary {
-  background: white;
-  color: var(--text);
+  background: #1C2B24;
+  color: #ffffff;
   border-radius: 100px;
   padding: 14px 28px;
   font-weight: 600;
@@ -4128,23 +4128,23 @@ video {
 }
 
 .button-hero-primary:hover {
-  background: var(--bg-soft);
+  background: #111816;
   transform: translateY(-1px);
 }
 
 .button-hero-secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #EADFCF;
+  color: #1C2B24;
   border-radius: 100px;
   padding: 14px 28px;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .button-hero-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #ddd2bf;
+  transform: translateY(-1px);
 }
 
 /* ─── SCROLL STORY SECTION ──────────────────────────────────────── */
