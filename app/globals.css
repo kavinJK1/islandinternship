@@ -1909,6 +1909,16 @@ video {
   color: #1e2822;
 }
 
+.final-cta-typewriter-title {
+  min-height: 2.25em;
+}
+
+.final-cta-typewriter-line {
+  display: block;
+  color: #1e2822;
+  min-height: 1.1em;
+}
+
 .final-cta-section .section-copy {
   color: var(--muted);
 }
@@ -2256,6 +2266,10 @@ video {
 
   .final-cta-actions {
     justify-self: stretch;
+  }
+
+  .final-cta-typewriter-title {
+    min-height: 2.6em;
   }
 }
 

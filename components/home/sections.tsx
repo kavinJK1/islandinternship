@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroHeadline } from "@/components/home/hero-headline";
+import { DoItTypewriter } from "@/components/home/do-it-typewriter";
 import {
   companies,
   community,
@@ -587,7 +588,16 @@ export function FinalCtaSection() {
       <div className="container final-cta-layout">
         <div>
           <span className="eyebrow">{finalCta.eyebrow}</span>
-          <h2 className="section-title">{finalCta.title}</h2>
+          <h2 className="section-title final-cta-typewriter-title" aria-label={finalCta.title}>
+            <span aria-hidden="true">
+              <DoItTypewriter
+                className="final-cta-typewriter-line"
+                cursorClassName="hero-type-cursor"
+                phrases={finalCta.phrases}
+                textClassName="hero-type-text"
+              />
+            </span>
+          </h2>
           <p className="section-copy">{finalCta.body}</p>
         </div>
         <div className="final-cta-actions">

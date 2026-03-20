@@ -744,6 +744,7 @@ export const outcomeTeaser = {
 export const finalCta = {
   eyebrow: "Your required internship semester",
   title: "Do it in Bali. Do it in Sri Lanka. Do it somewhere worth remembering.",
+  phrases: ["Bali.", "Sri Lanka.", "somewhere worth remembering."],
   body:
     "The application takes 10 minutes and is completely free. Tell us your field, your timing, and what you are looking for — we handle the matching, the logistics, and everything in between.",
   note: "Free application · No commitment · Reply within 2 business days",
