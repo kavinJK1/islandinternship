@@ -1964,7 +1964,7 @@ video {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -4626,4 +4626,58 @@ video {
   .stories-quotes-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── Blog teaser section ─────────────────────────────────────────── */
+.blog-teaser-section {
+  padding: clamp(4rem, 8vw, 7rem) var(--page-pad);
+  background: var(--bg-soft);
+}
+
+.blog-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.blog-card {
+  background: var(--bg);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.blog-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.blog-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+  margin: 0.5rem 0 0.75rem;
+}
+.blog-card-excerpt {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+.blog-card-cta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--forest);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+.blog-card:hover .blog-card-cta {
+  gap: 10px;
 }

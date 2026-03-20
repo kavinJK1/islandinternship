@@ -5,6 +5,7 @@ import { Header } from "@/components/home/header";
 import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
+  BlogTeaserSection,
   FaqTeaser,
   FinalCtaSection,
   Footer,
@@ -35,6 +36,7 @@ export function HomePage() {
           <OutcomesTeaser />
           <CostSection />
           <PricingTeaserSection />
+          <BlogTeaserSection />
           <FaqTeaser />
           <FinalCtaSection />
         </main>

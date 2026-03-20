@@ -60,6 +60,15 @@ export const navigation: NavItem[] = [
   { href: "/pricing", label: "Pricing", slot: "center" },
   { href: "/community-lifestyle.html", label: "Community", slot: "center" },
   { href: "#faq", label: "FAQ", slot: "center" },
+  {
+    label: "Resources",
+    slot: "center",
+    dropdown: [
+      { href: "/blog-bali-internship-cost.html", label: "Bali Internship Cost 2026" },
+      { href: "/blog-bali-visa-guide.html", label: "Bali Visa Guide" },
+      { href: "/for-parents.html", label: "For Parents" },
+    ],
+  },
   { href: "/companies.html", label: "For Businesses", slot: "right" },
 ];
 
@@ -831,21 +840,43 @@ export const featuredTracks = {
       kicker: "Marketing",
       title: "Digital Marketing",
       body: "Campaign planning, content creation, social growth, and brand execution inside fast-moving island-based teams.",
+      href: "/marketing-internship-bali.html",
     },
     {
       kicker: "Business",
       title: "Business Development",
       body: "Outreach, partnerships, market research, and commercial projects with ambitious international businesses.",
+      href: "/business-internship-bali.html",
     },
     {
       kicker: "Tech & AI",
       title: "Startup, AI & Technology",
       body: "AI-forward startups, digital ventures, and tech operations teams — cross-functional exposure from day one.",
+      href: "/data-tech-internship-bali.html",
     },
   ],
   cta: "View all 6 tracks",
   ctaHref: siteLinks.tracksPage,
 };
+
+export const blogPosts = [
+  {
+    eyebrow: "Cost Guide · 2026",
+    title: "How Much Does It Cost to Do an Internship in Bali?",
+    excerpt:
+      "Most students assume Bali is expensive. They're wrong — and that assumption is costing them a better internship semester.",
+    cta: "Read the guide",
+    href: "/blog-bali-internship-cost.html",
+  },
+  {
+    eyebrow: "Visa Guide · 2026",
+    title: "The Complete Bali Visa Guide for Dutch Students",
+    excerpt:
+      "Social visit visa, KITAS, or internship visa? Here's exactly which one you need and how to get it — step by step.",
+    cta: "Read the guide",
+    href: "/blog-bali-visa-guide.html",
+  },
+];
 
 export const faqTeaser = {
   eyebrow: "Quick answers",

@@ -29,7 +29,8 @@
       "WebFetch(domain:www.uva.nl)",
       "WebFetch(domain:commons.wikimedia.org)",
       "Bash(cd:*)",
-      "WebFetch(domain:featurescomparisontable.framer.website)"
+      "WebFetch(domain:featurescomparisontable.framer.website)",
+      "WebFetch(domain:www.islandinternship.com)"
     ]
   },
   "enableAllProjectMcpServers": true,

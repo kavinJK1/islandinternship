@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HeroHeadline } from "@/components/home/hero-headline";
 import { DoItTypewriter } from "@/components/home/do-it-typewriter";
 import {
+  blogPosts,
   companies,
   community,
   costComparison,
@@ -642,6 +643,25 @@ export function Footer() {
           </div>
         </div>
         <div>
+          <h3>Internship Tracks</h3>
+          <div className="footer-links">
+            <a href="/marketing-internship-bali.html">Marketing — Bali</a>
+            <a href="/business-internship-bali.html">Business — Bali</a>
+            <a href="/hospitality-internship-bali.html">Hospitality — Bali</a>
+            <a href="/sustainability-internship-bali.html">Sustainability — Bali</a>
+            <a href="/startup-internship-bali.html">Startup — Bali</a>
+            <a href="/data-tech-internship-bali.html">Data &amp; Tech — Bali</a>
+          </div>
+        </div>
+        <div>
+          <h3>Guides &amp; Resources</h3>
+          <div className="footer-links">
+            <a href="/blog-bali-internship-cost.html">Bali Internship Cost 2026</a>
+            <a href="/blog-bali-visa-guide.html">Bali Visa Guide</a>
+            <a href="/for-parents.html">For Parents</a>
+          </div>
+        </div>
+        <div>
           <h3>Contact</h3>
           <div className="footer-links">
             <a href={siteLinks.helloEmail}>hello@islandinternship.com</a>
@@ -649,7 +669,6 @@ export function Footer() {
               WhatsApp us
             </a>
             <a href={siteLinks.partnersEmail}>partners@islandinternship.com</a>
-            <Link href="/for-parents.html">For Parents</Link>
             <Link href={siteLinks.terms}>Terms &amp; Conditions</Link>
             <Link href={siteLinks.privacy}>Privacy Policy</Link>
           </div>
@@ -733,6 +752,10 @@ export function TracksTeaser() {
                 <span className="track-kicker">{track.kicker}</span>
                 <h3>{track.title}</h3>
                 <p>{track.body}</p>
+                <a href={track.href} className="inline-cta">
+                  Learn more
+                  <Icon name="arrow-right" className="icon" />
+                </a>
               </article>
             ))}
           </div>
@@ -1205,6 +1228,30 @@ export function FaqTeaser() {
           <a href="#faq" className="inline-link">
             See all questions <Icon name="arrow-right" className="icon" />
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function BlogTeaserSection() {
+  return (
+    <section className="blog-teaser-section fade-up">
+      <div className="container">
+        <span className="eyebrow">Free guides</span>
+        <h2 className="section-title">Everything you need to know before you go</h2>
+        <div className="blog-teaser-grid">
+          {blogPosts.map((post) => (
+            <a key={post.href} href={post.href} className="blog-card">
+              <span className="eyebrow">{post.eyebrow}</span>
+              <h3 className="blog-card-title">{post.title}</h3>
+              <p className="blog-card-excerpt">{post.excerpt}</p>
+              <span className="blog-card-cta">
+                {post.cta}
+                <Icon name="arrow-right" className="icon" />
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
