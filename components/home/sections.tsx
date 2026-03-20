@@ -649,6 +649,7 @@ export function Footer() {
               WhatsApp us
             </a>
             <a href={siteLinks.partnersEmail}>partners@islandinternship.com</a>
+            <Link href="/for-parents.html">For Parents</Link>
             <Link href={siteLinks.terms}>Terms &amp; Conditions</Link>
             <Link href={siteLinks.privacy}>Privacy Policy</Link>
           </div>

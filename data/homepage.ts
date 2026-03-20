@@ -597,6 +597,15 @@ export const resources = {
       href: siteLinks.infoSession,
       cta: "Ask about the next session",
     },
+    {
+      kicker: "Cost guide",
+      title: "How much does a Bali internship actually cost?",
+      body: "A detailed breakdown of the program fee, monthly living costs, one-off costs, and how Bali compares to staying in the Netherlands.",
+      meta: "The most common question students have before applying — answered with real numbers.",
+      type: "link" as const,
+      href: "/blog-bali-internship-cost.html",
+      cta: "Read the cost breakdown",
+    },
   ],
 };
 
