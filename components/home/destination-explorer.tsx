@@ -1,13 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { destinations, DestinationKey } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
 
 export function DestinationExplorer() {
   const [selected, setSelected] = useState<DestinationKey>("bali");
+  const router = useRouter();
   const dest = destinations[selected];
+
+  function handleDestinationSelect(key: DestinationKey) {
+    if (selected === key) {
+      router.push(destinations[key].ctaHref);
+      return;
+    }
+
+    setSelected(key);
+  }
 
   return (
     <section id="destinations" className="section dest-clean-section">
@@ -20,7 +32,13 @@ export function DestinationExplorer() {
                 key={key}
                 type="button"
                 className={`dest-toggle-btn ${selected === key ? "is-active" : ""}`}
-                onClick={() => setSelected(key)}
+                onClick={() => handleDestinationSelect(key)}
+                aria-pressed={selected === key}
+                title={
+                  selected === key
+                    ? `Open ${destinations[key].name} destination page`
+                    : `Preview ${destinations[key].name}`
+                }
               >
                 {destinations[key].name}
               </button>
@@ -29,7 +47,11 @@ export function DestinationExplorer() {
         </div>
 
         <div className="dest-clean-layout">
-          <div className="dest-clean-image-wrap">
+          <Link
+            href={dest.ctaHref}
+            className="dest-clean-image-wrap"
+            aria-label={`Learn more about ${dest.name}`}
+          >
             <Image
               key={dest.image}
               src={dest.image}
@@ -39,10 +61,14 @@ export function DestinationExplorer() {
               style={{ objectFit: "cover" }}
               sizes="(max-width: 900px) 100vw, 55vw"
             />
-          </div>
+          </Link>
 
           <div className="dest-clean-info">
-            <h2 className="dest-clean-title">{dest.panelTitle}</h2>
+            <h2 className="dest-clean-title">
+              <Link href={dest.ctaHref} className="dest-clean-title-link">
+                {dest.panelTitle}
+              </Link>
+            </h2>
             <p className="dest-clean-body">{dest.panelBody}</p>
 
             <ul className="dest-clean-bullets">

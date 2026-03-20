@@ -293,7 +293,7 @@ export const destinations: Record<
     ],
     tags: ["Startups", "Agencies", "Hospitality", "Coworking culture"],
     ctaLabel: "Explore Bali",
-    ctaHref: "#destinations",
+    ctaHref: siteLinks.bali,
     accentClass: "is-bali",
   },
   sriLanka: {
