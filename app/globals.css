@@ -346,7 +346,7 @@ video {
   width: 100%;
   max-width: 1640px;
   margin: 0 auto;
-  height: 74px;
+  height: 66px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -380,14 +380,13 @@ video {
   justify-content: center;
   gap: 0;
   /* pill */
-  height: 74px;
+  height: 66px;
   background: #F7F5F0;
   border: 1px solid #D8D5CE;
   border-radius: 100px;
-  padding: 0 36px;
+  padding: 0 28px;
   backdrop-filter: none;
   transition: box-shadow 0.25s ease;
-  overflow: hidden;
 }
 
 /* Glow border layer — follows the cursor via --glow-x / --glow-y */
@@ -399,7 +398,7 @@ video {
   padding: 1px;
   background: radial-gradient(
     180px circle at var(--glow-x, -300px) var(--glow-y, 50%),
-    rgba(173, 122, 60, 0.75),
+    rgba(173, 122, 60, 0.7),
     transparent 80%
   );
   /* Mask trick: show only the 1px border ring */
@@ -430,10 +429,10 @@ video {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 0 28px;
+  gap: 6px;
+  padding: 0 20px;
   border-radius: 0;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1;
