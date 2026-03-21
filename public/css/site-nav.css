@@ -1,6 +1,7 @@
 :root {
   --site-nav-font-sans: "DM Sans", "Helvetica Neue", sans-serif;
   --site-nav-font-serif: "Playfair Display", Georgia, serif;
+  --site-nav-font-nav: "Cormorant Garamond", Georgia, serif;
   --site-nav-bg: #F7F5F0;
   --site-nav-bg-soft: #faf6ef;
   --site-nav-bg-stone: #dfd1bf;
@@ -63,6 +64,7 @@
 .header-nav,
 #main-nav .nav-links {
   flex: 1;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +78,40 @@
   border: 1px solid var(--site-nav-border);
   border-radius: 100px;
   backdrop-filter: none;
+  overflow: hidden;
   transition: box-shadow 0.25s ease;
+}
+
+/* Glow border effect — cursor-tracked */
+.header-nav::before,
+#main-nav .nav-links::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    180px circle at var(--glow-x, -300px) var(--glow-y, 50%),
+    rgba(173, 122, 60, 0.75),
+    transparent 80%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-nav:hover::before,
+#main-nav .nav-links:hover::before {
+  opacity: 1;
 }
 
 .site-header.is-scrolled .header-nav,
@@ -106,14 +141,16 @@
   background: none;
   color: var(--site-nav-muted);
   cursor: pointer;
-  font-family: var(--site-nav-font-serif);
-  font-size: 1.2rem;
+  font-family: var(--site-nav-font-nav);
+  font-size: 1.25rem;
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.15s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-pill-item:hover,
@@ -162,8 +199,8 @@
   background: none;
   color: var(--site-nav-muted);
   cursor: pointer;
-  font-family: var(--site-nav-font-serif);
-  font-size: 1rem;
+  font-family: var(--site-nav-font-nav);
+  font-size: 1.1rem;
   font-weight: 400;
   text-decoration: none;
   white-space: nowrap;

@@ -81,4 +81,14 @@
       closeMenu();
     }
   });
+
+  // Glow border: track cursor position on the nav pill
+  var navPill = nav.querySelector(".header-nav") || nav.querySelector(".nav-links");
+  if (navPill) {
+    navPill.addEventListener("mousemove", function (e) {
+      var rect = navPill.getBoundingClientRect();
+      navPill.style.setProperty("--glow-x", (e.clientX - rect.left) + "px");
+      navPill.style.setProperty("--glow-y", (e.clientY - rect.top) + "px");
+    });
+  }
 })();

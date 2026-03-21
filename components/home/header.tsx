@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navigation } from "@/data/homepage";
 import { OpenApplicationButton } from "@/components/home/application-modal";
@@ -9,6 +9,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
   const isHome = pathname === "/";
 
   const centerItems = navigation.filter((i) => !i.slot || i.slot === "center");
@@ -24,6 +25,18 @@ export function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const onMove = (e: MouseEvent) => {
+      const rect = nav.getBoundingClientRect();
+      nav.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
+      nav.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
+    };
+    nav.addEventListener("mousemove", onMove);
+    return () => nav.removeEventListener("mousemove", onMove);
   }, []);
 
   function renderItem(item: (typeof navigation)[number], onClick?: () => void) {
@@ -67,7 +80,7 @@ export function Header() {
         </a>
 
         {/* Center pill nav — desktop */}
-        <nav className="header-nav" aria-label="Primary">
+        <nav ref={navRef} className="header-nav" aria-label="Primary">
           {centerItems.map((item) => renderItem(item))}
         </nav>
 
