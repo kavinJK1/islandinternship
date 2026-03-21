@@ -54,7 +54,7 @@ export const navigation: NavItem[] = [
       { href: "/sri-lanka.html", label: "Sri Lanka" },
     ],
   },
-  { href: "#tracks", label: "Tracks", slot: "center" },
+  { href: "/tracks.html", label: "Tracks", slot: "center" },
   { href: "/career-outcomes.html", label: "Outcomes", slot: "center" },
   { href: "/stories", label: "Student Stories", slot: "center" },
   { href: "/pricing", label: "Pricing", slot: "center" },
