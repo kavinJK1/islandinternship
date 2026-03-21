@@ -14,6 +14,7 @@
     destinations: '[data-nav-target="destinations"]',
     outcomes: '[data-nav-target="outcomes"]',
     pricing: '[data-nav-target="pricing"]',
+    resources: '[data-nav-target="resources"]',
     stories: '[data-nav-target="stories"]',
     tracks: '[data-nav-target="tracks"]',
   };

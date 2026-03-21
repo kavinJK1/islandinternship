@@ -101,7 +101,8 @@
 #main-nav .nav-pill-item.is-active,
 #main-nav .nav-action-link.is-active,
 #main-nav .nav-dropdown-trigger.is-active {
-  color: #1f2822;
+  background: #295a4d;
+  color: #ffffff;
   font-weight: 600;
 }
 
