@@ -32,8 +32,8 @@ export function Header() {
         <div key={item.label} className="nav-dropdown">
           <button type="button" className="nav-pill-item nav-dropdown-trigger">
             {item.label}
-            <svg width="9" height="5" viewBox="0 0 9 5" fill="none" aria-hidden="true">
-              <path d="M1 1l3.5 3L8 1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
+              <path d="M1 1l5.5 5.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <div className="nav-dropdown-menu">
@@ -59,7 +59,7 @@ export function Header() {
 
   return (
     <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
-      <div className="container header-inner">
+      <div className="header-inner">
 
         {/* Logo */}
         <a className="brand" href={isHome ? "#hero" : "/"}>
