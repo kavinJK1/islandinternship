@@ -30,7 +30,12 @@
       "WebFetch(domain:commons.wikimedia.org)",
       "Bash(cd:*)",
       "WebFetch(domain:featurescomparisontable.framer.website)",
-      "WebFetch(domain:www.islandinternship.com)"
+      "WebFetch(domain:www.islandinternship.com)",
+      "Bash(cat /Users/kavin/Desktop/island-internships-website/next.config.*)",
+      "Bash(git -C /Users/kavin/Desktop/island-internships-website remote -v)",
+      "Bash(git:*)",
+      "Bash(head -5 grep \"data-nav-current\\\\|BlogTeaser\\\\|ptc-grid\\\\|blogPosts\" /Users/kavin/Desktop/island-internships-website/data/homepage.ts)",
+      "Bash(gh run:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
