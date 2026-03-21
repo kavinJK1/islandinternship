@@ -32,8 +32,8 @@ export function Header() {
         <div key={item.label} className="nav-dropdown">
           <button type="button" className="nav-pill-item nav-dropdown-trigger">
             {item.label}
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" aria-hidden="true">
-              <path d="M1 1l5.5 5.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true">
+              <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <div className="nav-dropdown-menu">

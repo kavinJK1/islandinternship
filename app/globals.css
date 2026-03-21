@@ -339,32 +339,27 @@ video {
   z-index: 50;
   background: transparent;
   padding: 8px 18px;
-  transition: padding 0.25s ease;
 }
 
-/* The pill IS the header container */
+/* Transparent flex row: brand | pill | actions */
 .header-inner {
   width: 100%;
-  max-width: 1580px;
+  max-width: 1640px;
   margin: 0 auto;
   height: 74px;
   display: flex;
   align-items: center;
-  background: #F7F5F0;
-  border: 1px solid #D8D5CE;
-  border-radius: 38px;
-  padding: 0 36px;
-  transition: box-shadow 0.25s ease;
-}
-
-.site-header.is-scrolled .header-inner {
-  box-shadow: 0 4px 24px rgba(33, 40, 35, 0.08);
+  gap: 20px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 /* ── Logo ── */
 .brand {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   letter-spacing: -0.04em;
   color: var(--text);
   white-space: nowrap;
@@ -376,33 +371,40 @@ video {
   color: var(--forest);
 }
 
-/* ── Center nav ── */
+/* ── Center nav — THIS is the pill ── */
 .header-nav {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 52px;
-  flex: 1;
   justify-content: center;
-  background: none;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  gap: 0;
+  /* pill */
+  height: 74px;
+  background: #F7F5F0;
+  border: 1px solid #D8D5CE;
+  border-radius: 100px;
+  padding: 0 36px;
   backdrop-filter: none;
+  transition: box-shadow 0.25s ease;
 }
 
-/* Shared style for nav links + dropdown trigger */
+.site-header.is-scrolled .header-nav {
+  box-shadow: 0 4px 20px rgba(33, 40, 35, 0.07);
+}
+
+/* ── Nav items ── */
 .nav-pill-item,
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0;
+  gap: 7px;
+  padding: 0 28px;
   border-radius: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 1.15;
-  color: #66665F;
+  line-height: 1;
+  color: #6B6860;
   white-space: nowrap;
   cursor: pointer;
   border: none;
@@ -427,9 +429,10 @@ video {
 
 /* ── Dropdown chevron ── */
 .nav-dropdown-trigger svg {
-  width: 13px;
-  height: 8px;
+  width: 11px;
+  height: 7px;
   flex-shrink: 0;
+  color: #6B6860;
   transition: transform 0.18s ease;
 }
 
@@ -438,12 +441,12 @@ video {
   transform: rotate(180deg);
 }
 
-/* ── Right actions ── */
+/* ── Right actions (outside pill) ── */
 .header-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 24px;
+  gap: 18px;
   flex-shrink: 0;
 }
 
@@ -454,9 +457,9 @@ video {
   border: none;
   background: none;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: #66665F;
+  color: #6B6860;
   white-space: nowrap;
   transition: color 0.15s;
   text-decoration: none;
@@ -472,7 +475,7 @@ video {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 46px;
+  height: 44px;
   padding: 0 22px;
   font-size: 0.875rem;
   font-family: var(--font-sans);
@@ -566,7 +569,7 @@ video {
   height: 42px;
   border-radius: 12px;
   border: 1px solid rgba(41, 61, 52, 0.12);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(247, 245, 240, 0.9);
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -595,7 +598,6 @@ video {
   border-radius: 24px;
   background: #F7F5F0;
   border: 1px solid #D8D5CE;
-  backdrop-filter: blur(20px);
   padding: 12px 0 20px;
 }
 
@@ -612,7 +614,7 @@ video {
 .mobile-nav-inner .nav-action-link,
 .mobile-nav-inner .nav-dropdown-trigger {
   border-radius: 14px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding: 12px 16px;
   width: 100%;
   color: var(--text);
@@ -659,27 +661,18 @@ video {
     display: none;
   }
 
-  .header-inner {
-    padding: 0 20px;
+  .header-actions {
+    display: none;
   }
 
   .menu-button {
     display: inline-flex;
-  }
-
-  .header-actions {
-    display: none;
   }
 }
 
 @media (max-width: 640px) {
   .site-header {
     padding: 6px 10px;
-  }
-
-  .header-inner {
-    border-radius: 28px;
-    padding: 0 16px;
   }
 
   .mobile-nav {
