@@ -39,6 +39,7 @@ export function Header() {
     let rafId: number;
 
     function tick() {
+      if (!nav) return;
       cx += (tx - cx) * LERP;
       cy += (ty - cy) * LERP;
       nav.style.setProperty("--glow-x", `${Math.round(cx)}px`);
