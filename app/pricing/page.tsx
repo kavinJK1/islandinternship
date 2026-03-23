@@ -12,9 +12,9 @@ import {
 } from "@/components/home/sections";
 
 export const metadata: Metadata = {
-  title: "Pricing — Island Internship",
+  title: "Bali & Sri Lanka Internship Program Pricing 2026 | Island Internship",
   description:
-    "Simple, transparent pricing for your internship abroad. Free to apply — no commitment until you're matched.",
+    "Transparent pricing for your internship in Bali or Sri Lanka. Free to apply. One-time program fee covers placement, visa guidance, housing support, and arrival coordination. Monthly living costs from €440 in Bali.",
 };
 
 export default function PricingPage() {

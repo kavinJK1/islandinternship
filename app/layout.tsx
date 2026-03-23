@@ -26,9 +26,9 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = "https://www.islandinternship.com";
-const title = "Internship in Bali or Sri Lanka for University Students | Island Internship";
+const title = "Internship in Bali & Sri Lanka — Structured Placement Program for University Students | Island Internship";
 const description =
-  "Structured 3–6 month internships in Bali and Sri Lanka for European university students. Placement matching, university credit support, shared housing, and a student community. Free to apply.";
+  "Find your internship placement in Bali or Sri Lanka. Structured 3–6 month programs for Dutch and European university students — credit-eligible, housing included, visa guidance, and on-the-ground support. Free to apply.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,6 +57,8 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.islandinternship.com/",
+    // Dutch SEO note: add hreflang when /nl/ route is created
+    // languages: { "nl": "https://www.islandinternship.com/nl/" }
   },
   icons: {
     icon: "/favicon.ico",
@@ -235,6 +237,26 @@ const videoSchema = {
   ],
 };
 
+const internshipProgramSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalProgram",
+  "name": "Island Internship — Bali & Sri Lanka Placement Program",
+  "description": "Structured 3–6 month credit-eligible internship placements in Bali, Indonesia and Sri Lanka for Dutch and European university students. Includes placement matching, visa guidance, housing coordination, and on-the-ground support.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Island Internship",
+    "url": "https://www.islandinternship.com"
+  },
+  "timeToComplete": "P3M",
+  "offers": {
+    "@type": "Offer",
+    "category": "Internship placement program",
+    "url": "https://www.islandinternship.com/pricing"
+  },
+  "applicationStartDate": "2026-01-01",
+  "occupationalCategory": "Internship"
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -258,6 +280,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(internshipProgramSchema) }}
         />
         {children}
       </body>

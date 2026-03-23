@@ -6,9 +6,9 @@ import { ScrollObserver } from "@/components/home/scroll-observer";
 import { Footer, FullStoriesSection, MobileActionBar } from "@/components/home/sections";
 
 export const metadata: Metadata = {
-  title: "Student Stories — Island Internship",
+  title: "Student Internship Stories — Bali & Sri Lanka Placements | Island Internship",
   description:
-    "Watch video testimonials and read stories from students who did their required internship in Bali and Sri Lanka through Island Internship.",
+    "Video stories and testimonials from students who did their required university internship in Bali and Sri Lanka through Island Internship. Real experiences, real placements.",
 };
 
 export default function StoriesPage() {
