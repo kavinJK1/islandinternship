@@ -70,6 +70,7 @@ export const navigation: NavItem[] = [
       { href: "/bali-internship-safety.html", label: "Bali Safety Guide" },
       { href: "/university-credit.html", label: "University Credit Guide" },
       { href: "/first-48-hours-bali.html", label: "First 48 Hours in Bali" },
+      { href: "/bali-housing-guide.html", label: "Bali Housing Guide" },
     ],
   },
   { href: "/companies.html", label: "For Businesses", slot: "right" },
