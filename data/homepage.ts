@@ -67,6 +67,9 @@ export const navigation: NavItem[] = [
       { href: "/blog-bali-internship-cost.html", label: "Bali Internship Cost 2026" },
       { href: "/blog-bali-visa-guide.html", label: "Bali Visa Guide" },
       { href: "/for-parents.html", label: "For Parents" },
+      { href: "/bali-internship-safety.html", label: "Bali Safety Guide" },
+      { href: "/university-credit.html", label: "University Credit Guide" },
+      { href: "/first-48-hours-bali.html", label: "First 48 Hours in Bali" },
     ],
   },
   { href: "/companies.html", label: "For Businesses", slot: "right" },
@@ -1037,4 +1040,38 @@ export const applicationForm = {
     "Startup Operations",
     "Data & Tech",
   ],
+};
+
+export const expansionTeaser = {
+  eyebrow: "Growing with you",
+  title: "Expanding to new destinations.",
+  body: "Bali and Sri Lanka are where we operate today — with deep local networks, established host companies, and students currently on the ground. Vietnam and Thailand are next. If you're interested in these destinations, let us know and we'll reach out when they launch.",
+  destinations: [
+    {
+      name: "Vietnam",
+      region: "Southeast Asia",
+      status: "coming-soon" as const,
+      note: "Ho Chi Minh City & Hanoi — launching 2026",
+    },
+    {
+      name: "Thailand",
+      region: "Southeast Asia",
+      status: "coming-soon" as const,
+      note: "Bangkok & Chiang Mai — launching 2026",
+    },
+  ],
+  cta: { label: "Express interest", href: "mailto:hello@islandinternship.com?subject=Interest%20in%20Vietnam%2FThailand" },
+};
+
+export const parentTeaserBand = {
+  eyebrow: "For parents & study advisors",
+  heading: "We know you're part of this decision.",
+  body: "Island Internship is built to be parent-approved and coordinator-ready. Find answers to every question — from safety and housing to university credit and what happens if something goes wrong.",
+  links: [
+    { label: "Read the parent guide", href: "/for-parents.html" },
+    { label: "University credit explained", href: "/university-credit.html" },
+    { label: "Safety guide", href: "/bali-internship-safety.html" },
+  ],
+  ctaLabel: "Email us a question",
+  ctaHref: "mailto:hello@islandinternship.com",
 };

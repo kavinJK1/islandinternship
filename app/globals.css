@@ -5035,3 +5035,110 @@ video {
 .blog-card:hover .blog-card-cta {
   gap: 10px;
 }
+
+/* ── Parent Teaser Band ── */
+.parent-teaser-band {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--bg-stone);
+  border-bottom: 1px solid var(--bg-stone);
+}
+
+.parent-teaser-inner {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.parent-teaser-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.parent-cta-card {
+  background: var(--panel);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.parent-cta-card-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.parent-cta-card-body {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .parent-teaser-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Expansion Teaser Section ── */
+.expansion-destinations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expansion-dest-card {
+  background: var(--panel);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-align: center;
+  position: relative;
+}
+
+.expansion-coming-soon {
+  display: inline-block;
+  background: rgba(41, 90, 77, 0.1);
+  color: var(--forest);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.expansion-dest-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+}
+
+.expansion-dest-region {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.expansion-dest-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Parents: Is a Bali Internship Safe? Your Questions Answered | Island Internship</title>
-  <meta name="description" content="Everything parents ask before their child does an internship in Bali. Safety, cost, university credit, housing, support structure, and what happens if something goes wrong." />
+  <meta name="description" content="Everything parents ask before their child does an internship in Bali or Sri Lanka. Safety, visa, insurance, housing, cost, university credit, and what happens if something goes wrong — answered clearly." />
   <link rel="canonical" href="https://www.islandinternship.com/for-parents.html" />
   <meta property="og:image" content="https://www.islandinternship.com/images/community-group-2.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -15,7 +15,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/editorial-pages.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site-nav.css" />
   <script src="/js/site-nav.js" defer></script>
   <script type="application/ld+json">
@@ -42,7 +41,7 @@
       padding: 1.5rem 1.75rem;
     }
     .concern-card-label {
-      font-family: var(--font-sans, 'DM Sans', sans-serif);
+      font-family: var(--font-body, 'DM Sans', sans-serif);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -51,7 +50,7 @@
       margin-bottom: 0.5rem;
     }
     .concern-card h3 {
-      font-family: var(--font-serif, 'Playfair Display', serif);
+      font-family: var(--font-display, 'Playfair Display', serif);
       font-size: 1.1rem;
       color: #1A1A2E;
       margin: 0 0 0.75rem;
@@ -89,7 +88,7 @@
       margin-bottom: 0.5rem;
     }
     .cost-compare-value {
-      font-family: var(--font-serif, 'Playfair Display', serif);
+      font-family: var(--font-display, 'Playfair Display', serif);
       font-size: 1.6rem;
       color: #1A1A2E;
       font-weight: 600;
@@ -140,8 +139,203 @@
       font-size: 0.85rem;
       font-weight: 500;
     }
-    @media (max-width: 600px) {
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(42,122,111,0.15);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 0 0 2rem 0;
+      position: relative;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-dot {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: #2A7A6F;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2A7A6F;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-title {
+      font-family: var(--font-display, 'Playfair Display', serif);
+      font-size: 1.05rem;
+      color: #1A1A2E;
+      margin: 0 0 0.4rem;
+    }
+    .timeline-body {
+      font-size: 0.92rem;
+      color: #3d3d5c;
+      line-height: 1.65;
+      margin: 0;
+    }
+    /* Scenario table */
+    .scenario-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 0;
+    }
+    .scenario-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(26,26,46,0.08);
+      align-items: start;
+    }
+    .scenario-item:last-child {
+      border-bottom: none;
+    }
+    .scenario-label {
+      font-family: var(--font-display, 'Playfair Display', serif);
+      font-size: 1rem;
+      color: #1A1A2E;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .scenario-response {
+      font-size: 0.92rem;
+      color: #3d3d5c;
+      line-height: 1.65;
+      margin: 0;
+    }
+    /* Insurance card */
+    .insurance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+    .insurance-item {
+      background: #fff;
+      border: 1px solid rgba(26,26,46,0.1);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+    .insurance-item-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2A7A6F;
+      margin-bottom: 0.5rem;
+    }
+    .insurance-item p {
+      font-size: 0.9rem;
+      color: #3d3d5c;
+      line-height: 1.6;
+      margin: 0;
+    }
+    /* Visa block */
+    .visa-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+    .visa-card {
+      background: #fff;
+      border: 1px solid rgba(26,26,46,0.1);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+    }
+    .visa-card-flag {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .visa-card h3 {
+      font-family: var(--font-display, 'Playfair Display', serif);
+      font-size: 1.1rem;
+      color: #1A1A2E;
+      margin: 0 0 0.6rem;
+    }
+    .visa-card p {
+      font-size: 0.9rem;
+      color: #3d3d5c;
+      line-height: 1.65;
+      margin: 0 0 0.75rem;
+    }
+    .visa-card p:last-child {
+      margin-bottom: 0;
+    }
+    .visa-card-tag {
+      display: inline-block;
+      background: rgba(42,122,111,0.08);
+      color: #2A7A6F;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    /* Housing specifics */
+    .housing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .housing-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .housing-icon {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: rgba(42,122,111,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .housing-item-text strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 0.2rem;
+    }
+    .housing-item-text span {
+      font-size: 0.83rem;
+      color: #3d3d5c;
+      line-height: 1.55;
+    }
+    @media (max-width: 700px) {
       .cost-compare { grid-template-columns: 1fr; }
+      .visa-block { grid-template-columns: 1fr; }
+      .scenario-item { grid-template-columns: 1fr; gap: 0.4rem; }
     }
   </style>
 </head>
@@ -193,6 +387,14 @@
               <a href="/for-parents.html" class="nav-dropdown-item">
                 <span class="nav-dropdown-dot" aria-hidden="true"></span>
                 <span>For Parents</span>
+              </a>
+              <a href="/bali-internship-safety.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>Bali Safety Guide</span>
+              </a>
+              <a href="/university-credit.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>University Credit Guide</span>
               </a>
             </div>
           </div>
@@ -252,6 +454,14 @@
                 <span class="nav-dropdown-dot" aria-hidden="true"></span>
                 <span>For Parents</span>
               </a>
+              <a href="/bali-internship-safety.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>Bali Safety Guide</span>
+              </a>
+              <a href="/university-credit.html" class="nav-dropdown-item">
+                <span class="nav-dropdown-dot" aria-hidden="true"></span>
+                <span>University Credit Guide</span>
+              </a>
             </div>
           </div>
         </div>
@@ -266,115 +476,357 @@
     Back
   </a>
 
-  <section class="page-hero" style="max-width:760px;margin:0 auto;padding:4rem 2rem 3rem;">
+  <!-- Hero -->
+  <section class="page-hero" style="max-width:800px;margin:0 auto;padding:4rem 2rem 3rem;">
     <div class="eyebrow">For Parents</div>
-    <h1 class="headline" style="font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;">We know you're the other half of this decision.</h1>
-    <p class="lead">Your concerns are completely valid. Here's every answer you need, clearly.</p>
-    <p style="color:#3d3d5c;font-size:1rem;line-height:1.7;">Island Internship places European university students in structured, credit-eligible internships in Bali. We have worked with students from Maastricht, UvA, Erasmus, Tilburg, Vrije Universiteit, and Hogeschool Rotterdam. We understand what parents and university coordinators need to see before saying yes — and we've built the program around making that easy.</p>
+    <h1 class="headline" style="font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;">You probably have more questions than your child does.</h1>
+    <p class="lead" style="margin-top:1rem;">That is completely normal. Sending your child across the world for an internship is a significant decision, and the details matter. This page exists to answer every question you are likely to have — honestly and specifically — before you give the green light.</p>
+    <p style="color:#3d3d5c;font-size:1rem;line-height:1.7;margin-top:1rem;">Island Internship places European university students in structured, credit-eligible internships in Bali and Sri Lanka. We have worked with students from Maastricht, UvA, Erasmus, Tilburg, Vrije Universiteit, and Hogeschool Rotterdam. We understand what parents need to see before saying yes — and we have built the program around making that easy. The application is free. There is no commitment until a placement is confirmed and you are ready to proceed.</p>
+    <div class="cta-row">
+      <a href="mailto:hello@islandinternship.com" class="btn btn-primary">Email us a question</a>
+      <a href="https://wa.me/31683660360" class="btn btn-outline" target="_blank" rel="noreferrer">WhatsApp us directly</a>
+    </div>
   </section>
 
+  <!-- Six core concerns -->
   <section class="page-section">
     <div class="section-header">
       <div class="eyebrow">Your concerns, answered</div>
-      <h2 class="section-title">Six questions most parents ask first.</h2>
+      <h2 class="section-title">The six things parents ask first.</h2>
+      <p class="section-sub">These are the questions that come up in almost every parent conversation. Each one gets a full section further down this page — but here is the short version.</p>
     </div>
     <div class="concern-grid">
       <div class="concern-card">
         <div class="concern-card-label">Safety</div>
         <h3>Is Bali safe?</h3>
-        <p>Bali is a well-established international destination with a large expat, digital nomad, and student community. The most common practical risks — traffic, scooters, upset stomachs — are managed through pre-departure safety preparation we provide to every student before they fly. This is not a dramatic destination; it is a managed one.</p>
+        <p>Bali is one of the most visited islands in the world, with a well-established international community. The risks that exist — traffic, motorbikes, food hygiene — are real but manageable. We provide every student with a detailed safety briefing before departure so they arrive prepared, not surprised.</p>
       </div>
       <div class="concern-card">
         <div class="concern-card-label">Emergency contact</div>
         <h3>Who do we call if something goes wrong?</h3>
-        <p>We are reachable via WhatsApp throughout the placement. Emergency guidance, local contacts, and step-by-step protocols are shared with every student before departure. You will have a contact number and know exactly what to do before your child boards the plane.</p>
+        <p>You will have our WhatsApp number before your child boards the plane. We have clear protocols for medical situations, visa problems, and early returns — and we are reachable throughout the entire placement. You are never left waiting for an answer.</p>
       </div>
       <div class="concern-card">
         <div class="concern-card-label">University credit</div>
         <h3>Will this count for their degree?</h3>
-        <p>Yes. Every host company provides an official internship agreement, a named supervisor, and the documentation Dutch universities require to approve the placement. This is compatible with Maastricht, UvA, Erasmus, Tilburg, Vrije Universiteit, and Hogeschool Rotterdam. We recommend early confirmation with the study coordinator — and we help prepare the paperwork.</p>
+        <p>Yes. Every host company provides an official internship agreement, a named supervisor, mid-term and end-of-placement evaluations, and the documentation Dutch universities require to approve the placement. We help prepare the paperwork students need to submit to their study coordinator.</p>
       </div>
       <div class="concern-card">
         <div class="concern-card-label">Cost</div>
         <h3>How much will this actually cost?</h3>
-        <p>The program fee is €449 (Essentials) or €649 (Full Support), paid once matched and confirmed. Monthly living costs in Bali run €440–€630 — which is 40–50% less than a typical month in Amsterdam or Rotterdam. For most families, Bali is not the more expensive option.</p>
+        <p>The program fee is €449 (Essentials) or €649 (Full Support), paid once a placement is confirmed. Monthly living costs in Bali run €440–€630 — roughly 40–50% less than a comparable month in Amsterdam or Rotterdam. For most families, Bali is the more affordable option, not the more expensive one.</p>
       </div>
       <div class="concern-card">
         <div class="concern-card-label">Housing</div>
-        <h3>Who arranged the housing?</h3>
-        <p>We do. Every student gets a private room in a vetted shared house in a central, safe area of Bali. The address is confirmed before they book flights — there are no unknowns on arrival day.</p>
+        <h3>Where will they live?</h3>
+        <p>In a private room in a vetted shared house in a central, safe area. The address is confirmed before your child books their flights — there are no unknowns on arrival day. We handle the housing search so students do not have to figure it out from another continent.</p>
       </div>
       <div class="concern-card">
         <div class="concern-card-label">Community</div>
         <h3>Will they be alone?</h3>
-        <p>No. Students arrive into an existing community of other interns from European universities. Welcome dinners, shared housing, group chats, and weekend plans are built into the program — by the end of the first week, most students already have a group around them.</p>
+        <p>No. Students arrive into an existing cohort of interns from European universities. Welcome dinners, shared housing, group chats, and weekend plans are built into the program. Most students have a group around them within the first few days.</p>
       </div>
     </div>
   </section>
 
+  <!-- From application to first day: Timeline -->
   <section class="page-section">
     <div class="section-header">
-      <div class="eyebrow">Cost comparison</div>
-      <h2 class="section-title">Bali is usually the more affordable semester.</h2>
-      <p class="section-sub">This is one of the most surprising answers for parents. Bali is consistently cheaper than keeping your child in a Dutch university city.</p>
+      <div class="eyebrow">From application to first day</div>
+      <h2 class="section-title">What happens at every stage.</h2>
+      <p class="section-sub">There are no surprises in this process. Here is exactly what happens, in order, from the moment your child applies to the end of their first week in-destination.</p>
     </div>
-    <div class="cost-compare">
-      <div class="cost-compare-col is-bali">
-        <div class="cost-compare-label">Bali — estimated monthly total</div>
-        <div class="cost-compare-value">€440–630</div>
-        <p class="cost-compare-note">Private room, scooter, food, SIM, activities. Typically 40–50% less than staying in the Netherlands.</p>
-      </div>
-      <div class="cost-compare-col is-nl">
-        <div class="cost-compare-label">Amsterdam / Rotterdam — typical monthly budget</div>
-        <div class="cost-compare-value">€990–1,450</div>
-        <p class="cost-compare-note">Rent, food, transport, social. The internship semester still costs money at home — just more of it.</p>
-      </div>
-    </div>
-    <p style="margin-top:1.25rem;color:#3d3d5c;font-size:0.95rem;">The program fee (€449–649) is a one-time payment, made only once matched and confirmed. There is no cost to apply.</p>
-  </section>
-
-  <section class="page-section">
-    <div class="section-header">
-      <div class="eyebrow">Support structure</div>
-      <h2 class="section-title">What happens at each stage of the program.</h2>
-    </div>
-    <ul class="support-steps">
-      <li>
-        <span class="step-num">1</span>
+    <ul class="timeline" aria-label="Program timeline">
+      <li class="timeline-item">
+        <div class="timeline-dot">1</div>
         <div>
-          <strong>Pre-departure briefing</strong>
-          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Every student receives a detailed pre-departure pack covering visa, housing, local transport, safety tips, emergency contacts, and what to expect in the first week.</p>
+          <div class="timeline-label">Week 1–2</div>
+          <div class="timeline-title">Free application &amp; intro call</div>
+          <p class="timeline-body">Your child applies — no fee, no commitment. We schedule an intro call to understand their field of study, goals, and timeline. Parents are welcome on this call.</p>
         </div>
       </li>
-      <li>
-        <span class="step-num">2</span>
+      <li class="timeline-item">
+        <div class="timeline-dot">2</div>
         <div>
-          <strong>Arrival support</strong>
-          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Airport pickup (Full Support), housing check-in guidance, and orientation into the community — so the first 48 hours don't feel like a problem to solve alone.</p>
+          <div class="timeline-label">Week 2–4</div>
+          <div class="timeline-title">Matching process</div>
+          <p class="timeline-body">We match your child's profile against available host companies in their track. You receive details of the proposed placement — sector, company description, supervisor name — before any commitment is made.</p>
         </div>
       </li>
-      <li>
-        <span class="step-num">3</span>
+      <li class="timeline-item">
+        <div class="timeline-dot">3</div>
         <div>
-          <strong>WhatsApp reachability throughout</strong>
-          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Our team remains reachable for the duration of the placement. Practical questions, housing issues, placement concerns — nothing goes unanswered.</p>
+          <div class="timeline-label">Week 4–8</div>
+          <div class="timeline-title">Confirmed placement &amp; visa guidance begins</div>
+          <p class="timeline-body">Once your child accepts a placement, the program fee is paid and the internship agreement is signed. We begin visa guidance immediately — walking through the exact steps for the B211A (Bali) or ETA (Sri Lanka). Housing is also confirmed around this point.</p>
         </div>
       </li>
-      <li>
-        <span class="step-num">4</span>
+      <li class="timeline-item">
+        <div class="timeline-dot">4</div>
         <div>
-          <strong>Emergency protocol</strong>
-          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Clear emergency guidance is shared before departure. Students know exactly who to contact and what to do — as do you.</p>
+          <div class="timeline-label">2 weeks before departure</div>
+          <div class="timeline-title">Pre-departure pack, housing address, emergency contacts</div>
+          <p class="timeline-body">Every student receives a comprehensive pre-departure document: housing address, local emergency contacts, nearest hospital, scooter safety guidance, SIM card setup, money advice, and what to expect on day one. You receive our direct WhatsApp contact for the duration of the placement.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot">5</div>
+        <div>
+          <div class="timeline-label">Day 0 — arrival</div>
+          <div class="timeline-title">Airport pickup (Full Support)</div>
+          <p class="timeline-body">Full Support students are collected from the airport and taken directly to their accommodation. Essentials students receive step-by-step arrival instructions. No one lands without knowing exactly what happens next.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-dot">6</div>
+        <div>
+          <div class="timeline-label">Week 1 in Bali</div>
+          <div class="timeline-title">Orientation week &amp; workplace introduction</div>
+          <p class="timeline-body">The first week includes a group orientation covering local transport, safety, banking, and cultural context. Students are introduced formally to their workplace supervisor. By the end of week one, the internship is in motion and the student is settled.</p>
         </div>
       </li>
     </ul>
   </section>
 
+  <section class="page-band">
+    <h3>Happy to walk through the timeline with you.</h3>
+    <p>If you would like to understand any stage in more detail, or if you want to join your child's intro call, we are happy to arrange it. Email or WhatsApp us.</p>
+    <div class="cta-row">
+      <a href="mailto:hello@islandinternship.com" class="btn btn-primary">Email us</a>
+      <a href="https://wa.me/31683660360" class="btn btn-outline" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Housing specifics -->
   <section class="page-section">
     <div class="section-header">
-      <div class="eyebrow">University compatibility</div>
+      <div class="eyebrow">Housing</div>
+      <h2 class="section-title">What the accommodation actually looks like.</h2>
+      <p class="section-sub">Parents frequently ask this and we want to be specific, not vague. Here is what is confirmed before your child books a flight.</p>
+    </div>
+    <div class="housing-grid">
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Private room</strong>
+          <span>Your child has their own bedroom with a door that locks. Shared common areas only.</span>
+        </div>
+      </div>
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Central, safe location</strong>
+          <span>Housing is selected in established residential areas — not isolated or difficult to navigate.</span>
+        </div>
+      </div>
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Shared with other interns</strong>
+          <span>Housemates are typically other Island Internship students — they arrive into a community, not an empty house.</span>
+        </div>
+      </div>
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Rent paid monthly in-destination</strong>
+          <span>No large upfront international transfer. Rent is paid month-to-month, locally, in Indonesian rupiah.</span>
+        </div>
+      </div>
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Address confirmed before flights are booked</strong>
+          <span>Students receive the exact address once the placement is confirmed — before purchasing any travel.</span>
+        </div>
+      </div>
+      <div class="housing-item">
+        <div class="housing-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A7A6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="housing-item-text">
+          <strong>Vetted by Island Internship</strong>
+          <span>We have physically checked every property we use. If something is substandard, we do not put students there.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visa section -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Visa</div>
+      <h2 class="section-title">The visa process is straightforward. We guide every step.</h2>
+      <p class="section-sub">This is often the part that worries parents the most. Here is exactly what is involved for each destination.</p>
+    </div>
+    <div class="visa-block">
+      <div class="visa-card">
+        <div class="visa-card-flag">🇮🇩</div>
+        <div class="visa-card-tag">Bali, Indonesia</div>
+        <h3>B211A Social-Cultural Visa</h3>
+        <p>The B211A is Indonesia's social and cultural visa — a legal entry route commonly used by international interns and students. It is applied for online before departure, costs approximately $65 USD, and is issued for 60 days with the ability to extend in-country. Island Internship provides students with a step-by-step guide and all supporting documents needed for the application.</p>
+        <p>The visa is entirely above board for internship purposes. Indonesia does not issue a separate "intern visa" — the B211A is the standard legal pathway used by all international students doing internships in Bali.</p>
+        <p>We guide students through: the online portal, document preparation, sponsor letter (which we provide), and any extension if the placement runs longer than 60 days.</p>
+      </div>
+      <div class="visa-card">
+        <div class="visa-card-flag">🇱🇰</div>
+        <div class="visa-card-tag">Sri Lanka</div>
+        <h3>Electronic Travel Authorization (ETA)</h3>
+        <p>Sri Lanka uses an online ETA system for most European nationals. It is straightforward — applied for online, typically approved within 24 hours, and valid for 30 days with extensions available. Costs approximately $35 USD.</p>
+        <p>Island Internship provides the same visa guidance for Sri Lanka placements as for Bali — clear instructions, required documents, and support if any questions arise during the process.</p>
+        <p>As with Bali, the visa process is completed before the student travels. No surprises at the airport.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;color:#3d3d5c;font-size:0.92rem;line-height:1.7;">Visa rules change. We keep our guidance current and check every student's situation individually. If your child's nationality raises specific considerations, we will identify them during the matching process — not after they have booked a flight.</p>
+  </section>
+
+  <section class="page-band">
+    <h3>Read our full Bali visa guide.</h3>
+    <p>The B211A process is covered in detail in our dedicated guide, including screenshots of the online portal, what documents to prepare, and what to do if an extension is needed.</p>
+    <div class="cta-row">
+      <a href="/blog-bali-visa-guide.html" class="btn btn-primary">Read the Bali Visa Guide</a>
+      <a href="mailto:hello@islandinternship.com" class="btn btn-outline">Ask us a specific question</a>
+    </div>
+  </section>
+
+  <!-- Travel insurance -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Insurance</div>
+      <h2 class="section-title">Travel insurance is required. Here is what it must cover.</h2>
+      <p class="section-sub">We do not allow students to travel without adequate insurance. This is not optional. Below is exactly what the policy needs to include, and how we help students find one that qualifies.</p>
+    </div>
+    <div class="insurance-grid">
+      <div class="insurance-item">
+        <div class="insurance-item-label">Medical coverage</div>
+        <p>A minimum of €100,000 in emergency medical coverage. This covers hospitalisation, surgery, doctor visits, and medication if something goes wrong in-destination. Standard travel insurance from Dutch banks and travel insurers typically meets this threshold — check the policy documents.</p>
+      </div>
+      <div class="insurance-item">
+        <div class="insurance-item-label">Emergency evacuation</div>
+        <p>The policy must cover emergency medical evacuation — meaning if a serious incident requires treatment that cannot be handled locally, the cost of flying your child home or to a regional hospital is covered. This is distinct from standard medical coverage and must be listed explicitly.</p>
+      </div>
+      <div class="insurance-item">
+        <div class="insurance-item-label">Trip cancellation / interruption</div>
+        <p>Coverage if the placement needs to end early for a covered reason — illness, family emergency, or similar. This protects the cost of flights and program fees in unforeseen circumstances. Not every policy includes this; verify it is present.</p>
+      </div>
+      <div class="insurance-item">
+        <div class="insurance-item-label">24-hour emergency helpline</div>
+        <p>The insurer must provide a 24-hour emergency assistance line that can coordinate local medical care in Indonesia or Sri Lanka. Most international travel insurers offer this — but confirm the number works in-destination before departure.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;color:#3d3d5c;font-size:0.92rem;line-height:1.7;max-width:760px;">Island Internship helps every student verify that their insurance meets these requirements before departure. We review the policy summary document and flag anything that is missing. Common Dutch options that typically qualify include <strong>Centraal Beheer Reisverzekering</strong>, <strong>FBTO Reisverzekering</strong>, and <strong>Allianz Travel</strong> — but the specific tier matters. We will confirm what your child has selected covers everything required.</p>
+    <p style="margin-top:0.75rem;color:#3d3d5c;font-size:0.92rem;line-height:1.7;max-width:760px;">If your child does not yet have a policy, we provide a checklist of what to look for and can point them toward options that consistently meet the requirements for both Bali and Sri Lanka placements.</p>
+  </section>
+
+  <!-- Cost comparison -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Cost comparison</div>
+      <h2 class="section-title">Bali is usually the more affordable semester.</h2>
+      <p class="section-sub">This surprises most parents. The internship semester still costs money whether your child stays in the Netherlands or goes abroad — in Bali, it costs significantly less.</p>
+    </div>
+    <div class="cost-compare">
+      <div class="cost-compare-col is-bali">
+        <div class="cost-compare-label">Bali — estimated monthly total</div>
+        <div class="cost-compare-value">€440–630</div>
+        <p class="cost-compare-note">Private room, motorbike rental, food, SIM card, activities. Typically 40–50% less than staying in the Netherlands for the same period.</p>
+      </div>
+      <div class="cost-compare-col is-nl">
+        <div class="cost-compare-label">Amsterdam / Rotterdam — typical monthly budget</div>
+        <div class="cost-compare-value">€990–1,450</div>
+        <p class="cost-compare-note">Rent, food, OV-chipkaart, social. The internship semester has a cost regardless of location — in a Dutch city, that cost is substantially higher.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.25rem;color:#3d3d5c;font-size:0.95rem;line-height:1.7;">The program fee (€449–649) is a one-time payment, made only once a placement is confirmed and your child decides to proceed. There is no cost to apply, no deposit to hold a spot, and no commitment until the match is confirmed and accepted. For a full breakdown of every cost category, see our <a href="/blog-bali-internship-cost.html" style="color:#2A7A6F;text-decoration:underline;">Bali Internship Cost 2026</a> guide.</p>
+  </section>
+
+  <!-- What if something goes wrong -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Emergency scenarios</div>
+      <h2 class="section-title">What happens if something goes wrong.</h2>
+      <p class="section-sub">We would rather address this directly than let you wonder. The following covers the scenarios parents most frequently ask about — not to alarm you, but because you deserve a clear answer to each one.</p>
+    </div>
+    <ul class="scenario-list" aria-label="Emergency scenario responses">
+      <li class="scenario-item">
+        <div class="scenario-label">Your child gets sick — fever, food poisoning, infection</div>
+        <p class="scenario-response">Bali has well-established international clinics (BIMC Hospital in Kuta, BIMC Nusa Dua, and several others) staffed with English-speaking doctors. Students are provided the nearest clinic address and phone number in their pre-departure pack. Our team is reachable on WhatsApp and will help coordinate if needed. Travel insurance covers the cost of treatment — which is why adequate insurance is required before departure.</p>
+      </li>
+      <li class="scenario-item">
+        <div class="scenario-label">Your child needs to go to a hospital</div>
+        <p class="scenario-response">We provide the names, addresses, and phone numbers of the nearest international-standard hospitals for every placement location. We help students communicate with their insurer and, if needed, assist with coordination. In a serious medical situation, we contact parents directly. You will not find out about something serious from a WhatsApp message hours after the fact.</p>
+      </li>
+      <li class="scenario-item">
+        <div class="scenario-label">There is a visa problem</div>
+        <p class="scenario-response">Visa issues are almost always bureaucratic — a document not accepted, a form submitted incorrectly, an extension not processed in time. We guide students through the resolution, including liaising with the relevant office. In the rare event that an extension cannot be processed in time, students may need to do a visa run (a brief border exit); we explain this process in advance so it is never a surprise.</p>
+      </li>
+      <li class="scenario-item">
+        <div class="scenario-label">There is a problem with the host company</div>
+        <p class="scenario-response">If a placement is not working — the role is misrepresented, the supervisor is absent, or the environment is unsuitable — we intervene. We have relationships with multiple host companies in each destination, and a rematch is possible if a genuine placement failure occurs. Students do not have to manage a bad placement alone.</p>
+      </li>
+      <li class="scenario-item">
+        <div class="scenario-label">Your child wants to come home early</div>
+        <p class="scenario-response">This is not a common outcome — the majority of students extend their stay rather than cut it short. But if your child decides to come home for any reason, we help facilitate the departure: assisting with flight changes, communicating with the host company, and ensuring the handover is clean. University credit implications depend on how much of the placement was completed, and we help manage the communication with the student's study coordinator.</p>
+      </li>
+      <li class="scenario-item">
+        <div class="scenario-label">A natural event or security situation in-destination</div>
+        <p class="scenario-response">Bali and Sri Lanka are not high-risk destinations for political instability. For seismic activity (Bali sits on an active volcanic island), students receive a clear briefing on local protocols before departure. We monitor FCDO and Rijksoverheid travel advisories and contact students proactively if anything changes. In a situation requiring evacuation, travel insurance emergency evacuation coverage applies.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="page-band">
+    <h3>We are reachable throughout your child's placement.</h3>
+    <p>You will have our WhatsApp contact before your child leaves. You do not need to wait for an emergency to use it — if something feels off and you want to check in, you can.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/31683660360" class="btn btn-primary" target="_blank" rel="noreferrer">WhatsApp us</a>
+      <a href="mailto:hello@islandinternship.com" class="btn btn-outline">Email us</a>
+    </div>
+  </section>
+
+  <!-- Sri Lanka mention -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Two destinations</div>
+      <h2 class="section-title">Island Internship also operates in Sri Lanka.</h2>
+      <p class="section-sub">Most of this page focuses on Bali because it is our primary destination — but we run the same structured program in Sri Lanka, with the same support infrastructure.</p>
+    </div>
+    <div class="concern-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+      <div class="concern-card">
+        <div class="concern-card-label">Sri Lanka — what's the same</div>
+        <h3>Same support, different island</h3>
+        <p>Vetted host companies, official internship agreements, pre-departure briefing, in-destination WhatsApp support, housing arranged before arrival, and the same university documentation structure. The ETA visa process is simpler than Bali's B211A — straightforward online application, typically approved within a day.</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-card-label">Sri Lanka — placement tracks</div>
+        <h3>Similar tracks, growing partner network</h3>
+        <p>Sri Lanka placements currently span marketing, business, hospitality, and sustainability-focused organisations. The intern community is smaller than Bali's but growing. For students interested in a slightly different cultural context — South Asian rather than Southeast Asian — Sri Lanka is a strong alternative.</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-card-label">Sri Lanka — cost</div>
+        <h3>Comparable to Bali, sometimes lower</h3>
+        <p>Monthly living costs in Sri Lanka are broadly comparable to Bali, sometimes slightly lower depending on the city. The same program fee structure applies. University credit documentation follows the same format used for Bali placements.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;color:#3d3d5c;font-size:0.92rem;line-height:1.7;"><a href="/sri-lanka.html" style="color:#2A7A6F;text-decoration:underline;">Read more about Sri Lanka placements</a> or contact us to discuss whether it is the right fit for your child's goals.</p>
+  </section>
+
+  <!-- University credit -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">University credit</div>
       <h2 class="section-title">Students from these universities have completed placements through Island Internship.</h2>
-      <p class="section-sub">Every host company provides an official internship agreement with a named supervisor, and is prepared to complete your university's specific assessment paperwork. We help students prepare the documentation their coordinator needs to see.</p>
+      <p class="section-sub">Every host company provides an official internship agreement with a named supervisor, mid-term and final evaluations, and all supporting documentation your university's study coordinator requires. We help students prepare the paperwork before submission.</p>
     </div>
     <div class="uni-list">
       <span class="uni-tag">Maastricht University</span>
@@ -384,15 +836,63 @@
       <span class="uni-tag">Vrije Universiteit Amsterdam</span>
       <span class="uni-tag">Hogeschool Rotterdam</span>
     </div>
-    <p style="margin-top:1.25rem;color:#3d3d5c;font-size:0.9rem;">If your child attends a different Dutch university, contact us. The documentation structure is standard across the system.</p>
+    <p style="margin-top:1.25rem;color:#3d3d5c;font-size:0.9rem;line-height:1.7;">If your child attends a different Dutch or European university, contact us. The documentation structure is standard across the system and we have helped students from universities not listed here navigate the approval process. The earlier we know the university's requirements, the more time we have to ensure the paperwork matches exactly. For detailed guidance, read our <a href="/university-credit.html" style="color:#2A7A6F;text-decoration:underline;">University Credit Guide</a>.</p>
   </section>
 
+  <!-- Support structure -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Support structure</div>
+      <h2 class="section-title">The support that exists throughout the entire placement.</h2>
+      <p class="section-sub">This is not a program where a student receives a placement, a packet of documents, and is then left alone for three months. Here is what the ongoing support actually looks like.</p>
+    </div>
+    <ul class="support-steps">
+      <li>
+        <span class="step-num">1</span>
+        <div>
+          <strong>Pre-departure briefing document</strong>
+          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Every student receives a detailed pre-departure pack covering visa steps, housing address, local transport, safety tips, nearest hospital, emergency contacts, banking, SIM card setup, and what to expect in the first week. It is comprehensive and specific — not a generic checklist.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div>
+          <strong>Airport pickup &amp; housing check-in (Full Support)</strong>
+          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Full Support students are collected from the airport and taken to their accommodation. Essentials students receive detailed arrival instructions so that even without pickup, the first 48 hours are managed.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div>
+          <strong>Orientation week</strong>
+          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">The first week includes a structured group orientation — local transport, cultural context, safety reminders, and a group dinner with other interns. Students are not dropped into an unfamiliar place and left to work it out.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div>
+          <strong>WhatsApp reachability throughout the placement</strong>
+          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">Our team remains reachable for the full duration of every placement. Housing issues, workplace questions, visa extension support, medical coordination — nothing goes unanswered. Response time is same-day for all non-emergency queries, and immediate for urgent situations.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div>
+          <strong>End-of-placement documentation support</strong>
+          <p style="font-size:0.9rem;color:#3d3d5c;margin:0.25rem 0 0;">We help students collect the evaluations, signed agreements, and supervisor sign-offs their university needs to approve the credit. This is handled in the final weeks of the placement so there is no scramble at the end.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Final CTA band -->
   <section class="page-band">
-    <h3>Questions? We're happy to speak directly with parents.</h3>
-    <p>Email us at <a href="mailto:hello@islandinternship.com" style="color:inherit;text-decoration:underline;">hello@islandinternship.com</a> or message us on WhatsApp. The application is free — there is no commitment until a placement is confirmed.</p>
+    <h3>We are happy to speak with parents directly.</h3>
+    <p>If after reading this you still have questions — about a specific scenario, your child's university requirements, a medical situation that concerns you, or anything else — email or WhatsApp us. We speak with parents regularly and take these conversations seriously. The application is free. There is no commitment until a placement is confirmed and your family is ready to proceed.</p>
     <div class="cta-row">
       <a href="mailto:hello@islandinternship.com" class="btn btn-primary">Email us a question</a>
       <a href="https://wa.me/31683660360" class="btn btn-outline" target="_blank" rel="noreferrer">WhatsApp us</a>
+      <a href="/bali-internship-safety.html" class="btn btn-outline">Read the Bali Safety Guide</a>
     </div>
   </section>
 
@@ -400,7 +900,10 @@
     <div class="simple-footer-links">
       <a href="/index.html">Home</a>
       <a href="/bali-placements.html">Bali placements</a>
-      <a href="/sri-lanka-placements.html">Sri Lanka placements</a>
+      <a href="/sri-lanka.html">Sri Lanka placements</a>
+      <a href="/blog-bali-visa-guide.html">Bali Visa Guide</a>
+      <a href="/university-credit.html">University Credit Guide</a>
+      <a href="/bali-internship-safety.html">Bali Safety Guide</a>
       <a href="/match-quiz.html">Match Quiz</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>

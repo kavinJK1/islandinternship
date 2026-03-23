@@ -11,6 +11,7 @@ import {
   costs,
   costTeaser,
   destinationTeaser,
+  expansionTeaser,
   faqs,
   faqTeaser,
   featuredTracks,
@@ -18,6 +19,7 @@ import {
   includedHighlights,
   outcomeTeaser,
   outcomes,
+  parentTeaserBand,
   pricing,
   pricingTeaser,
   processSteps,
@@ -1292,6 +1294,68 @@ export function BlogTeaserSection() {
               </span>
             </a>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ParentTeaserBand() {
+  return (
+    <section className="section parent-teaser-band">
+      <div className="container">
+        <div className="parent-teaser-inner">
+          <div className="parent-teaser-text">
+            <span className="eyebrow reveal">{parentTeaserBand.eyebrow}</span>
+            <h2 className="section-title reveal reveal-delay-1">{parentTeaserBand.heading}</h2>
+            <p className="section-copy reveal reveal-delay-2">{parentTeaserBand.body}</p>
+            <div className="parent-teaser-links reveal reveal-delay-3">
+              {parentTeaserBand.links.map((link) => (
+                <a key={link.href} href={link.href} className="inline-link">
+                  {link.label} →
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="parent-teaser-cta reveal reveal-delay-2">
+            <div className="parent-cta-card">
+              <p className="parent-cta-card-label">Have questions?</p>
+              <p className="parent-cta-card-body">We're happy to answer directly — from parents, study advisors, or students. No commitment required.</p>
+              <a href={parentTeaserBand.ctaHref} className="button button-primary" style={{marginTop: "1rem", display: "inline-flex"}}>
+                {parentTeaserBand.ctaLabel}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ExpansionTeaserSection() {
+  return (
+    <section className="section expansion-teaser">
+      <div className="container">
+        <SectionIntro
+          eyebrow={expansionTeaser.eyebrow}
+          title={expansionTeaser.title}
+          copy={expansionTeaser.body}
+          centered
+        />
+        <div className="expansion-destinations reveal reveal-delay-2">
+          {expansionTeaser.destinations.map((dest) => (
+            <div key={dest.name} className="expansion-dest-card">
+              <span className="expansion-coming-soon">Coming Soon</span>
+              <h3 className="expansion-dest-name">{dest.name}</h3>
+              <p className="expansion-dest-region">{dest.region}</p>
+              <p className="expansion-dest-note">{dest.note}</p>
+            </div>
+          ))}
+        </div>
+        <div className="expansion-cta reveal reveal-delay-3" style={{textAlign: "center", marginTop: "2rem"}}>
+          <a href={expansionTeaser.cta.href} className="button button-secondary">
+            {expansionTeaser.cta.label}
+          </a>
         </div>
       </div>
     </section>

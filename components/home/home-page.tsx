@@ -6,12 +6,14 @@ import { ReframeSection } from "@/components/home/reframe-section";
 import { ScrollObserver } from "@/components/home/scroll-observer";
 import {
   BlogTeaserSection,
+  ExpansionTeaserSection,
   FaqTeaser,
   FinalCtaSection,
   Footer,
   HeroSection,
   MobileActionBar,
   OutcomesTeaser,
+  ParentTeaserBand,
   PricingTeaserSection,
   ProcessSection,
   TestimonialsTeaser,
@@ -28,8 +30,10 @@ export function HomePage() {
         <main id="main-content">
           <HeroSection />
           <TrustSection />
+          <ParentTeaserBand />
           <ReframeSection />
           <DestinationExplorer />
+          <ExpansionTeaserSection />
           <ProcessSection />
           <TracksTeaser />
           <TestimonialsTeaser />
