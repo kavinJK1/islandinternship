@@ -4436,6 +4436,7 @@ video {
 
 .hero-line-bali {
   color: #F6F1E5;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
 @keyframes hero-line-in {
@@ -4453,14 +4454,14 @@ video {
 }
 
 .hero-type-text {
-  color: #1C2B24;
+  color: inherit;
 }
 
 .hero-type-cursor {
   display: inline-block;
   width: 3px;
   height: 0.85em;
-  background: #1C2B24;
+  background: #F6F1E5;
   border-radius: 1px;
   margin-left: 3px;
   vertical-align: middle;
