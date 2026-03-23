@@ -16,6 +16,7 @@ import {
   ParentTeaserBand,
   PricingTeaserSection,
   ProcessSection,
+  TeamSection,
   TestimonialsTeaser,
   TracksTeaser,
   TrustSection,
@@ -41,6 +42,7 @@ export function HomePage() {
           <CostSection />
           <PricingTeaserSection />
           <BlogTeaserSection />
+          <TeamSection />
           <FaqTeaser />
           <FinalCtaSection />
         </main>

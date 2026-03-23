@@ -675,8 +675,8 @@ export const safeguards = {
     },
     {
       icon: "phone" as const,
-      title: "Local support and emergency contact",
-      body: "The team stays reachable through WhatsApp and provides local contact guidance for the practical issues that come up when living abroad.",
+      title: "On-the-ground team in Bali and Sri Lanka",
+      body: "There is a team present in-destination during the placement season — not managing remotely from Europe. Reachable via WhatsApp for practical issues, placement questions, and anything unexpected.",
     },
     {
       icon: "home" as const,
@@ -736,6 +736,11 @@ export const faqs = {
       question: "Is Bali safe to live in as a student?",
       answer:
         "Bali is a well-established destination for students, remote workers, and international communities. The most common challenges are practical rather than dramatic — and students are prepared properly before departure.",
+    },
+    {
+      question: "How long does it take from application to placement?",
+      answer:
+        "Most students go from intro call to placement match within 2–4 weeks. Total time from first application to departure depends on your visa timeline and university schedule — typically 6–10 weeks in total. We give honest timeline estimates on your intro call based on current availability.",
     },
     {
       question: "How long are the internships?",
@@ -971,15 +976,27 @@ export const pricing = {
   faqs: [
     {
       question: "When do I pay?",
-      answer: "You apply for free and only decide once you have a placement match.",
+      answer: "You apply for free and only decide once you have a placement match you're happy with. No payment is requested until you've reviewed the placement and want to move forward.",
+    },
+    {
+      question: "How long does matching take?",
+      answer: "Most students receive an initial placement match within 2–4 weeks of their intro call. The exact timeline depends on your field, destination, and how soon your placement period starts. We give an honest estimate on the call.",
+    },
+    {
+      question: "What happens after I pay?",
+      answer: "Once you confirm the match and pay the program fee, we move into pre-departure mode: visa guidance, housing coordination, arrival planning, and a full pre-departure briefing before you fly.",
+    },
+    {
+      question: "What if I'm not placed straight away?",
+      answer: "Matching timelines vary by field and timing. If there isn't an immediate fit, we continue working on it and stay in contact. We don't disappear between conversations.",
     },
     {
       question: "Are housing and scooter costs included?",
-      answer: "No. We can help arrange them, but they are paid separately.",
+      answer: "No. We can help arrange them (Full Support tier), but rent and scooter rental are paid separately in-destination.",
     },
     {
       question: "Can I upgrade to Full Support later?",
-      answer: "Usually yes, depending on timing and availability.",
+      answer: "Usually yes, depending on timing and availability. Deciding early helps ensure arrival logistics are sorted before you fly.",
     },
   ],
   disclaimer:
@@ -1024,6 +1041,51 @@ export const pricingTeaser = {
   cta: "See full pricing and cost breakdown",
   ctaHref: "/pricing",
   freeNotice: "Free to apply — no commitment until you're matched.",
+};
+
+export const pricingReassurance = {
+  eyebrow: "How matching works",
+  title: "You apply free. We find the placement. You only pay once the match is right.",
+  body: "Most students receive an initial placement match within 2–4 weeks of their intro call. Matching is our job — not yours. If the first option is not the right fit, we adjust.",
+  steps: [
+    {
+      number: "01",
+      title: "Apply free — 10 minutes",
+      body: "Tell us your field, timing, and preferred environment. No commitment required.",
+    },
+    {
+      number: "02",
+      title: "Intro call and match brief",
+      body: "We speak with you, refine the brief, and identify suitable companies from the network.",
+    },
+    {
+      number: "03",
+      title: "Review the match",
+      body: "We share placement details. You only pay once the match feels right — not before.",
+    },
+    {
+      number: "04",
+      title: "Support through to arrival",
+      body: "Visa guidance, housing, airport pickup, and a team on the ground from day one.",
+    },
+  ],
+  reassurancePoints: [
+    "No payment until you're matched to a company you want to work with",
+    "Most students matched within 2–4 weeks of their intro call",
+    "If the first match isn't right, we adjust — that's part of the job",
+    "Local team reachable via WhatsApp from arrival to end of placement",
+  ],
+  note: "We do not guarantee a specific company or exact timeline — matching depends on field, timing, and availability. We do guarantee transparency, a genuine effort to find the right fit, and that you will not navigate the process alone.",
+};
+
+export const teamSection = {
+  eyebrow: "The team behind it",
+  title: "Built by people who moved abroad to intern — and saw how broken the process was.",
+  body: "Island Internship was started because the typical DIY internship-abroad search — cold emails, unvetted placements, no local support — was failing students who needed the placement to count academically. We built the structure we wish had existed.",
+  localNote: "Our in-destination team is present in Bali and Sri Lanka during the placement season — not managing the program from a European office.",
+  supportNote: "Reachable via WhatsApp throughout your placement for practical questions, placement issues, and anything else that comes up in-country.",
+  cta: "Ask us a question",
+  ctaHref: "mailto:hello@islandinternship.com",
 };
 
 export const applicationForm = {

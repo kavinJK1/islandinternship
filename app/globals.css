@@ -5142,3 +5142,240 @@ video {
   color: var(--muted);
   margin: 0;
 }
+
+/* ─── PLACEMENT REASSURANCE SECTION ─────────────────────────── */
+.placement-reassurance-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--bg-stone);
+  border-bottom: 1px solid var(--bg-stone);
+}
+
+.prs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.prs-reassurance-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.prs-reassurance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.prs-check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: rgba(41, 90, 77, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+  margin-top: 1px;
+}
+
+.prs-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+  border-left: 3px solid var(--bg-stone);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.prs-steps {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.prs-step {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.25rem;
+  background: var(--panel-strong);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-sm);
+}
+
+.prs-step-num {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1;
+  padding-top: 3px;
+}
+
+.prs-step-title {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+}
+
+.prs-step-body {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .prs-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ─── TEAM SECTION ───────────────────────────────────────────── */
+.team-section {
+  background: var(--bg);
+}
+
+.team-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.team-local-note {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 1.5rem 0 0.75rem;
+  background: rgba(41, 90, 77, 0.06);
+  border: 1px solid rgba(41, 90, 77, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+}
+
+.team-local-icon {
+  color: var(--forest);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.team-local-note p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.team-support-note {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.team-cta {
+  display: inline-flex;
+}
+
+.team-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.team-placeholder-card {
+  background: var(--panel);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team-placeholder-avatar {
+  width: 72px;
+  height: 72px;
+  background: var(--bg-sand);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.team-placeholder-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.team-placeholder-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 260px;
+}
+
+.team-contact-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--bg-stone);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team-contact-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--forest);
+  margin: 0;
+}
+
+.team-contact-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.team-contact-email {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-top: 0.25rem;
+}
+
+.team-contact-email:hover {
+  color: var(--forest-deep);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .team-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

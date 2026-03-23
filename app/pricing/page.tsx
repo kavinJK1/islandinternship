@@ -7,6 +7,7 @@ import {
   CostComparisonSection,
   Footer,
   MobileActionBar,
+  PlacementReassuranceSection,
   PricingFaqsSection,
   PricingSection,
 } from "@/components/home/sections";
@@ -34,6 +35,7 @@ export default function PricingPage() {
           </Link>
 
           <PricingSection />
+          <PlacementReassuranceSection />
           <CostComparisonSection />
           <PricingFaqsSection />
         </main>

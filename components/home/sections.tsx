@@ -21,11 +21,13 @@ import {
   outcomes,
   parentTeaserBand,
   pricing,
+  pricingReassurance,
   pricingTeaser,
   processSteps,
   resources,
   safeguards,
   siteLinks,
+  teamSection,
   testimonials,
   tracks,
   trustMetrics,
@@ -1356,6 +1358,93 @@ export function ExpansionTeaserSection() {
           <a href={expansionTeaser.cta.href} className="button button-secondary">
             {expansionTeaser.cta.label}
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PlacementReassuranceSection() {
+  return (
+    <section className="section placement-reassurance-section fade-up">
+      <div className="container">
+        <div className="prs-layout">
+          <div className="prs-intro">
+            <span className="eyebrow">{pricingReassurance.eyebrow}</span>
+            <h2 className="section-title">{pricingReassurance.title}</h2>
+            <p className="section-copy">{pricingReassurance.body}</p>
+            <ul className="prs-reassurance-list">
+              {pricingReassurance.reassurancePoints.map((point) => (
+                <li key={point} className="prs-reassurance-item">
+                  <span className="prs-check" aria-hidden="true">
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
+                      <path d="M1.5 5L5 8.5L11.5 1.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="prs-note">{pricingReassurance.note}</p>
+          </div>
+          <div className="prs-steps">
+            {pricingReassurance.steps.map((step, i) => (
+              <div key={step.number} className={`prs-step fade-up delay-${i + 1}`}>
+                <span className="prs-step-num">{step.number}</span>
+                <div className="prs-step-content">
+                  <h3 className="prs-step-title">{step.title}</h3>
+                  <p className="prs-step-body">{step.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TeamSection() {
+  return (
+    <section className="section team-section fade-up">
+      <div className="container">
+        <div className="team-layout">
+          <div className="team-intro">
+            <span className="eyebrow">{teamSection.eyebrow}</span>
+            <h2 className="section-title">{teamSection.title}</h2>
+            <p className="section-copy">{teamSection.body}</p>
+            <div className="team-local-note">
+              <span className="team-local-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.75 4.5 8.5 4.5 8.5S12.5 9.75 12.5 6c0-2.49-2.01-4.5-4.5-4.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="currentColor" />
+                </svg>
+              </span>
+              <p>{teamSection.localNote}</p>
+            </div>
+            <p className="team-support-note">{teamSection.supportNote}</p>
+            <a href={teamSection.ctaHref} className="button button-secondary team-cta">
+              {teamSection.cta}
+            </a>
+          </div>
+          <div className="team-placeholder">
+            <div className="team-placeholder-card">
+              <div className="team-placeholder-avatar" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="16" r="7" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </div>
+              <p className="team-placeholder-label">Team photos coming soon</p>
+              <p className="team-placeholder-sub">We prefer to earn the real estate with results first.</p>
+            </div>
+            <div className="team-contact-card">
+              <p className="team-contact-label">Questions about the program?</p>
+              <p className="team-contact-body">Email us directly — we reply within 2 business days.</p>
+              <a href="mailto:hello@islandinternship.com" className="team-contact-email">
+                hello@islandinternship.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
