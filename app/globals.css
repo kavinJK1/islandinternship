@@ -337,7 +337,7 @@ video {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--bg);
+  background: #F7F5F0;
   border-bottom: 1px solid transparent;
   padding: 10px 24px;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -365,7 +365,7 @@ video {
 
 /* ── Logo ── */
 .brand {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif);
   font-size: 1.25rem;
   letter-spacing: -0.04em;
   color: var(--text);
@@ -489,7 +489,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 18px;
   flex-shrink: 0;
 }
 
