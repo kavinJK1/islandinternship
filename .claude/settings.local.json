@@ -38,7 +38,21 @@
       "Bash(gh run:*)",
       "Bash(while read:*)",
       "Bash(do sed:*)",
-      "Bash(grep -c '\"\"header-inner\"\"' public/404.html)"
+      "Bash(grep -c '\"\"header-inner\"\"' public/404.html)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:shard-vole-c98.notion.site)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(brew install:*)",
+      "WebFetch(domain:www.notion.so)",
+      "WebFetch(domain:questingai.gumroad.com)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(claude mcp:*)",
+      "Bash(pdftoppm -r 72 /Users/kavin/Downloads/The-Complete-Guide-to-Building-Skill-for-Claude.pdf /tmp/skill-guide-page)",
+      "Bash(pdftotext /Users/kavin/Downloads/The-Complete-Guide-to-Building-Skill-for-Claude.pdf -)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(superclaude:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
