@@ -141,7 +141,9 @@
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
+  flex: 1;
   padding: 0 8px;
   border-radius: 0;
   border: none;
@@ -252,6 +254,15 @@
 
 .nav-dropdown {
   position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-dropdown .nav-dropdown-trigger {
+  flex: unset;
+  width: 100%;
 }
 
 .nav-dropdown-menu {
