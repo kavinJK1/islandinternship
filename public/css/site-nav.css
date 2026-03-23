@@ -165,7 +165,7 @@
 .nav-pill-item:hover,
 .nav-dropdown-trigger:hover {
   background: none;
-  color: var(--site-nav-text);
+  color: var(--site-nav-forest);
 }
 
 .nav-pill-item.is-active,
@@ -218,7 +218,7 @@
 
 .nav-action-link:hover {
   background: none;
-  color: var(--site-nav-text);
+  color: var(--site-nav-forest);
 }
 
 /* ── Apply button ── */
