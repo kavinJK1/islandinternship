@@ -459,9 +459,8 @@ video {
 
 .nav-pill-item:hover,
 .nav-dropdown-trigger:hover {
-  background: var(--forest);
-  color: #ffffff;
-  border-radius: 100px;
+  background: none;
+  color: var(--forest);
 }
 
 .nav-pill-item.is-active,

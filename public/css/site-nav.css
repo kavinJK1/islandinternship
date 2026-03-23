@@ -164,9 +164,8 @@
 
 .nav-pill-item:hover,
 .nav-dropdown-trigger:hover {
-  background: var(--site-nav-forest);
-  color: #ffffff;
-  border-radius: 100px;
+  background: none;
+  color: var(--site-nav-forest);
 }
 
 .nav-pill-item.is-active,
