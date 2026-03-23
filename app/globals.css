@@ -337,8 +337,15 @@ video {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: transparent;
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
   padding: 10px 24px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--bg-stone);
+  box-shadow: 0 2px 12px rgba(33, 40, 35, 0.06);
 }
 
 /* Transparent flex row: brand | pill | actions */
@@ -421,7 +428,7 @@ video {
 }
 
 .site-header.is-scrolled .header-nav {
-  box-shadow: 0 4px 20px rgba(33, 40, 35, 0.07);
+  box-shadow: none;
 }
 
 /* ── Nav items ── */
@@ -429,10 +436,12 @@ video {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  padding: 0 12px;
+  flex: 1;
+  padding: 0 8px;
   border-radius: 0;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1;
@@ -532,6 +541,15 @@ video {
 /* ── Dropdown ── */
 .nav-dropdown {
   position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-dropdown .nav-dropdown-trigger {
+  flex: unset;
+  width: 100%;
 }
 
 .nav-dropdown-menu {

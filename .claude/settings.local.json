@@ -52,7 +52,13 @@
       "Bash(pdftotext /Users/kavin/Downloads/The-Complete-Guide-to-Building-Skill-for-Claude.pdf -)",
       "Bash(python:*)",
       "Bash(python3:*)",
-      "Bash(superclaude:*)"
+      "Bash(superclaude:*)",
+      "mcp__browsermcp__browser_navigate",
+      "mcp__browsermcp__browser_screenshot",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate"
     ]
   },
   "enableAllProjectMcpServers": true,
