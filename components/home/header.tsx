@@ -8,6 +8,7 @@ import { OpenApplicationButton } from "@/components/home/application-modal";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [clickedLabel, setClickedLabel] = useState<string | null>(null);
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const isHome = pathname === "/";
@@ -40,6 +41,7 @@ export function Header() {
   }, []);
 
   function isActive(item: (typeof navigation)[number]): boolean {
+    if (clickedLabel === item.label) return true;
     if (item.dropdown) {
       return item.dropdown.some((sub) => sub.href === pathname);
     }
@@ -48,12 +50,21 @@ export function Header() {
     return pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
   }
 
+  function handleClick(label: string, extraonClick?: () => void) {
+    setClickedLabel(label);
+    extraonClick?.();
+  }
+
   function renderItem(item: (typeof navigation)[number], onClick?: () => void) {
     const active = isActive(item);
     if (item.dropdown) {
       return (
         <div key={item.label} className="nav-dropdown">
-          <button type="button" className={`nav-pill-item nav-dropdown-trigger${active ? " is-active" : ""}`}>
+          <button
+            type="button"
+            className={`nav-pill-item nav-dropdown-trigger${active ? " is-active" : ""}`}
+            onClick={() => handleClick(item.label)}
+          >
             {item.label}
             <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true">
               <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -62,7 +73,7 @@ export function Header() {
           <div className="nav-dropdown-menu">
             <div className="nav-dropdown-menu-inner">
               {item.dropdown.map((sub) => (
-                <a key={sub.href} href={resolveHref(sub.href)} className="nav-dropdown-item" onClick={onClick}>
+                <a key={sub.href} href={resolveHref(sub.href)} className="nav-dropdown-item" onClick={() => handleClick(item.label, onClick)}>
                   <span className="nav-dropdown-dot" aria-hidden="true" />
                   <span>{sub.label}</span>
                 </a>
@@ -74,7 +85,7 @@ export function Header() {
     }
     const href = resolveHref(item.href);
     return (
-      <a key={item.label} href={href} className={`nav-pill-item${active ? " is-active" : ""}`} onClick={onClick}>
+      <a key={item.label} href={href} className={`nav-pill-item${active ? " is-active" : ""}`} onClick={() => handleClick(item.label, onClick)}>
         {item.label}
       </a>
     );

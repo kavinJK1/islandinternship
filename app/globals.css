@@ -459,15 +459,18 @@ video {
 
 .nav-pill-item:hover,
 .nav-dropdown-trigger:hover {
-  background: none;
-  color: var(--forest);
+  background: var(--forest);
+  color: #ffffff;
+  border-radius: 100px;
 }
 
 .nav-pill-item.is-active,
 .nav-dropdown-trigger.is-active {
-  background: none;
-  color: var(--forest);
+  background: var(--forest);
+  color: #ffffff;
   font-weight: 500;
+  border-radius: 100px;
+  padding: 6px 14px;
 }
 
 /* ── Dropdown chevron ── */
