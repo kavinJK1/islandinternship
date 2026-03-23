@@ -39,11 +39,21 @@ export function Header() {
     return () => nav.removeEventListener("mousemove", onMove);
   }, []);
 
+  function isActive(item: (typeof navigation)[number]): boolean {
+    if (item.dropdown) {
+      return item.dropdown.some((sub) => sub.href === pathname);
+    }
+    if (!item.href) return false;
+    if (item.href.startsWith("#")) return false;
+    return pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+  }
+
   function renderItem(item: (typeof navigation)[number], onClick?: () => void) {
+    const active = isActive(item);
     if (item.dropdown) {
       return (
         <div key={item.label} className="nav-dropdown">
-          <button type="button" className="nav-pill-item nav-dropdown-trigger">
+          <button type="button" className={`nav-pill-item nav-dropdown-trigger${active ? " is-active" : ""}`}>
             {item.label}
             <svg width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true">
               <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -64,7 +74,7 @@ export function Header() {
     }
     const href = resolveHref(item.href);
     return (
-      <a key={item.label} href={href} className="nav-pill-item" onClick={onClick}>
+      <a key={item.label} href={href} className={`nav-pill-item${active ? " is-active" : ""}`} onClick={onClick}>
         {item.label}
       </a>
     );

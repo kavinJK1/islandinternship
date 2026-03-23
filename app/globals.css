@@ -466,7 +466,7 @@ video {
 .nav-pill-item.is-active,
 .nav-dropdown-trigger.is-active {
   background: none;
-  color: var(--text);
+  color: var(--forest);
   font-weight: 500;
 }
 
