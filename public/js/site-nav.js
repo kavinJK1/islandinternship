@@ -82,13 +82,34 @@
     }
   });
 
-  // Glow border: track cursor position on the nav pill
+  // Glow border: smooth lerp cursor tracking on the nav pill
   var navPill = nav.querySelector(".header-nav") || nav.querySelector(".nav-links");
   if (navPill) {
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var LERP = reducedMotion ? 1 : 0.07;
+    var tx = -300, ty = 24;
+    var cx = -300, cy = 24;
+
+    function glowTick() {
+      cx += (tx - cx) * LERP;
+      cy += (ty - cy) * LERP;
+      navPill.style.setProperty("--glow-x", Math.round(cx) + "px");
+      navPill.style.setProperty("--glow-y", Math.round(cy) + "px");
+      requestAnimationFrame(glowTick);
+    }
+
     navPill.addEventListener("mousemove", function (e) {
       var rect = navPill.getBoundingClientRect();
-      navPill.style.setProperty("--glow-x", (e.clientX - rect.left) + "px");
-      navPill.style.setProperty("--glow-y", (e.clientY - rect.top) + "px");
+      tx = e.clientX - rect.left;
+      ty = e.clientY - rect.top;
     });
+
+    navPill.addEventListener("mouseenter", function (e) {
+      var rect = navPill.getBoundingClientRect();
+      cx = tx = e.clientX - rect.left;
+      cy = ty = e.clientY - rect.top;
+    });
+
+    requestAnimationFrame(glowTick);
   }
 })();

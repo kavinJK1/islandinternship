@@ -98,9 +98,9 @@
   border-radius: inherit;
   padding: 1px;
   background: radial-gradient(
-    220px circle at var(--glow-x, -300px) var(--glow-y, 50%),
-    rgba(41, 90, 77, 0.9),
-    transparent 80%
+    160px circle at var(--glow-x, -300px) var(--glow-y, 50%),
+    rgba(41, 90, 77, 0.85),
+    transparent 75%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -111,7 +111,7 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
   pointer-events: none;
   z-index: 0;
 }
@@ -119,6 +119,13 @@
 .header-nav:hover::before,
 #main-nav .nav-links:hover::before {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav::before,
+  #main-nav .nav-links::before {
+    transition: none;
+  }
 }
 
 .site-header.is-scrolled .header-nav,

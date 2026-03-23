@@ -396,7 +396,7 @@ video {
   transition: box-shadow 0.25s ease;
 }
 
-/* Glow border layer — follows the cursor via --glow-x / --glow-y */
+/* Glow border — cursor-tracked, lerp-smoothed via JS */
 .header-nav::before {
   content: '';
   position: absolute;
@@ -404,11 +404,11 @@ video {
   border-radius: inherit;
   padding: 1px;
   background: radial-gradient(
-    220px circle at var(--glow-x, -300px) var(--glow-y, 50%),
-    rgba(41, 90, 77, 0.9),
-    transparent 80%
+    160px circle at var(--glow-x, -300px) var(--glow-y, 50%),
+    rgba(41, 90, 77, 0.85),
+    transparent 75%
   );
-  /* Mask trick: show only the 1px border ring */
+  /* Mask: reveal only the 1px border ring */
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -418,13 +418,19 @@ video {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
   pointer-events: none;
   z-index: 0;
 }
 
 .header-nav:hover::before {
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav::before {
+    transition: none;
+  }
 }
 
 .site-header.is-scrolled .header-nav {

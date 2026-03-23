@@ -30,13 +30,43 @@ export function Header() {
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
-    const onMove = (e: MouseEvent) => {
-      const rect = nav.getBoundingClientRect();
-      nav.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
-      nav.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
-    };
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const LERP = reducedMotion ? 1 : 0.07;
+
+    let tx = -300, ty = 24;
+    let cx = -300, cy = 24;
+    let rafId: number;
+
+    function tick() {
+      cx += (tx - cx) * LERP;
+      cy += (ty - cy) * LERP;
+      nav.style.setProperty("--glow-x", `${Math.round(cx)}px`);
+      nav.style.setProperty("--glow-y", `${Math.round(cy)}px`);
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function onMove(e: MouseEvent) {
+      const r = nav.getBoundingClientRect();
+      tx = e.clientX - r.left;
+      ty = e.clientY - r.top;
+    }
+
+    function onEnter(e: MouseEvent) {
+      const r = nav.getBoundingClientRect();
+      cx = tx = e.clientX - r.left;
+      cy = ty = e.clientY - r.top;
+    }
+
+    rafId = requestAnimationFrame(tick);
     nav.addEventListener("mousemove", onMove);
-    return () => nav.removeEventListener("mousemove", onMove);
+    nav.addEventListener("mouseenter", onEnter);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      nav.removeEventListener("mousemove", onMove);
+      nav.removeEventListener("mouseenter", onEnter);
+    };
   }, []);
 
   function isActive(item: (typeof navigation)[number]): boolean {
