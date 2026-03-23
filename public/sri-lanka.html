@@ -18,6 +18,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/site-nav.css" />
   <script src="/js/site-nav.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.islandinternship.com/"},{"@type":"ListItem","position":2,"name":"Destinations","item":"https://www.islandinternship.com/"},{"@type":"ListItem","position":3,"name":"Sri Lanka","item":"https://www.islandinternship.com/sri-lanka.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Island Internship","url":"https://www.islandinternship.com","logo":"https://www.islandinternship.com/images/logo.png"}
+  </script>
+  <style>
+    .sl-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .sl-compare-col {
+      padding: 2rem 2rem 2.25rem;
+    }
+    .sl-compare-col:first-child {
+      border-right: 1px solid var(--border, #e5e7eb);
+    }
+    .sl-compare-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent, #5b6cf8);
+      margin-bottom: 0.5rem;
+    }
+    .sl-compare-col h3 {
+      font-size: 1.2rem;
+      margin: 0 0 1.25rem;
+    }
+    .sl-compare-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sl-compare-col ul li {
+      font-size: 0.925rem;
+      line-height: 1.6;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border, #e5e7eb);
+      color: var(--body-text, #374151);
+    }
+    .sl-compare-col ul li:last-child {
+      border-bottom: none;
+    }
+    .sl-compare-note {
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--muted, #6b7280);
+      font-style: italic;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .sl-compare-grid {
+        grid-template-columns: 1fr;
+      }
+      .sl-compare-col:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--border, #e5e7eb);
+      }
+    }
+
+    .sl-tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .sl-track-card {
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 10px;
+      padding: 1.25rem 1.25rem 1.5rem;
+    }
+    .sl-track-card.featured {
+      border-color: var(--accent, #5b6cf8);
+      background: var(--accent-tint, #f0f1ff);
+    }
+    .sl-track-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent, #5b6cf8);
+      margin-bottom: 0.5rem;
+    }
+    .sl-track-card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+    }
+    .sl-track-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--body-text, #374151);
+      margin: 0;
+    }
+
+    .sl-visa-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.75rem;
+      font-size: 0.925rem;
+    }
+    .sl-visa-table th,
+    .sl-visa-table td {
+      text-align: left;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border, #e5e7eb);
+    }
+    .sl-visa-table th {
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted, #6b7280);
+      background: var(--surface-subtle, #f9fafb);
+    }
+    .sl-visa-table tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
 </head>
 <body class="has-site-nav" data-nav-current="destinations">
   <header id="main-nav" class="site-header">
@@ -56,18 +180,12 @@
           </button>
           <div class="nav-dropdown-menu">
             <div class="nav-dropdown-menu-inner">
-              <a href="/blog-bali-internship-cost.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>Bali Internship Cost 2026</span>
-              </a>
-              <a href="/blog-bali-visa-guide.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>Bali Visa Guide</span>
-              </a>
-              <a href="/for-parents.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>For Parents</span>
-              </a>
+              <a href="/blog-bali-internship-cost.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Internship Cost 2026</span></a>
+              <a href="/blog-bali-visa-guide.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Visa Guide</span></a>
+              <a href="/for-parents.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>For Parents</span></a>
+              <a href="/bali-internship-safety.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Safety Guide</span></a>
+              <a href="/university-credit.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>University Credit Guide</span></a>
+              <a href="/first-48-hours-bali.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>First 48 Hours in Bali</span></a>
             </div>
           </div>
         </div>
@@ -114,18 +232,12 @@
           </button>
           <div class="nav-dropdown-menu">
             <div class="nav-dropdown-menu-inner">
-              <a href="/blog-bali-internship-cost.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>Bali Internship Cost 2026</span>
-              </a>
-              <a href="/blog-bali-visa-guide.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>Bali Visa Guide</span>
-              </a>
-              <a href="/for-parents.html" class="nav-dropdown-item">
-                <span class="nav-dropdown-dot" aria-hidden="true"></span>
-                <span>For Parents</span>
-              </a>
+              <a href="/blog-bali-internship-cost.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Internship Cost 2026</span></a>
+              <a href="/blog-bali-visa-guide.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Visa Guide</span></a>
+              <a href="/for-parents.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>For Parents</span></a>
+              <a href="/bali-internship-safety.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>Bali Safety Guide</span></a>
+              <a href="/university-credit.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>University Credit Guide</span></a>
+              <a href="/first-48-hours-bali.html" class="nav-dropdown-item"><span class="nav-dropdown-dot" aria-hidden="true"></span><span>First 48 Hours in Bali</span></a>
             </div>
           </div>
         </div>
@@ -161,7 +273,7 @@
       </ul>
       <div class="cta-row">
         <a href="/sri-lanka-placements.html" class="btn btn-primary">See Sri Lanka host companies</a>
-        <a href="/index.html#cta-banner" class="btn btn-outline">Start your application</a>
+        <a href="/#cta-banner" class="btn btn-outline">Start your application</a>
       </div>
     </div>
     <div class="hero-media">
@@ -209,40 +321,216 @@
     </ul>
   </section>
 
+  <!-- Section: Bali vs Sri Lanka comparison -->
   <section class="page-section">
     <div class="section-header">
-      <div class="eyebrow">Built to expand</div>
-      <h2 class="section-title">Ready for more Sri Lanka detail as the program grows.</h2>
-      <p class="section-sub">This page is intentionally structured so you can add real partner companies, local lifestyle photos, field-specific sections, and a fuller FAQ later without redesigning it again.</p>
+      <div class="eyebrow">Bali vs Sri Lanka</div>
+      <h2 class="section-title">Which destination is the right fit for you?</h2>
+      <p class="section-sub">Both destinations run the same program model with the same level of structure and support. The difference is setting, scale, and field mix. Neither is better — they suit different students.</p>
     </div>
-    <div class="cards-2">
-      <article class="placeholder-card">
-        <div class="placeholder-kicker">Next layer</div>
-        <h3>Partner companies</h3>
-        <p>Add hospitality, operations, sustainability, and business host-company examples here later.</p>
+    <div class="sl-compare-grid">
+      <div class="sl-compare-col">
+        <div class="sl-compare-label">Bali</div>
+        <h3>Larger, faster, more mixed</h3>
+        <ul>
+          <li>Higher startup and creative industry density</li>
+          <li>Larger intake — more peers in your cohort</li>
+          <li>Busier day-to-day pace in Canggu and Seminyak</li>
+          <li>Widest track mix available: tech, marketing, creative, hospitality, business</li>
+          <li>More developed expat and digital-nomad infrastructure</li>
+          <li>Slightly more active nightlife and social scene</li>
+        </ul>
+      </div>
+      <div class="sl-compare-col">
+        <div class="sl-compare-label">Sri Lanka</div>
+        <h3>Calmer, closer-knit, coastal</h3>
+        <ul>
+          <li>Coastal town setting with a noticeably slower daily rhythm</li>
+          <li>Smaller intake — you get to know your fellow interns quickly</li>
+          <li>Particularly strong for hospitality, sustainability, and operations</li>
+          <li>More close-knit intern community — stronger bonds, faster integration</li>
+          <li>Incredible geography: beaches, highlands, wildlife, all within a short trip</li>
+          <li>Tuk-tuks as the main local transport — part of the daily texture</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sl-compare-note">If you are unsure which fits better, mention it in your application and we will advise based on your track and preferences.</p>
+  </section>
+
+  <!-- Section: Daily life in Sri Lanka -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Life on the ground</div>
+      <h2 class="section-title">What your daily life looks like in Sri Lanka.</h2>
+      <p class="section-sub">The internship is the core of your time here. But the setting matters too — this is what the day-to-day actually feels like.</p>
+    </div>
+    <div class="cards-3">
+      <article class="info-card">
+        <div class="info-card-kicker">Setting</div>
+        <h3>Coastal towns with ocean access</h3>
+        <p>Depending on your placement, you will be based in or near Colombo or a coastal area. Ocean proximity is a genuine part of the daily texture — not just a weekend option.</p>
       </article>
-      <article class="placeholder-card">
-        <div class="placeholder-kicker">Next layer</div>
-        <h3>Student stories</h3>
-        <p>Add real Sri Lanka student photos, quotes, or field-specific experiences when they are ready.</p>
+      <article class="info-card">
+        <div class="info-card-kicker">Cost of living</div>
+        <h3>Lower than a Dutch city</h3>
+        <p>Your day-to-day spend is significantly lower than in the Netherlands or Germany. Local food, transport, and accommodation are all affordable relative to European standards. Budget carefully but you won't need to be tight.</p>
+      </article>
+      <article class="info-card">
+        <div class="info-card-kicker">Community</div>
+        <h3>Smaller group, stronger bonds</h3>
+        <p>The smaller intake size means you actually get to know people. Many students describe Sri Lanka as feeling more like a shared experience than a programme — the group dynamic is a genuine part of it.</p>
+      </article>
+      <article class="info-card">
+        <div class="info-card-kicker">Food &amp; culture</div>
+        <h3>Local food scene worth exploring</h3>
+        <p>Sri Lankan cuisine is distinct and genuinely good. Rice and curry, kottu roti, fresh seafood. Most students eat locally the majority of the time — it is cheap, fast, and far better than the international alternatives.</p>
+      </article>
+      <article class="info-card">
+        <div class="info-card-kicker">Weekend travel</div>
+        <h3>Remarkable geography within reach</h3>
+        <p>Sri Lanka is small enough to reach the highlands, ancient ruins, wildlife parks, or a different coastline in a few hours. Students regularly explore on weekends. It is one of the most geographically diverse islands in the region.</p>
+      </article>
+      <article class="info-card">
+        <div class="info-card-kicker">Transport</div>
+        <h3>Tuk-tuks are the main local option</h3>
+        <p>Short trips and daily commutes are done by tuk-tuk — cheap, quick, and part of the experience. Apps like PickMe make it easy to book. Longer distances use intercity buses or trains.</p>
       </article>
     </div>
   </section>
 
+  <!-- Section: Available tracks -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Internship tracks</div>
+      <h2 class="section-title">Available tracks in Sri Lanka.</h2>
+      <p class="section-sub">Sri Lanka has a defined set of available tracks. Hospitality and Sustainability are the standout options here — the local industry concentration makes placements in these fields particularly strong.</p>
+    </div>
+    <div class="sl-tracks-grid">
+      <div class="sl-track-card featured">
+        <div class="sl-track-badge">Strongest fit</div>
+        <h3>Hospitality</h3>
+        <p>Hotel operations, F&amp;B management, guest experience, front-of-house and back-of-house roles across Sri Lanka's growing tourism and hospitality sector.</p>
+      </div>
+      <div class="sl-track-card featured">
+        <div class="sl-track-badge">Strongest fit</div>
+        <h3>Sustainability</h3>
+        <p>Environmental projects, CSR programmes, responsible tourism initiatives, and purpose-driven organisations working across coastal and inland Sri Lanka.</p>
+      </div>
+      <div class="sl-track-card">
+        <div class="sl-track-badge">Available</div>
+        <h3>Operations</h3>
+        <p>Supply chain, logistics, process improvement, and business operations roles within local and regional companies. Practical and hands-on.</p>
+      </div>
+      <div class="sl-track-card">
+        <div class="sl-track-badge">Available</div>
+        <h3>Business</h3>
+        <p>Strategy, project coordination, market research, and general business exposure across companies operating in growth sectors of the Sri Lankan economy.</p>
+      </div>
+      <div class="sl-track-card">
+        <div class="sl-track-badge">Available</div>
+        <h3>Marketing</h3>
+        <p>Content, brand, social media, and campaign work for local and regional businesses. Smaller teams mean broader responsibility and faster learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Visa for Sri Lanka -->
+  <section class="page-section">
+    <div class="section-header">
+      <div class="eyebrow">Visa information</div>
+      <h2 class="section-title">Sri Lanka Electronic Travel Authorization (ETA).</h2>
+      <p class="section-sub">Most students from EU and Western countries can enter Sri Lanka on an ETA — applied for online before you arrive. The process is straightforward and Island Internship provides full guidance as part of your onboarding.</p>
+    </div>
+    <table class="sl-visa-table">
+      <thead>
+        <tr>
+          <th>Detail</th>
+          <th>Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Type</strong></td>
+          <td>Electronic Travel Authorization (ETA) — applied online before arrival</td>
+        </tr>
+        <tr>
+          <td><strong>Official portal</strong></td>
+          <td><a href="https://eta.gov.lk" target="_blank" rel="noopener">eta.gov.lk</a></td>
+        </tr>
+        <tr>
+          <td><strong>Cost</strong></td>
+          <td>Approximately $50 USD for a 30-day entry</td>
+        </tr>
+        <tr>
+          <td><strong>Initial duration</strong></td>
+          <td>30 days on entry, extendable to 90 days total</td>
+        </tr>
+        <tr>
+          <td><strong>Processing time</strong></td>
+          <td>Usually 24–48 hours after application</td>
+        </tr>
+        <tr>
+          <td><strong>Longer placements</strong></td>
+          <td>For internships longer than 30 days, the ETA can be extended in-country at the Department of Immigration. Island Internship provides guidance on this process.</td>
+        </tr>
+        <tr>
+          <td><strong>Island Internship support</strong></td>
+          <td>We provide a step-by-step ETA walkthrough as part of pre-departure onboarding, and the team is reachable if you run into any issues during the process.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section: Support structure -->
+  <section class="page-band">
+    <h3>Support from before you land to after you finish.</h3>
+    <p>The same structured support model that runs across all Island Internship destinations applies fully in Sri Lanka. You are not arriving into an unknown environment — there is a team behind the placement and a community of interns already on the ground when you arrive.</p>
+    <ul class="check-list">
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Placement matching based on your field, goals, and work style — done before you book flights.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>ETA visa guidance included — we walk you through the application process step by step.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Housing arrangement assistance so you are not searching from scratch once you land.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Orientation on arrival — practical, local, and covering what you actually need to know in the first week.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>WhatsApp-reachable team throughout your placement — not a support ticket system.</span>
+      </li>
+      <li>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Sri Lanka students arrive into a pre-existing community of interns — you won't be starting from zero socially.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Final CTA section -->
   <section class="page-band">
     <h3>Thinking about Sri Lanka?</h3>
-    <p>If the pace, fields, and setting feel closer to what you want, ask about current Sri Lanka placements and we will tell you what is live.</p>
+    <p>If the pace, fields, and setting feel closer to what you want, ask about current Sri Lanka placements and we will tell you what is live. You can also read our <a href="/for-parents.html">For Parents guide</a> or check <a href="/university-credit.html">university credit compatibility</a> if those are relevant questions for you.</p>
     <div class="cta-row">
       <a href="/sri-lanka-placements.html" class="btn btn-primary">See Sri Lanka host companies</a>
-      <a href="/index.html#destinations" class="btn btn-outline">Compare destinations</a>
+      <a href="/#destinations" class="btn btn-outline">Compare destinations</a>
     </div>
   </section>
 
   <footer class="simple-footer">
     <div class="simple-footer-links">
-      <a href="/index.html">Home</a>
-      <a href="/career-outcomes.html">Career Outcomes</a>
-      <a href="/community-lifestyle.html">Community</a>
+      <a href="/">Home</a>
+      <a href="/bali-placements.html">Bali</a>
+      <a href="/sri-lanka-placements.html">Sri Lanka placements</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/for-parents.html">For Parents</a>
+      <a href="/university-credit.html">University Credit</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
     </div>

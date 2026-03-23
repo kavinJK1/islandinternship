@@ -66,9 +66,10 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "EducationalOrganization"],
   name: "Island Internship",
   url: "https://www.islandinternship.com",
+  foundingDate: "2024",
   logo: {
     "@type": "ImageObject",
     url: "https://www.islandinternship.com/images/logo.png",
@@ -76,7 +77,7 @@ const organizationSchema = {
     height: 60,
   },
   description:
-    "Island Internship places European university students in curated 3–6 month internships in Bali and Sri Lanka, with placement matching, housing coordination, and full university credit support.",
+    "Island Internship organises structured 3–6 month credit-eligible internships in Bali and Sri Lanka for European university students. Services include placement matching, visa guidance, shared housing coordination, airport pickup, orientation week, and on-the-ground support throughout the placement.",
   contactPoint: {
     "@type": "ContactPoint",
     email: "hello@islandinternship.com",
@@ -85,6 +86,10 @@ const organizationSchema = {
     availableLanguage: ["English", "Dutch"],
   },
   areaServed: ["NL", "BE", "DE", "GB"],
+  serviceArea: {
+    "@type": "Place",
+    name: "Bali, Indonesia and Sri Lanka",
+  },
   sameAs: [
     "https://www.instagram.com/islandinternship",
     "https://www.linkedin.com/company/islandinternship",

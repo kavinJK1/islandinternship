@@ -246,7 +246,7 @@ export const processSteps = {
     {
       number: "02",
       title: "Intro call and matching",
-      body: "We speak with you, refine the brief, and match you to host companies that fit your background and preferred environment.",
+      body: "We speak with you, refine the brief, and match you to host companies that fit your background, field, and preferred environment. If the first match is not right, we adjust — the goal is a placement that actually fits, not just a placement.",
     },
     {
       number: "03",
@@ -258,10 +258,15 @@ export const processSteps = {
       title: "Arrive and start well",
       body: "You land with structure around you: housing guidance, onboarding, community touchpoints, and a host company ready for your first week.",
     },
+    {
+      number: "05",
+      title: "Ongoing support",
+      body: "Your team stays reachable via WhatsApp throughout the placement. Practical questions, placement issues, housing concerns — nothing goes unanswered.",
+    },
   ],
   noteTitle: "Free application. No commitment until you want to move forward.",
   noteBody:
-    "The first step is simply sharing your profile. Matching conversations and placement details only begin once the direction feels right for you.",
+    "The first step is simply sharing your profile. Matching conversations and placement details only begin once the direction feels right for you. If at any point the timing or direction changes, let us know — we work around real student schedules.",
 };
 
 export const destinations: Record<
