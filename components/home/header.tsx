@@ -28,8 +28,9 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const nav = navRef.current;
-    if (!nav) return;
+    const navEl = navRef.current;
+    if (!navEl) return;
+    const nav: HTMLElement = navEl;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const LERP = reducedMotion ? 1 : 0.07;
