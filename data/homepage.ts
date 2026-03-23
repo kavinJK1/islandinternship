@@ -758,6 +758,16 @@ export const faqs = {
       answer:
         "You have a local support contact and clear emergency guidance before you arrive. If there is a problem with the placement, housing, or anything else, we help you work through the next step — you are not dealing with it alone.",
     },
+    {
+      question: "Are Bali internship programs legitimate — how do I avoid scams?",
+      answer:
+        "The biggest red flags in this space are vague host companies, upfront payment before any real conversation, and programs that disappear after you transfer money. Island Internship operates transparently: you apply free, have a real intro call, receive a named placement match with company details, and only pay once you have reviewed and accepted the match. We have placed students from universities including HAN, HvA, Fontys, and Avans — and we encourage you to search for reviews and talk to past participants before deciding.",
+    },
+    {
+      question: "Can I read reviews from past students?",
+      answer:
+        "Yes. We can connect you with past participants directly so you can ask real questions. You are also welcome to search 'Island Internship reviews' or ask in Dutch student Facebook groups — we do not control what past students say, and that is intentional. Independent feedback matters more than testimonials we have curated ourselves.",
+    },
   ],
 };
 
@@ -924,7 +934,7 @@ export const faqTeaser = {
 export const pricing = {
   eyebrow: "Program fees",
   title: "Two ways to do your internship abroad",
-  copy: "Free to apply. No commitment until you're matched. Choose the level of support that fits how independently you want to arrive and settle in.",
+  copy: "Free to apply. No commitment until you're matched. Both tiers include placement matching, visa guidance, and ongoing support — Full Support adds arrival logistics, housing arrangement, airport pickup, and scooter setup so you land with everything sorted.",
   freeNotice: "Free to apply — no commitment until you're matched.",
   featureGroupLabels: ["Core placement", "Arrival & setup"],
   features: [

@@ -38,6 +38,24 @@ export default function PricingPage() {
           <PlacementReassuranceSection />
           <CostComparisonSection />
           <PricingFaqsSection />
+          <section style={{ padding: "3rem 1.5rem", maxWidth: "960px", margin: "0 auto" }}>
+            <p style={{ fontSize: "0.72rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--forest)", fontWeight: 600, marginBottom: "1rem" }}>Before you decide</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.75rem" }}>
+              {[
+                { href: "/blog-bali-internship-cost.html", title: "Full Cost Breakdown", desc: "Program fee, monthly living, and one-off expenses explained" },
+                { href: "/bali-housing-guide.html", title: "Bali Housing Guide", desc: "Where interns live and what accommodation costs" },
+                { href: "/blog-bali-visa-guide.html", title: "Bali Visa Guide", desc: "Which visa you need and what Island Internship helps with" },
+                { href: "/for-parents.html", title: "For Parents", desc: "Safety, support, cost, and university compatibility" },
+                { href: "/university-credit.html", title: "University Credit Guide", desc: "How Dutch universities approve this placement" },
+                { href: "/career-outcomes.html", title: "Student Outcomes", desc: "What students actually leave with — CV proof and results" },
+              ].map((item) => (
+                <a key={item.href} href={item.href} style={{ display: "block", padding: "0.875rem 1rem", background: "var(--bg-soft)", border: "1px solid var(--bg-stone)", borderRadius: "var(--radius-sm)", textDecoration: "none", transition: "box-shadow 0.2s" }}>
+                  <strong style={{ display: "block", fontSize: "0.88rem", color: "var(--text)", marginBottom: "0.25rem" }}>{item.title}</strong>
+                  <span style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{item.desc}</span>
+                </a>
+              ))}
+            </div>
+          </section>
         </main>
         <Footer />
         <MobileActionBar />
