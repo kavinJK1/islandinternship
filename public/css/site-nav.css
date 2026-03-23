@@ -20,8 +20,16 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: transparent;
-  padding: 8px 18px;
+  background: var(--site-nav-bg);
+  border-bottom: 1px solid transparent;
+  padding: 10px 24px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled,
+#main-nav.site-header.is-scrolled {
+  border-bottom-color: var(--site-nav-bg-stone);
+  box-shadow: 0 2px 12px rgba(33, 40, 35, 0.06);
 }
 
 /* ── Transparent flex row: brand | pill | actions ── */
@@ -29,9 +37,9 @@
 .header-inner,
 #main-nav.site-header .header-inner {
   width: 100%;
-  max-width: 1640px;
+  max-width: 1280px;
   margin: 0 auto;
-  height: 66px;
+  height: 60px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -70,10 +78,10 @@
   justify-content: center;
   gap: 0;
   margin: 0;
-  padding: 0 28px;
+  padding: 0 16px;
   list-style: none;
   /* pill shape */
-  height: 66px;
+  height: 48px;
   background: var(--site-nav-bg);
   border: 1px solid var(--site-nav-border);
   border-radius: 100px;
@@ -116,7 +124,7 @@
 .site-header.is-scrolled .header-nav,
 #main-nav.is-scrolled .header-nav,
 #main-nav.scrolled .header-nav {
-  box-shadow: 0 4px 20px rgba(33, 40, 35, 0.07);
+  box-shadow: none;
 }
 
 #main-nav .nav-center-shell {
@@ -133,15 +141,15 @@
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 0 20px;
+  gap: 4px;
+  padding: 0 8px;
   border-radius: 0;
   border: none;
   background: none;
   color: var(--site-nav-muted);
   cursor: pointer;
   font-family: var(--site-nav-font-nav);
-  font-size: 1.15rem;
+  font-size: 0.88rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1;
