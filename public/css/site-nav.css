@@ -98,8 +98,8 @@
   border-radius: inherit;
   padding: 1px;
   background: radial-gradient(
-    180px circle at var(--glow-x, -300px) var(--glow-y, 50%),
-    rgba(173, 122, 60, 0.75),
+    220px circle at var(--glow-x, -300px) var(--glow-y, 50%),
+    rgba(41, 90, 77, 0.9),
     transparent 80%
   );
   -webkit-mask:
