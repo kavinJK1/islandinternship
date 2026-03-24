@@ -1435,24 +1435,16 @@ export function TeamSection() {
               {teamSection.cta}
             </a>
           </div>
-          <div className="team-placeholder">
-            <div className="team-placeholder-card">
-              <div className="team-placeholder-avatar" aria-hidden="true">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <circle cx="20" cy="16" r="7" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </div>
-              <p className="team-placeholder-label">Team photos coming soon</p>
-              <p className="team-placeholder-sub">We prefer to earn the real estate with results first.</p>
-            </div>
-            <div className="team-contact-card">
-              <p className="team-contact-label">Questions about the program?</p>
-              <p className="team-contact-body">Email us directly — we reply within 2 business days.</p>
-              <a href="mailto:hello@islandinternship.com" className="team-contact-email">
-                hello@islandinternship.com
-              </a>
-            </div>
+          <div className="team-photo-wrap">
+            <Image
+              src="/images/team-bali.jpg"
+              alt="Island Internship team and interns gathered at a villa in Bali"
+              width={720}
+              height={480}
+              className="team-photo"
+              sizes="(max-width: 900px) 100vw, 50vw"
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+            />
           </div>
         </div>
       </div>
