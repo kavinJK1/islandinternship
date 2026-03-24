@@ -83,9 +83,9 @@ export const hero = {
     "Most Dutch students do their required semester at home. A growing number go to Bali or Sri Lanka — working inside real startups and international businesses, with every logistical detail sorted before they fly.",
   rotatingPhrases: ["Do it in Bali.", "Do it in Sri Lanka.", "Make it count."],
   bullets: [
-    "Matched to startups, agencies, hospitality brands, and AI-forward teams — credit-eligible from day one.",
-    "Visa guidance, private housing, airport pickup, and orientation week — fully arranged before you fly.",
-    "Monthly costs from €440 in Bali. Typically less than a semester in Amsterdam or Rotterdam.",
+    "Matched to startups, agencies, hospitality brands, and AI-forward teams — university credit-eligible placement.",
+    "Visa guidance, housing support, and pre-departure preparation included — with airport pickup and orientation week available in Full Support.",
+    "Monthly living costs from €440 in Bali — typically less than a semester in Amsterdam or Rotterdam.",
   ],
   primaryCta: "Start your application",
   secondaryCta: "Take the AI fit quiz",
@@ -107,8 +107,8 @@ export const hero = {
     {
       image: "/images/community-orientation.jpg",
       alt: "Students during orientation week in Bali",
-      label: "Full support included",
-      text: "Visa guidance, housing support, airport pickup, and orientation week — sorted before arrival.",
+      label: "Pre-departure preparation",
+      text: "Visa guidance, housing support, and a structured pre-departure brief — so your first week feels organised from the start.",
     },
   ],
 };
@@ -163,11 +163,11 @@ export const costs = {
       kicker: "Budget separately",
       title: "Costs outside the program fee",
       description:
-        "These are the same costs you'd have anywhere — accommodation, food, travel. In Bali, they tend to run lower than a Dutch city.",
+        "These are costs you would have regardless of where you intern — accommodation, food, transport. In Bali, they tend to run significantly lower than in a Dutch city. These are paid by you directly in-destination, not through Island Internship.",
       points: [
-        "Flights, insurance, and visa-related costs",
-        "Accommodation and everyday personal spending",
-        "Optional travel, activities, and lifestyle extras",
+        "Flights, travel insurance, and visa application fees",
+        "Monthly rent and everyday living costs",
+        "Scooter rental, activities, and personal extras",
       ],
     },
   ],
@@ -198,7 +198,7 @@ export const includedHighlights = {
   eyebrow: "What comes with the placement",
   title: "Everything arranged so you arrive ready to start — not still planning.",
   intro:
-    "The program fee covers placement matching, visa guidance, airport pickup, orientation week, and ongoing support throughout your stay. Monthly rent is paid directly.",
+    "The program fee covers placement matching, internship documentation support, visa and entry guidance, and ongoing support throughout your stay. Full Support also includes airport pickup, accommodation arrangement, scooter setup, and orientation week. Monthly rent is paid directly in-destination.",
   items: [
     {
       icon: "briefcase" as const,
@@ -207,8 +207,8 @@ export const includedHighlights = {
     },
     {
       icon: "map-pin" as const,
-      title: "Visa guidance",
-      body: "Clear support on documents, route, and timing so your departure process feels organized rather than last-minute.",
+      title: "Visa and entry guidance",
+      body: "Practical support on visa options, documentation, and timing — tailored to your nationality and destination. Visa and entry requirements vary; we help you understand what applies to your situation and prepare in good time.",
     },
     {
       icon: "home" as const,
@@ -251,8 +251,8 @@ export const processSteps = {
     },
     {
       number: "03",
-      title: "Placement and preparation",
-      body: "Once the match is right, we support the paperwork, pre-departure planning, and arrival coordination.",
+      title: "Placement confirmation and pre-departure",
+      body: "Once the match is confirmed, we move into preparation: internship agreement signing, university documentation support, visa guidance, housing coordination, and a full pre-departure briefing before you fly.",
     },
     {
       number: "04",
@@ -267,7 +267,7 @@ export const processSteps = {
   ],
   noteTitle: "Free application. No commitment until you want to move forward.",
   noteBody:
-    "The first step is simply sharing your profile. Matching conversations and placement details only begin once the direction feels right for you. If at any point the timing or direction changes, let us know — we work around real student schedules.",
+    "The first step is sharing your profile and having an intro call — no cost, no obligation. We give you an honest picture of what we can match you with based on current availability, your field, and your timeline. If the direction changes or the timing shifts, tell us — we work around real student schedules.",
 };
 
 export const destinations: Record<
@@ -401,9 +401,9 @@ export const tracks = {
 
 export const outcomes = {
   eyebrow: "What you build during the internship",
-  title: "What students should leave the program with.",
+  title: "What students leave the program with.",
   intro:
-    "The strongest programs do more than place you abroad. They leave you with better proof of work, stronger stories for interviews, and a network that stays useful after the internship ends.",
+    "Placement abroad is one part of it. The other part is what you can point to when you get back: real deliverables, team exposure, a professional network, and clarity on what you want next. That is what we structure the program around.",
   items: [
     {
       icon: "grid" as const,
@@ -465,10 +465,10 @@ export const outcomes = {
 };
 
 export const testimonials = {
-  eyebrow: "Student stories",
-  title: "What the experience feels like once students are in it.",
+  eyebrow: "From students who did it",
+  title: "Hear what the placement actually looks and feels like from the inside.",
   intro:
-    "These stories show the rhythm of a placement from the inside: workdays, team culture, and the kind of environment students step into once they arrive.",
+    "These are real students from Dutch universities — sharing what the work environment, team culture, and day-to-day rhythm of an Island Internship placement is like. Not a pitch. Just what they experienced.",
   videos: [
     {
       title: "A typical day at Ex Venture",
@@ -550,8 +550,8 @@ export const testimonials = {
     },
   ],
   postCta: {
-    title: "Real students. Real universities. Real placements.",
-    body: "If this sounds like the right fit, the next step is a free 10-minute application.",
+    title: "Real students. Dutch universities. Structured placements.",
+    body: "These are students from Maastricht, Erasmus, Breda, and other Dutch universities who completed their required internship semester abroad. If you want to speak with a past participant before applying, ask us — we can connect you directly.",
   },
 };
 
@@ -592,8 +592,8 @@ export const resources = {
     {
       kicker: "Guide",
       title: "The Bali Internship Guide",
-      body: "A practical overview of tracks, pricing, housing, visa basics, and what the application process looks like from first form to arrival.",
-      meta: "Best for students still comparing Bali with other internship options.",
+      body: "A practical overview of tracks, program fees, housing, visa basics, and what the application process looks like from first form to first week on the ground.",
+      meta: "Best for students still comparing Bali with other internship options — or explaining the program to parents.",
       type: "guide" as const,
       cta: "Send me the guide",
     },
@@ -657,37 +657,37 @@ export const safeguards = {
   eyebrow: "For students, parents, and university coordinators",
   title: "University-compatible. Structurally sound. Supported throughout.",
   intro:
-    "Every practical layer a coordinator, parent, or student needs to see before approving a move abroad — documentation, housing, visa guidance, and a local support contact from day one.",
+    "The practical documentation, guidance, and on-the-ground support that coordinators, parents, and students need to see before approving a placement abroad — structured before departure, not improvised after arrival.",
   cards: [
     {
       icon: "file" as const,
-      title: "University documentation handled",
-      body: "Internship agreements, learning objective forms, and supervisor evaluation sheets aligned with Dutch university requirements — ready before you ask your coordinator.",
+      title: "University documentation prepared",
+      body: "Internship agreements, learning objective forms, and supervisor evaluation sheets aligned with Dutch university requirements. We help prepare what your coordinator needs — so the approval process is straightforward, not back-and-forth.",
     },
     {
       icon: "shield" as const,
       title: "Verified host companies",
-      body: "Every host company provides an official internship agreement, a named supervisor, and the documentation your university needs to approve the placement.",
+      body: "Every host company provides an official internship agreement, a named supervisor, and mid-term and end-of-placement evaluations. You receive company details before making any commitment.",
     },
     {
       icon: "map-pin" as const,
-      title: "Visa and paperwork guidance",
-      body: "Step-by-step support for the visa route, required documentation, and what needs to be arranged before departure — no last-minute scrambling.",
+      title: "Visa and entry guidance",
+      body: "Step-by-step support on visa options, documentation requirements, and application timing — tailored to your nationality and destination. Visa and entry requirements depend on your personal situation; we help you navigate them clearly, not apply a one-size-fits-all answer.",
     },
     {
       icon: "phone" as const,
       title: "On-the-ground team in Bali and Sri Lanka",
-      body: "There is a team present in-destination during the placement season — not managing remotely from Europe. Reachable via WhatsApp for practical issues, placement questions, and anything unexpected.",
+      body: "A team is present in-destination during the placement season — not managing remotely from Europe. Reachable via WhatsApp throughout your placement for practical issues, placement questions, and anything unexpected.",
     },
     {
       icon: "home" as const,
-      title: "Housing and arrival guidance",
-      body: "Clear housing options, arrival instructions, and practical context before you travel — so your first days feel organised, not chaotic.",
+      title: "Housing and arrival coordination",
+      body: "Private accommodation in a central, vetted area — confirmed before you book flights. Arrival instructions, address, and local context are shared well in advance so your first days are calm, not chaotic.",
     },
     {
       icon: "calendar" as const,
-      title: "Pre-departure preparation",
-      body: "A preparation brief covering arrival, local practicalities, insurance, and what to expect in the first week — sent before you fly.",
+      title: "Structured pre-departure preparation",
+      body: "A detailed pre-departure brief covering arrival logistics, insurance requirements, local safety, banking, SIM card setup, and what to expect in your first week — sent before you fly.",
     },
   ],
 };
@@ -751,7 +751,7 @@ export const faqs = {
     {
       question: "Do I need a visa?",
       answer:
-        "Yes. The exact route depends on your passport and length of stay. We guide students through the right visa option and timeline before departure.",
+        "Yes — visa and entry requirements apply to all destinations. The right route depends on your nationality, the duration of your stay, and current immigration regulations in your destination country. We guide students through their specific options and help prepare the documentation — but visa approval is always at the discretion of local immigration authorities, and requirements can change. Students are responsible for meeting the official entry requirements for their destination.",
     },
     {
       question: "What if something goes wrong during my stay?",
@@ -761,7 +761,7 @@ export const faqs = {
     {
       question: "Are Bali internship programs legitimate — how do I avoid scams?",
       answer:
-        "The biggest red flags in this space are vague host companies, upfront payment before any real conversation, and programs that disappear after you transfer money. Island Internship operates transparently: you apply free, have a real intro call, receive a named placement match with company details, and only pay once you have reviewed and accepted the match. We have placed students from universities including HAN, HvA, Fontys, and Avans — and we encourage you to search for reviews and talk to past participants before deciding.",
+        "The biggest red flags in this space are vague host companies, upfront payment before any real conversation, and no verifiable past students. Island Internship operates transparently: you apply free, have a real intro call, receive a named placement match with company details, and only pay once you have reviewed and accepted the match. We encourage you to search independently for reviews, ask to speak with past participants before deciding, and verify the program before committing. We welcome that scrutiny — it is how trust should work.",
     },
     {
       question: "Can I read reviews from past students?",
@@ -976,9 +976,9 @@ export const pricing = {
     },
   ],
   clarityStrip: [
-    { label: "Included in your fee", value: "Placement and support" },
-    { label: "Arranged for you (Full Support)", value: "Accommodation, scooter, SIM, arrival logistics" },
-    { label: "Paid separately", value: "Rent, scooter rental, licence fees, living costs" },
+    { label: "Included in your fee", value: "Placement matching, internship documents, visa guidance, ongoing support" },
+    { label: "Arranged for you (Full Support)", value: "Airport pickup, accommodation, scooter, SIM card, orientation week" },
+    { label: "Paid separately by you", value: "Flights, travel insurance, rent, scooter rental, visa fees, daily living costs" },
   ],
   whyFull: {
     title: "Why most students choose Full Support",
@@ -1085,8 +1085,10 @@ export const pricingReassurance = {
     "Most students matched within 2–4 weeks of their intro call",
     "If the first match isn't right, we adjust — that's part of the job",
     "Local team reachable via WhatsApp from arrival to end of placement",
+    "Pre-departure brief includes visa guidance, housing address, and arrival instructions",
+    "University documentation support included — internship agreement, evaluation forms, and coordinator paperwork",
   ],
-  note: "We do not guarantee a specific company or exact timeline — matching depends on field, timing, and availability. We do guarantee transparency, a genuine effort to find the right fit, and that you will not navigate the process alone.",
+  note: "We do not guarantee a specific company, exact start date, or placement timeline — matching depends on your field, timing, and current availability. We do commit to being transparent about what is available, giving honest estimates, and staying in contact throughout. You will not navigate this process alone.",
 };
 
 export const teamSection = {
