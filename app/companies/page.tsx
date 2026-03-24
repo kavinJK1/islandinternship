@@ -69,7 +69,7 @@ export default function CompaniesPage() {
                 Become a Founding Partner Company
               </h1>
               <p className="section-copy" style={{ maxWidth: "620px" }}>
-                We place pre-screened Dutch university students in 3–6 month internships with companies in Bali and Sri Lanka. No placement fee. No paperwork burden. Just good interns.
+                We place pre-screened Dutch university students in 3–6 month internships with companies in Bali and Sri Lanka. No placement fee. No paperwork burden. Interns worth the time.
               </p>
               <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <a href="#register" className="button button-primary">
@@ -140,16 +140,16 @@ export default function CompaniesPage() {
             <div className="container">
               <div className="section-intro">
                 <span className="eyebrow">What you get</span>
-                <h2 className="section-title">Good interns. Zero admin.</h2>
+                <h2 className="section-title">Motivated interns. Minimal admin.</h2>
               </div>
               <div className="feature-grid">
                 <article className="premium-card feature-card">
                   <div className="card-icon">
                     <Icon name="users" className="icon" />
                   </div>
-                  <h3>Motivated interns</h3>
+                  <h3>Students who chose this</h3>
                   <p>
-                    Students choose Bali deliberately. They&apos;re not defaulting to convenience — they&apos;re investing in the experience. That shows up in how they work.
+                    These are students who applied to intern abroad, not locally. That kind of deliberate choice tends to translate into stronger engagement, greater adaptability, and more initiative once they start.
                   </p>
                 </article>
                 <article className="premium-card feature-card">
@@ -235,7 +235,7 @@ export default function CompaniesPage() {
                   paddingTop: "1.5rem",
                 }}
               >
-                That&apos;s it. No placement fee. No recruitment cost. No obligation beyond the placement itself.
+                No placement fee. No recruitment cost. No obligation beyond the internship itself.
               </p>
             </div>
           </section>

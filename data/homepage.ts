@@ -80,7 +80,7 @@ export const hero = {
   eyebrow: "Bali · Sri Lanka · Your required semester, done differently",
   title: "Your required internship semester, built into a better life chapter.",
   subtitle:
-    "Most Dutch students do their required semester at home. A growing number go to Bali or Sri Lanka — working inside real startups and international businesses, with every logistical detail sorted before they fly.",
+    "Most Dutch students do their required semester close to home. A growing number go further — spending it inside established startups and international businesses in Bali or Sri Lanka, with every logistical detail handled before they fly.",
   rotatingPhrases: ["Do it in Bali.", "Do it in Sri Lanka.", "Make it count."],
   bullets: [
     "Matched to startups, agencies, hospitality brands, and AI-forward teams — university credit-eligible placement.",
@@ -247,7 +247,7 @@ export const processSteps = {
     {
       number: "02",
       title: "Intro call and matching",
-      body: "We speak with you, refine the brief, and match you to host companies that fit your background, field, and preferred environment. If the first match is not right, we adjust — the goal is a placement that actually fits, not just a placement.",
+      body: "We speak with you, refine the brief, and match you to host companies that fit your background, field, and preferred environment. If the first match is not right, we adjust — the goal is a placement that fits, not just a slot filled.",
     },
     {
       number: "03",
@@ -267,7 +267,7 @@ export const processSteps = {
   ],
   noteTitle: "Free application. No commitment until you want to move forward.",
   noteBody:
-    "The first step is sharing your profile and having an intro call — no cost, no obligation. We give you an honest picture of what we can match you with based on current availability, your field, and your timeline. If the direction changes or the timing shifts, tell us — we work around real student schedules.",
+    "The first step is sharing your profile and having an intro call — no cost, no obligation. We give you an honest picture of what we can match you with based on current availability, your field, and your timeline. If the direction changes or the timing shifts, tell us — we work around yours.",
 };
 
 export const destinations: Record<
@@ -328,7 +328,7 @@ export const destinations: Record<
       "A close-knit island setting with stronger hospitality, sustainability, and operations exposure. Sri Lanka suits students who want a softer tempo, tighter community feel, and a more intimate environment around the placement.",
     storyTitle: "Best when the internship needs calm, depth, and a slower surrounding pace.",
     storyBody:
-      "Sri Lanka works well for students who care about guest experience, sustainability, boutique hospitality, and operational visibility. The environment feels more grounded and less saturated — still international, just less frantic.",
+      "Sri Lanka works well for students who care about guest experience, sustainability, boutique hospitality, and operational visibility. The environment feels more grounded and less saturated. Still international, with more room to focus.",
     facts: [
       { label: "Setting", value: "Coastal · Close-knit · Slower-paced" },
       { label: "Living costs", value: "Comparable to Bali — typically lower than a Dutch city" },
@@ -343,7 +343,7 @@ export const destinations: Record<
 
 export const tracks = {
   eyebrow: "Internship tracks",
-  title: "Six tracks. Real companies. Real work.",
+  title: "Six tracks. Established companies. Work that counts.",
   intro:
     "Each track maps to a specific type of company, role, and work environment. Pick what fits your degree requirements and career direction — we handle the matching.",
   items: [
@@ -386,7 +386,7 @@ export const tracks = {
       number: "06",
       kicker: "Tech & AI",
       title: "Startup, AI & Technology",
-      body: "Join AI-forward startups, digital ventures, and tech operations teams where you work across functions, touch real systems, and build skills that travel beyond the internship.",
+      body: "Join AI-forward startups, digital ventures, and tech operations teams where you work across functions, contribute to live systems, and build skills that carry well beyond the internship.",
       field: "Data & Tech",
     },
   ],
@@ -403,7 +403,7 @@ export const outcomes = {
   eyebrow: "What you build during the internship",
   title: "What students leave the program with.",
   intro:
-    "Placement abroad is one part of it. The other part is what you can point to when you get back: real deliverables, team exposure, a professional network, and clarity on what you want next. That is what we structure the program around.",
+    "The placement is one part of it. The other part is what you can point to when you return: tangible deliverables, direct team exposure, a professional network, and clarity on what you want next. That is what we structure the program around.",
   items: [
     {
       icon: "grid" as const,
@@ -411,7 +411,7 @@ export const outcomes = {
       alt: "Student working at internship in Bali",
       objectPosition: "center bottom",
       title: "Career Portfolio",
-      body: "Real deliverables you can speak about in every interview after you leave.",
+      body: "Campaign work, reports, and projects you can speak to in every interview after you leave.",
       points: [
         "Campaign work, reports, and project ownership on your CV",
         "Portfolio proof built through actual internship output",
@@ -423,7 +423,7 @@ export const outcomes = {
       alt: "Interns collaborating on a project in a tropical workspace",
       objectPosition: "center",
       title: "Business Exposure",
-      body: "Work close to founders and operators inside real international businesses.",
+      body: "Embedded with founders and operators inside international companies where commercial decisions happen daily.",
       points: [
         "Commercial awareness built through daily team exposure",
         "Understand how startups, agencies, and hospitality brands run",
@@ -447,7 +447,7 @@ export const outcomes = {
       alt: "Intern reflecting on career direction in a Bali cafe",
       objectPosition: "center",
       title: "Career Direction",
-      body: "Return knowing what kind of work and environment you actually want next.",
+      body: "Return knowing what kind of work, environment, and career path you want next.",
       points: [
         "Clarity on roles, industries, and working styles before you graduate",
         "Confidence to pursue the next step with better reasoning",
@@ -466,9 +466,9 @@ export const outcomes = {
 
 export const testimonials = {
   eyebrow: "From students who did it",
-  title: "Hear what the placement actually looks and feels like from the inside.",
+  title: "Hear what the placement looks and feels like from the people who lived it.",
   intro:
-    "These are real students from Dutch universities — sharing what the work environment, team culture, and day-to-day rhythm of an Island Internship placement is like. Not a pitch. Just what they experienced.",
+    "Students from Dutch universities, sharing their perspective on the work environment, team culture, and daily rhythm of a placement. No curated script. Their words.",
   videos: [
     {
       title: "A typical day at Ex Venture",
@@ -530,7 +530,7 @@ export const testimonials = {
       detail: "Erasmus Rotterdam",
       role: "Ex Venture · Bali · Business development · 4 months",
       quote:
-        "The internship had real responsibility from week one. Working with an international team in Bali gave me a kind of professional exposure I could not have found at home.",
+        "I had genuine responsibility from week one. Working with an international team in Bali gave me a kind of professional exposure I could not have found at home.",
     },
     {
       initials: "LI",
@@ -550,8 +550,8 @@ export const testimonials = {
     },
   ],
   postCta: {
-    title: "Real students. Dutch universities. Structured placements.",
-    body: "These are students from Maastricht, Erasmus, Breda, and other Dutch universities who completed their required internship semester abroad. If you want to speak with a past participant before applying, ask us — we can connect you directly.",
+    title: "Dutch students. Six universities. Structured placements.",
+    body: "These are students from Maastricht, Erasmus, Breda, and other Dutch universities who completed their required internship semester abroad. If you want to speak with a past participant before applying, ask us. We connect you directly.",
   },
 };
 
@@ -559,7 +559,7 @@ export const community = {
   eyebrow: "Life inside the program",
   title: "Ambitious days. Warm evenings. A circle of people who chose to go.",
   intro:
-    "You do not arrive alone. You arrive into a cohort of Dutch students from different universities — all doing real work at real companies, all making the most of the same rare chapter. Days have structure. Evenings have warmth. The first week feels more like settling in than starting over.",
+    "You do not arrive alone. You arrive into a cohort of Dutch students from different universities, all building something they can point to when they return, all making the most of the same rare chapter. Days have structure. Evenings have warmth. The first week feels more like settling in than starting over.",
   bullets: [
     "You meet your cohort before departure — group chats and introductions start weeks before you fly.",
     "Shared dinners, surf sessions, weekend trips, and unplanned evenings fill the weeks between.",
@@ -657,7 +657,7 @@ export const safeguards = {
   eyebrow: "How the program is structured",
   title: "Everything in place before you go — not improvised after you land.",
   intro:
-    "University documents, visa guidance, verified host companies, confirmed housing, and a local team on the ground: the structure that makes this a real program, not a solo adventure with logistical holes.",
+    "University documents, visa guidance, verified host companies, confirmed housing, and a local team on the ground. The structure that separates a properly supported placement from a solo experiment with no backup.",
   cards: [
     {
       icon: "file" as const,
@@ -731,7 +731,7 @@ export const faqs = {
     {
       question: "Are the internships paid?",
       answer:
-        "No — internships are normally unpaid. The value is in the placement itself: practical work experience, university credit, and real deliverables for your CV.",
+        "No — internships are normally unpaid. The value is in the placement itself: substantive work experience, university credit, and deliverables for your CV you can speak to in every interview after.",
     },
     {
       question: "Is Bali safe to live in as a student?",
@@ -761,12 +761,12 @@ export const faqs = {
     {
       question: "Are Bali internship programs legitimate — how do I avoid scams?",
       answer:
-        "The biggest red flags in this space are vague host companies, upfront payment before any real conversation, and no verifiable past students. Island Internship operates transparently: you apply free, have a real intro call, receive a named placement match with company details, and only pay once you have reviewed and accepted the match. We encourage you to search independently for reviews, ask to speak with past participants before deciding, and verify the program before committing. We welcome that scrutiny — it is how trust should work.",
+        "The biggest red flags in this space are vague host companies, upfront payment before any substantive conversation, and no verifiable past students. Island Internship operates transparently: you apply free, have a genuine intro call, receive a named placement match with company details, and only pay once you have reviewed and accepted the match. We encourage you to search independently for reviews, ask to speak with past participants before deciding, and verify the program before committing. We welcome that scrutiny. It is how trust should work.",
     },
     {
       question: "Can I read reviews from past students?",
       answer:
-        "Yes. We can connect you with past participants directly so you can ask real questions. You are also welcome to search 'Island Internship reviews' or ask in Dutch student Facebook groups — we do not control what past students say, and that is intentional. Independent feedback matters more than testimonials we have curated ourselves.",
+        "Yes. We can connect you with past participants directly so you can ask them anything. You are also welcome to search 'Island Internship reviews' or ask in Dutch student Facebook groups. We do not control what past students say, and that is intentional. Independent feedback matters more than testimonials we have curated ourselves.",
     },
   ],
 };
@@ -775,8 +775,8 @@ export const outcomeTeaser = {
   eyebrow: "What you come back with",
   title: "Not just a semester ticked off. A chapter that changes what you do next.",
   items: [
-    { icon: "grid" as const, label: "Career Portfolio", detail: "Real deliverables for every interview" },
-    { icon: "pulse" as const, label: "Business Exposure", detail: "Work inside real international companies" },
+    { icon: "grid" as const, label: "Career Portfolio", detail: "Deliverables you can speak to in every interview" },
+    { icon: "pulse" as const, label: "Business Exposure", detail: "Embedded inside international companies and teams" },
     { icon: "users" as const, label: "International Network", detail: "Connections that outlast the internship" },
     { icon: "compass" as const, label: "Career Direction", detail: "Leave knowing exactly what you want next" },
   ],
@@ -835,7 +835,7 @@ export const costTeaser = {
   title: "Your internship semester, often for less than staying home.",
   bali: { label: "Bali — estimated monthly total", value: "€440 – €630" },
   nl: { label: "Amsterdam / Rotterdam — typical budget", value: "€900 – €1,400" },
-  note: "Same required semester. Different location. In Bali, most students spend significantly less — while gaining more real-world exposure.",
+  note: "Same required semester. Different location. In Bali, most students spend significantly less while building broader international exposure.",
   cta: "See full cost breakdown",
   ctaHref: "#cost-comparison",
 };
@@ -858,7 +858,7 @@ export const costComparison = {
 
 export const featuredTracks = {
   eyebrow: "Internship tracks",
-  title: "Real work across six fields.",
+  title: "Substantive work across six fields.",
   items: [
     {
       kicker: "Marketing",
@@ -924,7 +924,7 @@ export const faqTeaser = {
     },
     {
       question: "Are the internships paid?",
-      answer: "No — internships are unpaid. The value is the placement itself: real work experience, university credit, and deliverables for your CV that you can speak to in every interview after.",
+      answer: "No — internships are unpaid. The value is the placement itself: substantive work experience, university credit, and deliverables for your CV that you can speak to in every interview after.",
     },
   ],
   cta: "Read all FAQs",

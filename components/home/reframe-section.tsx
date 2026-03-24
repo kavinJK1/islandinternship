@@ -18,7 +18,7 @@ const slides = [
   {
     index: "03",
     text: "Some go to Bali or Sri Lanka — and come back different.",
-    sub: "Real startup exposure. International network. Lower monthly costs than Amsterdam.",
+    sub: "Direct startup exposure. International network. Lower monthly costs than Amsterdam.",
     tone: "vivid",
   },
   {

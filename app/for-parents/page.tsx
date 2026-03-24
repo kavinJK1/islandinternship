@@ -82,10 +82,10 @@ export default function ForParentsPage() {
                     What Island Internship is
                   </h2>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", margin: "0 0 1rem" }}>
-                    Island Internship is a structured internship placement and support program. We match Dutch and European university students with real businesses in Bali (Indonesia) and Sri Lanka for 3–6 month placements that count toward their university credit requirements.
+                    Island Internship is a structured internship placement and support program. We match Dutch and European university students with established businesses in Bali (Indonesia) and Sri Lanka for 3–6 month placements that count toward their university credit requirements.
                   </p>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", margin: 0 }}>
-                    We are not a travel company, and this is not a gap year program. Students do real, supervised work inside real companies, with full documentation provided to their university for academic credit approval. We handle placement matching, paperwork, visa guidance, housing coordination, and on-the-ground support throughout the stay.
+                    We are not a travel company, and this is not a gap year program. Students do credited, supervised work inside vetted companies, with full documentation provided to their university for academic credit approval. We handle placement matching, paperwork, visa guidance, housing coordination, and on-the-ground support throughout the stay.
                   </p>
                 </div>
                 <div
@@ -249,7 +249,7 @@ export default function ForParentsPage() {
                 What to do in an emergency
               </h2>
               <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", maxWidth: "640px", margin: "0 0 2rem" }}>
-                Island Internship provides every student with an emergency contact number before departure. This is a direct line to our in-destination team — not a voicemail, not a call centre. If something happens, students have a real person to call.
+                Island Internship provides every student with an emergency contact number before departure. This is a direct line to our in-destination team. Not a voicemail, not a call centre. If something happens, students have a named person to contact immediately.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.25rem" }}>
                 <div
@@ -396,7 +396,7 @@ export default function ForParentsPage() {
                   margin: "0.7rem 0 1.25rem",
                 }}
               >
-                We&apos;re happy to answer directly.
+                Every question gets a direct answer.
               </h2>
               <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", margin: "0 0 2.5rem" }}>
                 Email us or send a WhatsApp message — from a parent, from a student, or from both together. No commitment required. We reply within 1–2 business days.
