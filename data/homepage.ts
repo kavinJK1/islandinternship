@@ -419,8 +419,8 @@ export const outcomes = {
     },
     {
       icon: "pulse" as const,
-      image: "/images/outcomes-workspace.jpg",
-      alt: "Interns collaborating on a project in a tropical workspace",
+      image: "/images/work-team-outdoor.jpg",
+      alt: "International team collaborating on a project in Bali",
       objectPosition: "center",
       title: "Business Exposure",
       body: "Embedded with founders and operators inside international companies where commercial decisions happen daily.",
@@ -443,8 +443,8 @@ export const outcomes = {
     },
     {
       icon: "compass" as const,
-      image: "/images/community-cafe.jpg",
-      alt: "Intern reflecting on career direction in a Bali cafe",
+      image: "/images/intern-focused-work.jpg",
+      alt: "Intern focused at a coworking space in Bali",
       objectPosition: "center",
       title: "Career Direction",
       body: "Return knowing what kind of work, environment, and career path you want next.",
@@ -569,16 +569,16 @@ export const community = {
   ],
   images: [
     {
-      image: "/images/community-laughing.jpg",
-      alt: "Interns together during the program",
+      image: "/images/community-group-tropical.jpg",
+      alt: "Interns together in Bali",
     },
     {
-      image: "/images/community-casatua.jpg",
-      alt: "Island Internship cohort at Casa Tua Bali",
+      image: "/images/orientation-session.jpg",
+      alt: "Orientation session during the first week",
     },
     {
-      image: "/images/community-indoor-social.jpg",
-      alt: "Interns networking at an informal evening",
+      image: "/images/bali-cafe-cowork.jpg",
+      alt: "Interns working from a café in Bali",
     },
   ],
 };
