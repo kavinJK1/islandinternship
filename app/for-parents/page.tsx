@@ -65,7 +65,7 @@ export default function ForParentsPage() {
           {/* ── WHAT IS ISLAND INTERNSHIP ────────────────────────── */}
           <section className="section" style={{ paddingTop: "3rem", paddingBottom: "3rem", background: "var(--bg-soft)" }}>
             <div className="container" style={{ maxWidth: 860 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "3rem", alignItems: "start" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem", alignItems: "start" }}>
                 <div>
                   <span className="eyebrow">What we are</span>
                   <h2
@@ -185,7 +185,7 @@ export default function ForParentsPage() {
               >
                 Housing and where they live
               </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem", alignItems: "start" }}>
                 <div>
                   <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", margin: "0 0 1rem" }}>
                     Students live in private rooms in shared houses in safe, central areas near other interns and the internship location. The accommodation is arranged and vetted before arrival — students receive the address and local information well in advance of departure.

@@ -27,7 +27,7 @@ export const siteLinks = {
   stories: "/stories",
   community: "/community-lifestyle.html",
   companies: "/companies",
-  hostCompanies: "/host-companies.html",
+  hostCompanies: "/companies",
   outcomes: "/career-outcomes.html",
   bali: "/bali-placements.html",
   baliPlacements: "/bali-placements.html",

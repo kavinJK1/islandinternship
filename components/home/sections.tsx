@@ -765,7 +765,7 @@ export function TracksTeaser() {
                 <span className="track-kicker">{track.kicker}</span>
                 <h3>{track.title}</h3>
                 <p>{track.body}</p>
-                <a href={track.href} className="inline-cta">
+                <a href={track.href} className="inline-cta" aria-label={`Learn more about ${track.title}`}>
                   Learn more
                   <Icon name="arrow-right" className="icon" />
                 </a>

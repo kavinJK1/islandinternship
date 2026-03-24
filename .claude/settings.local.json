@@ -65,7 +65,10 @@
       "mcp__chrome-devtools__hover",
       "mcp__chrome-devtools__evaluate_script",
       "Bash(I pay?\", \"What if I 'm not matched straight away?\" — honest answers to the:*)",
-      "Bash(Europe\":*)"
+      "Bash(Europe\":*)",
+      "mcp__chrome-devtools__lighthouse_audit",
+      "Bash(sed -n '3489,3500p' /Users/kavin/Desktop/island-internships-website/app/globals.css)",
+      "Bash(sed -n '4096,4105p' /Users/kavin/Desktop/island-internships-website/app/globals.css)"
     ]
   },
   "enableAllProjectMcpServers": true,

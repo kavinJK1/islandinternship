@@ -3404,7 +3404,7 @@ video {
 }
 
 .ptc-card-neutral .ptc-tier-name { color: var(--muted); }
-.ptc-card-featured .ptc-tier-name { color: rgba(255, 255, 255, 0.42); }
+.ptc-card-featured .ptc-tier-name { color: rgba(255, 255, 255, 0.72); }
 
 .ptc-price {
   font-family: var(--font-sans), sans-serif;
@@ -3423,7 +3423,7 @@ video {
 }
 
 .ptc-card-neutral .ptc-summary { color: var(--muted); }
-.ptc-card-featured .ptc-summary { color: rgba(255, 255, 255, 0.48); }
+.ptc-card-featured .ptc-summary { color: rgba(255, 255, 255, 0.68); }
 
 /* ── Feature list ── */
 .ptc-features {
