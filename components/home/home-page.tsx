@@ -38,12 +38,12 @@ export function HomePage() {
           <CommunitySection />
           {/* 5. Transformation: what you come back with */}
           <OutcomesTeaser />
-          {/* 6. How it works: actionable now that desire is built */}
-          <ProcessSection />
-          {/* 7. Why Island Internship: the team and local presence */}
-          <TeamSection />
-          {/* 8. Destinations: Bali or Sri Lanka — make it tangible */}
+          {/* 6. Destinations: make it vivid and tangible before going operational */}
           <DestinationExplorer />
+          {/* 7. How it works: actionable once the dream is concrete */}
+          <ProcessSection />
+          {/* 8. Why Island Internship: the team and local presence */}
+          <TeamSection />
           {/* 9. Tracks: what work is actually available */}
           <TracksTeaser />
           {/* 10. Social proof: hear from students who did it */}
