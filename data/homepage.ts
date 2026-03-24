@@ -569,8 +569,8 @@ export const community = {
   ],
   images: [
     {
-      image: "/images/community-villa-group.jpg",
-      alt: "Intern cohort together at the villa",
+      image: "/images/community-laughing.jpg",
+      alt: "Interns together during the program",
     },
     {
       image: "/images/community-casatua.jpg",

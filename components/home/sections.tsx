@@ -75,7 +75,7 @@ export function HeroSection() {
       </div>
       <div className="container hero-content">
         <div className="hero-text-wrap">
-          <p className="hero-pre">Bali & Sri Lanka · Real internships abroad · Credit-eligible</p>
+          <p className="hero-pre">Bali & Sri Lanka · Structured internships abroad · Credit-eligible</p>
           <HeroHeadline />
           <div className="hero-actions">
             <OpenApplicationButton className="button button-hero-primary" source="Hero">
@@ -792,7 +792,7 @@ export function TestimonialsTeaser() {
         <div className="stories-header fade-up">
           <div>
             <span className="eyebrow">Student stories</span>
-            <h2 className="section-title">Real students. Real outcomes.</h2>
+            <h2 className="section-title">Dutch students. Structured placements.</h2>
           </div>
           <Link href={siteLinks.stories} className="stories-see-all">
             See all stories →
