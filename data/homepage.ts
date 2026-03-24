@@ -237,7 +237,7 @@ export const processSteps = {
   eyebrow: "How it works",
   title: "From first application to your first week on the ground.",
   intro:
-    "The process is structured, transparent, and designed to move you from interest to placement without months of uncertainty.",
+    "A structured, transparent path from interest to placement — with a local team on the other side and no guesswork about what happens at each step.",
   steps: [
     {
       number: "01",
@@ -556,16 +556,16 @@ export const testimonials = {
 };
 
 export const community = {
-  eyebrow: "Community around the placement",
-  title: "The internship matters more when the community around it is strong.",
+  eyebrow: "Life inside the program",
+  title: "Ambitious days. Warm evenings. A circle of people who chose to go.",
   intro:
-    "Island Internship is not built as a solo drop-off placement. You arrive into an ambitious student community with shared routines, introductions, dinners, weekend plans, and people who make the move feel more connected from week one.",
+    "You do not arrive alone. You arrive into a cohort of Dutch students from different universities — all doing real work at real companies, all making the most of the same rare chapter. Days have structure. Evenings have warmth. The first week feels more like settling in than starting over.",
   bullets: [
-    "You meet people before arrival through group chats and pre-departure introductions.",
-    "Shared housing, coworking meetups, and casual dinners make everyday life easy to settle into.",
-    "Welcome nights, shared dinners, and weekend plans add warmth without pulling focus away from the internship itself.",
-    "You build friendships across different universities, countries, and internship tracks.",
-    "The result is a network that feels social while you are there and still useful once you are back home.",
+    "You meet your cohort before departure — group chats and introductions start weeks before you fly.",
+    "Shared dinners, surf sessions, weekend trips, and unplanned evenings fill the weeks between.",
+    "Days have a rhythm: internship hours, coworking energy, a team around you.",
+    "Friendships form across universities, nationalities, and tracks — and outlast the placement by years.",
+    "Most students describe the community as the part they did not expect to matter as much as it did.",
   ],
   images: [
     {
@@ -654,10 +654,10 @@ export const companies = {
 };
 
 export const safeguards = {
-  eyebrow: "For students, parents, and university coordinators",
-  title: "University-compatible. Structurally sound. Supported throughout.",
+  eyebrow: "How the program is structured",
+  title: "Everything in place before you go — not improvised after you land.",
   intro:
-    "The practical documentation, guidance, and on-the-ground support that coordinators, parents, and students need to see before approving a placement abroad — structured before departure, not improvised after arrival.",
+    "University documents, visa guidance, verified host companies, confirmed housing, and a local team on the ground: the structure that makes this a real program, not a solo adventure with logistical holes.",
   cards: [
     {
       icon: "file" as const,
@@ -772,8 +772,8 @@ export const faqs = {
 };
 
 export const outcomeTeaser = {
-  eyebrow: "What you leave with",
-  title: "Career proof. International network. A semester that actually changes your trajectory.",
+  eyebrow: "What you come back with",
+  title: "Not just a semester ticked off. A chapter that changes what you do next.",
   items: [
     { icon: "grid" as const, label: "Career Portfolio", detail: "Real deliverables for every interview" },
     { icon: "pulse" as const, label: "Business Exposure", detail: "Work inside real international companies" },
