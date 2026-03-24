@@ -26,7 +26,7 @@ export const siteLinks = {
   tracksPage: "/tracks.html",
   stories: "/stories",
   community: "/community-lifestyle.html",
-  companies: "/companies.html",
+  companies: "/companies",
   hostCompanies: "/host-companies.html",
   outcomes: "/career-outcomes.html",
   bali: "/bali-placements.html",
@@ -66,14 +66,14 @@ export const navigation: NavItem[] = [
     dropdown: [
       { href: "/blog-bali-internship-cost.html", label: "Bali Internship Cost 2026" },
       { href: "/blog-bali-visa-guide.html", label: "Bali Visa Guide" },
-      { href: "/for-parents.html", label: "For Parents" },
+      { href: "/for-parents", label: "For Parents" },
       { href: "/bali-internship-safety.html", label: "Bali Safety Guide" },
       { href: "/university-credit.html", label: "University Credit Guide" },
       { href: "/first-48-hours-bali.html", label: "First 48 Hours in Bali" },
       { href: "/bali-housing-guide.html", label: "Bali Housing Guide" },
     ],
   },
-  { href: "/companies.html", label: "For Businesses", slot: "right" },
+  { href: "/companies", label: "For Businesses", slot: "right" },
 ];
 
 export const hero = {
@@ -1148,7 +1148,7 @@ export const parentTeaserBand = {
   heading: "We know you're part of this decision.",
   body: "Island Internship is built to be parent-approved and coordinator-ready. Find answers to every question — from safety and housing to university credit and what happens if something goes wrong.",
   links: [
-    { label: "Read the parent guide", href: "/for-parents.html" },
+    { label: "Read the parent guide", href: "/for-parents" },
     { label: "University credit explained", href: "/university-credit.html" },
     { label: "Safety guide", href: "/bali-internship-safety.html" },
   ],

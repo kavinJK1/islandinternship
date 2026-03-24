@@ -664,7 +664,15 @@ export function Footer() {
           <div className="footer-links">
             <a href="/blog-bali-internship-cost.html">Bali Internship Cost 2026</a>
             <a href="/blog-bali-visa-guide.html">Bali Visa Guide</a>
-            <a href="/for-parents.html">For Parents</a>
+            <Link href="/for-parents">For Parents</Link>
+          </div>
+        </div>
+        <div>
+          <h3>Partners</h3>
+          <div className="footer-links">
+            <Link href="/companies">For Host Companies</Link>
+            <Link href="/universities">University Partners</Link>
+            <a href={siteLinks.partnersEmail}>partners@islandinternship.com</a>
           </div>
         </div>
         <div>
@@ -674,7 +682,6 @@ export function Footer() {
             <a href={siteLinks.whatsapp} target="_blank" rel="noreferrer">
               WhatsApp us
             </a>
-            <a href={siteLinks.partnersEmail}>partners@islandinternship.com</a>
             <Link href={siteLinks.terms}>Terms &amp; Conditions</Link>
             <Link href={siteLinks.privacy}>Privacy Policy</Link>
           </div>

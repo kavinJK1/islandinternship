@@ -45,7 +45,7 @@ export default function PricingPage() {
                 { href: "/blog-bali-internship-cost.html", title: "Full Cost Breakdown", desc: "Program fee, monthly living, and one-off expenses explained" },
                 { href: "/bali-housing-guide.html", title: "Bali Housing Guide", desc: "Where interns live and what accommodation costs" },
                 { href: "/blog-bali-visa-guide.html", title: "Bali Visa Guide", desc: "Which visa you need and what Island Internship helps with" },
-                { href: "/for-parents.html", title: "For Parents", desc: "Safety, support, cost, and university compatibility" },
+                { href: "/for-parents", title: "For Parents", desc: "Safety, support, cost, and university compatibility" },
                 { href: "/university-credit.html", title: "University Credit Guide", desc: "How Dutch universities approve this placement" },
                 { href: "/career-outcomes.html", title: "Student Outcomes", desc: "What students actually leave with — CV proof and results" },
               ].map((item) => (
