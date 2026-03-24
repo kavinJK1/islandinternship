@@ -225,15 +225,17 @@ export function ProcessSection() {
     <section id="how-it-works" className="section process-section">
       <div className="container">
         <SectionIntro eyebrow={processSteps.eyebrow} title={processSteps.title} copy={processSteps.intro} />
-        <div className="process-grid">
+        <ol className="process-stepper" aria-label="How the program works">
           {processSteps.steps.map((step) => (
-            <article key={step.number} className="premium-card process-card">
-              <span className="process-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
+            <li key={step.number} className="process-step reveal">
+              <div className="process-step-num" aria-hidden="true">{step.number}</div>
+              <div className="process-step-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
         <div className="process-note premium-card">
           <strong>{processSteps.noteTitle}</strong>
           <p>{processSteps.noteBody}</p>
