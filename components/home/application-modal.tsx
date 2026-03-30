@@ -128,9 +128,24 @@ export function ApplicationModalProvider({
     if (!validateStepTwo()) return;
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    setIsSubmitting(false);
-    setStep(3);
+
+    try {
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setStep(3);
+    } catch {
+      setErrors({ form: "Something went wrong. Please email us directly at hello@islandinternship.com." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetAfterSuccess = () => {
@@ -310,6 +325,7 @@ export function ApplicationModalProvider({
                             placeholder="Your study background, preferred start date, or any questions..."
                           />
                         </label>
+                        {errors.form ? <p className="modal-form-error">{errors.form}</p> : null}
                         <div className="modal-actions">
                           <button type="button" className="button button-secondary" onClick={() => setStep(1)}>
                             Back
